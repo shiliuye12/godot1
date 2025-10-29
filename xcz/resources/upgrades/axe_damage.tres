@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://d0s0xmfe8yx0b"]
+
+[ext_resource type="Script" uid="uid://d2x3tohcpxq6h" path="res://resources/upgrades/ability_upgrade.gd" id="1_bxluk"]
+
+[resource]
+script = ExtResource("1_bxluk")
+id = "axe_damage"
+name = "攻击伤害"
+description = "增加25%斧头的攻击伤害"
+max_quantity = 5

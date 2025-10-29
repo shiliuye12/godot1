@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0fuyprwtoi5n"]
+
+[ext_resource type="Texture2D" uid="uid://b712uuxvu7wrb" path="res://1/assets/GameBg.png" id="1_bk3v5"]
+[ext_resource type="Script" uid="uid://djaoasivyre8n" path="res://1/Game/game.gd" id="1_jcm6v"]
+[ext_resource type="PackedScene" uid="uid://c48rlurfb4ig8" path="res://1/Paddle/paddle.tscn" id="2_1r4le"]
+[ext_resource type="AudioStream" uid="uid://d4fudcmcy6ogt" path="res://1/assets/bgm_action_5.mp3" id="4_jcm6v"]
+[ext_resource type="AudioStream" uid="uid://8hjpg4cyf7sc" path="res://1/assets/spell1_0.wav" id="5_fwxkx"]
+[ext_resource type="AudioStream" uid="uid://bbbbow7j5s5gl" path="res://1/assets/explode.wav" id="6_qmv3x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7raqb"]
+font_size = 64
+font_color = Color(0.13137421, 0.43803927, 0.58976275, 1)
+outline_size = 5
+outline_color = Color(0.67788893, 0.82246697, 0.8705619, 1)
+shadow_size = 4
+shadow_color = Color(0.25838485, 0.13835108, 0.077372186, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_jcm6v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(586.00006, 326.00003)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("1_bk3v5")
+
+[node name="Paddle" parent="." instance=ExtResource("2_1r4le")]
+position = Vector2(561, 562)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 25.0
+offset_right = 178.0
+offset_bottom = 113.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0000"
+label_settings = SubResource("LabelSettings_7raqb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jcm6v")
+volume_db = -21.996
+autoplay = true
+
+[node name="spell" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fwxkx")
+volume_db = -15.408
+
+[node name="gameover" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("6_qmv3x")
+volume_db = -17.719
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

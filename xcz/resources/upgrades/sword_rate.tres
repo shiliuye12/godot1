@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://b742h5337brcm"]
+
+[ext_resource type="Script" uid="uid://d2x3tohcpxq6h" path="res://resources/upgrades/ability_upgrade.gd" id="1_pyxp1"]
+
+[resource]
+script = ExtResource("1_pyxp1")
+id = "sword_rate"
+name = "攻击频率"
+description = "增加20%剑的攻击频率"
+max_quantity = 3

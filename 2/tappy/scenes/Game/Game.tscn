@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cswcwrs0x5hhp"]
+
+[ext_resource type="Script" uid="uid://cnh8oeyddbn6u" path="res://scenes/Game/Game.gd" id="1_1asa3"]
+[ext_resource type="Texture2D" uid="uid://cans3ib37iggd" path="res://assets/background/rocks_2.png" id="1_tt4u6"]
+[ext_resource type="PackedScene" uid="uid://canm41uq5j77a" path="res://scenes/Plane/Plane.tscn" id="2_1asa3"]
+[ext_resource type="PackedScene" uid="uid://b6lqerhrc5i5g" path="res://scenes/ParallaxBg/ParallaxBg.tscn" id="2_50swi"]
+[ext_resource type="PackedScene" uid="uid://kxjmwtt5jbwv" path="res://scenes/Barrier/Barrier.tscn" id="3_yqgss"]
+[ext_resource type="PackedScene" uid="uid://cx4nayojq3lri" path="res://scenes/GameUI/GameUi.tscn" id="5_yqgss"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_1asa3")
+
+[node name="ParallaxBg" parent="." instance=ExtResource("2_50swi")]
+
+[node name="Rocks2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(338, 312)
+texture = ExtResource("1_tt4u6")
+
+[node name="Plane" parent="." instance=ExtResource("2_1asa3")]
+position = Vector2(60, 425)
+
+[node name="Barrier" parent="." instance=ExtResource("3_yqgss")]
+position = Vector2(41, -3)
+
+[node name="PipesHolder" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="UpperPoint" type="Marker2D" parent="."]
+position = Vector2(675, 167)
+
+[node name="LowerPoint2" type="Marker2D" parent="."]
+position = Vector2(676, 689)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameUI" parent="CanvasLayer" instance=ExtResource("5_yqgss")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

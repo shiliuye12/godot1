@@ -1,0 +1,31 @@
+[gd_scene load_steps=10 format=3 uid="uid://bul48nn7834e3"]
+
+[ext_resource type="Texture2D" uid="uid://cnw4fft6pr3n" path="res://scenes/game_object/experience_vile/ex.png" id="1_276kl"]
+[ext_resource type="Script" uid="uid://bv0ytls4ql5k2" path="res://scenes/game_object/experience_vile/experience_vile.gd" id="1_fpvlh"]
+[ext_resource type="PackedScene" uid="uid://bfhobvjjqnhw7" path="res://scenes/component/random_stream_player_2d_compoent.tscn" id="3_032rb"]
+[ext_resource type="AudioStream" uid="uid://cq25hgnb3s765" path="res://assets/audio/impactGeneric_light_000.ogg" id="4_iag6i"]
+[ext_resource type="AudioStream" uid="uid://c02x1u44y8jps" path="res://assets/audio/impactGeneric_light_001.ogg" id="5_ny6vq"]
+[ext_resource type="AudioStream" uid="uid://bqk21c7rs07jn" path="res://assets/audio/impactGeneric_light_002.ogg" id="6_ocd54"]
+[ext_resource type="AudioStream" uid="uid://cou5bfw0rbjx2" path="res://assets/audio/impactGeneric_light_003.ogg" id="7_ntlma"]
+[ext_resource type="AudioStream" uid="uid://v86aj3222vd" path="res://assets/audio/impactGeneric_light_004.ogg" id="8_f78p0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6siri"]
+radius = 16.0
+
+[node name="ExperienceVile" type="Node2D"]
+script = ExtResource("1_fpvlh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6siri")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_276kl")
+
+[node name="RandomStreamPlayer2DCompoent" parent="." instance=ExtResource("3_032rb")]
+streams = Array[AudioStream]([ExtResource("4_iag6i"), ExtResource("5_ny6vq"), ExtResource("6_ocd54"), ExtResource("7_ntlma"), ExtResource("8_f78p0")])
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

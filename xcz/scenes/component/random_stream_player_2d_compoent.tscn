@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfhobvjjqnhw7"]
+
+[ext_resource type="Script" uid="uid://byn4fjibom81t" path="res://scenes/component/random_stream_player_2d_compoent.gd" id="1_jgsey"]
+
+[node name="RandomStreamPlayer2DCompoent" type="AudioStreamPlayer2D"]
+max_distance = 300.0
+bus = &"sfx"
+script = ExtResource("1_jgsey")

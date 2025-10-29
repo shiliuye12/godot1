@@ -1,0 +1,140 @@
+[gd_scene load_steps=22 format=3 uid="uid://bc6yd4vibr8nt"]
+
+[ext_resource type="Script" uid="uid://q1c2u78a5bkf" path="res://scenes/game_object/baslc_enemy/baslc_enemy.gd" id="1_2c0ld"]
+[ext_resource type="Texture2D" uid="uid://d22hmgy7hfwq1" path="res://scenes/game_object/baslc_enemy/baslc_enemy.png" id="2_ml4uo"]
+[ext_resource type="PackedScene" uid="uid://dr2pjvt12gw4l" path="res://scenes/component/health_component.tscn" id="2_xsq7c"]
+[ext_resource type="PackedScene" uid="uid://bllby1ng2h4p7" path="res://scenes/component/vial_drop_component.tscn" id="3_c8hdq"]
+[ext_resource type="PackedScene" uid="uid://c6mni2pbpxxnq" path="res://scenes/component/death_component.tscn" id="4_0bfvc"]
+[ext_resource type="PackedScene" uid="uid://cuu6tu7q31jj5" path="res://scenes/component/velocity_component.tscn" id="4_raaco"]
+[ext_resource type="PackedScene" uid="uid://c6686q1wqivx1" path="res://scenes/component/hurtbox_component.tscn" id="4_scnr5"]
+[ext_resource type="PackedScene" uid="uid://bpp3oannvwejj" path="res://scenes/component/hit_flash_component.tscn" id="5_l5b3q"]
+[ext_resource type="Shader" uid="uid://m16ppdq7ght4" path="res://scenes/component/hit_flash_component.gdshader" id="6_w36qa"]
+[ext_resource type="AudioStream" uid="uid://cew7yl6vuk5d0" path="res://assets/audio/footstep_carpet_000.ogg" id="10_deh5b"]
+[ext_resource type="PackedScene" uid="uid://bfhobvjjqnhw7" path="res://scenes/component/random_stream_player_2d_compoent.tscn" id="11_nim5k"]
+[ext_resource type="AudioStream" uid="uid://goksw7eckjvx" path="res://assets/audio/footstep_carpet_001.ogg" id="12_2hxax"]
+[ext_resource type="AudioStream" uid="uid://c0io4msl4n5ye" path="res://assets/audio/footstep_carpet_002.ogg" id="13_x0tyv"]
+[ext_resource type="AudioStream" uid="uid://dkhgpp65msgik" path="res://assets/audio/footstep_carpet_003.ogg" id="14_ghwra"]
+[ext_resource type="AudioStream" uid="uid://d1evdisapgiw6" path="res://assets/audio/footstep_carpet_004.ogg" id="15_bd688"]
+
+[sub_resource type="Animation" id="Animation_0bfvc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_scnr5"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1, 0), Vector2(1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/Sprite2D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.174533, -0.174533, 0.174533, -0.174533]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_raaco"]
+_data = {
+&"RESET": SubResource("Animation_0bfvc"),
+&"walk": SubResource("Animation_scnr5")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_deh5b"]
+resource_local_to_scene = true
+shader = ExtResource("6_w36qa")
+shader_parameter/lerp_percent = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0bfvc"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_irfm8"]
+radius = 5.0
+
+[node name="BaslcEnemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_2c0ld")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_raaco")
+}
+autoplay = "walk"
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_xsq7c")]
+
+[node name="VelocityComponent" parent="." instance=ExtResource("4_raaco")]
+
+[node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_c8hdq")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("5_l5b3q")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Visuals/Sprite2D")
+hit_flash_material = SubResource("ShaderMaterial_deh5b")
+
+[node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("4_0bfvc")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Visuals/Sprite2D")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("2_ml4uo")
+offset = Vector2(0, -4)
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_scnr5")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_0bfvc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_irfm8")
+
+[node name="HitRandomAuidoPlayerCompoent" parent="." instance=ExtResource("11_nim5k")]
+streams = Array[AudioStream]([ExtResource("10_deh5b"), ExtResource("12_2hxax"), ExtResource("13_x0tyv"), ExtResource("14_ghwra"), ExtResource("15_bd688")])
+
+[connection signal="hit" from="HurtboxComponent" to="." method="_on_hurtbox_component_hit"]

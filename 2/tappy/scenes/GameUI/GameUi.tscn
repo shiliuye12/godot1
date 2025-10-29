@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://cx4nayojq3lri"]
+
+[ext_resource type="FontFile" uid="uid://be5gfjadt0liw" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_k6e7w"]
+[ext_resource type="Script" uid="uid://dc2ky3edh4lfb" path="res://scenes/GameUI/GameUi.gd" id="1_s76ix"]
+[ext_resource type="AudioStream" uid="uid://bp821cq4mc67q" path="res://assets/audio/score.wav" id="3_7y0a3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s76ix"]
+font = ExtResource("1_k6e7w")
+font_size = 56
+font_color = Color(0.75686276, 0.14117648, 0.4, 1)
+outline_size = 2
+outline_color = Color(0.103743605, 0.103743516, 0.103743516, 1)
+shadow_size = 2
+shadow_color = Color(0.75686276, 0.14117648, 0.4, 0.3647059)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xg3kr"]
+font = ExtResource("1_k6e7w")
+font_size = 56
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0.23392567, 0.23392543, 0.2339252, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7y0a3"]
+font = ExtResource("1_k6e7w")
+font_size = 72
+font_color = Color(0.75686276, 0.14117648, 0.4, 1)
+outline_size = 2
+outline_color = Color(0.103743605, 0.103743516, 0.103743516, 1)
+shadow_size = 2
+shadow_color = Color(0.75686276, 0.14117648, 0.4, 0.3647059)
+shadow_offset = Vector2(2, 2)
+
+[node name="GameUI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s76ix")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="score" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_s76ix")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="press" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "PRESS ESC"
+label_settings = SubResource("LabelSettings_xg3kr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gameover" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 65.0
+offset_top = 396.0
+offset_right = 427.0
+offset_bottom = 469.0
+size_flags_horizontal = 4
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_7y0a3")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7y0a3")
+volume_db = -9.63
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
