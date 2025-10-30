@@ -1,3 +1,9 @@
-res://Gem
-res://Paddle
-res://Game
+res://2/Scences/Main
+res://2/SignalHub
+res://2/Scences/Laser
+res://2/Scences/Pipes
+res://2/Scences/Barrier
+res://2/Scences
+res://2/assets/plane
+res://2/Scences/Plane
+res://2/Scences/Game

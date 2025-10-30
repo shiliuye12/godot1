@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcixd5bejbrph"]
+
+[ext_resource type="Script" uid="uid://b6hl5h3h0sb5y" path="res://2/Scences/Pipes/pipes.gd" id="1_g3xc1"]
+[ext_resource type="PackedScene" uid="uid://cqix67mxd4njn" path="res://2/Scences/Laser/laser.tscn" id="1_igofk"]
+[ext_resource type="PackedScene" uid="uid://dpvd3q2n16cia" path="res://2/Scences/Pipe/pipe.tscn" id="2_g3xc1"]
+
+[node name="Pipes" type="Node2D"]
+script = ExtResource("1_g3xc1")
+
+[node name="Laser" parent="." instance=ExtResource("1_igofk")]
+
+[node name="PipeUp" parent="." instance=ExtResource("2_g3xc1")]
+position = Vector2(0, -411)
+rotation = 3.1415927
+
+[node name="PipeDown" parent="." instance=ExtResource("2_g3xc1")]
+position = Vector2(0, 411)

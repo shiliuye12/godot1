@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://d0fuyprwtoi5n"]
 
 [ext_resource type="Texture2D" uid="uid://b712uuxvu7wrb" path="res://1/assets/GameBg.png" id="1_bk3v5"]
-[ext_resource type="Script" uid="uid://djaoasivyre8n" path="res://1/Game/game.gd" id="1_jcm6v"]
-[ext_resource type="PackedScene" uid="uid://c48rlurfb4ig8" path="res://1/Paddle/paddle.tscn" id="2_1r4le"]
+[ext_resource type="Script" uid="uid://djaoasivyre8n" path="res://1/Scences/Game/game.gd" id="1_jcm6v"]
+[ext_resource type="PackedScene" uid="uid://c48rlurfb4ig8" path="res://1/Scences/Paddle/paddle.tscn" id="2_1r4le"]
 [ext_resource type="AudioStream" uid="uid://d4fudcmcy6ogt" path="res://1/assets/bgm_action_5.mp3" id="4_jcm6v"]
 [ext_resource type="AudioStream" uid="uid://8hjpg4cyf7sc" path="res://1/assets/spell1_0.wav" id="5_fwxkx"]
 [ext_resource type="AudioStream" uid="uid://bbbbow7j5s5gl" path="res://1/assets/explode.wav" id="6_qmv3x"]

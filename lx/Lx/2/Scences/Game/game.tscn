@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccqxaf5fdxlkn"]
+
+[ext_resource type="Texture2D" uid="uid://cans3ib37iggd" path="res://2/assets/background/rocks_2.png" id="1_jjtt6"]
+[ext_resource type="Script" uid="uid://chnkynuk5i5pt" path="res://2/Scences/Game/game.gd" id="1_tk52d"]
+[ext_resource type="PackedScene" uid="uid://betu4h3dj4wui" path="res://2/Scences/Plane/plane.tscn" id="3_bgn2k"]
+[ext_resource type="PackedScene" uid="uid://cd6euydl2geqj" path="res://2/Scences/Barrier/barrier.tscn" id="4_hmv3b"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_tk52d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(348, 113)
+texture = ExtResource("1_jjtt6")
+
+[node name="Plane" parent="." instance=ExtResource("3_bgn2k")]
+position = Vector2(140, 327)
+
+[node name="Barrier" parent="." instance=ExtResource("4_hmv3b")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
