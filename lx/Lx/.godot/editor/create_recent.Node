@@ -1,8 +1,10 @@
+CanvasLayer
+AnimationPlayer
+Label
 MarginContainer
 TextureRect
 TextureProgressBar
 Timer
-AnimationPlayer
 CollisionShape2D
 Sprite2D
 Area2D
@@ -10,4 +12,3 @@ StaticBody2D
 AnimatedSprite2D
 CharacterBody2D
 AudioStreamPlayer2D
-Label

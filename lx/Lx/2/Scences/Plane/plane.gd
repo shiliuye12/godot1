@@ -17,8 +17,5 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP
 		animation_player.play("jump")
 	if is_on_floor():
-		die()
+		Signalhub.plane_die.emit()
 	move_and_slide()
-
-func die():
-	get_tree().paused = true

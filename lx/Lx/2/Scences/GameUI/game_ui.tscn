@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://bidoxdtfwbd0a"]
+
+[ext_resource type="Script" uid="uid://dm1d0rbc1gacj" path="res://2/Scences/GameUI/game_ui.gd" id="1_1k47q"]
+[ext_resource type="FontFile" uid="uid://be5gfjadt0liw" path="res://2/assets/fonts/LuckiestGuy-Regular.ttf" id="1_dxouo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1k47q"]
+font = ExtResource("1_dxouo")
+font_size = 72
+font_color = Color(0.8, 0.8666667, 0.9882353, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dxouo"]
+font = ExtResource("1_dxouo")
+font_size = 72
+font_color = Color(0.6396312, 0.39173844, 0.30669868, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u1l6o"]
+font = ExtResource("1_dxouo")
+font_size = 72
+font_color = Color(0.8854157, 0.92366666, 0.9931038, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 3)
+
+[node name="GameUI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1k47q")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+
+[node name="score" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0000"
+label_settings = SubResource("LabelSettings_1k47q")
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_dxouo")
+
+[node name="Pause" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PRESS ESC"
+label_settings = SubResource("LabelSettings_u1l6o")

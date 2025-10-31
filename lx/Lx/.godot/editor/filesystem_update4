@@ -1,12 +1,4 @@
-res://2/Scences/Game/game.tscn
-res://2/Scences/Game/game.gd
-res://2/Scences/Plane/plane.tscn
-res://2/Scences/Pipe/pipe.tscn
-res://2/Scences/Plane/plane.gd
-res://2/Scences/Barrier/barrier.tscn
-res://2/Scences/Laser/laser.tscn
-res://2/Scences/Pipes/pipes.tscn
-res://2/Scences/Pipes/pipes.gd
-res://2/SignalHub/signalhub.gd
-res://2/Scences/Pipe/pipe.gd
+res://2/Scences/GameUI/game_ui.tscn
+res://2/Scences/GameUI/game_ui.gd
 res://2/Scences/Main/main.tscn
+res://2/Globals/GameManager.gd
