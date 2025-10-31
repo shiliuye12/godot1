@@ -15,3 +15,5 @@ rotation = 3.1415927
 
 [node name="PipeDown" parent="." instance=ExtResource("2_g3xc1")]
 position = Vector2(0, 411)
+
+[connection signal="body_entered" from="Laser" to="." method="_on_laser_body_entered"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cy1gxrpv8l0h7"]
+[gd_scene load_steps=12 format=3 uid="uid://cy1gxrpv8l0h7"]
 
 [ext_resource type="Script" uid="uid://bp4pacrbnkr5w" path="res://2/Scences/Main/main.gd" id="1_c41d7"]
 [ext_resource type="Texture2D" uid="uid://bjibyqj06e775" path="res://2/assets/background/sky.png" id="1_mrcg4"]
 [ext_resource type="FontFile" uid="uid://be5gfjadt0liw" path="res://2/assets/fonts/LuckiestGuy-Regular.ttf" id="2_ls5qw"]
 [ext_resource type="LabelSettings" uid="uid://yr0wvsfesqxi" path="res://2/Resources/title.tres" id="3_goocx"]
+[ext_resource type="AudioStream" uid="uid://da3uu2gx5a53l" path="res://2/assets/audio/bgm_menu.mp3" id="5_06dh5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c41d7"]
 font = ExtResource("2_ls5qw")
@@ -143,3 +144,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_p36j8")
 }
 autoplay = "new_animation"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_06dh5")
+volume_db = -14.787
+autoplay = true

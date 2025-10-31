@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://betu4h3dj4wui"]
+[gd_scene load_steps=12 format=3 uid="uid://betu4h3dj4wui"]
 
 [ext_resource type="Texture2D" uid="uid://bk1weshdrxkh8" path="res://2/assets/plane/planes_sheet.png" id="1_l7ypo"]
 [ext_resource type="Script" uid="uid://w1dgjjo3b5s4" path="res://2/Scences/Plane/plane.gd" id="1_yxauw"]
+[ext_resource type="AudioStream" uid="uid://dr4o5p8h56wd" path="res://2/assets/audio/engine.mp3" id="3_anx3m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxauw"]
 atlas = ExtResource("1_l7ypo")
@@ -38,6 +39,21 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_yxf5p"]
 radius = 37.735924
 
+[sub_resource type="Animation" id="Animation_anx3m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_yxauw"]
 resource_name = "jump"
 length = 0.3
@@ -55,21 +71,6 @@ tracks/0/keys = {
 "values": [0.0, -0.5235987755982988, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_anx3m"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_av1ip"]
 _data = {
 &"RESET": SubResource("Animation_anx3m"),
@@ -82,8 +83,8 @@ script = ExtResource("1_yxauw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tagk1")
 animation = &"fly"
-frame = 1
-frame_progress = 0.36624196
+autoplay = "fly"
+frame_progress = 0.6906719
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yxf5p")
@@ -92,3 +93,8 @@ shape = SubResource("CircleShape2D_yxf5p")
 libraries = {
 &"": SubResource("AnimationLibrary_av1ip")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_anx3m")
+volume_db = -14.637
+autoplay = true

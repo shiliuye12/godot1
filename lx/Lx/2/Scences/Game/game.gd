@@ -1,8 +1,10 @@
 extends Node2D
 
 const PIPES = preload("uid://dcixd5bejbrph")
+@onready var game_over: AudioStreamPlayer2D = $Plane/game_over
 
 func _ready() -> void:
+	get_tree().paused = false
 	spanw_pipes()
 	Signalhub.plane_die.connect(_plane_die)
 
@@ -20,4 +22,5 @@ func _on_timer_timeout() -> void:
 	spanw_pipes()
 
 func _plane_die():
+	game_over.play()
 	get_tree().paused = true
