@@ -1,5 +1,6 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761660531
+::res://::1762002103
+godot.windows.opt.tools.64.20251028-222347-005.log::TextFile::-1::1761661427::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::5817334851061428107::1761533987::1761533993::1::::<><><>0<>0<>f28acf2afcaa82d66e801eb2e430629b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1761534052
 ::res://assets/audio/::1761534009
@@ -28,6 +29,13 @@ colored_castle.png::CompressedTexture2D::5217253366576838110::1761534008::176153
 waterTop_high.png::CompressedTexture2D::2139159138061149551::1761534008::1761534008::1::::<><><>0<>0<>295a920671ec4e1a44fe7c93105de2dd<>res://.godot/imported/waterTop_high.png-11594e7de55f5bbbcd65c56f8e5009f5.ctex::
 ::res://assets/ui/::1761534008
 panel_beige.png::CompressedTexture2D::6344363387871696976::1761534008::1761534008::1::::<><><>0<>0<>c2539a939473a3049690d3fda57ba750<>res://.godot/imported/panel_beige.png-0c2561c71b5e775174913c731a813cc9.ctex::
-::res://scenes/::1761534187
+::res://scenes/::1762002103
+::res://scenes/Animal/::1761661929
+animal.gd::GDScript::7126887868252771367::1761661929::0::1::::<>RigidBody2D<><>0<>0<><>::
+animal.tscn::PackedScene::8564535354217478748::1761661929::0::1::::<><><>0<>0<><>::uid://dly3d0u4nvlxh::::res://assets/player/parrot.png<>uid://c8sk2jbnwh7bn::::res://scenes/Animal/animal.gd<>uid://cnx1g3pjncg1t::::res://assets/env/items/arrow.png<>uid://8qnsp0o6g8u3::::res://assets/audio/kick_wood.ogg<>uid://d2kj4c62hccn2::::res://assets/audio/stretch2.ogg<>uid://mtsgp35rcq5p::::res://assets/audio/catapult.ogg
+::res://scenes/LevelBase/::1761661426
+level_base.tscn::PackedScene::6218564535490490561::1761661426::0::1::::<><><>0<>0<><>::uid://cgljnvhagdcew::::res://assets/scene/colored_castle.png<>uid://duayv708jkwnk::::res://scenes/Animal/animal.tscn
 ::res://scenes/Main/::1761534423
 main.tscn::PackedScene::9046714212638295964::1761534423::0::1::::<><><>0<>0<><>::uid://d4du1ov8wu1mh::::res://assets/env/MainBG.png
+::res://scenes/Test/::1762002103
+text.tscn::PackedScene::7643085025440009035::1762002085::0::1::::<><><>0<>0<><>::
