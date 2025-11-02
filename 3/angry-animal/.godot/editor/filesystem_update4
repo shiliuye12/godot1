@@ -1,1 +1,2 @@
-res://scenes/Test/test.tscn
+res://scenes/Animal/animal.tscn
+res://scenes/Animal/animal.gd

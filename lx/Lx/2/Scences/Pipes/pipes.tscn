@@ -16,4 +16,8 @@ rotation = 3.1415927
 [node name="PipeDown" parent="." instance=ExtResource("2_g3xc1")]
 position = Vector2(0, 411)
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(212, -1)
+
 [connection signal="body_entered" from="Laser" to="." method="_on_laser_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

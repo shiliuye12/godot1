@@ -1,3 +1,5 @@
+Timer
+Label
 CollisionShape2D
 Sprite2D
 RigidBody2D
@@ -5,5 +7,4 @@ ShapeCast2D
 StaticBody2D
 VisibleOnScreenNotifier2D
 AudioStreamPlayer2D
-Label
 TextureRect
