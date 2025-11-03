@@ -1,2 +1,9 @@
+res://scenes/LevelBase/level_base.tscn
+res://scenes/LevelBase/level_base.gd
+res://scenes/gloa/SignalHub.gd
 res://scenes/Animal/animal.tscn
 res://scenes/Animal/animal.gd
+res://scenes/Water/water.tscn
+res://scenes/Water/water.gd
+res://scenes/Cup/cup.tscn
+res://scenes/Cup/cup.gd

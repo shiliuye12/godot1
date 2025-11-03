@@ -15,6 +15,10 @@ run/main_scene="uid://cuuk344c3reg4"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalHub="*res://scenes/Globals/SignalHub.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"

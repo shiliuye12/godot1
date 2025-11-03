@@ -52,16 +52,20 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	pass # Replace with function body.
+	die()
 
 
 func _on_body_entered(body: Node) -> void:
-	pass # Replace with function body.
+	if body is Cup and kick_sound.playing == false:
+		kick_sound.play()
 
 
 func _on_sleeping_state_changed() -> void:
-	pass # Replace with function body.
-
+	if sleeping == true:
+		for body in get_colliding_bodies():
+			if body is Cup:
+				body.die()
+		call_deferred("die")
 
 func change_state(new_state: AnimalState):
 	if _state == new_state:
@@ -114,3 +118,7 @@ func update_arrow_scale():
 	var perc:float = clamp(imp_len / IMPULSE_MAX, 0.0, 1.0)
 	arrow.scale.x = lerp(_arrow_scale_x, _arrow_scale_x * 2, perc)
 	arrow.rotation = (_start - position).angle()
+
+func die():
+	SignalHub.on_animal_dide.emit()
+	queue_free()
