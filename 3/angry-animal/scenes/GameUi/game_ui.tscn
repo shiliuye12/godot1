@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6elqs3rhah7q"]
+
+[ext_resource type="LabelSettings" uid="uid://bfub3ef4rdp0w" path="res://Resources/game_ui.tres" id="1_gyxv1"]
+[ext_resource type="Script" uid="uid://cqhml01j263sh" path="res://scenes/GameUi/game_ui.gd" id="1_nbelv"]
+[ext_resource type="FontFile" uid="uid://1rgugkkgxvq1" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_f0r0p"]
+[ext_resource type="AudioStream" uid="uid://cnmndcelvyfbq" path="res://assets/audio/jazzyfrenchy.mp3" id="3_nbelv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fqwm6"]
+font = ExtResource("2_f0r0p")
+font_size = 72
+font_color = Color(0.20392157, 0.7372549, 0.9019608, 1)
+shadow_size = 2
+shadow_color = Color(0.3726289, 0.3726287, 0.37262872, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hcjun"]
+font = ExtResource("2_f0r0p")
+font_size = 48
+font_color = Color(0.7565081, 0.7565081, 0.75650805, 1)
+shadow_size = 2
+shadow_color = Color(0.3726289, 0.3726287, 0.37262872, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="GameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_nbelv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Level_Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level 10"
+label_settings = ExtResource("1_gyxv1")
+
+[node name="Attemp_Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "attemp 0"
+label_settings = ExtResource("1_gyxv1")
+
+[node name="VBgameover" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBgameover"]
+layout_mode = 2
+text = "Level Complete"
+label_settings = SubResource("LabelSettings_fqwm6")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBgameover"]
+layout_mode = 2
+text = "Press Space"
+label_settings = SubResource("LabelSettings_hcjun")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nbelv")
+volume_db = -21.571

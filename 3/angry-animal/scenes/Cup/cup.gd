@@ -11,10 +11,12 @@ func _ready() -> void:
 	_num_cups += 1
 
 
+
 func die():
 	animation_player.play("vanish")
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	_num_cups -= 1
+	SignalHub.on_cup_die.emit(_num_cups)
 	queue_free()

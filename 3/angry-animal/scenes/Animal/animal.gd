@@ -109,6 +109,7 @@ func start_release():
 	launch_sound.play()
 	freeze = false
 	apply_central_impulse(calculate_impulse())
+	SignalHub.on_attempt_made.emit()
 
 func calculate_impulse() -> Vector2:
 	return _dragged_vector * -IMPULSE_MULT
