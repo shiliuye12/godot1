@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbbn48xe445yw"]
+
+[ext_resource type="Texture2D" uid="uid://cwni0dhknvpp5" path="res://assets/ui/panel_beige.png" id="1_swug1"]
+[ext_resource type="FontFile" uid="uid://1rgugkkgxvq1" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_7kxw5"]
+[ext_resource type="Script" uid="uid://06dnuyljfgrs" path="res://scenes/LevelButton/level_button.gd" id="2_uxvm7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uxvm7"]
+font = ExtResource("2_7kxw5")
+font_size = 48
+font_color = Color(0.9664995, 0.9664995, 0.9664995, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.3726289, 0.3726287, 0.37262872, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ewdx"]
+font = ExtResource("2_7kxw5")
+font_size = 32
+font_color = Color(0.9105497, 0.91054976, 0.9105497, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.3726289, 0.3726287, 0.37262872, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Animation" id="Animation_8ewdx"]
+resource_name = "big"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.08726646259971647, 0.08726646259971647, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_v0xh7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_uxvm7"]
+resource_name = "s"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i2b28"]
+_data = {
+&"RESET": SubResource("Animation_v0xh7"),
+&"big": SubResource("Animation_8ewdx"),
+&"s": SubResource("Animation_uxvm7")
+}
+
+[node name="LevelButton" type="TextureButton"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_swug1")
+script = ExtResource("2_uxvm7")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 13
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MC/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3"
+label_settings = SubResource("LabelSettings_uxvm7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MC/VBoxContainer"]
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_8ewdx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i2b28")
+}
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

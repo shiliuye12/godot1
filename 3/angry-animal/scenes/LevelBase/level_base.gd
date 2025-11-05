@@ -16,3 +16,7 @@ func spawn_animal():
 	var new_animal = ANIMAL.instantiate()
 	new_animal.position = marker_2d.position
 	add_child(new_animal)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("exit"):
+		get_tree().change_scene_to_file("res://scenes/Main/main.tscn")

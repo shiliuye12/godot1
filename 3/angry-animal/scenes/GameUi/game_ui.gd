@@ -3,12 +3,14 @@ extends Control
 @onready var attemp_label: Label = $MarginContainer/VBoxContainer/Attemp_Label
 @onready var v_bgameover: VBoxContainer = $MarginContainer/VBgameover
 @onready var music: AudioStreamPlayer = $music
+@onready var level_label: Label = $MarginContainer/VBoxContainer/Level_Label
 
 var _attemp = 0
 
 func _ready() -> void:
 	SignalHub.on_attempt_made.connect(_on_attempt_made)
 	SignalHub.on_cup_die.connect(_on_cup_die)
+	level_label.text = "Level %s" % ScoreManage.level_number
 
 func _on_attempt_made():
 	_attemp += 1

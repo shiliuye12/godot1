@@ -4,7 +4,7 @@
 
 [resource]
 font = ExtResource("1_jqlpr")
-font_size = 40
+font_size = 72
 font_color = Color(0.5625571, 0.56255716, 0.56255716, 1)
 shadow_size = 2
 shadow_color = Color(0.3726289, 0.3726287, 0.37262872, 1)
