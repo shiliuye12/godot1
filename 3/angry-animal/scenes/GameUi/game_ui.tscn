@@ -78,6 +78,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 0
 
 [node name="Label" type="Label" parent="MarginContainer/VBgameover"]
 layout_mode = 2
@@ -86,7 +87,7 @@ label_settings = SubResource("LabelSettings_fqwm6")
 
 [node name="Label2" type="Label" parent="MarginContainer/VBgameover"]
 layout_mode = 2
-text = "Press Space"
+text = "Press ESC"
 label_settings = SubResource("LabelSettings_hcjun")
 horizontal_alignment = 1
 vertical_alignment = 1

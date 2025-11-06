@@ -20,3 +20,6 @@ func _on_cup_die(remaining_cups: int):
 	if remaining_cups == 0:
 		v_bgameover.show()
 		music.play()
+		ScoreManage.set_score(
+			ScoreManage.level_number,_attemp
+		)

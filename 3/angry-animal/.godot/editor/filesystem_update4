@@ -1,13 +1,1 @@
-res://scenes/LevelButton/level_button.tscn
-res://scenes/Main/main.tscn
-res://Resources/game_ui.tres
-res://scenes/LevelButton/level_button.gd
-res://scenes/GameUi/game_ui.tscn
-res://scenes/LevelBase/level_base.tscn
-res://scenes/LevelBase/level_base.gd
-res://Globals/ScoreManage.gd
-res://scenes/GameUi/game_ui.gd
 res://scenes/Animal/animal.tscn
-res://scenes/Animal/animal.gd
-res://scenes/LevelBase/level_1.tscn
-res://Resources/resource.gd
