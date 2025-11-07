@@ -1,14 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1762422287
-godot.windows.opt.tools.64.20251106-173324-884.log::TextFile::-1::1762421604::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251106-173356-464.log::TextFile::-1::1762421636::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251106-173448-889.log::TextFile::-1::1762421688::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251106-173455-548.log::TextFile::-1::1762421695::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251106-174211-656.log::TextFile::-1::1762422131::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251106-174221-587.log::TextFile::-1::1762422141::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251106-174231-580.log::TextFile::-1::1762422151::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251106-174333-406.log::TextFile::-1::1762422213::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251106-174345-006.log::TextFile::-1::1762422225::0::1::::<><><>0<>0<><>::
+::res://::1762496959
 icon.svg::CompressedTexture2D::5817334851061428107::1761533987::1761533993::1::::<><><>0<>0<>f28acf2afcaa82d66e801eb2e430629b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1761534052
 ::res://assets/audio/::1762352933
@@ -44,9 +35,9 @@ SignalHub.gd::GDScript::6406192264123032418::1762245363::0::1::::<>Node<><>0<>0<
 game_ui.tres::LabelSettings::2778763395344465836::1762352788::0::1::::<><><>0<>0<><>::uid://1rgugkkgxvq1::::res://assets/fonts/LuckiestGuy-Regular.ttf
 resource.gd::GDScript::6662892133863568657::1762355293::0::1::::ScoreResource<>Resource<><>0<>0<><>::
 ::res://scenes/::1762352214
-::res://scenes/Animal/::1762354680
+::res://scenes/Animal/::1762422653
 animal.gd::GDScript::7126887868252771367::1762354680::0::1::::<>RigidBody2D<><>0<>0<><>::
-animal.tscn::PackedScene::8564535354217478748::1762354680::0::1::::<><><>0<>0<><>::uid://dly3d0u4nvlxh::::res://assets/player/parrot.png<>uid://c8sk2jbnwh7bn::::res://scenes/Animal/animal.gd<>uid://cnx1g3pjncg1t::::res://assets/env/items/arrow.png<>uid://8qnsp0o6g8u3::::res://assets/audio/kick_wood.ogg<>uid://d2kj4c62hccn2::::res://assets/audio/stretch2.ogg<>uid://mtsgp35rcq5p::::res://assets/audio/catapult.ogg
+animal.tscn::PackedScene::8564535354217478748::1762422653::0::1::::<><><>0<>0<><>::uid://dly3d0u4nvlxh::::res://assets/player/parrot.png<>uid://c8sk2jbnwh7bn::::res://scenes/Animal/animal.gd<>uid://cnx1g3pjncg1t::::res://assets/env/items/arrow.png<>uid://8qnsp0o6g8u3::::res://assets/audio/kick_wood.ogg<>uid://d2kj4c62hccn2::::res://assets/audio/stretch2.ogg<>uid://mtsgp35rcq5p::::res://assets/audio/catapult.ogg
 ::res://scenes/Cup/::1762245816
 cup.gd::GDScript::3932598653949859514::1762245812::0::1::::Cup<>StaticBody2D<><>0<>0<><>::
 cup.tscn::PackedScene::3824972867383098910::1762245816::0::1::::<><><>0<>0<><>::uid://nn28pq1tfp8x::::res://assets/env/elementWood004.png<>uid://bwa8lcao7gdq5::::res://scenes/Cup/cup.gd<>uid://bsq5m0vd5gsil::::res://assets/env/elementWood015.png<>uid://dqh5pfjnmrfck::::res://assets/audio/vanish.wav

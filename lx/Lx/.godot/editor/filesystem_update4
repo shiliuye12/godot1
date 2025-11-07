@@ -1,4 +1,9 @@
-res://2/Scences/Plane/plane.tscn
-res://3/Scences/main.tscn
-res://3/Scences/LevelBase/level_base.tscn
 res://3/Scences/Animal/animal.tscn
+res://3/Scences/Animal/animal.gd
+res://3/Scences/LevelBase/level_base.tscn
+res://3/Scences/LevelBase/level_base.gd
+res://3/Global/AnimalSignalHub.gd
+res://3/Scences/Cup/cup.tscn
+res://3/Scences/GameUi/game_ui.tscn
+res://3/Scences/Water/water.tscn
+res://3/Scences/Water/water.gd

@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl45uc5ib2b3o"]
+
+[ext_resource type="FontFile" uid="uid://6l3rm3ckhspu" path="res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_vkjgy"]
+[ext_resource type="AudioStream" uid="uid://c7tdmtpryc0a8" path="res://3/assets/audio/jazzyfrenchy.mp3" id="2_xhcjo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vkjgy"]
+font = ExtResource("1_vkjgy")
+font_size = 56
+font_color = Color(0.63149935, 0.9454444, 0.9389898, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.22238246, 0.22238228, 0.2223823, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xhcjo"]
+font = ExtResource("1_vkjgy")
+font_size = 56
+font_color = Color(0.63149935, 0.9454444, 0.9389898, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.22238246, 0.22238228, 0.2223823, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_068hv"]
+font = ExtResource("1_vkjgy")
+font_size = 72
+font_color = Color(0.948777, 0.99137515, 0.98953253, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.22238246, 0.22238228, 0.2223823, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kqug6"]
+font = ExtResource("1_vkjgy")
+font_size = 64
+font_color = Color(0.88026947, 0.9806213, 0.97670263, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.22238246, 0.22238228, 0.2223823, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="GameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level 10"
+label_settings = SubResource("LabelSettings_vkjgy")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Attempts 1000"
+label_settings = SubResource("LabelSettings_xhcjo")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+text = "Level Complete"
+label_settings = SubResource("LabelSettings_068hv")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+text = "Press ESC "
+label_settings = SubResource("LabelSettings_kqug6")
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xhcjo")
+volume_db = -17.718
