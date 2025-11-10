@@ -86,6 +86,7 @@ _data = {
 }
 
 [node name="Cup" type="StaticBody2D"]
+process_mode = 3
 script = ExtResource("1_exgyf")
 
 [node name="Node2D" type="Node2D" parent="."]

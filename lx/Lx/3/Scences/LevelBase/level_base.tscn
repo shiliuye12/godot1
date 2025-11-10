@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://brcsmwht6tb51"]
+[gd_scene load_steps=5 format=3 uid="uid://brcsmwht6tb51"]
 
 [ext_resource type="Script" uid="uid://cdmdq8jkqtvve" path="res://3/Scences/LevelBase/level_base.gd" id="1_4bpp1"]
 [ext_resource type="Texture2D" uid="uid://bra42dcbexfmk" path="res://3/assets/scene/colored_castle.png" id="1_p320m"]
-[ext_resource type="PackedScene" uid="uid://c4bbdc5j7k7lj" path="res://3/Scences/Cup/cup.tscn" id="3_rl4tx"]
 [ext_resource type="PackedScene" uid="uid://cl45uc5ib2b3o" path="res://3/Scences/GameUi/game_ui.tscn" id="4_4bpp1"]
 [ext_resource type="PackedScene" uid="uid://dolgqr2rmqesh" path="res://3/Scences/Water/water.tscn" id="5_gdgsd"]
 
@@ -15,9 +14,6 @@ scale = Vector2(1.1259766, 1.0682927)
 texture = ExtResource("1_p320m")
 centered = false
 offset = Vector2(0, -100)
-
-[node name="Cup" parent="." instance=ExtResource("3_rl4tx")]
-position = Vector2(635, 447)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(185, 390)

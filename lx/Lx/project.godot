@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="lx"
-run/main_scene="uid://brcsmwht6tb51"
+run/main_scene="uid://cefem2digvvti"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,7 @@ Signalhub="*res://2/Globals/Signalhub.gd"
 GameManager="*res://2/Globals/GameManager.gd"
 ScoreManage="*res://2/Globals/ScoreManage.gd"
 AnimalSignalHub="*res://3/Global/AnimalSignalHub.gd"
+AnimalScoreManager="*res://3/Global/AnimalScoreManager.gd"
 
 [debug]
 

@@ -11,12 +11,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Cup.cup_number == 0:
+		AnimalSignalHub._on_level_pass.emit()
 
 func spawn_animal():
-	var new_anilma = ANIMAL.instantiate()
-	new_anilma.position = marker_2d.position
-	add_child(new_anilma)
+	var new_animal = ANIMAL.instantiate()
+	new_animal.position = marker_2d.position
+	call_deferred("add_child", new_animal)
 
 func on_anilam_die():
 	spawn_animal()

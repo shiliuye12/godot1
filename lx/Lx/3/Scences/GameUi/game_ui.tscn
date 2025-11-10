@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl45uc5ib2b3o"]
+[gd_scene load_steps=8 format=3 uid="uid://cl45uc5ib2b3o"]
 
+[ext_resource type="Script" uid="uid://6yeayu4ffw5w" path="res://3/Scences/GameUi/game_ui.gd" id="1_068hv"]
 [ext_resource type="FontFile" uid="uid://6l3rm3ckhspu" path="res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_vkjgy"]
 [ext_resource type="AudioStream" uid="uid://c7tdmtpryc0a8" path="res://3/assets/audio/jazzyfrenchy.mp3" id="2_xhcjo"]
 
@@ -44,12 +45,14 @@ shadow_color = Color(0.22238246, 0.22238228, 0.2223823, 1)
 shadow_offset = Vector2(2, 2)
 
 [node name="GameUi" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_068hv")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -64,12 +67,12 @@ theme_override_constants/margin_top = 24
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Level 10"
 label_settings = SubResource("LabelSettings_vkjgy")
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="AttemptsLabel2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Attempts 1000"
 label_settings = SubResource("LabelSettings_xhcjo")

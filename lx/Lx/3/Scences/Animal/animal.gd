@@ -21,6 +21,7 @@ func _ready() -> void:
 	_state = AnimalState.Ready
 	_start = position
 	_arrow_scale_x = arrow.scale.x
+	AnimalSignalHub._on_level_pass.connect(on_level_pass)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -81,14 +82,16 @@ func calculate_impulse():
 	return _dragged_vector * -SPEED
 
 func update_arrow_scale():
-	var len = calculate_impulse().length()
-	var perc: float = clamp(len / MAX,0.0,1.0) 
+	var _len = calculate_impulse().length()
+	var perc: float = clamp(_len / MAX,0.0,1.0) 
 	arrow.scale.x = lerp(_arrow_scale_x, _arrow_scale_x * 2, perc)
 	arrow.rotation = (_start - position).angle()
 
 
 func _on_sleeping_state_changed() -> void:
-	AnimalSignalHub._on_cup_die.emit()
+	for body in get_colliding_bodies():
+		if body is Cup:
+			body.on_cup_die()
 	AnimalSignalHub._on_animal_die.emit()
 	queue_free()
 
@@ -96,3 +99,6 @@ func _on_sleeping_state_changed() -> void:
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	AnimalSignalHub._on_animal_die.emit()
 	queue_free()
+
+func on_level_pass():
+	get_tree().paused = true

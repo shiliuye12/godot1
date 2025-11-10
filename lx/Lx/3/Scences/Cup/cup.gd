@@ -1,11 +1,15 @@
 extends StaticBody2D
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+class_name Cup
 
-# Called when the node enters the scene tree for the first time.
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+static var cup_number: int =0
+
 func _ready() -> void:
 	AnimalSignalHub._on_cup_die.connect(on_cup_die)
+	cup_number += 1
 
 
 func on_cup_die():
+	cup_number -= 1
 	animation_player.play("new_animation")

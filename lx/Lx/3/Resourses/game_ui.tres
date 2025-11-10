@@ -4,7 +4,7 @@
 
 [resource]
 font = ExtResource("1_volf4")
-font_size = 64
+font_size = 128
 font_color = Color(0.63149935, 0.9454444, 0.9389898, 1)
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
