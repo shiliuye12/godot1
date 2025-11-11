@@ -55,7 +55,7 @@ func set_drag():
 	_drag_start = get_global_mouse_position()
 	
 func update_state():
-	if _state== AnimalState.Drag:
+	if _state == AnimalState.Drag:
 		var new_drag_vector = get_global_mouse_position() - _drag_start
 		
 		new_drag_vector = new_drag_vector.clamp(
@@ -72,6 +72,7 @@ func update_state():
 		
 func set_release():
 	if _state == AnimalState.Release:
+		AnimalScoreManager.level_score = 1
 		arrow.hide()
 		launch.play()
 		freeze = false

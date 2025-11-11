@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://brcsmwht6tb51"]
+[gd_scene load_steps=6 format=3 uid="uid://brcsmwht6tb51"]
 
 [ext_resource type="Script" uid="uid://cdmdq8jkqtvve" path="res://3/Scences/LevelBase/level_base.gd" id="1_4bpp1"]
 [ext_resource type="Texture2D" uid="uid://bra42dcbexfmk" path="res://3/assets/scene/colored_castle.png" id="1_p320m"]
 [ext_resource type="PackedScene" uid="uid://cl45uc5ib2b3o" path="res://3/Scences/GameUi/game_ui.tscn" id="4_4bpp1"]
 [ext_resource type="PackedScene" uid="uid://dolgqr2rmqesh" path="res://3/Scences/Water/water.tscn" id="5_gdgsd"]
+[ext_resource type="AudioStream" uid="uid://bfs8clkabkd0v" path="res://3/assets/audio/birdsong.wav" id="5_sc83u"]
 
 [node name="LevelBase" type="Node2D"]
 script = ExtResource("1_4bpp1")
@@ -25,3 +26,8 @@ mouse_filter = 1
 
 [node name="Water" parent="." instance=ExtResource("5_gdgsd")]
 position = Vector2(581, 615)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_sc83u")
+volume_db = -18.699
+autoplay = true

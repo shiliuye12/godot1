@@ -2,12 +2,14 @@ extends TextureButton
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var label: Label = $MarginContainer/VBoxContainer/Label
+@onready var label_2: Label = $MarginContainer/VBoxContainer/Label2
 
 @export var level_x:int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	label.text = str(level_x)
+	label_2.text = str(AnimalScoreManager._level_score.get_level_score(level_x))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
