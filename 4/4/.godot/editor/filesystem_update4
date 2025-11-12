@@ -1,1 +1,5 @@
 res://Scenes/Master.tscn
+res://Resources/ImageFilesListResource.gd
+res://Tools/ImageFiller.gd
+res://Resources/image_files_list.tres
+res://Globals/ImageManager.gd
