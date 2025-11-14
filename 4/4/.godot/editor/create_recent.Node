@@ -1,2 +1,7 @@
 AudioStreamPlayer
+Label
+TextureButton
+HBoxContainer
+VBoxContainer
+ColorRect
 TextureRect

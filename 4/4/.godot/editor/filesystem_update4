@@ -1,5 +1,10 @@
 res://Scenes/Master.tscn
-res://Resources/ImageFilesListResource.gd
-res://Tools/ImageFiller.gd
-res://Resources/image_files_list.tres
-res://Globals/ImageManager.gd
+res://Resources/LevelSettingResource.gd
+res://Resources/LevelDataResource.gd
+res://Resources/level_data.tres
+res://Classes/LevelDataSelector.gd
+res://Scenes/Master.gd
+res://Scenes/Main/Main.tscn
+res://Scenes/Master/Master.tscn
+res://Scenes/LevelButton/LevelButton.tscn
+res://Scenes/LevelButton/LevelButton.gd
