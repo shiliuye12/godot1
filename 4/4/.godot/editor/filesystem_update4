@@ -1,10 +1,6 @@
-res://Scenes/Master.tscn
-res://Resources/LevelSettingResource.gd
-res://Resources/LevelDataResource.gd
 res://Resources/level_data.tres
-res://Classes/LevelDataSelector.gd
-res://Scenes/Master.gd
+res://Scenes/FrontSprite/FrontSprite.tscn
+res://Scenes/FrontSprite/FrontSprite.gd
 res://Scenes/Main/Main.tscn
+res://Scenes/Game/Game.tscn
 res://Scenes/Master/Master.tscn
-res://Scenes/LevelButton/LevelButton.tscn
-res://Scenes/LevelButton/LevelButton.gd

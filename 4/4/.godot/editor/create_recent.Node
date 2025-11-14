@@ -1,7 +1,10 @@
-AudioStreamPlayer
-Label
+Control
 TextureButton
+Label
 HBoxContainer
 VBoxContainer
-ColorRect
 TextureRect
+MarginContainer
+GridContainer
+AudioStreamPlayer
+ColorRect
