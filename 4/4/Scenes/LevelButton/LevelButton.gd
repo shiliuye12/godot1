@@ -2,6 +2,7 @@ extends TextureButton
 
 @export var level_number: int
 @onready var label: Label = $Label
+@onready var sound: AudioStreamPlayer = $Sound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,4 +13,5 @@ func _ready() -> void:
 		label.text = "%dx%d" % [ls.get_cols(), ls.get_rows()]
 
 func _on_pressed() -> void:
-	pass # Replace with function body.
+	SignalHub.on_level_selected.emit(level_number)
+	SoundManager.play_button_click(sound)

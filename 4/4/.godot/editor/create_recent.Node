@@ -1,10 +1,14 @@
-Control
-TextureButton
 Label
-HBoxContainer
 VBoxContainer
+NinePatchRect
+AudioStreamPlayer      - Matches the "sound" keyword.
+Timer
+AudioStreamPlayer
+Node
 TextureRect
+TextureButton
+Control
+HBoxContainer
 MarginContainer
 GridContainer
-AudioStreamPlayer
 ColorRect
