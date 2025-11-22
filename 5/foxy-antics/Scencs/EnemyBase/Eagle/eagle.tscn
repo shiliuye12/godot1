@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://c43tnsu8f6r8b"]
+
+[ext_resource type="PackedScene" uid="uid://biaaxr46ked5a" path="res://Scencs/EnemyBase/enemy_base.tscn" id="1_phrq6"]
+[ext_resource type="Script" uid="uid://bnpavjtoko8m3" path="res://Scencs/EnemyBase/Eagle/Eagle.gd" id="2_8vda2"]
+[ext_resource type="Texture2D" uid="uid://ct8i06tdq0ymy" path="res://assets/enemies/eagle/eagle-attack.png" id="3_n1era"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n1era"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p02x4"]
+atlas = ExtResource("3_n1era")
+region = Rect2(0, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u32vl"]
+atlas = ExtResource("3_n1era")
+region = Rect2(40, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq0if"]
+atlas = ExtResource("3_n1era")
+region = Rect2(80, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og07r"]
+atlas = ExtResource("3_n1era")
+region = Rect2(120, 0, 40, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eysn4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p02x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u32vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq0if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og07r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1era"]
+size = Vector2(22, 19.5)
+
+[node name="Eagle" instance=ExtResource("1_phrq6")]
+collision_mask = 0
+script = ExtResource("2_8vda2")
+fly_speed_R = Vector2(35, 15)
+fly_speed_L = Vector2(-35, 15)
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_n1era")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_eysn4")
+autoplay = "default"
+frame_progress = 0.80268687
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_n1era")
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="4"]
+target_position = Vector2(0, 300)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Timer" type="Timer" parent="." index="5"]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

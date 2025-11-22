@@ -1,3 +1,14 @@
+res://Scencs/Bullet/PlayerBullet
+res://Scencs/Bullet
+res://Scencs/Bullet/EnemyBullet
+res://assets/enemies/eagle
+res://assets/enemies/bunny
+res://Scencs/EnemyBase/Eagle
+res://Scencs/EnemyBase
+res://assets/enemies/frog
+res://Scencs/EnemyBase/Frog
+res://assets/enemies/snail
+res://Scencs/EnemyBase/Snail
 res://Scencs/PlayerCam
 res://Scencs/Player
 res://Scencs

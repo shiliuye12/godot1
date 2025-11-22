@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://doeps7gcwotn4"]
+[gd_scene load_steps=29 format=3 uid="uid://doeps7gcwotn4"]
 
 [ext_resource type="Script" uid="uid://d003ua5cnok0u" path="res://Scencs/Player/Player.gd" id="1_joaje"]
 [ext_resource type="Texture2D" uid="uid://ix048ftxavv3" path="res://assets/player/player.png" id="1_tnj6u"]
@@ -188,6 +188,9 @@ states/air/node = SubResource("AnimationNodeStateMachine_qiq6a")
 states/air/position = Vector2(511, 100)
 transitions = ["Start", "Grounded", SubResource("AnimationNodeStateMachineTransition_s71iv"), "Grounded", "air", SubResource("AnimationNodeStateMachineTransition_ipcls"), "air", "Grounded", SubResource("AnimationNodeStateMachineTransition_qiq6a")]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ipcls"]
+radius = 9.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_joaje")
@@ -224,3 +227,11 @@ theme_override_font_sizes/font_size = 96
 text = "000
 0000
 000"
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-1, 4)
+shape = SubResource("CircleShape2D_ipcls")
