@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://doeps7gcwotn4"]
+[gd_scene load_steps=30 format=3 uid="uid://doeps7gcwotn4"]
 
 [ext_resource type="Script" uid="uid://d003ua5cnok0u" path="res://Scencs/Player/Player.gd" id="1_joaje"]
 [ext_resource type="Texture2D" uid="uid://ix048ftxavv3" path="res://assets/player/player.png" id="1_tnj6u"]
 [ext_resource type="PackedScene" uid="uid://cqsqqaj3wloi" path="res://Scencs/PlayerCam/player_cam.tscn" id="3_ipcls"]
+[ext_resource type="PackedScene" uid="uid://vi68qjolkkyj" path="res://Scencs/Shooter/shooter.tscn" id="4_qiq6a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tnj6u"]
 radius = 6.0
@@ -235,3 +236,7 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-1, 4)
 shape = SubResource("CircleShape2D_ipcls")
+
+[node name="Shooter" parent="." instance=ExtResource("4_qiq6a")]
+speed = 300.0
+bullet_key = 3

@@ -4,6 +4,7 @@ class_name Player
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var label: Label = $Label
+@onready var shooter: Shooter = $Shooter
 
 @export var fell_off_y = 400
 
@@ -11,6 +12,11 @@ const GRAVITY = 690.0
 const JUMP_SPEED = -270
 const RUN_SPEED = 120
 const MAX_FALL = 350
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("shoot"):
+		var dir: Vector2 = Vector2.LEFT if sprite_2d.flip_h else Vector2.RIGHT
+		shooter.shoot(dir)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

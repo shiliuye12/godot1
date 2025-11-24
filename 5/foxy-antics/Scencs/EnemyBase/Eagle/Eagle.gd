@@ -7,6 +7,7 @@ var _fly_direction = Vector2.ZERO
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var timer: Timer = $Timer
+@onready var shooter: Shooter = $Shooter
 
 func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
@@ -16,8 +17,9 @@ func _physics_process(delta: float) -> void:
 		shoot()
 
 func shoot():
-	print("shoot")
-
+	var dir: Vector2 = global_position.direction_to(_player_ref.global_position)
+	shooter.shoot(dir)
+	
 func fly_to_player():
 	animated_sprite_2d.flip_h = _player_ref.position.x > global_position.x
 

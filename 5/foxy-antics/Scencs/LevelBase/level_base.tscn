@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cph30x5b8081s" path="res://Scencs/EnemyBase/Snail/snail.tscn" id="3_kr4eo"]
 [ext_resource type="PackedScene" uid="uid://c0k5yc5kwu08a" path="res://Scencs/EnemyBase/Frog/frog.tscn" id="4_t36ai"]
 [ext_resource type="PackedScene" uid="uid://c43tnsu8f6r8b" path="res://Scencs/EnemyBase/Eagle/eagle.tscn" id="5_clf4h"]
-[ext_resource type="PackedScene" uid="uid://dv2es2pg8760l" path="res://Scencs/Bullet/EnemyBullet/enemy_bullet.tscn" id="6_u8f6m"]
+[ext_resource type="PackedScene" uid="uid://cbn7n1yphxnu2" path="res://Scencs/ObjectMaker/object_maker.tscn" id="6_u8f6m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpo5i"]
 resource_name = "Platforms"
@@ -239,5 +239,4 @@ position = Vector2(275, -146)
 [node name="Eagle" parent="." instance=ExtResource("5_clf4h")]
 position = Vector2(106, -132)
 
-[node name="EnemyBullet" parent="." instance=ExtResource("6_u8f6m")]
-position = Vector2(57, -38)
+[node name="ObjectMaker" parent="." instance=ExtResource("6_u8f6m")]
