@@ -8,6 +8,8 @@
 radius = 4.0
 
 [node name="EnemyBullet" instance=ExtResource("1_si7vm")]
+collision_layer = 16
+collision_mask = 2
 script = ExtResource("2_153ob")
 
 [node name="CollisionShape2D" parent="." index="0"]

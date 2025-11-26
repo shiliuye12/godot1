@@ -1,9 +1,12 @@
+res://Globals
+res://Resources
+res://Scencs/HighScoreDisplay
+res://Scencs/Main
 res://assets/items
 res://Scencs/FruitPickup
 res://assets/explosion
 res://Scencs/Explosion
 res://Scencs/ObjectMaker
-res://Globals
 res://Scencs/Shooter
 res://Scencs/Bullet/PlayerBullet
 res://Scencs/Bullet
@@ -17,5 +20,3 @@ res://Scencs/EnemyBase/Frog
 res://assets/enemies/snail
 res://Scencs/EnemyBase/Snail
 res://Scencs/PlayerCam
-res://Scencs/Player
-res://Scencs

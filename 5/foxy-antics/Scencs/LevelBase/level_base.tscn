@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://cu0oqx2ytpjwe"]
+[gd_scene load_steps=11 format=4 uid="uid://cu0oqx2ytpjwe"]
 
+[ext_resource type="Script" uid="uid://bqumqo8ld3hs" path="res://Scencs/LevelBase/LevelBase.gd" id="1_18tnx"]
 [ext_resource type="Texture2D" uid="uid://dimbxa0c0cvms" path="res://assets/tiles/Terrain (16x16).png" id="1_ibivq"]
 [ext_resource type="PackedScene" uid="uid://doeps7gcwotn4" path="res://Scencs/Player/player.tscn" id="2_qjw55"]
 [ext_resource type="PackedScene" uid="uid://cph30x5b8081s" path="res://Scencs/EnemyBase/Snail/snail.tscn" id="3_kr4eo"]
@@ -222,6 +223,7 @@ terrain_set_0/terrain_0/color = Color(2.3584068e-06, 0.4184683, 0.5874772, 1)
 sources/0 = SubResource("TileSetAtlasSource_fpo5i")
 
 [node name="LevelBase" type="Node2D"]
+script = ExtResource("1_18tnx")
 
 [node name="Platforms" type="TileMapLayer" parent="."]
 position = Vector2(0, -20)

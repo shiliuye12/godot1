@@ -19,6 +19,7 @@ const DAMAGE = preload("uid://iyymqdtt7lcc")
 const JUMP = preload("uid://bn4inkecbwsh2")
 
 var _is_hurt: bool = false
+var _invincible: bool = false
 
 func play_effect(effect: AudioStream):
 	sound.stop()
@@ -75,6 +76,16 @@ func up_label():
 	ds += "P:%.1f,%.1f" % [global_position.x, global_position.y]
 	label.text = ds
 
+func go_invincible():
+	if _invincible == true:
+		return 0
+	_invincible = true
+	var tween: Tween = create_tween()
+	for i in range(3):
+		tween.tween_property(sprite_2d, "modulate", Color("#ffffff", 0.0), 0.5)
+		tween.tween_property(sprite_2d, "modulate", Color("#ffffff", 1.0), 0.5)
+	tween.tween_property(self, "_invincible", false, 0)
+
 func apply_hurt_jump():
 	_is_hurt = true
 	velocity = HURT_JUMP_VELOCITY
@@ -82,9 +93,12 @@ func apply_hurt_jump():
 	play_effect(DAMAGE)
 
 func apply_hit():
+	if _invincible == true:
+		return 0
+	go_invincible()
 	apply_hurt_jump()
 
-func _on_hit_box_area_entered(area: Area2D) -> void:
+func _on_hit_box_area_entered(_area: Area2D) -> void:
 	call_deferred("apply_hit")
 
 
