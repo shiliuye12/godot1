@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c28rulk1d1luw"]
 
 [ext_resource type="Script" uid="uid://xsiwwj8ih3ts" path="res://Scenes/GameOverUi/GameOverUi.gd" id="1_byt08"]
-[ext_resource type="Texture2D" uid="uid://cl2wy6kf00wxp" path="res://assets/ui/UIbg.png" id="1_j2od3"]
+[ext_resource type="Texture2D" uid="uid://cl2wy6kf00wxp" path="res://Scenes/GameOverUi/UIbg.png" id="1_j2od3"]
 [ext_resource type="LabelSettings" uid="uid://dba57mh421abv" path="res://Resources/title_lable.tres" id="2_8nicn"]
 [ext_resource type="LabelSettings" uid="uid://dwm3jiag4uexf" path="res://Resources/lable.tres" id="3_mdbud"]
 

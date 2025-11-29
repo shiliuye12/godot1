@@ -1,12 +1,2 @@
-res://Scenes/MemoryTile/MemoryTile.tscn
-res://Resources/level_data.tres
-res://Scenes/MemoryTile/MemoryTile.gd
-res://Scenes/Scorer/Scorer.tscn
-res://Scenes/Scorer/Scorer.gd
-res://Scenes/Game/Game.tscn
-res://Globals/SignalHub.gd
-res://Scenes/Game/Game.gd
 res://Scenes/GameOverUi/GameOverUi.tscn
-res://Scenes/GameOverUi/GameOverUi.gd
-res://Scenes/LevelButton/LevelButton.gd
-res://Scenes/LevelButton/LevelButton.tscn
+res://Resources/level_data.tres

@@ -1,9 +1,0 @@
-res://3/Scences/GameUi/game_ui.tscn
-res://3/Scences/Main/main.tscn
-res://3/Scences/LevelBase/level_base.tscn
-res://3/Scences/GameUi/game_ui.gd
-res://3/Global/AnimalScoreManager.gd
-res://3/Scences/Animal/animal.gd
-res://3/Resourses/resourse.gd
-res://3/Scences/LevelButton/level_button.tscn
-res://3/Scences/LevelButton/level_button.gd

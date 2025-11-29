@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwrsnnpbjnuxc"]
+
+[ext_resource type="Script" uid="uid://dllva6jxqwsgs" path="res://Scenes/Main/main.gd" id="1_p6jpk"]
+[ext_resource type="Texture2D" uid="uid://xakdcwfh272o" path="res://assets/7fc2694169ba66c881870395c8c707b5.png" id="1_qw60k"]
+[ext_resource type="Texture2D" uid="uid://d2aa04g7jn0hu" path="res://assets/blue_button00.png" id="2_5yls4"]
+[ext_resource type="Texture2D" uid="uid://5w6lstru03tt" path="res://assets/yellow_button00.png" id="3_5yls4"]
+[ext_resource type="Texture2D" uid="uid://dpraemltm7566" path="res://assets/green_button00.png" id="3_p6jpk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5yls4"]
+font_size = 64
+font_color = Color(0, 0.49803922, 1, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p6jpk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qw60k")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 50
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "大鱼吃小鱼"
+label_settings = SubResource("LabelSettings_5yls4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.000015
+offset_top = -145.0
+offset_right = 124.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("2_5yls4")
+texture_pressed = ExtResource("3_5yls4")
+texture_hover = ExtResource("3_p6jpk")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -20.0
+offset_right = 34.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="TextureButton/MarginContainer"]
+layout_mode = 2
+text = "开始游戏 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

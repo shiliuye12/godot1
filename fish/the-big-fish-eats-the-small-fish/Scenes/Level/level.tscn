@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://vv5nwmnwe0pp"]
+
+[ext_resource type="Script" uid="uid://i4l8i4s3883l" path="res://Scenes/Level/level.gd" id="1_7i4w6"]
+[ext_resource type="Texture2D" uid="uid://d1yoi6raecqel" path="res://assets/853278a0a8a95a6a06b82571f74b113d.png" id="1_iheil"]
+[ext_resource type="PackedScene" uid="uid://c5ce4ey05fq7u" path="res://Scenes/Collision/collision.tscn" id="3_lscpc"]
+[ext_resource type="PackedScene" uid="uid://buha2xe75y0h5" path="res://Scenes/EnemyManager/enemy_manager.tscn" id="5_x701m"]
+[ext_resource type="PackedScene" uid="uid://svwcuis3ibqt" path="res://Scenes/UI/ui.tscn" id="6_7i4w6"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_7i4w6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(295, 153)
+scale = Vector2(0.7848133, 0.784422)
+texture = ExtResource("1_iheil")
+
+[node name="Collision" parent="." instance=ExtResource("3_lscpc")]
+
+[node name="EnemyManager" parent="." instance=ExtResource("5_x701m")]
+
+[node name="Ui" parent="." instance=ExtResource("6_7i4w6")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(292, 158)

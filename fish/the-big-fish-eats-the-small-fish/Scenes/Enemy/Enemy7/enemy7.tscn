@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://crcwrv15554yy"]
+
+[ext_resource type="Script" uid="uid://63cja75e70je" path="res://Scenes/Enemy/Enemy7/enemy7.gd" id="1_sfvqe"]
+[ext_resource type="Texture2D" uid="uid://h3gjajq4tows" path="res://assets/2.png" id="2_6alge"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmlib"]
+radius = 6.0
+height = 18.0
+
+[node name="Enemy7" type="Area2D"]
+scale = Vector2(7.5, 7.5)
+script = ExtResource("1_sfvqe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 0.7853982
+texture = ExtResource("2_6alge")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_bmlib")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

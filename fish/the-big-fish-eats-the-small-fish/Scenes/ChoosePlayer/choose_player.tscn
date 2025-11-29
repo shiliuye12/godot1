@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3 uid="uid://f0eo7oqpp1e5"]
+
+[ext_resource type="Texture2D" uid="uid://k73ei3ijnlyq" path="res://assets/a1b0fcdcd32c3cd21b879c8fec15c8eb.png" id="1_dqr7t"]
+[ext_resource type="Script" uid="uid://bmprecdk7va3y" path="res://Scenes/ChoosePlayer/choose_player.gd" id="1_ykcke"]
+[ext_resource type="Texture2D" uid="uid://c272yre3s2xho" path="res://assets/new folder/1e17ceaa686219f9987e80a38d811838e.png" id="2_l2vp0"]
+[ext_resource type="Texture2D" uid="uid://dmmq0xh7unjcg" path="res://assets/NewRiverFishAssetPack1.0/NewRiverFishAssetPack1.0/Cenrarchidae/Bass/black_bass.png" id="3_g5ses"]
+[ext_resource type="Texture2D" uid="uid://d2aa04g7jn0hu" path="res://assets/blue_button00.png" id="4_j7dbh"]
+[ext_resource type="Texture2D" uid="uid://5w6lstru03tt" path="res://assets/yellow_button00.png" id="5_ykcke"]
+[ext_resource type="Texture2D" uid="uid://dpraemltm7566" path="res://assets/green_button00.png" id="6_5oif4"]
+[ext_resource type="Texture2D" uid="uid://062duq2vuiln" path="res://assets/NewRiverFishAssetPack1.0/yellow_button00.png" id="8_5oif4"]
+
+[node name="ChoosePlayer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ykcke")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dqr7t")
+expand_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(287, 137)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_l2vp0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+texture_filter = 1
+rotation = 0.7853982
+scale = Vector2(25, 25)
+texture = ExtResource("3_g5ses")
+flip_h = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Sprite2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.5
+offset_top = -215.5
+offset_right = -300.5
+offset_bottom = -215.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 194.0
+offset_right = 484.0
+offset_bottom = 243.0
+scale = Vector2(0.35, 0.5)
+texture_normal = ExtResource("4_j7dbh")
+texture_pressed = ExtResource("5_ykcke")
+texture_hover = ExtResource("6_5oif4")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 59.999958
+offset_top = 12.0
+offset_right = 107.999954
+offset_bottom = 35.0
+scale = Vector2(1.4, 1)
+text = "下一个"
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 194.0
+offset_right = 404.0
+offset_bottom = 243.0
+scale = Vector2(0.35, 0.5)
+texture_normal = ExtResource("4_j7dbh")
+texture_pressed = ExtResource("5_ykcke")
+texture_hover = ExtResource("6_5oif4")
+
+[node name="Label" type="Label" parent="TextureButton2"]
+layout_mode = 0
+offset_left = 59.999958
+offset_top = 12.0
+offset_right = 107.999954
+offset_bottom = 35.0
+scale = Vector2(1.4, 1)
+text = "上 一个"
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 216.00002
+offset_top = 220.0
+offset_right = 406.0
+offset_bottom = 269.0
+scale = Vector2(0.75, 0.5)
+texture_normal = ExtResource("4_j7dbh")
+texture_pressed = ExtResource("8_5oif4")
+texture_hover = ExtResource("6_5oif4")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 222.0
+offset_right = 325.0
+offset_bottom = 245.0
+scale = Vector2(0.75, 0.75)
+text = "开始游戏"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]

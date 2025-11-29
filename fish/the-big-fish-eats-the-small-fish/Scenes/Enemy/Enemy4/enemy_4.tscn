@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyma27s2d6h6r"]
+
+[ext_resource type="Texture2D" uid="uid://duh1m1spvklek" path="res://assets/NewRiverFishAssetPack1.0/NewRiverFishAssetPack1.0/Cenrarchidae/Panfish/redbreast_sunfish_panfish.png" id="1_fqeqq"]
+[ext_resource type="Script" uid="uid://bhtso2vremhcn" path="res://Scenes/Enemy/Enemy4/enemy_4.gd" id="1_sapsa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sapsa"]
+radius = 5.0
+height = 18.0
+
+[node name="Enemy4" type="Area2D"]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_sapsa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 0.7853982
+texture = ExtResource("1_fqeqq")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_sapsa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
