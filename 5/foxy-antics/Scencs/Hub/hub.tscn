@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://cei1via18xq2q"]
+
+[ext_resource type="FontFile" uid="uid://dy2lxyf1d48xi" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_5edap"]
+[ext_resource type="Script" uid="uid://ck15ltn7nrtm" path="res://Scencs/Hub/Hub.gd" id="1_8vvm1"]
+[ext_resource type="Texture2D" uid="uid://87pipygtfayk" path="res://assets/items/pixel heart 2.png" id="2_qobkx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qobkx"]
+font = ExtResource("1_5edap")
+font_size = 48
+font_color = Color(1, 0.9372549, 0.96862745, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Hub" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8vvm1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "0000 "
+label_settings = SubResource("LabelSettings_qobkx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="H1" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_qobkx")
+stretch_mode = 4
+
+[node name="H2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_qobkx")
+stretch_mode = 4
+
+[node name="H3" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_qobkx")
+stretch_mode = 4
+
+[node name="H4" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_qobkx")
+stretch_mode = 4
+
+[node name="H5" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_qobkx")
+stretch_mode = 4

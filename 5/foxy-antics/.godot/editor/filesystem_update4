@@ -1,0 +1,12 @@
+res://Scencs/Hub/hub.tscn
+res://Scencs/LevelBase/level_base.tscn
+res://Globals/SignalHub.gd
+res://Scencs/FruitPickup/fruit_pickup.tscn
+res://Scencs/FruitPickup/FruitPickup.gd
+res://Scencs/EnemyBase/EnemyBase.gd
+res://Scencs/Hub/Hub.gd
+res://Scencs/LevelBase/LevelBase.gd
+res://Scencs/HighScoreDisplay/HighScoreDisplay.gd
+res://Scencs/HighScoreDisplay/high_score_display.tscn
+res://Scencs/Main/main.tscn
+res://Scencs/Main/Main.gd

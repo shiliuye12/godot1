@@ -27,7 +27,8 @@ func die():
 	SignalHub.on_create_object.emit(position, Constants.ObjectType.EXPLOSION)
 	SignalHub.on_create_object.emit(position, Constants.ObjectType.PICKUP)
 	queue_free()
-
+	SignalHub.on_scored.emit(points)
+	
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	die()
 

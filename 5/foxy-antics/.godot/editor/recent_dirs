@@ -1,3 +1,4 @@
+res://Scencs/Hub
 res://Globals
 res://Resources
 res://Scencs/HighScoreDisplay
@@ -19,4 +20,3 @@ res://assets/enemies/frog
 res://Scencs/EnemyBase/Frog
 res://assets/enemies/snail
 res://Scencs/EnemyBase/Snail
-res://Scencs/PlayerCam
