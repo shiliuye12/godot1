@@ -1,6 +1,6 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1764438527
-7fc2694169ba66c881870395c8c707b5.png::CompressedTexture2D::2833660788974804252::1764438370::1764438370::1::::<><><>0<>0<>0119c4a8131c82ea5b321dacd8d04f3d<>res://.godot/imported/7fc2694169ba66c881870395c8c707b5.png-84982e9b9174acac496c643faef211ae.ctex::
+::res://::1764644521
+godot.windows.opt.tools.64.20251130-014915-659.log::TextFile::-1::1764438555::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::2115623128477297984::1764438370::1764438370::1::::<><><>0<>0<>e6412e33e5b02e1ff628cf3aa83182f3<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1764438475
 1.png::CompressedTexture2D::4577001850362122474::1764438371::1764438371::1::::<><><>0<>0<>ac41710119fc01ed9fbd8b410c81fb29<>res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex::
@@ -99,6 +99,6 @@ main.tscn::PackedScene::3966786492773005112::1764438381::0::1::::<><><>0<>0<><>:
 ::res://Scenes/Player/::1764438475
 player.gd::GDScript::3468737541758185382::1764438381::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::7269265327669410903::1764438381::0::1::::<><><>0<>0<><>::uid://bpojuog8wg3pi::::res://Scenes/Player/player.gd<>uid://deh4ug1h5qmhf::::res://assets/global.png
-::res://Scenes/UI/::1764438475
+::res://Scenes/UI/::1764438594
 ui.gd::GDScript::8885320210273139054::1764438381::0::1::::<>CanvasLayer<><>0<>0<><>::
-ui.tscn::PackedScene::1308091527429519607::1764438381::0::1::::<><><>0<>0<><>::uid://bm0psi3xspjou::::res://assets/pixel heart 2.png<>uid://dyud6qd1p303c::::res://Scenes/UI/ui.gd
+ui.tscn::PackedScene::1308091527429519607::1764438594::0::1::::<><><>0<>0<><>::uid://bm0psi3xspjou::::res://assets/pixel heart 2.png<>uid://dyud6qd1p303c::::res://Scenes/UI/ui.gd

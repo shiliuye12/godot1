@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6tp3ryhjhq0w"]
+
+[ext_resource type="Texture2D" uid="uid://dimbxa0c0cvms" path="res://assets/tiles/Terrain (16x16).png" id="1_8dc0f"]
+[ext_resource type="Script" uid="uid://dk31amr35ssf1" path="res://Scencs/MovingPlatmorm/MovingPlatmorm.gd" id="1_g7jn2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7jn2"]
+size = Vector2(48, 8)
+
+[node name="MovingPlatmorm" type="PathFollow2D"]
+rotates = false
+script = ExtResource("1_g7jn2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8dc0f")
+region_enabled = true
+region_rect = Rect2(0, 64, 47, 9)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_mask = 0
+sync_to_physics = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_g7jn2")

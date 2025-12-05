@@ -1,0 +1,243 @@
+[gd_scene load_steps=22 format=3 uid="uid://61akc6eayaaw"]
+
+[ext_resource type="Script" uid="uid://bfbutph7xby31" path="res://Scencs/Boss/Boss.gd" id="1_d3xkw"]
+[ext_resource type="Texture2D" uid="uid://brqpdeclu4rax" path="res://assets/enemies/boss/boss.png" id="1_lgcmm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lgcmm"]
+radius = 20.0
+height = 72.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgcmm"]
+size = Vector2(20, 362)
+
+[sub_resource type="Animation" id="Animation_ho73x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d3xkw"]
+resource_name = "arrive"
+length = 0.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"antivate_collisions"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_7313e"]
+resource_name = "attack"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-200, 0), Vector2(0, -150), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_p88j8"]
+resource_name = "hit"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8000001, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.19607843, 0.17254902, 1), Color(1, 1, 1, 1), Color(1, 0.19607843, 0.17254902, 1), Color(1, 1, 1, 1), Color(1, 0.19607843, 0.17254902, 1), Color(1, 1, 1, 1), Color(1, 0.19607843, 0.17254902, 1), Color(1, 1, 1, 1), Color(1, 0.19607843, 0.17254902, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lgcmm"]
+resource_name = "pulse"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -150), Vector2(0, 0), Vector2(0, -150), Vector2(0, 0), Vector2(0, -150), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7313e"]
+_data = {
+&"RESET": SubResource("Animation_ho73x"),
+&"arrive": SubResource("Animation_d3xkw"),
+&"attack": SubResource("Animation_7313e"),
+&"hit": SubResource("Animation_p88j8"),
+&"pulse": SubResource("Animation_lgcmm")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lgcmm"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d3xkw"]
+animation = &"arrive"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ho73x"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p88j8"]
+animation = &"hit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7313e"]
+animation = &"pulse"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p88j8"]
+advance_mode = 2
+advance_condition = &"on_trigger"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sxcqg"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l5gea"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mb3vl"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xplhd"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lgcmm"]
+states/RESET/node = SubResource("AnimationNodeAnimation_lgcmm")
+states/RESET/position = Vector2(346.4, 102)
+states/arrive/node = SubResource("AnimationNodeAnimation_d3xkw")
+states/arrive/position = Vector2(504, 99.920006)
+states/attack/node = SubResource("AnimationNodeAnimation_ho73x")
+states/attack/position = Vector2(756, 100.4)
+states/hit/node = SubResource("AnimationNodeAnimation_p88j8")
+states/hit/position = Vector2(503.84, 192.40001)
+states/pulse/node = SubResource("AnimationNodeAnimation_7313e")
+states/pulse/position = Vector2(632, 99.92)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_p88j8"), "RESET", "arrive", SubResource("AnimationNodeStateMachineTransition_sxcqg"), "arrive", "pulse", SubResource("AnimationNodeStateMachineTransition_l5gea"), "pulse", "attack", SubResource("AnimationNodeStateMachineTransition_mb3vl"), "attack", "pulse", SubResource("AnimationNodeStateMachineTransition_xplhd")]
+
+[node name="Boss" type="Node2D"]
+script = ExtResource("1_d3xkw")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+position = Vector2(0, -36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_lgcmm")
+
+[node name="HitBox" type="Area2D" parent="Visuals"]
+collision_layer = 8
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/HitBox"]
+position = Vector2(1, -36)
+shape = SubResource("CapsuleShape2D_lgcmm")
+
+[node name="Trigger" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
+position = Vector2(-226, -181)
+shape = SubResource("RectangleShape2D_lgcmm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7313e")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+deterministic = false
+tree_root = SubResource("AnimationNodeStateMachine_lgcmm")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/on_trigger = false
+
+[connection signal="area_entered" from="Trigger" to="." method="_on_trigger_area_entered"]

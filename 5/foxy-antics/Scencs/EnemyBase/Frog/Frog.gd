@@ -29,7 +29,7 @@ func apply_jump():
 		return
 	
 	velocity = JUMP_VELOCITY_R if animated_sprite_2d.flip_h else JUMP_VELOCITY_L
-	_can_jump = false
+	_can_jump = false 
 	jump_timer.start()
 	animated_sprite_2d.play("jump")
 

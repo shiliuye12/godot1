@@ -1,3 +1,7 @@
+res://Scencs/Boss
+res://Scencs/FloorSpikes
+res://Scencs/MovingPlatmorm
+res://Scencs/BallSpikes
 res://Scencs/Hub
 res://Globals
 res://Resources
@@ -16,7 +20,3 @@ res://assets/enemies/eagle
 res://assets/enemies/bunny
 res://Scencs/EnemyBase/Eagle
 res://Scencs/EnemyBase
-res://assets/enemies/frog
-res://Scencs/EnemyBase/Frog
-res://assets/enemies/snail
-res://Scencs/EnemyBase/Snail
