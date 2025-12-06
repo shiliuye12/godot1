@@ -6,7 +6,6 @@ extends Control
 func _ready() -> void:
 	score.text = "%04d" % ScoreManage.high_score
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -14,3 +13,5 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
 		GameManager.lode_game()
+	if event.is_action_pressed("exit"):
+		ChangeScences.change_scencce()

@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdmy68qya5tnt"]
+
+[ext_resource type="Script" uid="uid://bbbe6jrwmsjyt" path="res://main/Main/control.gd" id="1_bwvbq"]
+[ext_resource type="Texture2D" uid="uid://crrkho6b66av3" path="res://1/assets/element_red_diamond.png" id="1_gt0li"]
+[ext_resource type="Texture2D" uid="uid://ctdvbyeic0kas" path="res://2/assets/plane/1.png" id="2_cxtgl"]
+[ext_resource type="Texture2D" uid="uid://dp2u160befthp" path="res://3/assets/player/parrot.png" id="3_nb4d3"]
+[ext_resource type="Texture2D" uid="uid://b5sogjep608ru" path="res://4/assets/1.png" id="4_266cx"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bwvbq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.2901961)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/h_separation = 100
+columns = 10
+
+[node name="1" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+icon = ExtResource("1_gt0li")
+icon_alignment = 1
+expand_icon = true
+
+[node name="2" type="Button" parent="MarginContainer/GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+icon = ExtResource("2_cxtgl")
+icon_alignment = 1
+expand_icon = true
+
+[node name="3" type="Button" parent="MarginContainer/GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+icon = ExtResource("3_nb4d3")
+icon_alignment = 1
+expand_icon = true
+
+[node name="4" type="Button" parent="MarginContainer/GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+icon = ExtResource("4_266cx")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="MarginContainer/GridContainer/1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/2" to="." method="_on__pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/4" to="." method="_on_4_pressed"]

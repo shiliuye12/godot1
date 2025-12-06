@@ -1,0 +1,9 @@
+res://main/Main/control.tscn
+res://main/Main/control.gd
+res://1/Scences/Game/game.tscn
+res://main/ChangeScences.gd
+res://4/Scences/Main/main.tscn
+res://1/Scences/Game/game.gd
+res://2/Scences/Main/main.gd
+res://3/Scences/Main/main.gd
+res://4/Scences/Main/main.gd

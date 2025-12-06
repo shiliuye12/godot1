@@ -12,6 +12,10 @@ var score = 0
 func _ready() -> void:
 	spawn_gem()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("exit"):
+		ChangeScences.change_scencce()
+
 func spawn_gem():
 	var new_gem = GEM.instantiate()
 	var new_x = randf_range(

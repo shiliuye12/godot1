@@ -1,10 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1764923431
-godot.windows.opt.tools.64.20251205-154011-046.log::TextFile::-1::1764920411::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251205-154709-561.log::TextFile::-1::1764920829::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251205-155401-911.log::TextFile::-1::1764921241::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251205-162810-391.log::TextFile::-1::1764923290::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251205-162922-074.log::TextFile::-1::1764923362::0::1::::<><><>0<>0<><>::
+::res://::1765011336
 icon.png::CompressedTexture2D::393404274326421585::1763814750::1763814750::1::::<><><>0<>0<>81b4c5c37a9fdf292a146de4243455bc<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 icon.svg::CompressedTexture2D::4578813056542107635::1763814750::1763814750::1::::<><><>0<>0<>e71d91afd70f1b598032eef2fda6c564<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1763743025
@@ -129,9 +124,9 @@ high_score_display_24.tres::LabelSettings::6333711124083056116::1764163945::0::1
 ::res://Scencs/BallSpikes/::1764920443
 BallSpikes.gd::GDScript::5560155877665336053::1764920310::0::1::::<>PathFollow2D<><>0<>0<><>::
 ball_spikes.tscn::PackedScene::5380511953664244747::1764920443::0::1::::<><><>0<>0<><>::uid://clhm7p6umg53v::::res://Scencs/BallSpikes/BallSpikes.gd<>uid://co3kkej0phhro::::res://assets/danger/spiked_ball.png
-::res://Scencs/Boss/::1764923414
-Boss.gd::GDScript::2740678349725465450::1764923125::0::1::::<>Node2D<><>0<>0<><>::
-boss.tscn::PackedScene::2229545985441929238::1764923414::0::1::::<><><>0<>0<><>::uid://bfbutph7xby31::::res://Scencs/Boss/Boss.gd<>uid://brqpdeclu4rax::::res://assets/enemies/boss/boss.png
+::res://Scencs/Boss/::1764924640
+Boss.gd::GDScript::2740678349725465450::1764924573::0::1::::<>Node2D<><>0<>0<><>::
+boss.tscn::PackedScene::2229545985441929238::1764924640::0::1::::<><><>0<>0<><>::uid://bfbutph7xby31::::res://Scencs/Boss/Boss.gd<>uid://brqpdeclu4rax::::res://assets/enemies/boss/boss.png
 ::res://Scencs/Bullet/::1764331750
 BaseBullet.gd::GDScript::5253607620413383922::1763953569::0::1::::Bullet<>Area2D<><>0<>0<><>::
 base_bullet.tscn::PackedScene::7665766934886933592::1763949499::0::1::::<><><>0<>0<><>::uid://cg35fdlq7eik5::::res://Scencs/Bullet/BaseBullet.gd<>uid://bgk46iw3gsah3::::res://Scencs/LifeTimer/life_timer.tscn
@@ -146,8 +141,8 @@ enemy_base.tscn::PackedScene::2947973445175476456::1764079518::0::1::::<><><>0<>
 ::res://Scencs/EnemyBase/Eagle/::1764331749
 Eagle.gd::GDScript::3329879321681904840::1763950935::0::1::::<>EnemyBase<><>0<>0<><>::
 eagle.tscn::PackedScene::6867298226009822223::1763955291::0::1::::<><><>0<>0<><>::uid://biaaxr46ked5a::::res://Scencs/EnemyBase/enemy_base.tscn<>uid://bnpavjtoko8m3::::res://Scencs/EnemyBase/Eagle/Eagle.gd<>uid://ct8i06tdq0ymy::::res://assets/enemies/eagle/eagle-attack.png<>uid://vi68qjolkkyj::::res://Scencs/Shooter/shooter.tscn
-::res://Scencs/EnemyBase/Frog/::1764331749
-Frog.gd::GDScript::2215159440951124556::1763814769::0::1::::<>EnemyBase<><>0<>0<><>::
+::res://Scencs/EnemyBase/Frog/::1764923662
+Frog.gd::GDScript::2215159440951124556::1764923662::0::1::::<>EnemyBase<><>0<>0<><>::
 frog.tscn::PackedScene::6550070756589723398::1763814769::0::1::::<><><>0<>0<><>::uid://biaaxr46ked5a::::res://Scencs/EnemyBase/enemy_base.tscn<>uid://b73bsh606lc35::::res://assets/enemies/frog/frog_sheet.png<>uid://6tbl8k53eyrk::::res://Scencs/EnemyBase/Frog/Frog.gd
 ::res://Scencs/EnemyBase/Snail/::1764331749
 Snail.gd::GDScript::1593015865420026476::1763814769::0::1::::<>EnemyBase<><>0<>0<><>::
@@ -166,9 +161,9 @@ high_score_display.tscn::PackedScene::3334407829109784594::1764592215::0::1::::<
 ::res://Scencs/Hub/::1764591764
 Hub.gd::GDScript::162654288187827486::1764591400::0::1::::<>Control<><>0<>0<><>::
 hub.tscn::PackedScene::5071728328867885422::1764591764::0::1::::<><><>0<>0<><>::uid://dy2lxyf1d48xi::::res://assets/fonts/LuckiestGuy-Regular.ttf<>uid://ck15ltn7nrtm::::res://Scencs/Hub/Hub.gd<>uid://87pipygtfayk::::res://assets/items/pixel heart 2.png
-::res://Scencs/LevelBase/::1764923378
+::res://Scencs/LevelBase/::1764924065
 LevelBase.gd::GDScript::104455520600260184::1764591076::0::1::::<>Node2D<><>0<>0<><>::
-level_base.tscn::PackedScene::6229107545462766844::1764923378::0::1::::<><><>0<>0<><>::uid://bqumqo8ld3hs::::res://Scencs/LevelBase/LevelBase.gd<>uid://dimbxa0c0cvms::::res://assets/tiles/Terrain (16x16).png<>uid://doeps7gcwotn4::::res://Scencs/Player/player.tscn<>uid://cph30x5b8081s::::res://Scencs/EnemyBase/Snail/snail.tscn<>uid://c0k5yc5kwu08a::::res://Scencs/EnemyBase/Frog/frog.tscn<>uid://c43tnsu8f6r8b::::res://Scencs/EnemyBase/Eagle/eagle.tscn<>uid://cbn7n1yphxnu2::::res://Scencs/ObjectMaker/object_maker.tscn<>uid://3lyqs071067n::::res://assets/sound/Flowing Rocks.ogg<>uid://cei1via18xq2q::::res://Scencs/Hub/hub.tscn<>uid://ciwmimd56xupv::::res://Scencs/BallSpikes/ball_spikes.tscn<>uid://c6tp3ryhjhq0w::::res://Scencs/MovingPlatmorm/moving_platmorm.tscn<>uid://hxa2wpi4qjam::::res://Scencs/FloorSpikes/floor_spikes.tscn
+level_base.tscn::PackedScene::6229107545462766844::1764924065::0::1::::<><><>0<>0<><>::uid://bqumqo8ld3hs::::res://Scencs/LevelBase/LevelBase.gd<>uid://dimbxa0c0cvms::::res://assets/tiles/Terrain (16x16).png<>uid://doeps7gcwotn4::::res://Scencs/Player/player.tscn<>uid://cph30x5b8081s::::res://Scencs/EnemyBase/Snail/snail.tscn<>uid://c0k5yc5kwu08a::::res://Scencs/EnemyBase/Frog/frog.tscn<>uid://c43tnsu8f6r8b::::res://Scencs/EnemyBase/Eagle/eagle.tscn<>uid://cbn7n1yphxnu2::::res://Scencs/ObjectMaker/object_maker.tscn<>uid://3lyqs071067n::::res://assets/sound/Flowing Rocks.ogg<>uid://cei1via18xq2q::::res://Scencs/Hub/hub.tscn<>uid://ciwmimd56xupv::::res://Scencs/BallSpikes/ball_spikes.tscn<>uid://c6tp3ryhjhq0w::::res://Scencs/MovingPlatmorm/moving_platmorm.tscn<>uid://hxa2wpi4qjam::::res://Scencs/FloorSpikes/floor_spikes.tscn<>uid://61akc6eayaaw::::res://Scencs/Boss/boss.tscn
 ::res://Scencs/LifeTimer/::1764331750
 LifeTimer.gd::GDScript::295890816689657120::1763814767::0::1::::<>Node<><>0<>0<><>::
 life_timer.tscn::PackedScene::2830014130916588282::1763814767::0::1::::<><><>0<>0<><>::uid://ehljp78hu15m::::res://Scencs/LifeTimer/LifeTimer.gd
@@ -178,14 +173,14 @@ main.tscn::PackedScene::2699138987739511996::1764592231::0::1::::<><><>0<>0<><>:
 ::res://Scencs/MovingPlatmorm/::1764920819
 MovingPlatmorm.gd::GDScript::7920532364240116028::1764920791::0::1::::<>PathFollow2D<><>0<>0<><>::
 moving_platmorm.tscn::PackedScene::6988880384915803728::1764920819::0::1::::<><><>0<>0<><>::uid://dimbxa0c0cvms::::res://assets/tiles/Terrain (16x16).png<>uid://dk31amr35ssf1::::res://Scencs/MovingPlatmorm/MovingPlatmorm.gd
-::res://Scencs/ObjectMaker/::1764921358
-ObjectMaker.gd::GDScript::6502430701482137419::1764079356::0::1::::<>Node2D<><>0<>0<><>::
+::res://Scencs/ObjectMaker/::1764924253
+ObjectMaker.gd::GDScript::6502430701482137419::1764924253::0::1::::<>Node2D<><>0<>0<><>::
 object_maker.tscn::PackedScene::4871834684290517247::1764921358::0::1::::<><><>0<>0<><>::uid://cyv3c3xildv8n::::res://Scencs/ObjectMaker/ObjectMaker.gd
 ::res://Scencs/Player/::1764331750
 Player.gd::GDScript::8967328424010104462::1764162951::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::8151107962346654771::1764163004::0::1::::<><><>0<>0<><>::uid://d003ua5cnok0u::::res://Scencs/Player/Player.gd<>uid://ix048ftxavv3::::res://assets/player/player.png<>uid://cqsqqaj3wloi::::res://Scencs/PlayerCam/player_cam.tscn<>uid://vi68qjolkkyj::::res://Scencs/Shooter/shooter.tscn<>uid://bn4inkecbwsh2::::res://assets/sound/jump.wav
 ::res://Scencs/PlayerCam/::1764331749
 player_cam.tscn::PackedScene::174530050734112288::1763814767::0::1::::<><><>0<>0<><>::
-::res://Scencs/Shooter/::1764331749
+::res://Scencs/Shooter/::1764923793
 Shooter.gd::GDScript::9127071416004175075::1764079891::0::1::::Shooter<>Node2D<><>0<>0<><>::
-shooter.tscn::PackedScene::1492422751333823329::1764079910::0::1::::<><><>0<>0<><>::uid://d3bhsd32lfv36::::res://Scencs/Shooter/Shooter.gd<>uid://dtmx6j0yuqdct::::res://assets/sound/laser.wav
+shooter.tscn::PackedScene::1492422751333823329::1764923793::0::1::::<><><>0<>0<><>::uid://d3bhsd32lfv36::::res://Scencs/Shooter/Shooter.gd<>uid://dtmx6j0yuqdct::::res://assets/sound/laser.wav

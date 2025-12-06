@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw40qr15yyn1b"]
+
+[ext_resource type="Script" uid="uid://cjn3qb8myk5mf" path="res://4/Scences/Player/player.gd" id="1_8cuk3"]
+[ext_resource type="Texture2D" uid="uid://bc184b231ee5t" path="res://4/assets/snake.png" id="1_et7gi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_et7gi"]
+size = Vector2(40, 40)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_8cuk3")
+
+[node name="left" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_et7gi")
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="up" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_et7gi")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
+
+[node name="right" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_et7gi")
+region_enabled = true
+region_rect = Rect2(32, 0, 8, 8)
+
+[node name="down" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_et7gi")
+region_enabled = true
+region_rect = Rect2(24, 0, 8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_et7gi")
+
+[node name="Timer" type="Timer" parent="." groups=["player"]]
+wait_time = 0.7
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

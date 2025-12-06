@@ -1,3 +1,11 @@
+res://main
+res://main/Main
+res://4/Scences/Ui
+res://4/Global
+res://4/Scences/Ex
+res://4/Scences/PlayerBody
+res://4/Scences/Player
+res://4/Scences/Main
 res://3/Global
 res://3/Scences/LevelBase
 res://3/Scences/LevelButton
@@ -12,11 +20,3 @@ res://2/Scences/Main
 res://2/Globals
 res://2/Scences/Load
 res://2/Scences/GameUI
-res://2/Resources
-res://2/Scences/Laser
-res://2/Scences/Pipes
-res://2/Scences/Barrier
-res://2/Scences
-res://2/assets/plane
-res://2/Scences/Plane
-res://2/Scences/Game
