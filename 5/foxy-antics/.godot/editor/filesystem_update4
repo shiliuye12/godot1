@@ -1,0 +1,9 @@
+res://Scencs/LevelBase/level_base.tscn
+res://Scencs/Player/player.tscn
+res://Scencs/Player/Player.gd
+res://Globals/SignalHub.gd
+res://Scencs/Hub/hub.tscn
+res://Scencs/Hub/Hub.gd
+res://Scencs/Main/main.tscn
+res://Scencs/Main/Main.gd
+res://Scencs/LevelBase/LevelBase.gd

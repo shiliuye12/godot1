@@ -14,4 +14,5 @@ func set_scores():
 		grid_container.add_child(hsd)
 
 func _ready() -> void:
+	get_tree().paused = false
 	set_scores()

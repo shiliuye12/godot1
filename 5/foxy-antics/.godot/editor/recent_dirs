@@ -1,3 +1,4 @@
+res://Scencs/Checkpoint
 res://Scencs/Boss
 res://Scencs/FloorSpikes
 res://Scencs/MovingPlatmorm
@@ -19,4 +20,3 @@ res://Scencs/Bullet/EnemyBullet
 res://assets/enemies/eagle
 res://assets/enemies/bunny
 res://Scencs/EnemyBase/Eagle
-res://Scencs/EnemyBase

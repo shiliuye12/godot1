@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cu0oqx2ytpjwe"]
+[gd_scene load_steps=18 format=4 uid="uid://cu0oqx2ytpjwe"]
 
 [ext_resource type="Script" uid="uid://bqumqo8ld3hs" path="res://Scencs/LevelBase/LevelBase.gd" id="1_18tnx"]
 [ext_resource type="Texture2D" uid="uid://dimbxa0c0cvms" path="res://assets/tiles/Terrain (16x16).png" id="1_ibivq"]
@@ -12,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://ciwmimd56xupv" path="res://Scencs/BallSpikes/ball_spikes.tscn" id="10_qcp71"]
 [ext_resource type="PackedScene" uid="uid://c6tp3ryhjhq0w" path="res://Scencs/MovingPlatmorm/moving_platmorm.tscn" id="11_ejqdn"]
 [ext_resource type="PackedScene" uid="uid://hxa2wpi4qjam" path="res://Scencs/FloorSpikes/floor_spikes.tscn" id="12_3kfbw"]
-[ext_resource type="PackedScene" uid="uid://61akc6eayaaw" path="res://Scencs/Boss/boss.tscn" id="13_if4jn"]
+[ext_resource type="PackedScene" uid="uid://61akc6eayaaw" path="res://Scencs/Boss/boss.tscn" id="13_2g607"]
+[ext_resource type="PackedScene" uid="uid://cwkdfj6b75jlp" path="res://Scencs/Checkpoint/checkpoint.tscn" id="13_if4jn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpo5i"]
 resource_name = "Platforms"
@@ -285,5 +286,8 @@ position = Vector2(275, -146)
 [node name="Eagle" parent="Enemies" instance=ExtResource("5_clf4h")]
 position = Vector2(106, -132)
 
-[node name="Boss" parent="Enemies" instance=ExtResource("13_if4jn")]
-position = Vector2(831, -21)
+[node name="Boss" parent="Enemies" instance=ExtResource("13_2g607")]
+position = Vector2(770, -26)
+
+[node name="Checkpoint" parent="." instance=ExtResource("13_if4jn")]
+position = Vector2(485, -23)

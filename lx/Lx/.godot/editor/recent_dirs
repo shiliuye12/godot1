@@ -1,3 +1,5 @@
+res://5/Scenes/base_fk
+res://5/Scenes/Main
 res://main
 res://main/Main
 res://4/Scences/Ui
@@ -18,5 +20,3 @@ res://3/Scences
 res://2/Scences/ParallaxBG
 res://2/Scences/Main
 res://2/Globals
-res://2/Scences/Load
-res://2/Scences/GameUI

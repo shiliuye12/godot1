@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbx00yseeje8i"]
+
+[ext_resource type="Texture2D" uid="uid://balexds4q6l5r" path="res://5/assets/Tetrominoes/Background.png" id="1_j2gyg"]
+[ext_resource type="PackedScene" uid="uid://damx7rycn24ng" path="res://5/Scenes/base_fk/fk_1.tscn" id="2_mbq8j"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j2gyg"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 328)
+texture = ExtResource("1_j2gyg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(573, 629)
+shape = SubResource("WorldBoundaryShape2D_j2gyg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(425, 281)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_j2gyg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(728, 283)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_j2gyg")
+
+[node name="fk1" parent="." instance=ExtResource("2_mbq8j")]
+position = Vector2(681, 73)
+
+[node name="fk2" parent="." instance=ExtResource("2_mbq8j")]
+position = Vector2(622, 31)
+
+[node name="fk3" parent="." instance=ExtResource("2_mbq8j")]
+position = Vector2(562, 61)
+
+[node name="fk4" parent="." instance=ExtResource("2_mbq8j")]
+position = Vector2(502, 26)
+
+[node name="fk5" parent="." instance=ExtResource("2_mbq8j")]
+position = Vector2(441, 64)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://61akc6eayaaw"]
+[gd_scene load_steps=23 format=3 uid="uid://61akc6eayaaw"]
 
 [ext_resource type="Script" uid="uid://bfbutph7xby31" path="res://Scencs/Boss/Boss.gd" id="1_d3xkw"]
 [ext_resource type="Texture2D" uid="uid://brqpdeclu4rax" path="res://assets/enemies/boss/boss.png" id="1_lgcmm"]
@@ -127,6 +127,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 0.19607843, 0.17254902, 1), Color(1, 1, 1, 1), Color(1, 0.19607843, 0.17254902, 1), Color(1, 1, 1, 1), Color(1, 0.19607843, 0.17254902, 1), Color(1, 1, 1, 1), Color(1, 0.19607843, 0.17254902, 1), Color(1, 1, 1, 1), Color(1, 0.19607843, 0.17254902, 1), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_invincible"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_lgcmm"]
 resource_name = "pulse"
@@ -188,6 +202,10 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d3xkw"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lgcmm"]
 states/RESET/node = SubResource("AnimationNodeAnimation_lgcmm")
 states/RESET/position = Vector2(346.4, 102)
@@ -196,10 +214,10 @@ states/arrive/position = Vector2(504, 99.920006)
 states/attack/node = SubResource("AnimationNodeAnimation_ho73x")
 states/attack/position = Vector2(756, 100.4)
 states/hit/node = SubResource("AnimationNodeAnimation_p88j8")
-states/hit/position = Vector2(503.84, 192.40001)
+states/hit/position = Vector2(632.288, 194)
 states/pulse/node = SubResource("AnimationNodeAnimation_7313e")
 states/pulse/position = Vector2(632, 99.92)
-transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_p88j8"), "RESET", "arrive", SubResource("AnimationNodeStateMachineTransition_sxcqg"), "arrive", "pulse", SubResource("AnimationNodeStateMachineTransition_l5gea"), "pulse", "attack", SubResource("AnimationNodeStateMachineTransition_mb3vl"), "attack", "pulse", SubResource("AnimationNodeStateMachineTransition_xplhd")]
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_p88j8"), "RESET", "arrive", SubResource("AnimationNodeStateMachineTransition_sxcqg"), "arrive", "pulse", SubResource("AnimationNodeStateMachineTransition_l5gea"), "pulse", "attack", SubResource("AnimationNodeStateMachineTransition_mb3vl"), "attack", "pulse", SubResource("AnimationNodeStateMachineTransition_xplhd"), "hit", "pulse", SubResource("AnimationNodeStateMachineTransition_d3xkw")]
 
 [node name="Boss" type="Node2D"]
 script = ExtResource("1_d3xkw")
@@ -240,4 +258,5 @@ tree_root = SubResource("AnimationNodeStateMachine_lgcmm")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/on_trigger = false
 
+[connection signal="area_entered" from="Visuals/HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="Trigger" to="." method="_on_trigger_area_entered"]
