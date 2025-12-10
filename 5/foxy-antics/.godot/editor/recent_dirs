@@ -1,3 +1,6 @@
+res://Scencs/Main
+res://Scencs/LevelBase
+res://Scencs/ParallaxBG
 res://Scencs/Checkpoint
 res://Scencs/Boss
 res://Scencs/FloorSpikes
@@ -7,7 +10,6 @@ res://Scencs/Hub
 res://Globals
 res://Resources
 res://Scencs/HighScoreDisplay
-res://Scencs/Main
 res://assets/items
 res://Scencs/FruitPickup
 res://assets/explosion
@@ -18,5 +20,3 @@ res://Scencs/Bullet/PlayerBullet
 res://Scencs/Bullet
 res://Scencs/Bullet/EnemyBullet
 res://assets/enemies/eagle
-res://assets/enemies/bunny
-res://Scencs/EnemyBase/Eagle

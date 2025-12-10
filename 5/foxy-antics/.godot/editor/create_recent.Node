@@ -1,3 +1,8 @@
+AudioStreamPlayer
+Timer
+Label
+VBoxContainer
+ColorRect
 AudioStreamPlayer2D
 AnimationTree
 AnimationPlayer
@@ -8,8 +13,3 @@ Node2D
 Node
 AnimatableBody2D
 PathFollow2D
-Path2D
-CanvasLayer
-TextureRect
-HBoxContainer
-Label

@@ -4,8 +4,13 @@ const MAIN = preload("uid://bepqopbrmymx5")
 const LEVEL_BASE = preload("uid://cu0oqx2ytpjwe")
 
 const SCORES_PATH = "user://high_scores.tres"
+const levels: Array[PackedScene] = [
+	preload("uid://cgvg3cdaoqcti"),
+	preload("uid://buboen0bfunvv")
+]
 
 var high_scores: HighScores = HighScores.new()
+var _current_level = -1
 
 var cached_score: int:
 	set(value):
@@ -25,10 +30,14 @@ func _exit_tree() -> void:
 
 func load_main():
 	cached_score = 0
+	_current_level += 1
 	get_tree().change_scene_to_packed(MAIN)
 
 func load_next_level():
-	get_tree().change_scene_to_packed(LEVEL_BASE)
+	_current_level += 1
+	if _current_level >= levels.size():
+		_current_level = 0
+	get_tree().change_scene_to_packed(levels[_current_level])
 
 func load_high_scores():
 	if ResourceLoader.exists(SCORES_PATH):

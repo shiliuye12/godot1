@@ -7,9 +7,12 @@ class_name Player
 @onready var shooter: Shooter = $Shooter
 @onready var sound: AudioStreamPlayer2D = $Sound
 @onready var hurt_timer: Timer = $HurtTimer
+@onready var player_cam: Camera2D = $PlayerCam
 
 @export var fell_off_y = 400
 @export var lives: int = 3
+@export var camera_min: Vector2 = Vector2(-10000, 10000)
+@export var camera_max: Vector2 = Vector2(10000, -10000)
 
 const GRAVITY = 690.0
 const JUMP_SPEED = -270
@@ -33,6 +36,7 @@ func _input(event: InputEvent) -> void:
 		shooter.shoot(dir)
 
 func _ready() -> void:
+	set_camera_limits()
 	call_deferred("late_init")
 
 func _enter_tree() -> void:
@@ -51,6 +55,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	up_label()
 	fallen_off()
+
+func set_camera_limits():
+	player_cam.limit_bottom = camera_min.y
+	player_cam.limit_left = camera_min.x
+	player_cam.limit_top = camera_max.y
+	player_cam.limit_right = camera_max.x
+	
 
 func get_input():
 	if _is_hurt == true:

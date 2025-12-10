@@ -4,7 +4,7 @@ extends Control
 const HIGH_SCORE_DISPLAY = preload("uid://bnrhherjymhqw")
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("exit"):
+	if event.is_action_pressed("shoot"):
 		GameManager.load_next_level()
 
 func set_scores():
