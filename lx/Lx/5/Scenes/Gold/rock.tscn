@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqad7emwfwvmx"]
+
+[ext_resource type="PackedScene" uid="uid://diipwkll7nbg" path="res://5/Scenes/Gold/gold.tscn" id="1_qpdum"]
+[ext_resource type="Script" uid="uid://dne7om0afafts" path="res://5/Scenes/Gold/rock.gd" id="2_w30ne"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qpdum"]
+radius = 38.0
+
+[node name="rock" instance=ExtResource("1_qpdum")]
+script = ExtResource("2_w30ne")
+score = 11
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = -1.5707964
+region_rect = Rect2(1, 147, 63, 70)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_qpdum")

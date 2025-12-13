@@ -1,43 +1,84 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbx00yseeje8i"]
+[gd_scene load_steps=9 format=3 uid="uid://dbx00yseeje8i"]
 
-[ext_resource type="Texture2D" uid="uid://balexds4q6l5r" path="res://5/assets/Tetrominoes/Background.png" id="1_j2gyg"]
-[ext_resource type="PackedScene" uid="uid://damx7rycn24ng" path="res://5/Scenes/base_fk/fk_1.tscn" id="2_mbq8j"]
+[ext_resource type="Texture2D" uid="uid://l7ydtudgc82h" path="res://5/assets/res/Resources/menu-background.png" id="1_j2gyg"]
+[ext_resource type="Texture2D" uid="uid://bt5igj4nki124" path="res://5/assets/res/Resources/menu-background-sky.jpg" id="1_mbq8j"]
+[ext_resource type="Script" uid="uid://clymty60pyn5s" path="res://5/Scenes/Main/main.gd" id="1_wl4o7"]
+[ext_resource type="Texture2D" uid="uid://dc8lcbo7hbwmt" path="res://5/assets/res/Resources/menu-start-gold.png" id="3_m2h2x"]
+[ext_resource type="Texture2D" uid="uid://c5nk1rd8lxx2o" path="res://5/assets/res/Resources/green.png" id="4_wjtxh"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j2gyg"]
+[sub_resource type="LabelSettings" id="LabelSettings_wjtxh"]
+font_size = 80
+font_color = Color(1, 1, 0.05490196, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
-[node name="Main" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_wl4o7"]
+font_size = 44
+
+[sub_resource type="LabelSettings" id="LabelSettings_rekui"]
+font_size = 44
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wl4o7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(1.263158, 1.2631578)
+texture = ExtResource("1_mbq8j")
+centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 328)
+position = Vector2(-1, 0)
+scale = Vector2(1.2146596, 1.2146597)
 texture = ExtResource("1_j2gyg")
+centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 199.0
+offset_right = 726.0
+offset_bottom = 486.0
+icon = ExtResource("3_m2h2x")
+flat = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(573, 629)
-shape = SubResource("WorldBoundaryShape2D_j2gyg")
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 33.0
+offset_right = 284.0
+offset_bottom = 165.0
+text = "开始"
+label_settings = SubResource("LabelSettings_wjtxh")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(425, 281)
-rotation = 1.5707964
-shape = SubResource("WorldBoundaryShape2D_j2gyg")
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(591.00006, 548.00006)
+scale = Vector2(2.7037036, 2.7037036)
+texture = ExtResource("4_wjtxh")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(728, 283)
-rotation = -1.5707964
-shape = SubResource("WorldBoundaryShape2D_j2gyg")
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 619.0
+offset_top = 481.0
+offset_right = 762.0
+offset_bottom = 606.0
+text = "   \"s\"
+放炸药"
+label_settings = SubResource("LabelSettings_wl4o7")
 
-[node name="fk1" parent="." instance=ExtResource("2_mbq8j")]
-position = Vector2(681, 73)
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 484.0
+offset_right = 552.0
+offset_bottom = 609.0
+text = "   \"w\"
+ 放钩子"
+label_settings = SubResource("LabelSettings_rekui")
 
-[node name="fk2" parent="." instance=ExtResource("2_mbq8j")]
-position = Vector2(622, 31)
-
-[node name="fk3" parent="." instance=ExtResource("2_mbq8j")]
-position = Vector2(562, 61)
-
-[node name="fk4" parent="." instance=ExtResource("2_mbq8j")]
-position = Vector2(502, 26)
-
-[node name="fk5" parent="." instance=ExtResource("2_mbq8j")]
-position = Vector2(441, 64)
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

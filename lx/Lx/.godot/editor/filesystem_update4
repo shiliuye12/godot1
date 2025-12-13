@@ -1,4 +1,5 @@
-res://5/Scenes/base_fk/fk.gd
-res://5/Scenes/base_fk/fk_1.tscn
-res://5/Scenes/base_fk/fk.tscn
-res://5/Scenes/Main/main.tscn
+res://5/Scenes/Grapple/grapple.tscn
+res://5/Scenes/Grapple/grapple.gd
+res://5/Scenes/Gold/gold.gd
+res://5/Scenes/Gold/money.gd
+res://5/Scenes/Gold/rock.gd

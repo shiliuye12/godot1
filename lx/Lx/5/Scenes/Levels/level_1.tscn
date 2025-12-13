@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://dva16wa7jlcls"]
+
+[ext_resource type="PackedScene" uid="uid://c2lh0ad4lcgna" path="res://5/Scenes/Levels/base_level.tscn" id="1_3mn78"]
+[ext_resource type="PackedScene" uid="uid://2qo13s5h07yw" path="res://5/Scenes/Gold/gold_1.tscn" id="2_2mq0m"]
+[ext_resource type="PackedScene" uid="uid://c1bp3myop7qex" path="res://5/Scenes/Gold/gold_3.tscn" id="3_yddbq"]
+[ext_resource type="PackedScene" uid="uid://bqad7emwfwvmx" path="res://5/Scenes/Gold/rock.tscn" id="4_8ylm8"]
+[ext_resource type="PackedScene" uid="uid://bfaresp0ol3bk" path="res://5/Scenes/Gold/gold_2.tscn" id="5_r5ugk"]
+
+[node name="Level1" instance=ExtResource("1_3mn78")]
+
+[node name="Gold5" parent="." index="5" instance=ExtResource("2_2mq0m")]
+position = Vector2(558, 388)
+
+[node name="Gold3" parent="." index="6" instance=ExtResource("3_yddbq")]
+position = Vector2(158, 510)
+
+[node name="Gold7" parent="." index="7" instance=ExtResource("3_yddbq")]
+position = Vector2(1018, 559)
+
+[node name="rock" parent="." index="8" instance=ExtResource("4_8ylm8")]
+position = Vector2(800, 488)
+
+[node name="rock4" parent="." index="9" instance=ExtResource("4_8ylm8")]
+position = Vector2(740, 279)
+
+[node name="rock2" parent="." index="10" instance=ExtResource("4_8ylm8")]
+position = Vector2(919, 213)
+
+[node name="rock3" parent="." index="11" instance=ExtResource("4_8ylm8")]
+position = Vector2(102, 233)
+
+[node name="Gold1" parent="." index="12" instance=ExtResource("2_2mq0m")]
+position = Vector2(688, 483)
+
+[node name="Gold9" parent="." index="13" instance=ExtResource("2_2mq0m")]
+position = Vector2(414, 572)
+
+[node name="Gold8" parent="." index="14" instance=ExtResource("2_2mq0m")]
+position = Vector2(610, 250)
+
+[node name="Gold2" parent="." index="15" instance=ExtResource("5_r5ugk")]
+position = Vector2(361, 225)
+
+[node name="Gold4" parent="." index="16" instance=ExtResource("5_r5ugk")]
+position = Vector2(970, 322)
+
+[node name="Gold6" parent="." index="17" instance=ExtResource("5_r5ugk")]
+position = Vector2(226, 356)

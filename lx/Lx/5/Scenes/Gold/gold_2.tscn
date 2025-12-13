@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfaresp0ol3bk"]
+
+[ext_resource type="PackedScene" uid="uid://diipwkll7nbg" path="res://5/Scenes/Gold/gold.tscn" id="1_46k37"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_46k37"]
+radius = 40.04997
+
+[node name="Gold2" instance=ExtResource("1_46k37")]
+scale = Vector2(0.5, 0.5)
+weight = 0.8
+score = 50
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_46k37")

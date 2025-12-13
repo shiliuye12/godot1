@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dptnksnjbj67s"]
+
+[ext_resource type="Texture2D" uid="uid://o03s3l84alkh" path="res://5/assets/222.png" id="1_3360p"]
+[ext_resource type="LabelSettings" uid="uid://36oxci7dei1h" path="res://5/Resources/bomb.tres" id="2_d6ck1"]
+[ext_resource type="Script" uid="uid://bbhd5geb4wfm5" path="res://5/Scenes/MoneyDJ/moneydj.gd" id="2_yqqkb"]
+
+[node name="moneydj" type="Button"]
+texture_filter = 1
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(2.5, 2.5)
+icon = ExtResource("1_3360p")
+flat = true
+script = ExtResource("2_yqqkb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 45.0
+offset_right = 41.0
+offset_bottom = 68.0
+text = "$400"
+label_settings = ExtResource("2_d6ck1")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

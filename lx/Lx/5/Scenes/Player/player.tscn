@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://w5sympaiofl"]
+
+[ext_resource type="Script" uid="uid://b6ya07acjq7yp" path="res://5/Scenes/Player/player.gd" id="1_5s3qx"]
+[ext_resource type="Texture2D" uid="uid://b15elmu02pna5" path="res://5/assets/res/Resources/minerAction.png" id="1_hqxru"]
+[ext_resource type="PackedScene" uid="uid://byd2jneegm1mr" path="res://5/Scenes/Grapple/grapple.tscn" id="3_6pv7l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tld5x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s3qx"]
+atlas = ExtResource("1_hqxru")
+region = Rect2(0, 248, 124, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pv7l"]
+atlas = ExtResource("1_hqxru")
+region = Rect2(124, 248, 124, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03kmc"]
+atlas = ExtResource("1_hqxru")
+region = Rect2(248, 248, 124, 126)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03kmc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s3qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pv7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03kmc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_5s3qx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tld5x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_03kmc")
+
+[node name="grapple" parent="." instance=ExtResource("3_6pv7l")]
+position = Vector2(-26.000002, 26.000002)
+scale = Vector2(1.5, 1.5)

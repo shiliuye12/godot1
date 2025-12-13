@@ -24,6 +24,8 @@ AnimalSignalHub="*res://3/Global/AnimalSignalHub.gd"
 AnimalScoreManager="*res://3/Global/AnimalScoreManager.gd"
 SnakeSignalHub="*res://4/Global/SnakeSignalHub.gd"
 ChangeScences="*res://main/ChangeScences.gd"
+GoldSignalHub="*res://5/Global/GoldSignalHub.gd"
+GoldChooseLevel="*res://5/Global/GoldChooseLevel.gd"
 
 [debug]
 

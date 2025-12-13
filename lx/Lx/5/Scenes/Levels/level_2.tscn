@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://cicr5aqoyvqne"]
+
+[ext_resource type="PackedScene" uid="uid://c2lh0ad4lcgna" path="res://5/Scenes/Levels/base_level.tscn" id="1_s2m3a"]
+[ext_resource type="PackedScene" uid="uid://2qo13s5h07yw" path="res://5/Scenes/Gold/gold_1.tscn" id="2_uls26"]
+[ext_resource type="PackedScene" uid="uid://6m7dvdcc3obe" path="res://5/Scenes/Gold/diamond.tscn" id="3_fho1j"]
+[ext_resource type="PackedScene" uid="uid://bfaresp0ol3bk" path="res://5/Scenes/Gold/gold_2.tscn" id="4_c3nrd"]
+[ext_resource type="PackedScene" uid="uid://c1bp3myop7qex" path="res://5/Scenes/Gold/gold_3.tscn" id="5_d85bf"]
+[ext_resource type="PackedScene" uid="uid://3k8oj847xbuy" path="res://5/Scenes/Gold/money.tscn" id="6_pwq57"]
+
+[node name="Level2" instance=ExtResource("1_s2m3a")]
+
+[node name="Gold1" parent="." index="5" instance=ExtResource("2_uls26")]
+position = Vector2(512, 382)
+
+[node name="Gold12" parent="." index="6" instance=ExtResource("2_uls26")]
+position = Vector2(54, 250)
+
+[node name="Gold9" parent="." index="7" instance=ExtResource("2_uls26")]
+position = Vector2(828, 584)
+
+[node name="Gold10" parent="." index="8" instance=ExtResource("2_uls26")]
+position = Vector2(670, 451)
+
+[node name="Gold11" parent="." index="9" instance=ExtResource("2_uls26")]
+position = Vector2(979, 437)
+
+[node name="Diamond" parent="." index="10" instance=ExtResource("3_fho1j")]
+position = Vector2(147, 419)
+
+[node name="Diamond2" parent="." index="11" instance=ExtResource("3_fho1j")]
+position = Vector2(39, 609)
+
+[node name="Gold2" parent="." index="12" instance=ExtResource("2_uls26")]
+position = Vector2(389, 259)
+
+[node name="Gold3" parent="." index="13" instance=ExtResource("4_c3nrd")]
+position = Vector2(164, 247)
+
+[node name="Gold5" parent="." index="14" instance=ExtResource("4_c3nrd")]
+position = Vector2(908, 220)
+
+[node name="Gold6" parent="." index="15" instance=ExtResource("4_c3nrd")]
+position = Vector2(676, 266)
+
+[node name="Gold7" parent="." index="16" instance=ExtResource("4_c3nrd")]
+position = Vector2(777, 448)
+
+[node name="Gold8" parent="." index="17" instance=ExtResource("4_c3nrd")]
+position = Vector2(1032, 611)
+
+[node name="Gold4" parent="." index="18" instance=ExtResource("5_d85bf")]
+position = Vector2(314, 522)
+
+[node name="money" parent="." index="19" instance=ExtResource("6_pwq57")]
+position = Vector2(956, 330)
+
+[node name="money2" parent="." index="20" instance=ExtResource("6_pwq57")]
+position = Vector2(611, 503)

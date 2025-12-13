@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://0vn1vrdadkku"]
+
+[ext_resource type="Texture2D" uid="uid://cm6vk4e075vlu" path="res://5/assets/111.png" id="1_speh8"]
+[ext_resource type="LabelSettings" uid="uid://36oxci7dei1h" path="res://5/Resources/bomb.tres" id="2_o2jst"]
+[ext_resource type="Script" uid="uid://xcguko3u6vd7" path="res://5/Scenes/Bomb/bomb.gd" id="2_speh8"]
+
+[node name="bomb" type="Button"]
+texture_filter = 1
+scale = Vector2(2, 2)
+icon = ExtResource("1_speh8")
+flat = true
+script = ExtResource("2_speh8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.5
+offset_top = 61.0
+offset_right = 38.5
+offset_bottom = 84.0
+text = "$53"
+label_settings = ExtResource("2_o2jst")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

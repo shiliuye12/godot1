@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://t72wbrexpwu5"]
+
+[ext_resource type="Script" uid="uid://cfd7syabrha1x" path="res://5/Scenes/ZhuanChang/zhuanchang.gd" id="1_1onwf"]
+[ext_resource type="Texture2D" uid="uid://bleqonf1mwl6q" path="res://5/assets/res/Resources/dialog-background.png" id="1_1wrgv"]
+[ext_resource type="Texture2D" uid="uid://7eqootpatwqm" path="res://5/assets/res/Resources/quitbtn.png" id="2_ot0ji"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ot0ji"]
+font_size = 128
+font_color = Color(1, 1, 0.05490196, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1onwf"]
+font_size = 128
+font_color = Color(1, 1, 0.05490196, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="zhuanchang" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1onwf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-78, -250)
+scale = Vector2(1.7199999, 1.7199999)
+texture = ExtResource("1_1wrgv")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(559, 370)
+scale = Vector2(9.111538, 9.111538)
+texture = ExtResource("2_ot0ji")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 305.0
+offset_top = 236.0
+offset_right = 817.0
+offset_bottom = 411.0
+text = "恭喜过关"
+label_settings = SubResource("LabelSettings_ot0ji")
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 305.0
+offset_top = 236.0
+offset_right = 817.0
+offset_bottom = 411.0
+text = "恭喜通关"
+label_settings = SubResource("LabelSettings_ot0ji")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 375.0
+offset_top = 236.0
+offset_right = 759.0
+offset_bottom = 411.0
+text = "失败了"
+label_settings = SubResource("LabelSettings_1onwf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
