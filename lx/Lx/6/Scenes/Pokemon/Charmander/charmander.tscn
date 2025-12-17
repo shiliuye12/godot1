@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://wa4hdghgrvc3"]
+
+[ext_resource type="Texture2D" uid="uid://cqven0oulpgrh" path="res://6/asstes/pokemon/004 Charmander.png" id="1_aoebq"]
+[ext_resource type="Script" uid="uid://cs6y1af8phtov" path="res://6/Scenes/Pokemon/Charmander/charmander.gd" id="1_hex1j"]
+[ext_resource type="Texture2D" uid="uid://wox3v32pedlc" path="res://6/asstes/pokemon/004charmander.png" id="2_ku1l4"]
+
+[node name="Charmander" type="Node2D"]
+script = ExtResource("1_hex1j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("1_aoebq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ku1l4")

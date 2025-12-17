@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbahbordh5r7v"]
+
+[ext_resource type="Script" uid="uid://dc0l4msmea58r" path="res://6/Scenes/Pokemon/Bulbasaur/bulbasaur.gd" id="1_gssn2"]
+[ext_resource type="Texture2D" uid="uid://cumrtgmlxvp6t" path="res://6/asstes/pokemon/001bulbasaur.png" id="1_jrbbq"]
+[ext_resource type="Texture2D" uid="uid://ds5f0awomw0oj" path="res://6/asstes/pokemon/001 Bulbasaur.png" id="2_bftwu"]
+
+[node name="Bulbasaur" type="Node2D"]
+script = ExtResource("1_gssn2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_bftwu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("1_jrbbq")

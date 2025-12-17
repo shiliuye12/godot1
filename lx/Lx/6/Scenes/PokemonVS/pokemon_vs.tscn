@@ -1,0 +1,511 @@
+[gd_scene load_steps=31 format=3 uid="uid://dukawurxb2cox"]
+
+[ext_resource type="Script" uid="uid://dxov2ouvsq3ab" path="res://6/Scenes/PokemonVS/pokemon_vs.gd" id="1_gswbu"]
+[ext_resource type="Texture2D" uid="uid://1o4trxfbbdcn" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background1.png" id="1_mtide"]
+[ext_resource type="Texture2D" uid="uid://5p8i7nm5ecx2" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background2.png" id="2_qh751"]
+[ext_resource type="Texture2D" uid="uid://dkydrfu4s78yc" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background3.png" id="3_8dkdh"]
+[ext_resource type="Texture2D" uid="uid://gpx56d7wqdtm" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background4.png" id="4_5u6vm"]
+[ext_resource type="Texture2D" uid="uid://cp0c3s1jdor0r" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background5.png" id="5_q885i"]
+[ext_resource type="Texture2D" uid="uid://8lk0uvbrfw1w" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background6.png" id="6_3y2ya"]
+[ext_resource type="Texture2D" uid="uid://c5tdync2r8ny0" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background7.png" id="7_pjueg"]
+[ext_resource type="Texture2D" uid="uid://3wmvalot3x04" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background8.png" id="8_k4bcx"]
+[ext_resource type="Texture2D" uid="uid://c8e3oxlul1siy" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background9.png" id="9_u5dxi"]
+[ext_resource type="Texture2D" uid="uid://dh6756tw2nqm2" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background10.png" id="10_18vsk"]
+[ext_resource type="Texture2D" uid="uid://8cekjeyp6pcj" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background11.png" id="11_fpgl6"]
+[ext_resource type="Texture2D" uid="uid://bjdxccgxcnasc" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background12.png" id="12_1skyt"]
+[ext_resource type="Texture2D" uid="uid://b8m67hqkicub0" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background13.png" id="13_gswbu"]
+[ext_resource type="Texture2D" uid="uid://bh13kiyqfg013" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background14.png" id="14_4njug"]
+[ext_resource type="Texture2D" uid="uid://bbm5h66jwhpjl" path="res://6/asstes/PG_ITCS-main/1.png" id="15_qh751"]
+[ext_resource type="LabelSettings" uid="uid://c03tifwv85bjb" path="res://6/Resources/q.tres" id="17_u5dxi"]
+[ext_resource type="Texture2D" uid="uid://5qyk3gxghk88" path="res://6/asstes/PG_ITCS-main/othersource/Pic/pointer.png" id="19_18vsk"]
+[ext_resource type="Texture2D" uid="uid://crsfd7wy1lyjl" path="res://6/asstes/PG_ITCS-main/othersource/Pic/notes_bg.png" id="19_pjueg"]
+[ext_resource type="FontFile" uid="uid://6l3rm3ckhspu" path="res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf" id="20_pjueg"]
+[ext_resource type="LabelSettings" uid="uid://br682yek0gfv" path="res://6/Resources/xinxi.tres" id="21_k4bcx"]
+[ext_resource type="Texture2D" uid="uid://csa5g3aeoo11b" path="res://6/asstes/PG_ITCS-main/othersource/Pic/healthBar100.png" id="22_u5dxi"]
+[ext_resource type="Texture2D" uid="uid://jq3r3gk6ii2o" path="res://6/asstes/PG_ITCS-main/othersource/Pic/skillBar.png" id="24_fpgl6"]
+[ext_resource type="LabelSettings" uid="uid://dhjkl5nvi4tb1" path="res://6/Resources/1.tres" id="25_gswbu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iipkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mtide")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qh751")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8dkdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5u6vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q885i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3y2ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pjueg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k4bcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u5dxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_18vsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fpgl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1skyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gswbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4njug")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_18vsk"]
+font = ExtResource("20_pjueg")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5dxi"]
+font = ExtResource("20_pjueg")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_8dkdh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ui:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(574, 561)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ui:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qh751"]
+resource_name = "jiazai"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ui:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-574, 561), Vector2(575, 561)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ui:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5u6vm"]
+_data = {
+&"RESET": SubResource("Animation_8dkdh"),
+&"jiazai": SubResource("Animation_qh751")
+}
+
+[node name="PokemonVS" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gswbu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -30)
+scale = Vector2(2.3, 2.3)
+sprite_frames = SubResource("SpriteFrames_iipkm")
+autoplay = "default"
+frame = 13
+frame_progress = 1.0
+centered = false
+
+[node name="Marker2D1" type="Marker2D" parent="."]
+position = Vector2(320, 409)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(849, 215)
+
+[node name="ui" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+texture_filter = 1
+position = Vector2(574, 561)
+scale = Vector2(2.2951682, 2.261236)
+texture = ExtResource("15_qh751")
+
+[node name="MarginContainer" type="MarginContainer" parent="ui"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -44.5
+offset_right = -250.0
+offset_bottom = -44.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ui/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ui/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "   战斗"
+label_settings = ExtResource("17_u5dxi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ui/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "宝可梦"
+label_settings = ExtResource("17_u5dxi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="1" type="Sprite2D" parent="ui/MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+position = Vector2(-8.981243, 9.81056)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("19_18vsk")
+
+[node name="3" type="Sprite2D" parent="ui/MarginContainer/HBoxContainer/VBoxContainer"]
+visible = false
+texture_filter = 1
+position = Vector2(-8.981243, 42.09379)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("19_18vsk")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ui/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ui/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "背包"
+label_settings = ExtResource("17_u5dxi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ui/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "逃跑"
+label_settings = ExtResource("17_u5dxi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Sprite2D" parent="ui/MarginContainer/HBoxContainer/VBoxContainer2"]
+visible = false
+texture_filter = 1
+position = Vector2(-8.981243, 9.81056)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("19_18vsk")
+
+[node name="4" type="Sprite2D" parent="ui/MarginContainer/HBoxContainer/VBoxContainer2"]
+visible = false
+texture_filter = 1
+position = Vector2(-9.384896, 38.113663)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("19_18vsk")
+
+[node name="Label" type="Label" parent="ui/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "野生的宝可梦出现了"
+label_settings = SubResource("LabelSettings_18vsk")
+
+[node name="zdui" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(580, 569)
+scale = Vector2(2.2949433, 2.2949436)
+texture = ExtResource("24_fpgl6")
+
+[node name="MarginContainer" type="MarginContainer" parent="zdui"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.11511
+offset_top = -44.445534
+offset_right = -417.3244
+offset_bottom = -44.445534
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 65
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 65
+theme_override_constants/margin_bottom = 15
+
+[node name="move1" type="Label" parent="zdui/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "火花"
+label_settings = ExtResource("25_gswbu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="move3" type="Label" parent="zdui/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "火花"
+label_settings = ExtResource("25_gswbu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="jn_1" type="Sprite2D" parent="zdui/MarginContainer"]
+texture_filter = 1
+position = Vector2(55.339054, 25.708694)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("19_18vsk")
+
+[node name="jn_3" type="Sprite2D" parent="zdui/MarginContainer"]
+visible = false
+texture_filter = 1
+position = Vector2(55.339054, 60.567947)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("19_18vsk")
+
+[node name="move2" type="Label" parent="zdui/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "火花"
+label_settings = ExtResource("25_gswbu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="move4" type="Label" parent="zdui/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "火花"
+label_settings = ExtResource("25_gswbu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="jn_2" type="Sprite2D" parent="zdui/MarginContainer"]
+visible = false
+texture_filter = 1
+position = Vector2(211.3342, 25.708694)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("19_18vsk")
+
+[node name="jn_4" type="Sprite2D" parent="zdui/MarginContainer"]
+visible = false
+texture_filter = 1
+position = Vector2(211.3342, 60.132202)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("19_18vsk")
+
+[node name="MarginContainer2" type="MarginContainer" parent="zdui"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -417.20926
+offset_top = -44.5
+offset_right = -250.0
+offset_bottom = -44.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 17
+
+[node name="VBoxContainer" type="VBoxContainer" parent="zdui/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="zdui/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "PP"
+label_settings = ExtResource("25_gswbu")
+
+[node name="type" type="Label" parent="zdui/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "属性/普通"
+label_settings = ExtResource("25_gswbu")
+
+[node name="PP" type="Label" parent="zdui/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "12/15"
+label_settings = ExtResource("25_gswbu")
+
+[node name="mb1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(875, 365)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("19_pjueg")
+region_enabled = true
+region_rect = Rect2(131, 112, 238, 79)
+
+[node name="MarginContainer" type="MarginContainer" parent="mb1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -39.5
+offset_right = -119.0
+offset_bottom = -39.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 3
+
+[node name="PlayerName" type="Label" parent="mb1/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "小火龙"
+label_settings = SubResource("LabelSettings_u5dxi")
+
+[node name="PlayerLV" type="Label" parent="mb1/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Lv5"
+label_settings = ExtResource("21_k4bcx")
+
+[node name="Sprite2D" type="Sprite2D" parent="mb1/MarginContainer"]
+texture_filter = 1
+position = Vector2(134.625, 45.125004)
+texture = ExtResource("22_u5dxi")
+
+[node name="PlayerHp" type="Label" parent="mb1/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "50/50"
+label_settings = ExtResource("21_k4bcx")
+
+[node name="mb2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(270, 103)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("19_pjueg")
+region_enabled = true
+region_rect = Rect2(131, 112, 238, 79)
+
+[node name="MarginContainer" type="MarginContainer" parent="mb2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -39.5
+offset_right = -119.0
+offset_bottom = -39.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 3
+
+[node name="EnemyName" type="Label" parent="mb2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "小火龙"
+label_settings = SubResource("LabelSettings_u5dxi")
+
+[node name="EnemyLV" type="Label" parent="mb2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Lv5"
+label_settings = ExtResource("21_k4bcx")
+
+[node name="Sprite2D" type="Sprite2D" parent="mb2/MarginContainer"]
+texture_filter = 1
+position = Vector2(134.625, 45.125004)
+texture = ExtResource("22_u5dxi")
+
+[node name="EnemyHp" type="Label" parent="mb2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "50/50"
+label_settings = ExtResource("21_k4bcx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5u6vm")
+}
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
