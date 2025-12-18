@@ -1,8 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1765964757
-godot.windows.opt.tools.64.20251216-182347-075.log::TextFile::-1::1765880627::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251216-183112-314.log::TextFile::-1::1765881072::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251216-183114-534.log::TextFile::-1::1765881074::0::1::::<><><>0<>0<><>::
+::res://::1766044548
 icon.svg::CompressedTexture2D::4814205675737737270::1765771073::1765771073::1::::<><><>0<>0<>ed74252deb6cd3806df235572515cb28<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://1/::1765771132
 ::res://1/assets/::1765771132
@@ -353,9 +350,10 @@ water.tscn::PackedScene::6140970233866828292::1765771112::0::1::::<><><>0<>0<><>
 zhuanchang.gd::GDScript::5131955067526190963::1765771112::0::1::::<>Control<><>0<>0<><>::
 zhuanchang.tscn::PackedScene::1401326842521248710::1765771112::0::1::::<><><>0<>0<><>::uid://cfd7syabrha1x::::res://5/Scenes/ZhuanChang/zhuanchang.gd<>uid://bleqonf1mwl6q::::res://5/assets/res/Resources/dialog-background.png<>uid://7eqootpatwqm::::res://5/assets/res/Resources/quitbtn.png
 ::res://6/::1765856026
-::res://6/asstes/::1765880175
-::res://6/asstes/PG_ITCS-main/::1765879800
+::res://6/asstes/::1765974384
+::res://6/asstes/PG_ITCS-main/::1766045135
 1.png::CompressedTexture2D::2483217747271581297::1765879796::1765879800::1::::<><><>0<>0<>ed72fa4d8f82c0fa9c3901059aa10060<>res://.godot/imported/1.png-3317df8fd96cc83a79194ceae104dde0.ctex::
+bj.png::CompressedTexture2D::4863680337801617131::1766045135::1766045138::1::::<><><>0<>0<>079b2f4d0a8ca22913d9de1a0b2e7e72<>res://.godot/imported/bj.png-1cdc4d29194efbf8cd385a0d586f7df4.ctex::
 README.md::TextFile::-1::1765798094::0::1::::<><><>0<>0<><>::
 ::res://6/asstes/PG_ITCS-main/othersource/::1765798096
 ::res://6/asstes/PG_ITCS-main/othersource/font/::1765856295
@@ -774,19 +772,24 @@ trback001_爱给网_aigei_com.png::CompressedTexture2D::1469651833983568251::176
 001bulbasaur.png::CompressedTexture2D::6202457226365913061::1765880413::1765880414::1::::<><><>0<>0<>afe0e6237b52924f3f7d6c9685f2ae57<>res://.godot/imported/001bulbasaur.png-12b77340c3a5c55b9740392c4cd4d27d.ctex::
 004 Charmander.png::CompressedTexture2D::5939482217356825737::1765880183::1765880183::1::::<><><>0<>0<>d1ac9b8e65c5629f7ed016cae5f4f1d9<>res://.godot/imported/004 Charmander.png-95b3dbd68ba0bcb64183b1128f40bd3c.ctex::
 004charmander.png::CompressedTexture2D::1574503489148354292::1765881766::1765881767::1::::<><><>0<>0<>c5b1efbd3867bd8ef9a6b7ee8d7df34f<>res://.godot/imported/004charmander.png-cbc8390d9ff61a9767a4894fc792983b.ctex::
-::res://6/Global/::1765856026
+::res://6/Global/::1765973242
+PokemonManager.gd::GDScript::3643746125348154839::1765968721::0::1::::<>Node<><>0<>0<><>::
+PokemonMoveList.gd::GDScript::8715922993163303432::1765973242::0::1::::<>Node<><>0<>0<><>::
 ::res://6/Resources/::1765882435
 1.tres::LabelSettings::7669791766741644496::1765882435::0::1::::<><><>0<>0<><>::uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf
 q.tres::LabelSettings::6586533242266358871::1765881241::0::1::::<><><>0<>0<><>::uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf
 xinxi.tres::LabelSettings::107225878833525183::1765880971::0::1::::<><><>0<>0<><>::uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf
 ::res://6/Scenes/::1765880259
-::res://6/Scenes/Pokemon/::1765880448
-::res://6/Scenes/Pokemon/Bulbasaur/::1765881827
-bulbasaur.tscn::PackedScene::2457037093809841177::1765881827::0::1::::<><><>0<>0<><>::uid://cumrtgmlxvp6t::::res://6/asstes/pokemon/001bulbasaur.png<>uid://ds5f0awomw0oj::::res://6/asstes/pokemon/001 Bulbasaur.png
-::res://6/Scenes/Pokemon/Charmander/::1765881788
-charmander.tscn::PackedScene::1545928020549909628::1765881788::0::1::::<><><>0<>0<><>::uid://cqven0oulpgrh::::res://6/asstes/pokemon/004 Charmander.png<>uid://wox3v32pedlc::::res://6/asstes/pokemon/004charmander.png
-::res://6/Scenes/PokemonVS/::1765882688
-pokemon_vs.tscn::PackedScene::8583723066622549379::1765882688::0::1::::<><><>0<>0<><>::uid://1o4trxfbbdcn::::res://6/asstes/PG_ITCS-main/othersource/Pic/background1.png<>uid://5p8i7nm5ecx2::::res://6/asstes/PG_ITCS-main/othersource/Pic/background2.png<>uid://dkydrfu4s78yc::::res://6/asstes/PG_ITCS-main/othersource/Pic/background3.png<>uid://gpx56d7wqdtm::::res://6/asstes/PG_ITCS-main/othersource/Pic/background4.png<>uid://cp0c3s1jdor0r::::res://6/asstes/PG_ITCS-main/othersource/Pic/background5.png<>uid://8lk0uvbrfw1w::::res://6/asstes/PG_ITCS-main/othersource/Pic/background6.png<>uid://c5tdync2r8ny0::::res://6/asstes/PG_ITCS-main/othersource/Pic/background7.png<>uid://3wmvalot3x04::::res://6/asstes/PG_ITCS-main/othersource/Pic/background8.png<>uid://c8e3oxlul1siy::::res://6/asstes/PG_ITCS-main/othersource/Pic/background9.png<>uid://dh6756tw2nqm2::::res://6/asstes/PG_ITCS-main/othersource/Pic/background10.png<>uid://8cekjeyp6pcj::::res://6/asstes/PG_ITCS-main/othersource/Pic/background11.png<>uid://bjdxccgxcnasc::::res://6/asstes/PG_ITCS-main/othersource/Pic/background12.png<>uid://b8m67hqkicub0::::res://6/asstes/PG_ITCS-main/othersource/Pic/background13.png<>uid://bh13kiyqfg013::::res://6/asstes/PG_ITCS-main/othersource/Pic/background14.png<>uid://bbm5h66jwhpjl::::res://6/asstes/PG_ITCS-main/1.png<>uid://wa4hdghgrvc3::::res://6/Scenes/Pokemon/Charmander/charmander.tscn<>uid://bbahbordh5r7v::::res://6/Scenes/Pokemon/Bulbasaur/bulbasaur.tscn<>uid://c03tifwv85bjb::::res://6/Resources/q.tres<>uid://5qyk3gxghk88::::res://6/asstes/PG_ITCS-main/othersource/Pic/pointer.png<>uid://crsfd7wy1lyjl::::res://6/asstes/PG_ITCS-main/othersource/Pic/notes_bg.png<>uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf<>uid://br682yek0gfv::::res://6/Resources/xinxi.tres<>uid://csa5g3aeoo11b::::res://6/asstes/PG_ITCS-main/othersource/Pic/healthBar100.png<>uid://jq3r3gk6ii2o::::res://6/asstes/PG_ITCS-main/othersource/Pic/skillBar.png<>uid://dhjkl5nvi4tb1::::res://6/Resources/1.tres
+::res://6/Scenes/Pokemon/::1765968708
+::res://6/Scenes/Pokemon/Bulbasaur/::1765968799
+bulbasaur.gd::GDScript::7351969515787822891::1765968777::0::1::::<>Node2D<><>0<>0<><>::
+bulbasaur.tscn::PackedScene::2457037093809841177::1765968799::0::1::::<><><>0<>0<><>::uid://dc0l4msmea58r::::res://6/Scenes/Pokemon/Bulbasaur/bulbasaur.gd<>uid://cumrtgmlxvp6t::::res://6/asstes/pokemon/001bulbasaur.png<>uid://ds5f0awomw0oj::::res://6/asstes/pokemon/001 Bulbasaur.png
+::res://6/Scenes/Pokemon/Charmander/::1765974025
+charmander.gd::GDScript::6101739910958294213::1765974025::0::1::::<>Node2D<><>0<>0<><>::
+charmander.tscn::PackedScene::1545928020549909628::1765968564::0::1::::<><><>0<>0<><>::uid://cqven0oulpgrh::::res://6/asstes/pokemon/004 Charmander.png<>uid://cs6y1af8phtov::::res://6/Scenes/Pokemon/Charmander/charmander.gd<>uid://wox3v32pedlc::::res://6/asstes/pokemon/004charmander.png
+::res://6/Scenes/PokemonVS/::1766044640
+pokemon_vs.gd::GDScript::8803830783796262321::1766044623::0::1::::<>Control<><>0<>0<><>::
+pokemon_vs.tscn::PackedScene::8583723066622549379::1766044640::0::1::::<><><>0<>0<><>::uid://dxov2ouvsq3ab::::res://6/Scenes/PokemonVS/pokemon_vs.gd<>uid://1o4trxfbbdcn::::res://6/asstes/PG_ITCS-main/othersource/Pic/background1.png<>uid://5p8i7nm5ecx2::::res://6/asstes/PG_ITCS-main/othersource/Pic/background2.png<>uid://dkydrfu4s78yc::::res://6/asstes/PG_ITCS-main/othersource/Pic/background3.png<>uid://gpx56d7wqdtm::::res://6/asstes/PG_ITCS-main/othersource/Pic/background4.png<>uid://cp0c3s1jdor0r::::res://6/asstes/PG_ITCS-main/othersource/Pic/background5.png<>uid://8lk0uvbrfw1w::::res://6/asstes/PG_ITCS-main/othersource/Pic/background6.png<>uid://c5tdync2r8ny0::::res://6/asstes/PG_ITCS-main/othersource/Pic/background7.png<>uid://3wmvalot3x04::::res://6/asstes/PG_ITCS-main/othersource/Pic/background8.png<>uid://c8e3oxlul1siy::::res://6/asstes/PG_ITCS-main/othersource/Pic/background9.png<>uid://dh6756tw2nqm2::::res://6/asstes/PG_ITCS-main/othersource/Pic/background10.png<>uid://8cekjeyp6pcj::::res://6/asstes/PG_ITCS-main/othersource/Pic/background11.png<>uid://bjdxccgxcnasc::::res://6/asstes/PG_ITCS-main/othersource/Pic/background12.png<>uid://b8m67hqkicub0::::res://6/asstes/PG_ITCS-main/othersource/Pic/background13.png<>uid://bh13kiyqfg013::::res://6/asstes/PG_ITCS-main/othersource/Pic/background14.png<>uid://bbm5h66jwhpjl::::res://6/asstes/PG_ITCS-main/1.png<>uid://c03tifwv85bjb::::res://6/Resources/q.tres<>uid://5qyk3gxghk88::::res://6/asstes/PG_ITCS-main/othersource/Pic/pointer.png<>uid://crsfd7wy1lyjl::::res://6/asstes/PG_ITCS-main/othersource/Pic/notes_bg.png<>uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf<>uid://br682yek0gfv::::res://6/Resources/xinxi.tres<>uid://csa5g3aeoo11b::::res://6/asstes/PG_ITCS-main/othersource/Pic/healthBar100.png<>uid://jq3r3gk6ii2o::::res://6/asstes/PG_ITCS-main/othersource/Pic/skillBar.png<>uid://dhjkl5nvi4tb1::::res://6/Resources/1.tres
 ::res://main/::1765771133
 ChangeScences.gd::GDScript::4429008608123981048::1765771074::0::1::::<>Node<><>0<>0<><>::
 ::res://main/Main/::1765771133

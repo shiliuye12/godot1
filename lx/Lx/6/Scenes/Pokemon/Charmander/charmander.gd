@@ -1,19 +1,21 @@
 extends Node2D
 
 @export var pokemon_name: String = "小火龙"
-@export var level: int
-@export var hp: int
 @export var max_hp: int
 @export var min_level: int = 5
 @export var max_level: int = 100
 
+var level: int
+var hp: int
+var wg: int
+var fy: int
+var sd: int
+
 var move_num = 0
-var type: String
+var type: String = "火"
 var _hp = 39
 var _wg = 52
 var _fy = 43
-var _tg = 60
-var _tf = 50
 var _sd = 65
 var _gtz = randi_range(0, 32)
 var _move: Array
@@ -27,6 +29,10 @@ func _ready() -> void:
 	level = randi_range(min_level, max_level)
 	max_hp = int((_hp * 2 + _gtz) * level / 50 + level + 10)
 	hp = max_hp
+	wg = int((_wg * 2 + _gtz ) * level / 50 + 10)
+	fy = int((_fy * 2 + _gtz ) * level / 50 + 10)
+	sd = int((_sd * 2 + _gtz ) * level / 50 + 10)
+	
 	if level >= 1:
 		_move.append(PokemonMoveList.movelist[0].new())
 		move_num += 1

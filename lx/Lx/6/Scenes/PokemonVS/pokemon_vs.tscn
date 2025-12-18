@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dukawurxb2cox"]
+[gd_scene load_steps=41 format=3 uid="uid://dukawurxb2cox"]
 
 [ext_resource type="Script" uid="uid://dxov2ouvsq3ab" path="res://6/Scenes/PokemonVS/pokemon_vs.gd" id="1_gswbu"]
 [ext_resource type="Texture2D" uid="uid://1o4trxfbbdcn" path="res://6/asstes/PG_ITCS-main/othersource/Pic/background1.png" id="1_mtide"]
@@ -21,9 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://crsfd7wy1lyjl" path="res://6/asstes/PG_ITCS-main/othersource/Pic/notes_bg.png" id="19_pjueg"]
 [ext_resource type="FontFile" uid="uid://6l3rm3ckhspu" path="res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf" id="20_pjueg"]
 [ext_resource type="LabelSettings" uid="uid://br682yek0gfv" path="res://6/Resources/xinxi.tres" id="21_k4bcx"]
+[ext_resource type="Texture2D" uid="uid://cbkads5b83acx" path="res://6/asstes/PG_ITCS-main/bj.png" id="22_1skyt"]
 [ext_resource type="Texture2D" uid="uid://csa5g3aeoo11b" path="res://6/asstes/PG_ITCS-main/othersource/Pic/healthBar100.png" id="22_u5dxi"]
+[ext_resource type="Texture2D" uid="uid://moq1tfqyf2u2" path="res://6/asstes/PG_ITCS-main/othersource/Pic/pointerUp.png" id="23_gswbu"]
 [ext_resource type="Texture2D" uid="uid://jq3r3gk6ii2o" path="res://6/asstes/PG_ITCS-main/othersource/Pic/skillBar.png" id="24_fpgl6"]
 [ext_resource type="LabelSettings" uid="uid://dhjkl5nvi4tb1" path="res://6/Resources/1.tres" id="25_gswbu"]
+[ext_resource type="Texture2D" uid="uid://dx202ydq6j1pk" path="res://6/asstes/player/trback000_爱给网_aigei_com.png" id="27_4njug"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iipkm"]
 animations = [{
@@ -75,8 +78,49 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijm0c"]
+atlas = ExtResource("27_4njug")
+region = Rect2(0, 0, 232, 232)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4kd5"]
+atlas = ExtResource("27_4njug")
+region = Rect2(232, 0, 232, 232)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62p4x"]
+atlas = ExtResource("27_4njug")
+region = Rect2(464, 0, 232, 232)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad26s"]
+atlas = ExtResource("27_4njug")
+region = Rect2(696, 0, 232, 232)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_exlj8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijm0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4kd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62p4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad26s")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_18vsk"]
 font = ExtResource("20_pjueg")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1skyt"]
+font = ExtResource("20_pjueg")
+font_size = 48
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_u5dxi"]
@@ -110,13 +154,37 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("jz:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(580.00006, 560)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("jz:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_qh751"]
 resource_name = "jiazai"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("ui:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -128,7 +196,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("ui:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -152,11 +220,39 @@ tracks/2/keys = {
 "method": &"start"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("jz:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-574, 560), Vector2(575, 560)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("jz:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_iipkm"]
+resource_name = "start"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5u6vm"]
 _data = {
 &"RESET": SubResource("Animation_8dkdh"),
-&"jiazai": SubResource("Animation_qh751")
+&"jiazai": SubResource("Animation_qh751"),
+&"start": SubResource("Animation_iipkm")
 }
 
 [node name="PokemonVS" type="Control"]
@@ -177,6 +273,10 @@ autoplay = "default"
 frame = 13
 frame_progress = 1.0
 centered = false
+
+[node name="PlayerStart" type="AnimatedSprite2D" parent="."]
+position = Vector2(339, 353)
+sprite_frames = SubResource("SpriteFrames_exlj8")
 
 [node name="Marker2D1" type="Marker2D" parent="."]
 position = Vector2(320, 409)
@@ -405,6 +505,42 @@ size_flags_vertical = 0
 text = "12/15"
 label_settings = ExtResource("25_gswbu")
 
+[node name="jz" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(580.00006, 560)
+scale = Vector2(0.7519233, 0.75192314)
+texture = ExtResource("22_1skyt")
+
+[node name="MarginContainer" type="MarginContainer" parent="jz"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -749.56476
+offset_top = -129.33504
+offset_right = -749.56476
+offset_bottom = -129.33504
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+
+[node name="HBoxContainer" type="HBoxContainer" parent="jz/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="zdks" type="Label" parent="jz/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "野生的宝可梦出现了"
+label_settings = SubResource("LabelSettings_1skyt")
+
+[node name="jt" type="TextureRect" parent="jz/MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("23_gswbu")
+expand_mode = 2
+flip_v = true
+
 [node name="mb1" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(875, 365)
@@ -442,7 +578,7 @@ size_flags_vertical = 0
 text = "Lv5"
 label_settings = ExtResource("21_k4bcx")
 
-[node name="Sprite2D" type="Sprite2D" parent="mb1/MarginContainer"]
+[node name="PlayerHpui" type="Sprite2D" parent="mb1/MarginContainer"]
 texture_filter = 1
 position = Vector2(134.625, 45.125004)
 texture = ExtResource("22_u5dxi")
@@ -491,7 +627,7 @@ size_flags_vertical = 0
 text = "Lv5"
 label_settings = ExtResource("21_k4bcx")
 
-[node name="Sprite2D" type="Sprite2D" parent="mb2/MarginContainer"]
+[node name="EnemyHpui" type="Sprite2D" parent="mb2/MarginContainer"]
 texture_filter = 1
 position = Vector2(134.625, 45.125004)
 texture = ExtResource("22_u5dxi")
@@ -508,4 +644,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_5u6vm")
 }
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="PlayerStart" to="." method="_on_player_start_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
