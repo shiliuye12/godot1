@@ -5,6 +5,9 @@ extends Node2D
 @export var min_level: int = 5
 @export var max_level: int = 100
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d_2: Sprite2D = $Sprite2D2
+
 var level: int
 var hp: int
 var wg: int
@@ -13,6 +16,7 @@ var sd: int
 
 var move_num = 0
 var type: String = "火"
+var type_2: String = "无"
 var _hp = 39
 var _wg = 52
 var _fy = 43
@@ -73,3 +77,7 @@ func _ready() -> void:
 		move_number.append(move2)
 		move_number.append(move3)
 		move_number.append(move4)
+
+func mx():
+	sprite_2d.hide()
+	sprite_2d_2.show()

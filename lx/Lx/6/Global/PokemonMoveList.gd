@@ -1,6 +1,8 @@
 extends Node
 
 func typekz(player_type: String, enemy_type: String):
+	if enemy_type == "无":
+		return 1
 	if player_type == "一般":
 		if enemy_type == "岩石" or enemy_type == "钢":
 			return 0.5

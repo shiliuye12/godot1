@@ -8,12 +8,12 @@
 script = ExtResource("1_gssn2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("2_bftwu")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("1_jrbbq")

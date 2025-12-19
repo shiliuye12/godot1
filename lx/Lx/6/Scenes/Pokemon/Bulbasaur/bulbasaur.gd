@@ -5,6 +5,10 @@ extends Node2D
 @export var min_level: int = 5
 @export var max_level: int = 100
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d_2: Sprite2D = $Sprite2D2
+
+
 var level: int
 var hp: int
 var wg: int
@@ -13,6 +17,7 @@ var sd: int
 
 var move_num = 0
 var type: String = "草"
+var type_2: String = "无"
 var _hp = 45
 var _wg = 65
 var _fy = 65
@@ -28,6 +33,7 @@ var move_number: Array
 
 func _ready() -> void:
 	level = randi_range(min_level, max_level)
+	level = 1
 	max_hp = int((_hp * 2 + _gtz) * level / 50 + level + 10)
 	hp = max_hp
 	wg = int((_wg * 2 + _gtz ) * level / 50 + 10)
@@ -73,3 +79,7 @@ func _ready() -> void:
 		move_number.append(move2)
 		move_number.append(move3)
 		move_number.append(move4)
+
+func mx():
+	sprite_2d.hide()
+	sprite_2d_2.show()

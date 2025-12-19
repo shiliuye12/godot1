@@ -66,6 +66,7 @@ var enemy_dq_sd = 0.0
 var player_pokemon = PokemonManager.Pokemon_instantiate(0)
 var enemy_pokemon = PokemonManager.Pokemon_instantiate(1)
 
+
 func _unhandled_input(event: InputEvent) -> void:	
 	if zdui.visible == true and event.is_action_pressed("pokemon_qd") and wz <= player_pokemon.move_num:
 		move(wz)
@@ -167,13 +168,14 @@ func _process(_delta: float) -> void:
 		else:
 			type.text = "属性/-"
 			pp.text = "-"
-	player_hp.text = str(player_pokemon.hp) + "/" + str(player_pokemon.max_hp)
-	enemy_hp.text = str(enemy_pokemon.hp) + "/" + str(enemy_pokemon.max_hp)
 	if can_gxhp:
+		player_hp.text = str(player_pokemon.hp) + "/" + str(player_pokemon.max_hp)
+		enemy_hp.text = str(enemy_pokemon.hp) + "/" + str(enemy_pokemon.max_hp)
+		enemy_lv.text = "Lv:" + str(enemy_pokemon.level)
 		gx_hp()
 
 func move(_wz: int):
-	if player_pokemon.sd >= enemy_pokemon.sd:
+	if player_pokemon.sd * (player_dq_sd + 1) >= enemy_pokemon.sd * (enemy_dq_sd + 1):
 		hhz(_wz)
 	else:
 		enemy_hh()
@@ -211,6 +213,7 @@ func start():
 	if player_pokemon.move_num > 3:
 		move_4.text = player_pokemon._move[player_pokemon.move4].name
 	
+	enemy_pokemon.mx()
 	player_start.show()
 	can_gxhp = true
 
@@ -226,7 +229,6 @@ func hhz(_wz: int):
 	zdks.text = player_pokemon.pokemon_name + "使用了" + player_pokemon._move[player_pokemon.move_number[_wz - 1]].name
 	_sh(_wz, player_pokemon, enemy_pokemon)
 
-
 func enemy_hh():
 	_hhz = true
 	zdui.hide()
@@ -241,7 +243,6 @@ func enemy_hh():
 		var a = randi_range(0, 3)
 		zdks.text = enemy_pokemon.pokemon_name + "使用了" + enemy_pokemon._move[enemy_pokemon.move_number[a]].name
 		_sh(a + 1, enemy_pokemon, player_pokemon)
-	
 
 func gx_hp():
 	if player_pokemon.hp*100 / player_pokemon.max_hp == 100:
@@ -325,6 +326,7 @@ func jc_move(_wz: int , gj_pokemon: Node2D):
 				player_dq_sd += gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
 
 func enemy_die():
+	enemy_pokemon.queue_free()
 	enemy_dq_fy = 0
 	enemy_dq_sd = 0
 	enemy_dq_wg = 0
@@ -344,7 +346,19 @@ func _on_player_start_animation_finished() -> void:
 func _on_timer_timeout() -> void:
 	if player_pokemon.sd >= enemy_pokemon.sd:
 		wz = 1
-		enemy_hh()
+		if enemy_pokemon.hp > 0:
+			enemy_hh()
+		else:
+			enemy_die()
+			qiehuan()
+			wz = 1
+			_hhz = false
+			jz.hide()
+			ui.show()
+			hh_wz = 0
+			enemy_pokemon.mx()
+			can_gxhp = true
+
 	else:
 		wz = 1
 		_hhz = false
@@ -370,6 +384,7 @@ func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 	else:
 		power = gj_pokemon.wg * gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].power / fy_pokemon.fy * (1 + enemy_dq_wg) / (player_dq_fy + 1)
 	var sx = PokemonMoveList.typekz(gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].type, fy_pokemon.type)
+	var sx2 = PokemonMoveList.typekz(gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].type, fy_pokemon.type_2)
 	var hx = randf_range(0, 1)
 	if power == 0:
 		jc_move(_wz, gj_pokemon)
@@ -385,7 +400,7 @@ func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 		return
 	
 	var mz = randi_range(0, 100)
-	if mz > gj_pokemon._move[gj_pokemon.move_numver[_wz - 1]].accuracy:
+	if mz > gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].accuracy:
 		zdks.text = "未命中"
 		if gj_pokemon == player_pokemon:
 			timer.start()
@@ -396,7 +411,9 @@ func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 	if hx <= 0.2:
 		hx = 1.5
 		power = gj_pokemon.wg * gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].power / fy_pokemon.fy * (1 + player_dq_wg)
-		fy_pokemon.hp -= power * sx * randf_range(0.9, 1.1) * hx
+		fy_pokemon.hp -= power * sx * randf_range(0.9, 1.1) * hx * sx2
+		if fy_pokemon.hp <= 0:
+			fy_pokemon.hp = 0
 		await get_tree().create_timer(1.0).timeout
 		zdks.text = "击中要害"
 		if gj_pokemon == player_pokemon:
@@ -407,7 +424,9 @@ func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 	else:
 		hx = 1
 	
-	enemy_pokemon.hp -= power * sx * randf_range(0.9, 1.1) * hx
+	fy_pokemon.hp -= power * sx * randf_range(0.9, 1.1) * hx * sx2
+	if fy_pokemon.hp <= 0:
+		fy_pokemon.hp = 0
 	if sx == 2:
 		await get_tree().create_timer(1.0).timeout
 		zdks.text = "效果绝佳"
@@ -436,3 +455,10 @@ func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 		timer.start()
 	else :
 		timer_2.start()
+
+func qiehuan():
+	can_gxhp = false
+	enemy_pokemon = PokemonManager.Pokemon_instantiate(0)
+	enemy_pokemon.position = marker_2d_2.position
+	enemy_name.text = enemy_pokemon.pokemon_name
+	add_child(enemy_pokemon)
