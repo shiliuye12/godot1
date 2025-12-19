@@ -12,4 +12,3 @@ CollisionShape2D
 Area2D
 CollisionPolygon2D
 CharacterBody2D
-Node2D

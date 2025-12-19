@@ -24,6 +24,7 @@ var move1 = 0
 var move2 = 1
 var move3 = 2
 var move4 = 3
+var move_number: Array
 
 func _ready() -> void:
 	level = randi_range(min_level, max_level)
@@ -34,19 +35,29 @@ func _ready() -> void:
 	sd = int((_sd * 2 + _gtz ) * level / 50 + 10)
 	
 	if level >= 1:
-		_move.append(PokemonMoveList.movelist[0].new())
+		_move.append(PokemonMoveList.charmander_movelist[0].new())
 		move_num += 1
-		_move.append(PokemonMoveList.movelist[1].new())
+		_move.append(PokemonMoveList.charmander_movelist[1].new())
 		move_num += 1
 	if level >= 4:
-		_move.append(PokemonMoveList.movelist[2].new())
+		_move.append(PokemonMoveList.charmander_movelist[2].new())
 		move_num += 1
 	if level >= 8:
-		_move.append(PokemonMoveList.movelist[3].new())
+		_move.append(PokemonMoveList.charmander_movelist[3].new())
 		move_num += 1
 	if level >= 12:
-		_move.append(PokemonMoveList.movelist[4].new())
+		_move.append(PokemonMoveList.charmander_movelist[4].new())
 		move_num += 1
+	
+	if move_num <= 1:
+		move_number.append(move1)
+	if move_num <= 2:
+		move_number.append(move1)
+		move_number.append(move2)
+	if move_num <= 3:
+		move_number.append(move1)
+		move_number.append(move2)
+		move_number.append(move3)
 	if move_num > 4:
 		move1 = randi_range(0, move_num - 1)
 		move2 = randi_range(0, move_num - 1)
@@ -58,3 +69,7 @@ func _ready() -> void:
 			move3 = randi_range(0, move_num - 1)
 		while move1 == move4 or move2 == move4 or move3 == move4:
 			move4 = randi_range(0, move_num - 1)
+		move_number.append(move1)
+		move_number.append(move2)
+		move_number.append(move3)
+		move_number.append(move4)

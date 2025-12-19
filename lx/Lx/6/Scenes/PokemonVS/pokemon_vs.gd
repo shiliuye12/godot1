@@ -36,6 +36,7 @@ extends Control
 @onready var player_hpui: Sprite2D = $mb1/MarginContainer/PlayerHpui
 @onready var enemy_hpui: Sprite2D = $mb2/MarginContainer/EnemyHpui
 @onready var timer: Timer = $Timer
+@onready var timer_2: Timer = $Timer2
 
 const HEALTH_BAR_0 = preload("uid://b7j1os4tq5etw")
 const HEALTH_BAR_10 = preload("uid://rfdchq30snu8")
@@ -51,14 +52,22 @@ const HEALTH_BAR_100 = preload("uid://csa5g3aeoo11b")
 #endregion
 
 var wz = 0
+var hh_wz = 0
 var _hhz = false
 var can_gxhp = false
+
+var player_dq_wg = 0.0
+var player_dq_fy = 0.0
+var player_dq_sd = 0.0
+var enemy_dq_wg = 0.0
+var enemy_dq_fy = 0.0
+var enemy_dq_sd = 0.0
 
 var player_pokemon = PokemonManager.Pokemon_instantiate(0)
 var enemy_pokemon = PokemonManager.Pokemon_instantiate(1)
 
 func _unhandled_input(event: InputEvent) -> void:	
-	if zdui.visible == true and event.is_action_pressed("pokemon_qd"):
+	if zdui.visible == true and event.is_action_pressed("pokemon_qd") and wz <= player_pokemon.move_num:
 		move(wz)
 	if event.is_action_pressed("pokemon_down") and wz <= 2 and wz != 0:
 		wz += 2
@@ -163,9 +172,12 @@ func _process(_delta: float) -> void:
 	if can_gxhp:
 		gx_hp()
 
-
 func move(_wz: int):
-	hhz(_wz)
+	if player_pokemon.sd >= enemy_pokemon.sd:
+		hhz(_wz)
+	else:
+		enemy_hh()
+		hh_wz = _wz
 
 func qd():
 	if wz == 1:
@@ -189,6 +201,7 @@ func start():
 	player_name.text = player_pokemon.pokemon_name
 	enemy_name.text = enemy_pokemon.pokemon_name
 	player_lv.text = "Lv:" + str(player_pokemon.level)
+	enemy_lv.text = "Lv:" + str(enemy_pokemon.level)
 	
 	move_1.text = player_pokemon._move[player_pokemon.move1].name
 	if player_pokemon.move_num > 1:
@@ -210,32 +223,25 @@ func hhz(_wz: int):
 	ui.hide()
 	jz.show()
 	wz = 0
-	if _wz == 1:
-		zdks.text = player_pokemon.pokemon_name + "使用了" + player_pokemon._move[player_pokemon.move1].name
-		sh(1)
-	if _wz == 2:
-		zdks.text = player_pokemon.pokemon_name + "使用了" + player_pokemon._move[player_pokemon.move2].name
-		sh(2)
-	if _wz == 3:
-		zdks.text = player_pokemon.pokemon_name + "使用了" + player_pokemon._move[player_pokemon.move3].name
-		sh(3)
-	if _wz == 4:
-		zdks.text = player_pokemon.pokemon_name + "使用了" + player_pokemon._move[player_pokemon.move4].name
-		sh(4)
-	timer.start()
+	zdks.text = player_pokemon.pokemon_name + "使用了" + player_pokemon._move[player_pokemon.move_number[_wz - 1]].name
+	_sh(_wz, player_pokemon, enemy_pokemon)
+
 
 func enemy_hh():
-	pass
-
-func sh(_wz: int):
-	if _wz == 1:
-		enemy_pokemon.hp -= player_pokemon._move[player_pokemon.move1].power
-	if _wz == 2:
-		enemy_pokemon.hp -= player_pokemon._move[player_pokemon.move2].power
-	if _wz == 3:
-		enemy_pokemon.hp -= player_pokemon._move[player_pokemon.move3].power
-	if _wz == 4:
-		enemy_pokemon.hp -= player_pokemon._move[player_pokemon.move4].power
+	_hhz = true
+	zdui.hide()
+	ui.hide()
+	jz.show()
+	wz = 0
+	if enemy_pokemon.move_num < 4:
+		var a = randi_range(0, enemy_pokemon.move_num - 1)
+		zdks.text = enemy_pokemon.pokemon_name + "使用了" + enemy_pokemon._move[enemy_pokemon.move_number[a]].name
+		_sh(a + 1, enemy_pokemon, player_pokemon)
+	else:
+		var a = randi_range(0, 3)
+		zdks.text = enemy_pokemon.pokemon_name + "使用了" + enemy_pokemon._move[enemy_pokemon.move_number[a]].name
+		_sh(a + 1, enemy_pokemon, player_pokemon)
+	
 
 func gx_hp():
 	if player_pokemon.hp*100 / player_pokemon.max_hp == 100:
@@ -283,7 +289,45 @@ func gx_hp():
 		enemy_hpui.texture = HEALTH_BAR_10
 	if enemy_pokemon.hp*100 / enemy_pokemon.max_hp <= 0:
 		enemy_hpui.texture = HEALTH_BAR_0
-	
+
+func jc_move(_wz: int , gj_pokemon: Node2D):
+	if gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx == "降低":
+		if gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx == "防御":
+			if gj_pokemon == player_pokemon:
+				enemy_dq_fy -= gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+			else:
+				player_dq_fy -= gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+		if gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx == "物攻":
+			if gj_pokemon == player_pokemon:
+				enemy_dq_wg -= gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+			else:
+				player_dq_wg -= gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+		if gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx == "速度":
+			if gj_pokemon == player_pokemon:
+				enemy_dq_sd -= gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+			else:
+				player_dq_sd -= gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+	if gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx == "提升":
+		if gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx == "防御":
+			if gj_pokemon == player_pokemon:
+				enemy_dq_fy += gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+			else:
+				player_dq_fy += gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+		if gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx == "物攻":
+			if gj_pokemon == player_pokemon:
+				enemy_dq_wg += gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+			else:
+				player_dq_wg += gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+		if gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx == "速度":
+			if gj_pokemon == player_pokemon:
+				enemy_dq_sd += gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+			else:
+				player_dq_sd += gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
+
+func enemy_die():
+	enemy_dq_fy = 0
+	enemy_dq_sd = 0
+	enemy_dq_wg = 0
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	animation_player.play("jiazai")
@@ -298,7 +342,97 @@ func _on_player_start_animation_finished() -> void:
 	wz = 1
 
 func _on_timer_timeout() -> void:
-	jz.hide()
-	ui.show()
-	wz = 1
-	_hhz = false
+	if player_pokemon.sd >= enemy_pokemon.sd:
+		wz = 1
+		enemy_hh()
+	else:
+		wz = 1
+		_hhz = false
+		jz.hide()
+		ui.show()
+		hh_wz = 0
+
+func _on_timer_2_timeout() -> void:
+	if player_pokemon.sd >= enemy_pokemon.sd:
+		wz = 1
+		_hhz = false
+		jz.hide()
+		ui.show()
+		hh_wz = 0
+	else:
+		wz = 1
+		hhz(hh_wz)
+
+func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
+	var power = 0
+	if gj_pokemon == player_pokemon:
+		power = gj_pokemon.wg * gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].power / fy_pokemon.fy * (1 + player_dq_wg) / (enemy_dq_fy + 1)
+	else:
+		power = gj_pokemon.wg * gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].power / fy_pokemon.fy * (1 + enemy_dq_wg) / (player_dq_fy + 1)
+	var sx = PokemonMoveList.typekz(gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].type, fy_pokemon.type)
+	var hx = randf_range(0, 1)
+	if power == 0:
+		jc_move(_wz, gj_pokemon)
+		await get_tree().create_timer(1.0).timeout
+		if gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx == "提升":
+			zdks.text = gj_pokemon.pokemon_name + "的" + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx + "了"
+		elif gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx == "降低":
+			zdks.text = fy_pokemon.pokemon_name + "的" + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx + "了"
+		if gj_pokemon == player_pokemon:
+			timer.start()
+		else :
+			timer_2.start()
+		return
+	
+	var mz = randi_range(0, 100)
+	if mz > gj_pokemon._move[gj_pokemon.move_numver[_wz - 1]].accuracy:
+		zdks.text = "未命中"
+		if gj_pokemon == player_pokemon:
+			timer.start()
+		else :
+			timer_2.start()
+		return
+	
+	if hx <= 0.2:
+		hx = 1.5
+		power = gj_pokemon.wg * gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].power / fy_pokemon.fy * (1 + player_dq_wg)
+		fy_pokemon.hp -= power * sx * randf_range(0.9, 1.1) * hx
+		await get_tree().create_timer(1.0).timeout
+		zdks.text = "击中要害"
+		if gj_pokemon == player_pokemon:
+			timer.start()
+		else :
+			timer_2.start()
+		return
+	else:
+		hx = 1
+	
+	enemy_pokemon.hp -= power * sx * randf_range(0.9, 1.1) * hx
+	if sx == 2:
+		await get_tree().create_timer(1.0).timeout
+		zdks.text = "效果绝佳"
+		if gj_pokemon == player_pokemon:
+			timer.start()
+		else :
+			timer_2.start()
+		return
+	if sx == 0.5:
+		await get_tree().create_timer(1.0).timeout
+		zdks.text = "效果不好"
+		if gj_pokemon == player_pokemon:
+			timer.start()
+		else :
+			timer_2.start()
+		return
+	if sx == 0:
+		await get_tree().create_timer(1.0).timeout
+		zdks.text = "没有效果"
+		if gj_pokemon == player_pokemon:
+			timer.start()
+		else :
+			timer_2.start()
+		return
+	if gj_pokemon == player_pokemon:
+		timer.start()
+	else :
+		timer_2.start()

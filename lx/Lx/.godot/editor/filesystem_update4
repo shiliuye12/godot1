@@ -1,5 +1,5 @@
 res://6/Scenes/PokemonVS/pokemon_vs.tscn
-res://6/Scenes/PokemonVS/pokemon_vs.gd
 res://6/Scenes/Pokemon/Charmander/charmander.gd
+res://6/Scenes/PokemonVS/pokemon_vs.gd
 res://6/Scenes/Pokemon/Bulbasaur/bulbasaur.gd
 res://6/Global/PokemonMoveList.gd

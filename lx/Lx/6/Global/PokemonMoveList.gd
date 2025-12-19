@@ -148,7 +148,6 @@ class zhua:
 	var pp = 35
 	var power = 40
 	var accuracy = 100
-	var lx = "物理"
 
 class jiaosheng:
 	var name = "叫声"
@@ -156,7 +155,9 @@ class jiaosheng:
 	var pp = 40
 	var power = 0
 	var accuracy = 100
-	var lx = "变化"
+	var lx = "降低"
+	var lx_sx = "防御"
+	var lx_sx_lv = 0.1
 
 class huohua:
 	var name = "火花"
@@ -164,7 +165,6 @@ class huohua:
 	var pp = 25
 	var power = 40
 	var accuracy = 100
-	var lx = "特殊"
 
 class yanwu:
 	var name = "烟雾"
@@ -172,7 +172,9 @@ class yanwu:
 	var pp = 20
 	var power = 0
 	var accuracy = 100
-	var lx = "变化"
+	var lx = "降低"
+	var lx_sx = "防御"
+	var lx_sx_lv = 0.1
 
 class longxi:
 	var name = "龙息"
@@ -180,6 +182,40 @@ class longxi:
 	var pp = 20
 	var power = 60
 	var accuracy = 100
-	var lx = "特殊"
 
-var movelist: Array = [zhua, jiaosheng, huohua, yanwu, longxi]
+class  zhuangji:
+	var name = "撞击"
+	var type = "一般"
+	var pp = 35
+	var power = 40
+	var accuracy = 100
+
+class tengbian:
+	var name = "藤鞭"
+	var type = "草"
+	var pp = 25
+	var power = 45
+	var accuracy = 100
+
+class shengzhang:
+	var name = "生长"
+	var type = "一般"
+	var pp = 20
+	var power = 0
+	var accuracy = 200
+	var lx = "降低"
+	var lx_sx = "防御"
+	var lx_sx_lv = 0.1
+
+class jishengzhongzi:
+	var name = "寄生种子"
+	var type = "草"
+	var pp = 10
+	var power = 0
+	var accuracy = 90
+	var lx = "降低"
+	var lx_sx = "防御"
+	var lx_sx_lv = 0.1
+
+var charmander_movelist: Array = [zhua, jiaosheng, huohua, yanwu, longxi]
+var bulbasaur_movelist: Array = [zhuangji, jiaosheng, tengbian, shengzhang, jishengzhongzi]
