@@ -4,6 +4,8 @@ extends Node2D
 @export var max_hp: int
 @export var min_level: int = 5
 @export var max_level: int = 100
+var dq_dot_hh: int = 0
+var dq_dot: String
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var sprite_2d_2: Sprite2D = $Sprite2D2
@@ -33,7 +35,9 @@ var move_number: Array
 
 func _ready() -> void:
 	level = randi_range(min_level, max_level)
-	level = 1
+	level = 99
+	dq_dot = ""
+	dq_dot_hh = 0
 	max_hp = int((_hp * 2 + _gtz) * level / 50 + level + 10)
 	hp = max_hp
 	wg = int((_wg * 2 + _gtz ) * level / 50 + 10)

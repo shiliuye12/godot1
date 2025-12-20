@@ -13,8 +13,8 @@ extends Control
 @onready var ui: Sprite2D = $ui
 @onready var jn_1: Sprite2D = $zdui/MarginContainer/jn_1
 @onready var jn_3: Sprite2D = $zdui/MarginContainer/jn_3
-@onready var jn_2: Sprite2D = $zdui/MarginContainer/jn_2
-@onready var jn_4: Sprite2D = $zdui/MarginContainer/jn_4
+@onready var jn_2: TextureRect = $zdui/MarginContainer/HBoxContainer3/jn_2
+@onready var jn_4: TextureRect = $zdui/MarginContainer/HBoxContainer4/jn_4
 @onready var marker_2d_1: Marker2D = $Marker2D1
 @onready var marker_2d_2: Marker2D = $Marker2D2
 @onready var player_name: Label = $mb1/MarginContainer/PlayerName
@@ -25,8 +25,8 @@ extends Control
 @onready var enemy_hp: Label = $mb2/MarginContainer/EnemyHp
 @onready var move_1: Label = $zdui/MarginContainer/move1
 @onready var move_3: Label = $zdui/MarginContainer/move3
-@onready var move_2: Label = $zdui/MarginContainer/move2
-@onready var move_4: Label = $zdui/MarginContainer/move4
+@onready var move_2: Label = $zdui/MarginContainer/HBoxContainer3/move2
+@onready var move_4: Label = $zdui/MarginContainer/HBoxContainer4/move4
 @onready var type: Label = $zdui/MarginContainer2/VBoxContainer/type
 @onready var pp: Label = $zdui/MarginContainer2/PP
 @onready var jz: Sprite2D = $jz
@@ -63,8 +63,8 @@ var enemy_dq_wg = 0.0
 var enemy_dq_fy = 0.0
 var enemy_dq_sd = 0.0
 
-var player_pokemon = PokemonManager.Pokemon_instantiate(0)
-var enemy_pokemon = PokemonManager.Pokemon_instantiate(1)
+var player_pokemon = PokemonManager.Pokemon_instantiate(1)
+var enemy_pokemon = PokemonManager.Pokemon_instantiate(0)
 
 
 func _unhandled_input(event: InputEvent) -> void:	
@@ -331,6 +331,9 @@ func enemy_die():
 	enemy_dq_sd = 0
 	enemy_dq_wg = 0
 
+func player_die():
+	pass
+
 func _on_animated_sprite_2d_animation_finished() -> void:
 	animation_player.play("jiazai")
 
@@ -351,14 +354,15 @@ func _on_timer_timeout() -> void:
 		else:
 			enemy_die()
 			qiehuan()
+			zdks.text = "出现了新的宝可梦"
+			enemy_pokemon.mx()
+			await get_tree().create_timer(2).timeout
 			wz = 1
 			_hhz = false
 			jz.hide()
 			ui.show()
 			hh_wz = 0
-			enemy_pokemon.mx()
 			can_gxhp = true
-
 	else:
 		wz = 1
 		_hhz = false
@@ -374,8 +378,18 @@ func _on_timer_2_timeout() -> void:
 		ui.show()
 		hh_wz = 0
 	else:
-		wz = 1
-		hhz(hh_wz)
+		if player_pokemon.hp > 0:
+			wz = 1
+			hhz(hh_wz)
+		else:
+			player_die()
+			player_qiehuan()
+			wz = 1
+			_hhz = false
+			jz.hide()
+			ui.show()
+			hh_wz = 0
+			can_gxhp = true
 
 func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 	var power = 0
@@ -390,22 +404,32 @@ func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 		jc_move(_wz, gj_pokemon)
 		await get_tree().create_timer(1.0).timeout
 		if gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx == "提升":
+			gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].pp -= 1
 			zdks.text = gj_pokemon.pokemon_name + "的" + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx + "了"
 		elif gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx == "降低":
+			gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].pp -= 1
 			zdks.text = fy_pokemon.pokemon_name + "的" + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx + "了"
-		if gj_pokemon == player_pokemon:
-			timer.start()
-		else :
-			timer_2.start()
+		elif gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx == "dot":
+			var _dot =PokemonMoveList.sj_dot(gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].name, fy_pokemon)
+			if _dot == 1:
+				var a =PokemonMoveList.jc_dot(gj_pokemon, fy_pokemon)
+				gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].pp -= 1
+				zdks.text = fy_pokemon.pokemon_name + "处于" + a
+				if gj_pokemon == player_pokemon:
+					timer.start()
+					return
+				else :
+					timer_2.start()
+					return
+			else :
+				zdks.text = gj_pokemon.pokemon_name + "的" + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].name + "失败了"
+		pd_hh(gj_pokemon, fy_pokemon)
 		return
 	
 	var mz = randi_range(0, 100)
 	if mz > gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].accuracy:
 		zdks.text = "未命中"
-		if gj_pokemon == player_pokemon:
-			timer.start()
-		else :
-			timer_2.start()
+		pd_hh(gj_pokemon, fy_pokemon)
 		return
 	
 	if hx <= 0.2:
@@ -416,10 +440,7 @@ func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 			fy_pokemon.hp = 0
 		await get_tree().create_timer(1.0).timeout
 		zdks.text = "击中要害"
-		if gj_pokemon == player_pokemon:
-			timer.start()
-		else :
-			timer_2.start()
+		pd_hh(gj_pokemon, fy_pokemon)
 		return
 	else:
 		hx = 1
@@ -430,31 +451,19 @@ func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 	if sx == 2:
 		await get_tree().create_timer(1.0).timeout
 		zdks.text = "效果绝佳"
-		if gj_pokemon == player_pokemon:
-			timer.start()
-		else :
-			timer_2.start()
+		pd_hh(gj_pokemon, fy_pokemon)
 		return
 	if sx == 0.5:
 		await get_tree().create_timer(1.0).timeout
 		zdks.text = "效果不好"
-		if gj_pokemon == player_pokemon:
-			timer.start()
-		else :
-			timer_2.start()
+		pd_hh(gj_pokemon, fy_pokemon)
 		return
 	if sx == 0:
 		await get_tree().create_timer(1.0).timeout
 		zdks.text = "没有效果"
-		if gj_pokemon == player_pokemon:
-			timer.start()
-		else :
-			timer_2.start()
+		pd_hh(gj_pokemon, fy_pokemon)
 		return
-	if gj_pokemon == player_pokemon:
-		timer.start()
-	else :
-		timer_2.start()
+	pd_hh(gj_pokemon, fy_pokemon)
 
 func qiehuan():
 	can_gxhp = false
@@ -462,3 +471,24 @@ func qiehuan():
 	enemy_pokemon.position = marker_2d_2.position
 	enemy_name.text = enemy_pokemon.pokemon_name
 	add_child(enemy_pokemon)
+
+func player_qiehuan():
+	can_gxhp = false
+	player_pokemon = PokemonManager.Pokemon_instantiate(0)
+	player_pokemon.position = marker_2d_1.position
+	player_name.text = player_pokemon.pokemon_name
+	add_child(player_pokemon)
+
+func pd_hh(gj_pokemon: Node2D, fy_pokemon:Node2D):
+	if gj_pokemon == player_pokemon:
+		if fy_pokemon.dq_dot_hh > 0:
+			await get_tree().create_timer(1.0).timeout
+			var a =PokemonMoveList.jc_dot(gj_pokemon, fy_pokemon)
+			zdks.text = fy_pokemon.pokemon_name + "处于" + a
+		timer.start()
+	else :
+		if fy_pokemon.dq_dot_hh > 0:
+			await get_tree().create_timer(1.0).timeout
+			var a =PokemonMoveList.jc_dot(gj_pokemon, fy_pokemon)
+			zdks.text = fy_pokemon.pokemon_name + "处于" + a
+		timer_2.start()

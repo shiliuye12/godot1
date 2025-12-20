@@ -144,6 +144,27 @@ func typekz(player_type: String, enemy_type: String):
 		else:
 			return 1
 
+func sj_dot(move: String, fy_pokemon: Node2D):
+	if move == "寄生种子" and fy_pokemon.type != "草" and fy_pokemon.dq_dot != "寄生种子":
+		fy_pokemon.dq_dot = move
+		fy_pokemon.dq_dot_hh = 999
+		return 1
+	else:
+		return 0
+
+func jc_dot(gj_pokemon: Node2D, fy_pokemon: Node2D):
+	if fy_pokemon.dq_dot == "寄生种子" and fy_pokemon.dq_dot_hh > 0:
+		fy_pokemon.dq_dot_hh -= 1
+		var a = fy_pokemon.max_hp / 8
+		fy_pokemon.hp -= a
+		gj_pokemon.hp += a
+		if fy_pokemon.hp <= 0 :
+			fy_pokemon.hp = 0
+		if gj_pokemon.hp > gj_pokemon.max_hp:
+			gj_pokemon.hp = gj_pokemon.max_hp
+		return "寄生状态"
+
+#region
 class zhua:
 	var name = "抓"
 	var type = "一般"
@@ -151,32 +172,12 @@ class zhua:
 	var power = 40
 	var accuracy = 100
 
-class jiaosheng:
-	var name = "叫声"
-	var type = "一般"
-	var pp = 40
-	var power = 0
-	var accuracy = 100
-	var lx = "降低"
-	var lx_sx = "防御"
-	var lx_sx_lv = 0.1
-
 class huohua:
 	var name = "火花"
 	var type = "火"
 	var pp = 25
 	var power = 40
 	var accuracy = 100
-
-class yanwu:
-	var name = "烟雾"
-	var type = "一般"
-	var pp = 20
-	var power = 0
-	var accuracy = 100
-	var lx = "降低"
-	var lx_sx = "防御"
-	var lx_sx_lv = 0.1
 
 class longxi:
 	var name = "龙息"
@@ -199,14 +200,38 @@ class tengbian:
 	var power = 45
 	var accuracy = 100
 
+#endregion
+
+#region
+
+class jiaosheng:
+	var name = "叫声"
+	var type = "一般"
+	var pp = 40
+	var power = 0
+	var accuracy = 100
+	var lx = "降低"
+	var lx_sx = "防御"
+	var lx_sx_lv = 0.1
+
+class yanwu:
+	var name = "烟雾"
+	var type = "一般"
+	var pp = 20
+	var power = 0
+	var accuracy = 100
+	var lx = "降低"
+	var lx_sx = "速度"
+	var lx_sx_lv = 0.1
+
 class shengzhang:
 	var name = "生长"
 	var type = "一般"
 	var pp = 20
 	var power = 0
 	var accuracy = 200
-	var lx = "降低"
-	var lx_sx = "防御"
+	var lx = "提升"
+	var lx_sx = "攻击"
 	var lx_sx_lv = 0.1
 
 class jishengzhongzi:
@@ -215,9 +240,11 @@ class jishengzhongzi:
 	var pp = 10
 	var power = 0
 	var accuracy = 90
-	var lx = "降低"
-	var lx_sx = "防御"
-	var lx_sx_lv = 0.1
+	var lx = "dot"
+	var lx_sx = "寄生种子"
+	var lx_sx_lv = 1
+
+#endregion
 
 var charmander_movelist: Array = [zhua, jiaosheng, huohua, yanwu, longxi]
 var bulbasaur_movelist: Array = [zhuangji, jiaosheng, tengbian, shengzhang, jishengzhongzi]

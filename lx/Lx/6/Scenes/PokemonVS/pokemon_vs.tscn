@@ -381,7 +381,7 @@ texture = ExtResource("19_18vsk")
 [node name="Label" type="Label" parent="ui/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "野生的宝可梦出现了"
+text = "想要宝可梦做什么？"
 label_settings = SubResource("LabelSettings_18vsk")
 
 [node name="zdui" type="Sprite2D" parent="."]
@@ -425,20 +425,20 @@ label_settings = ExtResource("25_gswbu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="jn_1" type="Sprite2D" parent="zdui/MarginContainer"]
-texture_filter = 1
-position = Vector2(55.339054, 27.451658)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("19_18vsk")
+[node name="HBoxContainer3" type="HBoxContainer" parent="zdui/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
 
-[node name="jn_3" type="Sprite2D" parent="zdui/MarginContainer"]
-visible = false
+[node name="jn_2" type="TextureRect" parent="zdui/MarginContainer/HBoxContainer3"]
 texture_filter = 1
-position = Vector2(55.339054, 60.567947)
-scale = Vector2(0.7, 0.7)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = ExtResource("19_18vsk")
+stretch_mode = 3
 
-[node name="move2" type="Label" parent="zdui/MarginContainer"]
+[node name="move2" type="Label" parent="zdui/MarginContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -447,7 +447,20 @@ label_settings = ExtResource("25_gswbu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="move4" type="Label" parent="zdui/MarginContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="zdui/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="jn_4" type="TextureRect" parent="zdui/MarginContainer/HBoxContainer4"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("19_18vsk")
+stretch_mode = 3
+
+[node name="move4" type="Label" parent="zdui/MarginContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -456,18 +469,14 @@ label_settings = ExtResource("25_gswbu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="jn_2" type="Sprite2D" parent="zdui/MarginContainer"]
-visible = false
+[node name="jn_1" type="Sprite2D" parent="zdui/MarginContainer"]
 texture_filter = 1
-position = Vector2(211.3342, 25.708694)
-scale = Vector2(0.7, 0.7)
+position = Vector2(49.674427, 27.451654)
 texture = ExtResource("19_18vsk")
 
-[node name="jn_4" type="Sprite2D" parent="zdui/MarginContainer"]
-visible = false
+[node name="jn_3" type="Sprite2D" parent="zdui/MarginContainer"]
 texture_filter = 1
-position = Vector2(211.3342, 60.132202)
-scale = Vector2(0.7, 0.7)
+position = Vector2(50.11017, 58.824974)
 texture = ExtResource("19_18vsk")
 
 [node name="MarginContainer2" type="MarginContainer" parent="zdui"]
