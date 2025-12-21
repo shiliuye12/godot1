@@ -1,8 +1,8 @@
 extends Node2D
 
-var id = 0
+var id = 2
 
-@export var pokemon_name: String = "小火龙"
+@export var pokemon_name: String = "杰尼龟"
 @export var max_hp: int
 @export var min_level: int = 5
 @export var max_level: int = 100
@@ -12,6 +12,7 @@ var dq_dot: String
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var sprite_2d_2: Sprite2D = $Sprite2D2
 
+
 var level: int
 var hp: int
 var wg: int
@@ -20,12 +21,12 @@ var sd: int
 var gtz = 0
 
 var move_num = 0
-var type: String = "火"
+var type: String = "水"
 var type_2: String = "无"
-var _hp = 39
-var _wg = 52
-var _fy = 43
-var _sd = 65
+var _hp = 44
+var _wg = 48
+var _fy = 65
+var _sd = 43
 var _move: Array
 
 var move1 = 0
@@ -44,7 +45,7 @@ func mx():
 
 func a_level(a: int, _gtz: int):
 	level = a
-	gtz = _gtz
+	level = 1000
 	max_hp = int((_hp * 2 + _gtz) * level / 50 + level + 10)
 	hp = max_hp
 	wg = int((_wg * 2 + _gtz ) * level / 50 + 10)
@@ -52,18 +53,18 @@ func a_level(a: int, _gtz: int):
 	sd = int((_sd * 2 + _gtz ) * level / 50 + 10)
 	
 	if level >= 1:
-		_move.append(PokemonMoveList.charmander_movelist[0].new())
+		_move.append(PokemonMoveList.squirtle_movelist[0].new())
 		move_num += 1
-		_move.append(PokemonMoveList.charmander_movelist[1].new())
+		_move.append(PokemonMoveList.squirtle_movelist[1].new())
 		move_num += 1
-	if level >= 4:
-		_move.append(PokemonMoveList.charmander_movelist[2].new())
+	if level >= 3:
+		_move.append(PokemonMoveList.squirtle_movelist[2].new())
 		move_num += 1
-	if level >= 8:
-		_move.append(PokemonMoveList.charmander_movelist[3].new())
+	if level >= 6:
+		_move.append(PokemonMoveList.squirtle_movelist[3].new())
 		move_num += 1
-	if level >= 12:
-		_move.append(PokemonMoveList.charmander_movelist[4].new())
+	if level >= 9:
+		_move.append(PokemonMoveList.squirtle_movelist[4].new())
 		move_num += 1
 	
 	if move_num <= 1:

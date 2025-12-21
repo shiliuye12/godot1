@@ -63,9 +63,8 @@ var enemy_dq_wg = 0.0
 var enemy_dq_fy = 0.0
 var enemy_dq_sd = 0.0
 
-var player_pokemon = PokemonManager.Pokemon_instantiate(1)
-var enemy_pokemon = PokemonManager.Pokemon_instantiate(0)
-
+var player_pokemon = PokemonManager.Pokemon_instantiate(2)
+var enemy_pokemon = PokemonManager.Pokemon_instantiate(randi_range(0, 2))
 
 func _unhandled_input(event: InputEvent) -> void:	
 	if zdui.visible == true and event.is_action_pressed("pokemon_qd") and wz <= player_pokemon.move_num:
@@ -88,7 +87,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		player_start.play("default")
 		zdks.text = "就决定是你了 " + player_pokemon.pokemon_name
 		mb_2.show()
-
 
 func _ready() -> void:
 	mb_1.hide()
@@ -200,6 +198,8 @@ func start():
 	player_pokemon.scale = Vector2(0,0)
 	add_child(player_pokemon)
 	add_child(enemy_pokemon)
+	player_pokemon.a_level(randi_range(player_pokemon.min_level, player_pokemon.max_level), randi_range(0, 32))
+	enemy_pokemon.a_level(randi_range(enemy_pokemon.min_level, enemy_pokemon.max_level), randi_range(0, 32))
 	player_name.text = player_pokemon.pokemon_name
 	enemy_name.text = enemy_pokemon.pokemon_name
 	player_lv.text = "Lv:" + str(player_pokemon.level)
@@ -245,6 +245,9 @@ func enemy_hh():
 		_sh(a + 1, enemy_pokemon, player_pokemon)
 
 func gx_hp():
+	if player_pokemon.max_hp == 0 or enemy_pokemon.max_hp == 0:
+		return
+	
 	if player_pokemon.hp*100 / player_pokemon.max_hp == 100:
 		player_hpui.texture = HEALTH_BAR_100
 	if player_pokemon.hp*100 / player_pokemon.max_hp >= 90 and player_pokemon.hp*100 / player_pokemon.max_hp < 100:
@@ -467,10 +470,12 @@ func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 
 func qiehuan():
 	can_gxhp = false
-	enemy_pokemon = PokemonManager.Pokemon_instantiate(0)
+	enemy_pokemon = PokemonManager.Pokemon_instantiate(randi_range(0, 2))
 	enemy_pokemon.position = marker_2d_2.position
 	enemy_name.text = enemy_pokemon.pokemon_name
 	add_child(enemy_pokemon)
+	enemy_pokemon.a_level(randi_range(enemy_pokemon.min_level, enemy_pokemon.max_level),  randi_range(0, 32))
+	gx_hp()
 
 func player_qiehuan():
 	can_gxhp = false

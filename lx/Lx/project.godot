@@ -28,6 +28,8 @@ GoldSignalHub="*res://5/Global/GoldSignalHub.gd"
 GoldChooseLevel="*res://5/Global/GoldChooseLevel.gd"
 PokemonManager="*res://6/Global/PokemonManager.gd"
 PokemonMoveList="*res://6/Global/PokemonMoveList.gd"
+PlayerData="*res://6/Global/PlayerData.gd"
+PokemonScenesChoose="*res://6/Global/PokemonScenesChoose.gd"
 
 [debug]
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b22gyotf484jo"]
+
+[ext_resource type="Script" uid="uid://dt2gdui6hml4i" path="res://6/Scenes/Pokemon/Squirtle/squirtle.gd" id="1_i3n35"]
+[ext_resource type="Texture2D" uid="uid://b8p24xuix3r8m" path="res://6/asstes/pokemon/007squirtle.png" id="1_jsq1m"]
+[ext_resource type="Texture2D" uid="uid://b7n64nn46btp0" path="res://6/asstes/pokemon/007 Squirtle.png" id="2_i3n35"]
+
+[node name="Squirtle" type="Node2D"]
+script = ExtResource("1_i3n35")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_i3n35")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("1_jsq1m")

@@ -1,0 +1,136 @@
+[gd_scene load_steps=10 format=3 uid="uid://birx1nwa5nhip"]
+
+[ext_resource type="Texture2D" uid="uid://c7ceio7v4v74y" path="res://6/asstes/player/Starter Pokemon Select.png" id="1_2hbcg"]
+[ext_resource type="Script" uid="uid://qdy7pefvfts" path="res://6/Scenes/ChoosePokemon/choose_pokemon.gd" id="1_eltyh"]
+[ext_resource type="Texture2D" uid="uid://cbkads5b83acx" path="res://6/asstes/PG_ITCS-main/bj.png" id="3_vgmtr"]
+[ext_resource type="FontFile" uid="uid://6l3rm3ckhspu" path="res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf" id="4_eo0ij"]
+[ext_resource type="Texture2D" uid="uid://cc4o8fgeaqcor" path="res://6/asstes/PG_ITCS-main/othersource/Pic/pointerUp2.png" id="5_21dv1"]
+[ext_resource type="Texture2D" uid="uid://wox3v32pedlc" path="res://6/asstes/pokemon/004charmander.png" id="6_21dv1"]
+[ext_resource type="Texture2D" uid="uid://cumrtgmlxvp6t" path="res://6/asstes/pokemon/001bulbasaur.png" id="7_aaffl"]
+[ext_resource type="Texture2D" uid="uid://b8p24xuix3r8m" path="res://6/asstes/pokemon/007squirtle.png" id="8_n6kt7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aaffl"]
+font = ExtResource("4_eo0ij")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[node name="ChoosePokemon" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eltyh")
+
+[node name="background" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4.8198757, 4.8198757)
+texture = ExtResource("1_2hbcg")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 241, 161)
+
+[node name="pokemon1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(272.00003, 250.00003)
+scale = Vector2(4.8198757, 4.8198757)
+texture = ExtResource("1_2hbcg")
+centered = false
+region_enabled = true
+region_rect = Rect2(110, 161, 26, 22)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(271.99988, 74.99997)
+scale = Vector2(4.8198757, 4.8198757)
+
+[node name="pokemon2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(524, 250)
+scale = Vector2(4.8198757, 4.8198757)
+texture = ExtResource("1_2hbcg")
+centered = false
+region_enabled = true
+region_rect = Rect2(135, 161, 24, 22)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(524, 74.99997)
+scale = Vector2(4.8198757, 4.8198757)
+
+[node name="pokemon3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(779, 249.99998)
+scale = Vector2(4.8198757, 4.8198757)
+texture = ExtResource("1_2hbcg")
+centered = false
+region_enabled = true
+region_rect = Rect2(158, 162, 23, 22)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(779, 74.99997)
+scale = Vector2(4.8198757, 4.8198757)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(271.99988, 74.99997)
+scale = Vector2(4.8198757, 4.8198757)
+texture = ExtResource("1_2hbcg")
+centered = false
+region_enabled = true
+region_rect = Rect2(181, 162, 25, 27)
+
+[node name="jz" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(579, 548.99994)
+scale = Vector2(0.75288486, 0.75288486)
+texture = ExtResource("3_vgmtr")
+
+[node name="MarginContainer" type="MarginContainer" parent="jz"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -768.0
+offset_top = -130.0
+offset_right = -768.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="jz/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="jz/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "选择你的初始宝可梦"
+label_settings = SubResource("LabelSettings_aaffl")
+
+[node name="TextureRect" type="TextureRect" parent="jz/MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_21dv1")
+expand_mode = 2
+flip_v = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(318, 402)
+scale = Vector2(2, 2)
+texture = ExtResource("6_21dv1")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(585, 407)
+scale = Vector2(2, 2)
+texture = ExtResource("7_aaffl")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(831, 399)
+scale = Vector2(2, 2)
+texture = ExtResource("8_n6kt7")

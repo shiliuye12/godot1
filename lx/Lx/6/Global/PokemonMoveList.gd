@@ -200,6 +200,20 @@ class tengbian:
 	var power = 45
 	var accuracy = 100
 
+class shuiqiang:
+	var name = "水枪"
+	var type = "水"
+	var pp = 25
+	var power = 40
+	var accuracy = 100
+
+class gaosuxuanzhuan:
+	var name = "高速旋转"
+	var type = "水"
+	var pp = 40
+	var power = 50
+	var accuracy = 100
+
 #endregion
 
 #region
@@ -244,7 +258,27 @@ class jishengzhongzi:
 	var lx_sx = "寄生种子"
 	var lx_sx_lv = 1
 
+class yaoweiba:
+	var name = "摇尾巴"
+	var type = "一般"
+	var pp = 30
+	var power = 0
+	var accuracy = 100
+	var lx = "降低"
+	var lx_sx = "防御"
+	var lx_sx_lv = 0.1
+
+class suorukezhong:
+	var name = "缩入壳中"
+	var type = "一般"
+	var pp = 40
+	var power = 0
+	var accuracy = 100
+	var lx = "提升"
+	var lx_sx = "防御"
+	var lx_sx_lv = 0.1
 #endregion
 
 var charmander_movelist: Array = [zhua, jiaosheng, huohua, yanwu, longxi]
 var bulbasaur_movelist: Array = [zhuangji, jiaosheng, tengbian, shengzhang, jishengzhongzi]
+var squirtle_movelist: Array = [zhuangji, yaoweiba, shuiqiang, suorukezhong, gaosuxuanzhuan]

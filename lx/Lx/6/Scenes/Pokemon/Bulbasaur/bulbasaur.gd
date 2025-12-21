@@ -1,5 +1,7 @@
 extends Node2D
 
+var id = 1
+
 @export var pokemon_name: String = "妙蛙种子"
 @export var max_hp: int
 @export var min_level: int = 5
@@ -16,6 +18,7 @@ var hp: int
 var wg: int
 var fy: int
 var sd: int
+var gtz = 0
 
 var move_num = 0
 var type: String = "草"
@@ -24,7 +27,6 @@ var _hp = 45
 var _wg = 65
 var _fy = 65
 var _sd = 45
-var _gtz = randi_range(0, 32)
 var _move: Array
 
 var move1 = 0
@@ -34,10 +36,15 @@ var move4 = 3
 var move_number: Array
 
 func _ready() -> void:
-	level = randi_range(min_level, max_level)
-	level = 99
 	dq_dot = ""
 	dq_dot_hh = 0
+
+func mx():
+	sprite_2d.hide()
+	sprite_2d_2.show()
+
+func a_level(a: int, _gtz: int):
+	level = a
 	max_hp = int((_hp * 2 + _gtz) * level / 50 + level + 10)
 	hp = max_hp
 	wg = int((_wg * 2 + _gtz ) * level / 50 + 10)
@@ -49,13 +56,13 @@ func _ready() -> void:
 		move_num += 1
 		_move.append(PokemonMoveList.bulbasaur_movelist[1].new())
 		move_num += 1
-	if level >= 3:
+	if level >= 4:
 		_move.append(PokemonMoveList.bulbasaur_movelist[2].new())
 		move_num += 1
-	if level >= 6:
+	if level >= 8:
 		_move.append(PokemonMoveList.bulbasaur_movelist[3].new())
 		move_num += 1
-	if level >= 9:
+	if level >= 12:
 		_move.append(PokemonMoveList.bulbasaur_movelist[4].new())
 		move_num += 1
 	
@@ -83,7 +90,3 @@ func _ready() -> void:
 		move_number.append(move2)
 		move_number.append(move3)
 		move_number.append(move4)
-
-func mx():
-	sprite_2d.hide()
-	sprite_2d_2.show()

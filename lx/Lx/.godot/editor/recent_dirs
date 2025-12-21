@@ -1,5 +1,7 @@
-res://6/asstes/player
 res://6/Global
+res://6/Scenes/Pokemon/Squirtle
+res://6/Scenes/ChoosePokemon
+res://6/asstes/player
 res://6/Scenes/Pokemon
 res://6/Resources
 res://6/Scenes/Pokemon/Bulbasaur
@@ -18,5 +20,3 @@ res://4/Scences/Main
 res://3/Global
 res://3/Scences/LevelBase
 res://3/Scences/LevelButton
-res://3/Scences/Water
-res://3/Resourses
