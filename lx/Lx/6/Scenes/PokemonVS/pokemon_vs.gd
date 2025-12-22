@@ -63,12 +63,15 @@ var enemy_dq_wg = 0.0
 var enemy_dq_fy = 0.0
 var enemy_dq_sd = 0.0
 
-var player_pokemon = PokemonManager.Pokemon_instantiate(2)
+var player_pokemon_data = PlayerData.pokemon_load(1)
+var player_pokemon = PokemonManager.Pokemon_instantiate(player_pokemon_data["id"])
 var enemy_pokemon = PokemonManager.Pokemon_instantiate(randi_range(0, 2))
 
 func _unhandled_input(event: InputEvent) -> void:	
 	if zdui.visible == true and event.is_action_pressed("pokemon_qd") and wz <= player_pokemon.move_num:
-		move(wz)
+		if player_pokemon.move_pp[wz - 1] > 0:
+			player_pokemon.move_pp[wz - 1] -= 1
+			move(wz)
 	if event.is_action_pressed("pokemon_down") and wz <= 2 and wz != 0:
 		wz += 2
 	if event.is_action_pressed("pokemon_left") and (wz == 2 or wz == 4):
@@ -114,7 +117,7 @@ func _process(_delta: float) -> void:
 		if zdui.visible == true:
 			move_1.text = player_pokemon._move[player_pokemon.move1].name
 			type.text = "属性/" + player_pokemon._move[player_pokemon.move1].type
-			pp.text = str(player_pokemon._move[player_pokemon.move1].pp) + "/" + str(player_pokemon._move[player_pokemon.move1].pp)
+			pp.text = str(player_pokemon.move_pp[0]) + "/" + str(player_pokemon._move[player_pokemon.move1].pp)
 	elif wz == 2:
 		_1.hide()
 		_2.show()
@@ -128,7 +131,7 @@ func _process(_delta: float) -> void:
 			if zdui.visible == true:
 				move_2.text = player_pokemon._move[player_pokemon.move2].name
 				type.text = "属性/" + player_pokemon._move[player_pokemon.move2].type
-				pp.text = str(player_pokemon._move[player_pokemon.move2].pp) + "/" + str(player_pokemon._move[player_pokemon.move2].pp)
+				pp.text = str(player_pokemon.move_pp[1]) + "/" + str(player_pokemon._move[player_pokemon.move2].pp)
 		else:
 			type.text = "属性/-"
 			pp.text = "-"
@@ -145,7 +148,7 @@ func _process(_delta: float) -> void:
 			if zdui.visible == true:
 				move_3.text = player_pokemon._move[player_pokemon.move3].name
 				type.text = "属性/" + player_pokemon._move[player_pokemon.move3].type
-				pp.text = str(player_pokemon._move[player_pokemon.move3].pp) + "/" + str(player_pokemon._move[player_pokemon.move3].pp)
+				pp.text = str(player_pokemon.move_pp[2]) + "/" + str(player_pokemon._move[player_pokemon.move3].pp)
 		else:
 			type.text = "属性/-"
 			pp.text = "-"
@@ -162,7 +165,7 @@ func _process(_delta: float) -> void:
 			if zdui.visible == true:
 				move_4.text = player_pokemon._move[player_pokemon.move4].name
 				type.text = "属性/" + player_pokemon._move[player_pokemon.move4].type
-				pp.text = str(player_pokemon._move[player_pokemon.move4].pp) + "/" + str(player_pokemon._move[player_pokemon.move4].pp)
+				pp.text = str(player_pokemon.move_pp[3]) + "/" + str(player_pokemon._move[player_pokemon.move4].pp)
 		else:
 			type.text = "属性/-"
 			pp.text = "-"
@@ -198,19 +201,29 @@ func start():
 	player_pokemon.scale = Vector2(0,0)
 	add_child(player_pokemon)
 	add_child(enemy_pokemon)
-	player_pokemon.a_level(randi_range(player_pokemon.min_level, player_pokemon.max_level), randi_range(0, 32))
+	player_pokemon.a_level(player_pokemon_data["level"], player_pokemon_data["gtz"])
 	enemy_pokemon.a_level(randi_range(enemy_pokemon.min_level, enemy_pokemon.max_level), randi_range(0, 32))
 	player_name.text = player_pokemon.pokemon_name
 	enemy_name.text = enemy_pokemon.pokemon_name
-	player_lv.text = "Lv:" + str(player_pokemon.level)
+	player_lv.text = "Lv:" + str(player_pokemon_data["level"])
 	enemy_lv.text = "Lv:" + str(enemy_pokemon.level)
-	
+	player_pokemon.move1 = player_pokemon_data["move"][0]
+	player_pokemon.move_pp = player_pokemon_data["move_pp"]
 	move_1.text = player_pokemon._move[player_pokemon.move1].name
 	if player_pokemon.move_num > 1:
+		player_pokemon.move1 = player_pokemon_data["move"][0]
+		player_pokemon.move2 = player_pokemon_data["move"][1]
 		move_2.text = player_pokemon._move[player_pokemon.move2].name
 	if player_pokemon.move_num > 2:
+		player_pokemon.move1 = player_pokemon_data["move"][0]
+		player_pokemon.move2 = player_pokemon_data["move"][1]
+		player_pokemon.move3 = player_pokemon_data["move"][2]
 		move_3.text = player_pokemon._move[player_pokemon.move3].name
 	if player_pokemon.move_num > 3:
+		player_pokemon.move1 = player_pokemon_data["move"][0]
+		player_pokemon.move2 = player_pokemon_data["move"][1]
+		player_pokemon.move3 = player_pokemon_data["move"][2]
+		player_pokemon.move4 = player_pokemon_data["move"][3]
 		move_4.text = player_pokemon._move[player_pokemon.move4].name
 	
 	enemy_pokemon.mx()

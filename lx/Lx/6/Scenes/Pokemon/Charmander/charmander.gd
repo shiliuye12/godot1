@@ -33,6 +33,7 @@ var move2 = 1
 var move3 = 2
 var move4 = 3
 var move_number: Array
+var move_pp: Array
 
 func _ready() -> void:
 	dq_dot = ""
@@ -66,15 +67,21 @@ func a_level(a: int, _gtz: int):
 		_move.append(PokemonMoveList.charmander_movelist[4].new())
 		move_num += 1
 	
-	if move_num <= 1:
+	if move_num == 1:
 		move_number.append(move1)
-	if move_num <= 2:
+		move_pp.append(_move[0].pp)
+	if move_num == 2:
 		move_number.append(move1)
 		move_number.append(move2)
-	if move_num <= 3:
+		move_pp.append(_move[0].pp)
+		move_pp.append(_move[1].pp)
+	if move_num == 3:
 		move_number.append(move1)
 		move_number.append(move2)
 		move_number.append(move3)
+		move_pp.append(_move[0].pp)
+		move_pp.append(_move[1].pp)
+		move_pp.append(_move[2].pp)
 	if move_num > 4:
 		move1 = randi_range(0, move_num - 1)
 		move2 = randi_range(0, move_num - 1)
@@ -90,3 +97,8 @@ func a_level(a: int, _gtz: int):
 		move_number.append(move2)
 		move_number.append(move3)
 		move_number.append(move4)
+		move_pp.append(_move[0].pp)
+		move_pp.append(_move[1].pp)
+		move_pp.append(_move[2].pp)
+		move_pp.append(_move[3].pp)
+	
