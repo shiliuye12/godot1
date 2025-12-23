@@ -223,6 +223,7 @@ func start():
 	enemy_lv.text = "Lv:" + str(enemy_pokemon.level)
 	player_pokemon.move1 = player_pokemon_data["move"][0]
 	player_pokemon.move_pp = player_pokemon_data["move_pp"]
+	player_pokemon.wz = player_pokemon_data["wz"]
 	move_1.text = player_pokemon._move[player_pokemon.move1].name
 	if player_pokemon.move_num > 1:
 		player_pokemon.move1 = player_pokemon_data["move"][0]
@@ -240,12 +241,10 @@ func start():
 		player_pokemon.move4 = player_pokemon_data["move"][3]
 		move_4.text = player_pokemon._move[player_pokemon.move4].name
 	
+	player_pokemon.move_number = player_pokemon_data["move"]
 	enemy_pokemon.mx()
 	player_start.show()
 	can_gxhp = true
-
-func hhq():
-	pass
 
 func hhz(_wz: int):
 	_hhz = true
@@ -384,6 +383,7 @@ func _on_timer_timeout() -> void:
 		else:
 			enemy_die()
 			qiehuan()
+			PlayerData.save(player_pokemon, player_pokemon.wz)
 			zdks.text = "出现了新的宝可梦"
 			enemy_pokemon.mx()
 			await get_tree().create_timer(2).timeout
@@ -396,6 +396,7 @@ func _on_timer_timeout() -> void:
 	else:
 		wz = 1
 		_hhz = false
+		PlayerData.save(player_pokemon, player_pokemon.wz)
 		jz.hide()
 		ui.show()
 		hh_wz = 0
@@ -404,6 +405,7 @@ func _on_timer_2_timeout() -> void:
 	if player_pokemon.sd >= enemy_pokemon.sd:
 		wz = 1
 		_hhz = false
+		PlayerData.save(player_pokemon, player_pokemon.wz)
 		jz.hide()
 		ui.show()
 		hh_wz = 0
@@ -412,6 +414,7 @@ func _on_timer_2_timeout() -> void:
 			wz = 1
 			hhz(hh_wz)
 		else:
+			PlayerData.save(player_pokemon, player_pokemon.wz)
 			player_die()
 			player_qiehuan()
 			wz = 1
@@ -434,16 +437,13 @@ func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 		jc_move(_wz, gj_pokemon)
 		await get_tree().create_timer(1.0).timeout
 		if gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx == "提升":
-			gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].pp -= 1
 			zdks.text = gj_pokemon.pokemon_name + "的" + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx + "了"
 		elif gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx == "降低":
-			gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].pp -= 1
 			zdks.text = fy_pokemon.pokemon_name + "的" + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx + gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx + "了"
 		elif gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx == "dot":
 			var _dot =PokemonMoveList.sj_dot(gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].name, fy_pokemon)
 			if _dot == 1:
 				var a =PokemonMoveList.jc_dot(gj_pokemon, fy_pokemon)
-				gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].pp -= 1
 				zdks.text = fy_pokemon.pokemon_name + "处于" + a
 				if gj_pokemon == player_pokemon:
 					timer.start()
@@ -497,6 +497,7 @@ func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 
 func qiehuan():
 	can_gxhp = false
+	enemy_pokemon.queue_free()
 	enemy_pokemon = PokemonManager.Pokemon_instantiate(randi_range(0, 2))
 	enemy_pokemon.position = marker_2d_2.position
 	enemy_name.text = enemy_pokemon.pokemon_name

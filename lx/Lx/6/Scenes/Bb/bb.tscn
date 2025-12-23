@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjtea7ulhngtk"]
+
+[ext_resource type="Texture2D" uid="uid://chrpwocsgepjt" path="res://6/asstes/player/a.jpg" id="1_o1f3d"]
+[ext_resource type="FontFile" uid="uid://6l3rm3ckhspu" path="res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf" id="2_xjpd6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_csfhu"]
+font = ExtResource("2_xjpd6")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="Bb" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.972549, 0.96862745, 0.84705883, 1)
+
+[node name="A" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(213.50002, 323.99725)
+scale = Vector2(0.6048159, 0.604816)
+texture = ExtResource("1_o1f3d")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = 28.0
+offset_right = -735.0
+offset_bottom = -552.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "精灵球"
+label_settings = SubResource("LabelSettings_csfhu")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 46.0
+offset_right = 1106.0
+offset_bottom = 608.0
+color = Color(0.9444731, 0.95878106, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

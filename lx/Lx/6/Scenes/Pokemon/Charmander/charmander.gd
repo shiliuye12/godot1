@@ -34,11 +34,12 @@ var move3 = 2
 var move4 = 3
 var move_number: Array
 var move_pp: Array
+var wz = PlayerData.dq_pokemon + 1
 
 func _ready() -> void:
 	dq_dot = ""
 	dq_dot_hh = 0
-	
+
 func mx():
 	sprite_2d.hide()
 	sprite_2d_2.show()
@@ -97,8 +98,7 @@ func a_level(a: int, _gtz: int):
 		move_number.append(move2)
 		move_number.append(move3)
 		move_number.append(move4)
-		move_pp.append(_move[0].pp)
-		move_pp.append(_move[1].pp)
-		move_pp.append(_move[2].pp)
-		move_pp.append(_move[3].pp)
-	
+		move_pp.append(_move[move1].pp)
+		move_pp.append(_move[move2].pp)
+		move_pp.append(_move[move3].pp)
+		move_pp.append(_move[move4].pp)

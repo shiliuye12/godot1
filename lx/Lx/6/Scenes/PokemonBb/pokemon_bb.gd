@@ -47,7 +47,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if wz >= 2 and event.is_action_pressed("pokemon_up"):
 		wz -= 2
 
-
 func _ready() -> void:
 	wz = 0
 	sprite_2d.show()
@@ -59,8 +58,9 @@ func _ready() -> void:
 	player_pokemon1.position = marker_2d.global_position
 	player_pokemon1.scale = Vector2(0.7, 0.7)
 	add_child(player_pokemon1)
-	start_move(player_pokemon1, player_pokemon_data1)
 	player_pokemon1.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
+	start_move(player_pokemon1, player_pokemon_data1)
+	player_pokemon1.hp = player_pokemon_data1.hp
 	player_pokemon1.mx()
 	if PlayerData.dq_pokemon > 1:
 		player_pokemon_data2 = PlayerData.pokemon_load(2)
@@ -68,8 +68,9 @@ func _ready() -> void:
 		player_pokemon2.position = marker_2d_2.global_position
 		player_pokemon2.scale = Vector2(0.7, 0.7)
 		add_child(player_pokemon2)
-		start_move(player_pokemon2, player_pokemon_data2)
 		player_pokemon2.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
+		start_move(player_pokemon2, player_pokemon_data2)
+		player_pokemon2.hp = player_pokemon_data2.hp
 		player_pokemon2.mx()
 	if PlayerData.dq_pokemon > 2:
 		player_pokemon_data3 = PlayerData.pokemon_load(3)
@@ -77,8 +78,9 @@ func _ready() -> void:
 		player_pokemon3.position = marker_2d_3.global_position
 		player_pokemon3.scale = Vector2(0.7, 0.7)
 		add_child(player_pokemon3)
-		start_move(player_pokemon3, player_pokemon_data3)
 		player_pokemon3.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
+		start_move(player_pokemon3, player_pokemon_data3)
+		player_pokemon3.hp = player_pokemon_data3.hp
 		player_pokemon3.mx()
 	if PlayerData.dq_pokemon > 3:
 		player_pokemon_data4 = PlayerData.pokemon_load(4)
@@ -86,8 +88,9 @@ func _ready() -> void:
 		player_pokemon4.position = marker_2d_4.global_position
 		player_pokemon4.scale = Vector2(0.7, 0.7)
 		add_child(player_pokemon4)
-		start_move(player_pokemon4, player_pokemon_data4)
 		player_pokemon4.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
+		start_move(player_pokemon4, player_pokemon_data4)
+		player_pokemon4.hp = player_pokemon_data4.hp
 		player_pokemon4.mx()
 	if PlayerData.dq_pokemon > 4:
 		player_pokemon_data5 = PlayerData.pokemon_load(5)
@@ -95,8 +98,9 @@ func _ready() -> void:
 		player_pokemon5.position = marker_2d_5.global_position
 		player_pokemon5.scale = Vector2(0.7, 0.7)
 		add_child(player_pokemon5)
-		start_move(player_pokemon5, player_pokemon_data5)
 		player_pokemon5.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
+		start_move(player_pokemon5, player_pokemon_data5)
+		player_pokemon5.hp = player_pokemon_data5.hp
 		player_pokemon5.mx()
 	if PlayerData.dq_pokemon > 5:
 		player_pokemon_data6 = PlayerData.pokemon_load(6)
@@ -104,8 +108,9 @@ func _ready() -> void:
 		player_pokemon6.position = marker_2d_6.global_position
 		player_pokemon6.scale = Vector2(0.7, 0.7)
 		add_child(player_pokemon6)
-		start_move(player_pokemon6, player_pokemon_data6)
 		player_pokemon6.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
+		start_move(player_pokemon6, player_pokemon_data6)
+		player_pokemon6.hp = player_pokemon_data6.hp
 		player_pokemon6.mx()
 
 func _process(_delta: float) -> void:
@@ -118,7 +123,6 @@ func _process(_delta: float) -> void:
 		sprite_2d_6.hide()
 		move_csh()
 		hp.text = str(player_pokemon1.hp) + "/" + str(player_pokemon1.max_hp)
-		move_1.text = player_pokemon1._move[player_pokemon1.move1].name
 		move(player_pokemon1)
 	if wz == 1:
 		sprite_2d.hide()
@@ -201,16 +205,9 @@ func start_move(player_pokemon: Node2D, player_pokemon_data: Dictionary):
 		player_pokemon.move2 = player_pokemon_data["move"][1]
 		player_pokemon.move3 = player_pokemon_data["move"][2]
 		player_pokemon.move4 = player_pokemon_data["move"][3]
+	player_pokemon.move_number = player_pokemon_data["move"]
 
 func move(player_pokemon: Node2D):
-	move_1.text = "无"
-	move_2.text = "无"
-	move_3.text = "无"
-	move_4.text = "无"
-	pp_1.text = "-"
-	pp_2.text = "-"
-	pp_3.text = "-"
-	pp_4.text = "-"
 	move_1.text = player_pokemon._move[player_pokemon.move1].name
 	pp_1.text = str(player_pokemon.move_pp[0]) + "/" + str(player_pokemon._move[player_pokemon.move1].pp)
 	if player_pokemon.move_num >= 2:

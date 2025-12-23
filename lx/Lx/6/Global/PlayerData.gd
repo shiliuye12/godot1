@@ -9,7 +9,8 @@ var pokemon1: Dictionary = {
 	"hp": 0,
 	"gtz": 0,
 	"move": [],
-	"move_pp": []
+	"move_pp": [],
+	"wz": -1
 }
 
 var pokemon2: Dictionary = {
@@ -58,21 +59,25 @@ var pokemon6: Dictionary = {
 }
 var pokemons: Array = [pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6]
 
-func save(pokemon: Node2D):
-	dq_pokemon += 1
-	if dq_pokemon <= 6 and dq_pokemon > 0:
-		pokemons[dq_pokemon - 1]["id"] = pokemon.id
-		pokemons[dq_pokemon - 1]["level"] = pokemon.level
-		pokemons[dq_pokemon - 1]["hp"] = pokemon.hp
-		pokemons[dq_pokemon - 1]["gtz"] = pokemon.gtz
-		pokemons[dq_pokemon - 1]["move"] = pokemon.move_number
-		pokemons[dq_pokemon - 1]["move_pp"] = pokemon.move_pp
-	else:
-		dq_pokemon -= 1
-		return
+func save(pokemon: Node2D, a: int):
+	if a <= dq_pokemon + 1:
+		pokemons[a - 1]["id"] = pokemon.id
+		pokemons[a - 1]["level"] = pokemon.level
+		pokemons[a - 1]["hp"] = pokemon.hp
+		pokemons[a - 1]["gtz"] = pokemon.gtz
+		pokemons[a - 1]["move"] = pokemon.move_number
+		pokemons[a - 1]["move_pp"] = pokemon.move_pp
+		pokemons[a - 1]["wz"] = pokemon.wz
+	elif  a > dq_pokemon:
+		dq_pokemon += 1
 
 func pokemon_load(a: int):
 	if a <= 6 and a > 0:
 		return pokemons[a - 1]
 	else:
 		return 
+
+func _process(delta: float) -> void:
+	if pokemon1 != null:
+		#print(pokemon1["move"])
+		return

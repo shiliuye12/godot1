@@ -1,5 +1,7 @@
 res://6/Scenes/PokemonBb/pokemon_bb.tscn
 res://6/Scenes/PokemonBb/pokemon_bb.gd
-res://6/Scenes/ChoosePokemon/choose_pokemon.tscn
 res://6/Scenes/PokemonVS/pokemon_vs.gd
+res://6/Scenes/Pokemon/Charmander/charmander.gd
+res://6/Global/PlayerData.gd
 res://6/Scenes/ChoosePokemon/choose_pokemon.gd
+res://6/Scenes/Bb/bb.tscn

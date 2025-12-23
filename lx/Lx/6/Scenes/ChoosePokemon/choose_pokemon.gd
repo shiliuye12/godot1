@@ -47,8 +47,8 @@ func _process(_delta: float) -> void:
 		sprite_2d_4.hide()
 		if Input.is_action_just_pressed("pokemon_qd"):
 			var new = PokemonManager.Pokemon_instantiate(0)
-			new.a_level(5, randi_range(0, 32))
-			PlayerData.save(new)
+			new.a_level(500, randi_range(0, 32))
+			PlayerData.save(new, new.wz)
 			PokemonScenesChoose.to_pokemon_vs()
 	if wz == 2:
 		sprite_2d.position = marker_2d_2.position
@@ -59,7 +59,7 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("pokemon_qd"):
 			var new = PokemonManager.Pokemon_instantiate(1)
 			new.a_level(5, randi_range(0, 32))
-			PlayerData.save(new)
+			PlayerData.save(new, new.wz)
 			PokemonScenesChoose.to_pokemon_vs()
 	if wz == 3:
 		sprite_2d.position = marker_2d_3.position
@@ -70,5 +70,5 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("pokemon_qd"):
 			var new = PokemonManager.Pokemon_instantiate(2)
 			new.a_level(5, randi_range(0, 32))
-			PlayerData.save(new)
+			PlayerData.save(new, new.wz)
 			PokemonScenesChoose.to_pokemon_vs()
