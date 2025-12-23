@@ -49,7 +49,12 @@ const HEALTH_BAR_70 = preload("uid://da2g54xvrpw8s")
 const HEALTH_BAR_80 = preload("uid://dxhf6xojevx4m")
 const HEALTH_BAR_90 = preload("uid://ufq0k3b6f43k")
 const HEALTH_BAR_100 = preload("uid://csa5g3aeoo11b")
+
+const POKEMON_BB = preload("uid://nhokmxdn7s4k")
+
 #endregion
+
+var bb_instance = null
 
 var wz = 0
 var hh_wz = 0
@@ -72,13 +77,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		if player_pokemon.move_pp[wz - 1] > 0:
 			player_pokemon.move_pp[wz - 1] -= 1
 			move(wz)
-	if event.is_action_pressed("pokemon_down") and wz <= 2 and wz != 0:
+	if event.is_action_pressed("pokemon_down") and wz <= 2 and wz != 0 and (ui.visible == true or zdui.visible == true):
 		wz += 2
-	if event.is_action_pressed("pokemon_left") and (wz == 2 or wz == 4):
+	if event.is_action_pressed("pokemon_left") and (wz == 2 or wz == 4) and (ui.visible == true or zdui.visible == true):
 		wz -= 1
-	if event.is_action_pressed("pokemon_right") and (wz == 1 or wz == 3):
+	if event.is_action_pressed("pokemon_right") and (wz == 1 or wz == 3) and (ui.visible == true or zdui.visible == true):
 		wz += 1
-	if event.is_action_pressed("pokemon_up") and wz > 2 and wz != 0:
+	if event.is_action_pressed("pokemon_up") and wz > 2 and wz != 0 and (ui.visible == true or zdui.visible == true):
 		wz -= 2
 	if event.is_action_pressed("pokemon_qd") and ui.visible == true:
 		qd()
@@ -90,6 +95,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		player_start.play("default")
 		zdks.text = "就决定是你了 " + player_pokemon.pokemon_name
 		mb_2.show()
+	if event.is_action_pressed("exit") and bb_instance != null:
+		bb_instance.queue_free()
+		wz = 1
+		ui.show()
 
 func _ready() -> void:
 	mb_1.hide()
@@ -189,7 +198,12 @@ func qd():
 	elif wz == 2:
 		pass
 	elif wz == 3:
-		pass
+		ui.hide()
+		zdui.hide()
+		jz.hide()
+		if not bb_instance:
+			bb_instance = POKEMON_BB.instantiate()
+			add_child(bb_instance)
 	elif wz == 4:
 		pass
 

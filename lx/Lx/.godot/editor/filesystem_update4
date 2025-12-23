@@ -1,13 +1,5 @@
+res://6/Scenes/PokemonBb/pokemon_bb.tscn
+res://6/Scenes/PokemonBb/pokemon_bb.gd
 res://6/Scenes/ChoosePokemon/choose_pokemon.tscn
 res://6/Scenes/PokemonVS/pokemon_vs.gd
-res://6/Scenes/Pokemon/Squirtle/squirtle.gd
-res://6/Global/PlayerData.gd
 res://6/Scenes/ChoosePokemon/choose_pokemon.gd
-res://6/Scenes/PokemonBb/pokemon_bb.tscn
-res://6/Resources/q.tres
-res://6/Scenes/Pokemon/Charmander/charmander.gd
-res://6/Global/PokemonMoveList.gd
-res://6/Scenes/Pokemon/Bulbasaur/bulbasaur.gd
-res://6/Scenes/Pokemon/Charmander/charmander.tscn
-res://6/Scenes/Pokemon/Squirtle/squirtle.tscn
-res://6/Scenes/PokemonBb/pokemon_bb.gd

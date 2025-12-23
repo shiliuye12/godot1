@@ -63,12 +63,13 @@ columns = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="PlayerPokemons/MarginContainer2/GridContainer"]
 layout_mode = 2
 
-[node name="move" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer"]
+[node name="move1" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "寄生种子"
 label_settings = SubResource("LabelSettings_ofs3u")
 
-[node name="pp" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer"]
+[node name="pp1" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "10/10"
@@ -77,12 +78,13 @@ label_settings = SubResource("LabelSettings_ofs3u")
 [node name="VBoxContainer2" type="VBoxContainer" parent="PlayerPokemons/MarginContainer2/GridContainer"]
 layout_mode = 2
 
-[node name="move" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer2"]
+[node name="move2" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "寄生种子"
 label_settings = SubResource("LabelSettings_ofs3u")
 
-[node name="pp" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer2"]
+[node name="pp2" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "10/10"
@@ -91,12 +93,13 @@ label_settings = SubResource("LabelSettings_ofs3u")
 [node name="VBoxContainer3" type="VBoxContainer" parent="PlayerPokemons/MarginContainer2/GridContainer"]
 layout_mode = 2
 
-[node name="move" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer3"]
+[node name="move3" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer3"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "寄生种子"
 label_settings = SubResource("LabelSettings_ofs3u")
 
-[node name="pp" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer3"]
+[node name="pp3" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "10/10"
@@ -105,12 +108,13 @@ label_settings = SubResource("LabelSettings_ofs3u")
 [node name="VBoxContainer4" type="VBoxContainer" parent="PlayerPokemons/MarginContainer2/GridContainer"]
 layout_mode = 2
 
-[node name="move" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer4"]
+[node name="move4" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer4"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "寄生种子"
 label_settings = SubResource("LabelSettings_ofs3u")
 
-[node name="pp" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer4"]
+[node name="pp4" type="Label" parent="PlayerPokemons/MarginContainer2/GridContainer/VBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "10/10"
