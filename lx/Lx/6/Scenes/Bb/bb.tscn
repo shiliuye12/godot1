@@ -1,9 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjtea7ulhngtk"]
+[gd_scene load_steps=9 format=3 uid="uid://bjtea7ulhngtk"]
 
+[ext_resource type="Script" uid="uid://vtj5i410qtf7" path="res://6/Scenes/Bb/bb.gd" id="1_1i8o3"]
 [ext_resource type="Texture2D" uid="uid://chrpwocsgepjt" path="res://6/asstes/player/a.jpg" id="1_o1f3d"]
 [ext_resource type="FontFile" uid="uid://6l3rm3ckhspu" path="res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf" id="2_xjpd6"]
+[ext_resource type="Texture2D" uid="uid://dgpansdvtp2g4" path="res://6/asstes/PokeBall/Poké Ball.png" id="3_csfhu"]
+[ext_resource type="Texture2D" uid="uid://5qyk3gxghk88" path="res://6/asstes/PG_ITCS-main/othersource/Pic/pointer.png" id="3_jmubl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_csfhu"]
+font = ExtResource("2_xjpd6")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xjpd6"]
+font = ExtResource("2_xjpd6")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jmubl"]
 font = ExtResource("2_xjpd6")
 font_size = 32
 font_color = Color(0, 0, 0, 1)
@@ -15,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1i8o3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -64,5 +78,185 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 40
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="GridContainer" type="GridContainer" parent="ColorRect2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/v_separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect2/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="name1" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+text = "精灵球"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="number" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "X 10"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect2/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="name2" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+text = "精灵球"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="number2" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "X 10"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect2/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="name3" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer3"]
+visible = false
+layout_mode = 2
+text = "精灵球"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="number3" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer3"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "X 10"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect2/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="name4" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer4"]
+visible = false
+layout_mode = 2
+text = "精灵球"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="number4" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer4"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "X 10"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect2/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="name5" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer5"]
+visible = false
+layout_mode = 2
+text = "精灵球"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="number5" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer5"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "X 10"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="ColorRect2/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="name6" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer6"]
+visible = false
+layout_mode = 2
+text = "精灵球"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="number6" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer6"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "X 10"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="ColorRect2/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="name7" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer7"]
+visible = false
+layout_mode = 2
+text = "精灵球"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="number7" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer7"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "X 10"
+label_settings = SubResource("LabelSettings_xjpd6")
+
+[node name="Marker2D" type="Marker2D" parent="ColorRect2"]
+position = Vector2(65, 65)
+scale = Vector2(2, 2)
+
+[node name="Marker2D2" type="Marker2D" parent="ColorRect2"]
+position = Vector2(65, 134)
+scale = Vector2(2, 2)
+
+[node name="Marker2D3" type="Marker2D" parent="ColorRect2"]
+position = Vector2(65, 204)
+scale = Vector2(2, 2)
+
+[node name="Marker2D4" type="Marker2D" parent="ColorRect2"]
+position = Vector2(65, 272)
+scale = Vector2(2, 2)
+
+[node name="Marker2D5" type="Marker2D" parent="ColorRect2"]
+position = Vector2(65, 340)
+scale = Vector2(2, 2)
+
+[node name="Marker2D6" type="Marker2D" parent="ColorRect2"]
+position = Vector2(65, 408)
+scale = Vector2(2, 2)
+
+[node name="Marker2D7" type="Marker2D" parent="ColorRect2"]
+position = Vector2(65, 478)
+scale = Vector2(2, 2)
+
+[node name="jt" type="Sprite2D" parent="ColorRect2"]
+texture_filter = 1
+position = Vector2(65, 478)
+scale = Vector2(2, 2)
+texture = ExtResource("3_jmubl")
+
+[node name="tp" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(76.99999, 341.99997)
+scale = Vector2(5, 5)
+texture = ExtResource("3_csfhu")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_top = 411.0
+offset_right = 427.0
+offset_bottom = 629.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="ms" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "精灵球"
+label_settings = SubResource("LabelSettings_jmubl")

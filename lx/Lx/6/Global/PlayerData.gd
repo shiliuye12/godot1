@@ -3,6 +3,11 @@ extends Node
 var pokemon_number = 0
 var dq_pokemon = 0
 
+var poke_ball = 1
+var great_ball = 2
+var ultra_ball = 3
+var master_ball = 4
+
 var pokemon1: Dictionary = {
 	"id": -1,
 	"level": 0,
@@ -58,6 +63,7 @@ var pokemon6: Dictionary = {
 	"move_pp": []
 }
 var pokemons: Array = [pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6]
+var poke_ball_arr: Array = [poke_ball, great_ball, ultra_ball, master_ball]
 
 func save(pokemon: Node2D, a: int):
 	if a <= dq_pokemon + 1:
@@ -76,8 +82,3 @@ func pokemon_load(a: int):
 		return pokemons[a - 1]
 	else:
 		return 
-
-func _process(delta: float) -> void:
-	if pokemon1 != null:
-		#print(pokemon1["move"])
-		return

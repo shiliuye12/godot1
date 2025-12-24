@@ -1,63 +1,30 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1766482857
-godot.windows.opt.tools.64.20251223-153842-163.log::TextFile::-1::1766475522::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-154211-250.log::TextFile::-1::1766475731::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-154229-780.log::TextFile::-1::1766475749::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-154422-369.log::TextFile::-1::1766475862::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-154514-739.log::TextFile::-1::1766475914::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-154751-376.log::TextFile::-1::1766476071::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-154807-364.log::TextFile::-1::1766476087::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-154957-567.log::TextFile::-1::1766476197::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-155117-524.log::TextFile::-1::1766476277::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-155330-164.log::TextFile::-1::1766476410::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-155541-381.log::TextFile::-1::1766476541::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-155758-142.log::TextFile::-1::1766476678::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-155931-651.log::TextFile::-1::1766476771::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-160352-740.log::TextFile::-1::1766477032::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-160541-176.log::TextFile::-1::1766477141::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-160647-142.log::TextFile::-1::1766477207::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-160744-758.log::TextFile::-1::1766477264::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-161352-747.log::TextFile::-1::1766477632::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-161626-362.log::TextFile::-1::1766477786::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-161739-490.log::TextFile::-1::1766477859::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-161757-692.log::TextFile::-1::1766477877::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-162815-774.log::TextFile::-1::1766478495::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-163224-094.log::TextFile::-1::1766478744::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-163334-774.log::TextFile::-1::1766478814::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-163523-680.log::TextFile::-1::1766478923::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-163541-529.log::TextFile::-1::1766478941::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-163906-238.log::TextFile::-1::1766479146::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164051-529.log::TextFile::-1::1766479251::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164141-207.log::TextFile::-1::1766479301::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164246-484.log::TextFile::-1::1766479366::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164334-838.log::TextFile::-1::1766479414::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164346-273.log::TextFile::-1::1766479426::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164500-014.log::TextFile::-1::1766479500::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164518-918.log::TextFile::-1::1766479518::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164525-988.log::TextFile::-1::1766479525::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164548-548.log::TextFile::-1::1766479548::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164556-923.log::TextFile::-1::1766479556::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164557-117.log::TextFile::-1::1766479557::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164645-953.log::TextFile::-1::1766479605::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164726-497.log::TextFile::-1::1766479646::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164751-886.log::TextFile::-1::1766479671::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-164949-969.log::TextFile::-1::1766479789::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-165034-732.log::TextFile::-1::1766479834::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-165159-820.log::TextFile::-1::1766479919::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-165306-775.log::TextFile::-1::1766479986::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-165351-393.log::TextFile::-1::1766480031::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-165634-819.log::TextFile::-1::1766480194::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-165830-547.log::TextFile::-1::1766480310::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-170100-577.log::TextFile::-1::1766480460::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-170120-472.log::TextFile::-1::1766480480::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-170217-071.log::TextFile::-1::1766480537::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-170330-842.log::TextFile::-1::1766480610::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-173731-850.log::TextFile::-1::1766482651::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-173825-854.log::TextFile::-1::1766482705::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-173908-052.log::TextFile::-1::1766482748::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-174003-416.log::TextFile::-1::1766482803::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-174039-894.log::TextFile::-1::1766482839::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20251223-174057-655.log::TextFile::-1::1766482857::0::1::::<><><>0<>0<><>::
+::res://::1766587137
+godot.windows.opt.tools.64.20251224-215058-391.log::TextFile::-1::1766584258::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-215107-429.log::TextFile::-1::1766584267::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-215111-523.log::TextFile::-1::1766584271::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-221605-706.log::TextFile::-1::1766585765::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-221618-779.log::TextFile::-1::1766585778::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-221633-075.log::TextFile::-1::1766585793::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-221641-923.log::TextFile::-1::1766585801::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-221649-778.log::TextFile::-1::1766585809::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-221713-086.log::TextFile::-1::1766585833::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-221740-069.log::TextFile::-1::1766585860::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-221901-215.log::TextFile::-1::1766585941::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-222001-979.log::TextFile::-1::1766586001::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-222031-220.log::TextFile::-1::1766586031::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-222230-709.log::TextFile::-1::1766586150::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-222249-514.log::TextFile::-1::1766586169::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-222444-309.log::TextFile::-1::1766586284::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-222611-442.log::TextFile::-1::1766586371::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-222622-485.log::TextFile::-1::1766586382::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-222740-864.log::TextFile::-1::1766586460::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-222859-816.log::TextFile::-1::1766586539::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-222921-812.log::TextFile::-1::1766586561::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-223157-726.log::TextFile::-1::1766586717::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-223731-508.log::TextFile::-1::1766587051::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-223821-995.log::TextFile::-1::1766587101::0::1::::<><><>0<>0<><>::
+godot.windows.opt.tools.64.20251224-223830-701.log::TextFile::-1::1766587110::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::4814205675737737270::1765771073::1765771073::1::::<><><>0<>0<>ed74252deb6cd3806df235572515cb28<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://1/::1765771132
 ::res://1/assets/::1765771132
@@ -408,7 +375,7 @@ water.tscn::PackedScene::6140970233866828292::1765771112::0::1::::<><><>0<>0<><>
 zhuanchang.gd::GDScript::5131955067526190963::1765771112::0::1::::<>Control<><>0<>0<><>::
 zhuanchang.tscn::PackedScene::1401326842521248710::1765771112::0::1::::<><><>0<>0<><>::uid://cfd7syabrha1x::::res://5/Scenes/ZhuanChang/zhuanchang.gd<>uid://bleqonf1mwl6q::::res://5/assets/res/Resources/dialog-background.png<>uid://7eqootpatwqm::::res://5/assets/res/Resources/quitbtn.png
 ::res://6/::1765856026
-::res://6/asstes/::1765974384
+::res://6/asstes/::1766583254
 ::res://6/asstes/PG_ITCS-main/::1766045138
 1.png::CompressedTexture2D::2483217747271581297::1765879796::1765879800::1::::<><><>0<>0<>ed72fa4d8f82c0fa9c3901059aa10060<>res://.godot/imported/1.png-3317df8fd96cc83a79194ceae104dde0.ctex::
 bj.png::CompressedTexture2D::4863680337801617131::1766045135::1766045138::1::::<><><>0<>0<>079b2f4d0a8ca22913d9de1a0b2e7e72<>res://.godot/imported/bj.png-1cdc4d29194efbf8cd385a0d586f7df4.ctex::
@@ -821,12 +788,17 @@ yeokrin_p11.png::CompressedTexture2D::3780732563036938276::1765798096::176585629
 yeokrin_p12.png::CompressedTexture2D::8407529628241865911::1765798096::1765856296::1::::<><><>0<>0<>0c6a9ac3a13dfcf64cd5f31f4ef8d0e0<>res://.godot/imported/yeokrin_p12.png-6824e5a17fe110de44e2085fa587adde.ctex::
 yeokrin_p13.png::CompressedTexture2D::2811576709245712021::1765798096::1765856296::1::::<><><>0<>0<>a1c579913f9533a013e924e219c65d61<>res://.godot/imported/yeokrin_p13.png-ab4480fbfb9cd1837e3ca992874c984b.ctex::
 yeokrin_p14.png::CompressedTexture2D::2736204526608243526::1765798096::1765856296::1::::<><><>0<>0<>6584f6c8fb0995e689fef3d517970bd0<>res://.godot/imported/yeokrin_p14.png-8c6ee0450e79b42e11a05afe0877c1db.ctex::
-::res://6/asstes/player/::1766484287
-a.jpg::CompressedTexture2D::5300208476271391041::1766484287::1766484296::1::::<><><>0<>0<>b6b408cfca48dd584cc1b6815063a59c<>res://.godot/imported/a.jpg-4eecd33424a5778d5545abe77083291b.ctex::
+::res://6/asstes/player/::1766583024
+a.jpg::CompressedTexture2D::5300208476271391041::1766583022::1766583024::1::::<><><>0<>0<>b6b408cfca48dd584cc1b6815063a59c<>res://.godot/imported/a.jpg-4eecd33424a5778d5545abe77083291b.ctex::
 Starter Pokemon Select.png::CompressedTexture2D::7023271059388067338::1766291080::1766291080::1::::<><><>0<>0<>5981d1cae2d064dfbf551548225dbeb6<>res://.godot/imported/Starter Pokemon Select.png-2c617b56f069183969e7417d86650c19.ctex::
 trback000_爱给网_aigei_com.png::CompressedTexture2D::8830911061331849960::1765870529::1765879464::1::::<><><>0<>0<>31207eadb924c2519446b2c7012c6521<>res://.godot/imported/trback000_爱给网_aigei_com.png-a48c90cf1aeb40a9848e0a093dea74a1.ctex::
 trback001_爱给网_aigei_com.png::CompressedTexture2D::1469651833983568251::1765870646::1765879464::1::::<><><>0<>0<>21c486611bc380190a1d94b9caf45254<>res://.godot/imported/trback001_爱给网_aigei_com.png-e0ac60df804549c5c3942e064ab8dea6.ctex::
 黑色(Black)_爱给网_aigei_com.png::CompressedTexture2D::851620854846262071::1765870503::1765879464::1::::<><><>0<>0<>2009926fe10d465aefa2644435a7eb00<>res://.godot/imported/黑色(Black)_爱给网_aigei_com.png-0ca60f7280563fc356194d4292a7d5b5.ctex::
+::res://6/asstes/PokeBall/::1766583333
+Great Ball.png::CompressedTexture2D::2618987473869804901::1766583315::1766583316::1::::<><><>0<>0<>e32633faafa8782e5da767fe0cf8fc84<>res://.godot/imported/Great Ball.png-828528cc398db966ce24b6d46b7367ec.ctex::
+Master Ball.png::CompressedTexture2D::2028899285088484724::1766583333::1766583333::1::::<><><>0<>0<>392d27d8f57749cd579aa011475c2d7c<>res://.godot/imported/Master Ball.png-b6d22a273e95537d714875f37906dd21.ctex::
+Poké Ball.png::CompressedTexture2D::7611384945574028893::1766583261::1766583262::1::::<><><>0<>0<>8d91c77a6e15ff96aeaf801368bb73da<>res://.godot/imported/Poké Ball.png-056203ebdfcd0a942fca25d99aaa534e.ctex::
+Ultra Ball.png::CompressedTexture2D::1696285847978514136::1766583327::1766583328::1::::<><><>0<>0<>8ba541f4c45f516df6e029a23bc80a74<>res://.godot/imported/Ultra Ball.png-6085ec6c1ab0ec2c8df72a8e7632b874.ctex::
 ::res://6/asstes/pokemon/::1766294388
 001 Bulbasaur.png::CompressedTexture2D::8484940833635857273::1765881799::1765881800::1::::<><><>0<>0<>217c8cf614db91365900f4af095526b1<>res://.godot/imported/001 Bulbasaur.png-e84886c4fa521dcef2e62ddbe45d23c8.ctex::
 001bulbasaur.png::CompressedTexture2D::6202457226365913061::1765880413::1765880414::1::::<><><>0<>0<>afe0e6237b52924f3f7d6c9685f2ae57<>res://.godot/imported/001bulbasaur.png-12b77340c3a5c55b9740392c4cd4d27d.ctex::
@@ -834,8 +806,9 @@ trback001_爱给网_aigei_com.png::CompressedTexture2D::1469651833983568251::176
 004charmander.png::CompressedTexture2D::1574503489148354292::1765881766::1765881767::1::::<><><>0<>0<>c5b1efbd3867bd8ef9a6b7ee8d7df34f<>res://.godot/imported/004charmander.png-cbc8390d9ff61a9767a4894fc792983b.ctex::
 007 Squirtle.png::CompressedTexture2D::4661235309957041595::1766294387::1766294388::1::::<><><>0<>0<>5708ea57e3f03c19ccfc05b97f5b1034<>res://.godot/imported/007 Squirtle.png-08fad2bf8d236c9664c87abcd1be3be3.ctex::
 007squirtle.png::CompressedTexture2D::4735310576215484930::1766294378::1766294379::1::::<><><>0<>0<>815db57a1d060bdf5fdf3e5031cfd40a<>res://.godot/imported/007squirtle.png-3ee205648058487dff55e11e2220f94b.ctex::
-::res://6/Global/::1766482854
-PlayerData.gd::GDScript::8317729504870119694::1766482854::0::1::::<>Node<><>0<>0<><>::
+::res://6/Global/::1766585832
+DJList.gd::GDScript::2699232862249996537::1766585670::0::1::::<>Node<><>0<>0<><>::
+PlayerData.gd::GDScript::8317729504870119694::1766585832::0::1::::<>Node<><>0<>0<><>::
 PokemonManager.gd::GDScript::3643746125348154839::1766294953::0::1::::<>Node<><>0<>0<><>::
 PokemonMoveList.gd::GDScript::8715922993163303432::1766408047::0::1::::<>Node<><>0<>0<><>::
 PokemonScenesChoose.gd::GDScript::1756685652667426152::1766296185::0::1::::<>Node<><>0<>0<><>::
@@ -844,8 +817,9 @@ PokemonScenesChoose.gd::GDScript::1756685652667426152::1766296185::0::1::::<>Nod
 q.tres::LabelSettings::6586533242266358871::1766407012::0::1::::<><><>0<>0<><>::uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf
 xinxi.tres::LabelSettings::107225878833525183::1765880971::0::1::::<><><>0<>0<><>::uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf
 ::res://6/Scenes/::1766483031
-::res://6/Scenes/Bb/::1766483327
-bb.tscn::PackedScene::3057588033886549600::1766483327::0::1::::<><><>0<>0<><>::uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf<>uid://5qyk3gxghk88::::res://6/asstes/PG_ITCS-main/othersource/Pic/pointer.png
+::res://6/Scenes/Bb/::1766587121
+bb.gd::GDScript::1513789386679370534::1766587121::0::1::::<>Control<><>0<>0<><>::
+bb.tscn::PackedScene::3057588033886549600::1766587121::0::1::::<><><>0<>0<><>::uid://vtj5i410qtf7::::res://6/Scenes/Bb/bb.gd<>uid://chrpwocsgepjt::::res://6/asstes/player/a.jpg<>uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf<>uid://dgpansdvtp2g4::::res://6/asstes/PokeBall/Poké Ball.png<>uid://5qyk3gxghk88::::res://6/asstes/PG_ITCS-main/othersource/Pic/pointer.png
 ::res://6/Scenes/ChoosePokemon/::1766482756
 choose_pokemon.gd::GDScript::33256758205499364::1766482756::0::1::::<>Control<><>0<>0<><>::
 choose_pokemon.tscn::PackedScene::2984469492921390723::1766478523::0::1::::<><><>0<>0<><>::uid://c7ceio7v4v74y::::res://6/asstes/player/Starter Pokemon Select.png<>uid://qdy7pefvfts::::res://6/Scenes/ChoosePokemon/choose_pokemon.gd<>uid://cbkads5b83acx::::res://6/asstes/PG_ITCS-main/bj.png<>uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf<>uid://cc4o8fgeaqcor::::res://6/asstes/PG_ITCS-main/othersource/Pic/pointerUp2.png<>uid://wox3v32pedlc::::res://6/asstes/pokemon/004charmander.png<>uid://cumrtgmlxvp6t::::res://6/asstes/pokemon/001bulbasaur.png<>uid://b8p24xuix3r8m::::res://6/asstes/pokemon/007squirtle.png
