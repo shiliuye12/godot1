@@ -31,6 +31,7 @@ PokemonMoveList="*res://6/Global/PokemonMoveList.gd"
 PlayerData="*res://6/Global/PlayerData.gd"
 PokemonScenesChoose="*res://6/Global/PokemonScenesChoose.gd"
 DjList="*res://6/Global/DJList.gd"
+PokemonSignalHub="*res://6/Global/PokemonSignalHub.gd"
 
 [debug]
 

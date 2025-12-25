@@ -1,4 +1,9 @@
 res://6/Scenes/Bb/bb.tscn
 res://6/Scenes/Bb/bb.gd
-res://6/Scenes/ChoosePokemon/choose_pokemon.tscn
 res://6/Global/DJList.gd
+res://6/Global/PlayerData.gd
+res://6/Scenes/PokemonVS/pokemon_vs.tscn
+res://6/Scenes/PokemonVS/pokemon_vs.gd
+res://6/Global/PokemonSignalHub.gd
+res://6/Scenes/ChoosePokemon/choose_pokemon.gd
+res://6/Scenes/ChoosePokemon/choose_pokemon.tscn

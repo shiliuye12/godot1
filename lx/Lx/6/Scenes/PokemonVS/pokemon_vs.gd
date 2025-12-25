@@ -50,11 +50,13 @@ const HEALTH_BAR_80 = preload("uid://dxhf6xojevx4m")
 const HEALTH_BAR_90 = preload("uid://ufq0k3b6f43k")
 const HEALTH_BAR_100 = preload("uid://csa5g3aeoo11b")
 
+const BB = preload("uid://bjtea7ulhngtk")
 const POKEMON_BB = preload("uid://nhokmxdn7s4k")
 
 #endregion
 
 var bb_instance = null
+var dj_bb_instance = null
 
 var wz = 0
 var hh_wz = 0
@@ -67,6 +69,8 @@ var player_dq_sd = 0.0
 var enemy_dq_wg = 0.0
 var enemy_dq_fy = 0.0
 var enemy_dq_sd = 0.0
+
+var sy_dj: bool = false
 
 var player_pokemon_data = PlayerData.pokemon_load(1)
 var player_pokemon = PokemonManager.Pokemon_instantiate(player_pokemon_data["id"])
@@ -99,6 +103,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		bb_instance.queue_free()
 		wz = 1
 		ui.show()
+	if event.is_action_pressed("exit") and dj_bb_instance != null:
+		dj_bb_instance.queue_free()
+		wz = 1
+		ui.show()
 
 func _ready() -> void:
 	mb_1.hide()
@@ -112,6 +120,7 @@ func _ready() -> void:
 	ui.hide()
 	zdui.hide()
 	wz = 0
+	PokemonSignalHub.on_dj.connect(on_dj)
 
 func _process(_delta: float) -> void:
 	if wz == 1:
@@ -196,7 +205,12 @@ func qd():
 		ui.hide()
 		zdui.show()
 	elif wz == 2:
-		pass
+		ui.hide()
+		zdui.hide()
+		jz.hide()
+		if not dj_bb_instance:
+			dj_bb_instance = BB.instantiate()
+			add_child(dj_bb_instance)
 	elif wz == 3:
 		ui.hide()
 		zdui.hide()
@@ -410,10 +424,13 @@ func _on_timer_2_timeout() -> void:
 		ui.show()
 		hh_wz = 0
 	else:
-		if player_pokemon.hp > 0:
+		if player_pokemon.hp > 0 and sy_dj == false:
 			wz = 1
 			hhz(hh_wz)
+		elif sy_dj == true and player_pokemon.hp > 0:
+			sy_dj = false
 		else:
+			sy_dj = false
 			PlayerData.save(player_pokemon, player_pokemon.wz)
 			player_die()
 			player_qiehuan()
@@ -427,9 +444,9 @@ func _on_timer_2_timeout() -> void:
 func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 	var power = 0
 	if gj_pokemon == player_pokemon:
-		power = gj_pokemon.wg * gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].power / fy_pokemon.fy * (1 + player_dq_wg) / (enemy_dq_fy + 1)
+		power = gj_pokemon.wg * gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].power / float(fy_pokemon.fy * (1 + player_dq_wg)) / (enemy_dq_fy + 1)
 	else:
-		power = gj_pokemon.wg * gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].power / fy_pokemon.fy * (1 + enemy_dq_wg) / (player_dq_fy + 1)
+		power = gj_pokemon.wg * gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].power / float(fy_pokemon.fy * (1 + enemy_dq_wg)) / (player_dq_fy + 1)
 	var sx = PokemonMoveList.typekz(gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].type, fy_pokemon.type)
 	var sx2 = PokemonMoveList.typekz(gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].type, fy_pokemon.type_2)
 	var hx = randf_range(0, 1)
@@ -525,3 +542,27 @@ func pd_hh(gj_pokemon: Node2D, fy_pokemon:Node2D):
 			var a =PokemonMoveList.jc_dot(gj_pokemon, fy_pokemon)
 			zdks.text = fy_pokemon.pokemon_name + "处于" + a
 		timer_2.start()
+
+func on_dj(dj_name: String):
+		dj_bb_instance.queue_free()
+		wz = 1
+		_hhz = true
+		zdui.hide()
+		ui.hide()
+		jz.show()
+		wz = 0
+		zdks.text = player_pokemon.pokemon_name + "使用了" + dj_name
+		sy_dj = true
+		await get_tree().create_timer(1).timeout
+		for i in DjList.ball_arr.size():
+			var a = DjList.ball_arr[i].new()
+			if dj_name == a.name:
+				var bzl = ((3 * enemy_pokemon.max_hp - 2 * enemy_pokemon.hp) * 200 * a.bzl) / (3 * enemy_pokemon.max_hp)
+				var sfcg = randf_range(0, 1)
+				if float(bzl) / 255.0 > sfcg:
+					zdks.text = "捕捉成功"
+					await get_tree().create_timer(1).timeout
+				else:
+					zdks.text = enemy_pokemon.pokemon_name + "挣脱了"
+					await get_tree().create_timer(1).timeout
+		enemy_hh()
