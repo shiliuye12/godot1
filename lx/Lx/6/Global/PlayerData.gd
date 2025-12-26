@@ -71,7 +71,7 @@ var poke_ball_arr: Array = [poke_ball, great_ball, ultra_ball, master_ball]
 var dj_arr: Array = [potion, super_potion, hyper_potion, max_potion]
 
 func save(pokemon: Node2D, a: int):
-	if a <= dq_pokemon + 1:
+	if a < dq_pokemon + 1:
 		pokemons[a - 1]["id"] = pokemon.id
 		pokemons[a - 1]["level"] = pokemon.level
 		pokemons[a - 1]["hp"] = pokemon.hp
@@ -79,7 +79,14 @@ func save(pokemon: Node2D, a: int):
 		pokemons[a - 1]["move"] = pokemon.move_number
 		pokemons[a - 1]["move_pp"] = pokemon.move_pp
 		pokemons[a - 1]["wz"] = pokemon.wz
-	elif  a > dq_pokemon:
+	elif  a >= dq_pokemon:
+		pokemons[a - 1]["id"] = pokemon.id
+		pokemons[a - 1]["level"] = pokemon.level
+		pokemons[a - 1]["hp"] = pokemon.hp
+		pokemons[a - 1]["gtz"] = pokemon.gtz
+		pokemons[a - 1]["move"] = pokemon.move_number
+		pokemons[a - 1]["move_pp"] = pokemon.move_pp
+		pokemons[a - 1]["wz"] = pokemon.wz
 		dq_pokemon += 1
 
 func pokemon_load(a: int):
@@ -87,3 +94,22 @@ func pokemon_load(a: int):
 		return pokemons[a - 1]
 	else:
 		return 
+
+func dj_sy(_name: String):
+	if _name == "精灵球":
+		poke_ball -= 1
+	if _name == "高级球":
+		ultra_ball -= 1
+	if _name == "超级球":
+		great_ball -= 1
+	if _name == "大师球":
+		master_ball -= 1
+	if _name == "伤药":
+		potion -= 1
+	if _name == "厉害伤药":
+		hyper_potion -= 1
+	if _name == "好伤药":
+		super_potion -= 1
+	if _name == "全满药":
+		max_potion -= 1
+	poke_ball_arr = [poke_ball, great_ball, ultra_ball, master_ball]

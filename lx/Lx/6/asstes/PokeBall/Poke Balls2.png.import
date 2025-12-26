@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgpansdvtp2g4"
-path="res://.godot/imported/Poké Ball.png-056203ebdfcd0a942fca25d99aaa534e.ctex"
+uid="uid://4m8p8i0rkd3e"
+path="res://.godot/imported/Poke Balls2.png-ff6150fa3e3e1c78078cf77530d524cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://6/asstes/PokeBall/Poké Ball.png"
-dest_files=["res://.godot/imported/Poké Ball.png-056203ebdfcd0a942fca25d99aaa534e.ctex"]
+source_file="res://6/asstes/PokeBall/Poke Balls2.png"
+dest_files=["res://.godot/imported/Poke Balls2.png-ff6150fa3e3e1c78078cf77530d524cf.ctex"]
 
 [params]
 

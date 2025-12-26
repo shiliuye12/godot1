@@ -59,6 +59,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pokemon_qd"):
 		if dj != []:
 			PokemonSignalHub.on_dj.emit(dj[wz - 1].name)
+			dj.clear()
 
 func _ready() -> void:
 	dj_name = [name_1, name_2, name_3, name_4, name_5, name_6, name_7]

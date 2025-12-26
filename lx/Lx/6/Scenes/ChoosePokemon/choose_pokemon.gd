@@ -47,7 +47,7 @@ func _process(_delta: float) -> void:
 		sprite_2d_4.hide()
 		if Input.is_action_just_pressed("pokemon_qd"):
 			var new = PokemonManager.Pokemon_instantiate(0)
-			new.a_level(5000, randi_range(0, 32))
+			new.a_level(5, randi_range(0, 32))
 			PlayerData.save(new, new.wz)
 			PokemonScenesChoose.to_pokemon_vs()
 	if wz == 2:

@@ -68,7 +68,7 @@ func _ready() -> void:
 		player_pokemon2.position = marker_2d_2.global_position
 		player_pokemon2.scale = Vector2(0.7, 0.7)
 		add_child(player_pokemon2)
-		player_pokemon2.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
+		player_pokemon2.a_level(player_pokemon_data2["level"], player_pokemon_data2["gtz"])
 		start_move(player_pokemon2, player_pokemon_data2)
 		player_pokemon2.hp = player_pokemon_data2.hp
 		player_pokemon2.mx()
@@ -78,7 +78,7 @@ func _ready() -> void:
 		player_pokemon3.position = marker_2d_3.global_position
 		player_pokemon3.scale = Vector2(0.7, 0.7)
 		add_child(player_pokemon3)
-		player_pokemon3.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
+		player_pokemon3.a_level(player_pokemon_data3["level"], player_pokemon_data3["gtz"])
 		start_move(player_pokemon3, player_pokemon_data3)
 		player_pokemon3.hp = player_pokemon_data3.hp
 		player_pokemon3.mx()
@@ -88,7 +88,7 @@ func _ready() -> void:
 		player_pokemon4.position = marker_2d_4.global_position
 		player_pokemon4.scale = Vector2(0.7, 0.7)
 		add_child(player_pokemon4)
-		player_pokemon4.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
+		player_pokemon4.a_level(player_pokemon_data4["level"], player_pokemon_data4["gtz"])
 		start_move(player_pokemon4, player_pokemon_data4)
 		player_pokemon4.hp = player_pokemon_data4.hp
 		player_pokemon4.mx()
@@ -98,7 +98,7 @@ func _ready() -> void:
 		player_pokemon5.position = marker_2d_5.global_position
 		player_pokemon5.scale = Vector2(0.7, 0.7)
 		add_child(player_pokemon5)
-		player_pokemon5.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
+		player_pokemon5.a_level(player_pokemon_data5["level"], player_pokemon_data5["gtz"])
 		start_move(player_pokemon5, player_pokemon_data5)
 		player_pokemon5.hp = player_pokemon_data5.hp
 		player_pokemon5.mx()
@@ -108,7 +108,7 @@ func _ready() -> void:
 		player_pokemon6.position = marker_2d_6.global_position
 		player_pokemon6.scale = Vector2(0.7, 0.7)
 		add_child(player_pokemon6)
-		player_pokemon6.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
+		player_pokemon6.a_level(player_pokemon_data6["level"], player_pokemon_data6["gtz"])
 		start_move(player_pokemon6, player_pokemon_data6)
 		player_pokemon6.hp = player_pokemon_data6.hp
 		player_pokemon6.mx()
@@ -146,7 +146,7 @@ func _process(_delta: float) -> void:
 		sprite_2d_6.hide()
 		move_csh()
 		if PlayerData.dq_pokemon >= 3:
-			hp.text = str(player_pokemon2.hp) + "/" + str(player_pokemon2.max_hp)
+			hp.text = str(player_pokemon3.hp) + "/" + str(player_pokemon3.max_hp)
 			move(player_pokemon3)
 		else:
 			hp.text = "-"
@@ -159,7 +159,7 @@ func _process(_delta: float) -> void:
 		sprite_2d_6.hide()
 		move_csh()
 		if PlayerData.dq_pokemon >= 4:
-			hp.text = str(player_pokemon2.hp) + "/" + str(player_pokemon2.max_hp)
+			hp.text = str(player_pokemon4.hp) + "/" + str(player_pokemon4.max_hp)
 			move(player_pokemon4)
 		else:
 			hp.text = "-"
@@ -172,7 +172,7 @@ func _process(_delta: float) -> void:
 		sprite_2d_6.hide()
 		move_csh()
 		if PlayerData.dq_pokemon >= 5:
-			hp.text = str(player_pokemon2.hp) + "/" + str(player_pokemon2.max_hp)
+			hp.text = str(player_pokemon5.hp) + "/" + str(player_pokemon6.max_hp)
 			move(player_pokemon5)
 		else:
 			hp.text = "-"
@@ -185,7 +185,7 @@ func _process(_delta: float) -> void:
 		sprite_2d_6.show()
 		move_csh()
 		if PlayerData.dq_pokemon >= 6:
-			hp.text = str(player_pokemon2.hp) + "/" + str(player_pokemon2.max_hp)
+			hp.text = str(player_pokemon6.hp) + "/" + str(player_pokemon6.max_hp)
 			move(player_pokemon6)
 		else:
 			hp.text = "-"
@@ -199,7 +199,7 @@ func start_move(player_pokemon: Node2D, player_pokemon_data: Dictionary):
 	if player_pokemon.move_num > 2:
 		player_pokemon.move1 = player_pokemon_data["move"][0]
 		player_pokemon.move2 = player_pokemon_data["move"][1]
-		player_pokemon.move3 = player_pokemon_data["move"][2]
+		player_pokemon.move3 = player_pokemon_data["move"][2] 
 	if player_pokemon.move_num > 3:
 		player_pokemon.move1 = player_pokemon_data["move"][0]
 		player_pokemon.move2 = player_pokemon_data["move"][1]

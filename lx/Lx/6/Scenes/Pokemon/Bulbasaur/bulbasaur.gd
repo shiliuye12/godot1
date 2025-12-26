@@ -35,6 +35,7 @@ var move3 = 2
 var move4 = 3
 var move_number: Array
 var move_pp: Array
+var wz = PlayerData.dq_pokemon + 1
 
 func _ready() -> void:
 	dq_dot = ""
@@ -46,6 +47,7 @@ func mx():
 
 func a_level(a: int, _gtz: int):
 	level = a
+	gtz = _gtz
 	max_hp = int((_hp * 2 + _gtz) * level / 50 + level + 10)
 	hp = max_hp
 	wg = int((_wg * 2 + _gtz ) * level / 50 + 10)

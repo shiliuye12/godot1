@@ -37,6 +37,7 @@ extends Control
 @onready var enemy_hpui: Sprite2D = $mb2/MarginContainer/EnemyHpui
 @onready var timer: Timer = $Timer
 @onready var timer_2: Timer = $Timer2
+@onready var ball: Sprite2D = $Ball
 
 const HEALTH_BAR_0 = preload("uid://b7j1os4tq5etw")
 const HEALTH_BAR_10 = preload("uid://rfdchq30snu8")
@@ -189,6 +190,7 @@ func _process(_delta: float) -> void:
 			pp.text = "-"
 	if can_gxhp:
 		player_hp.text = str(player_pokemon.hp) + "/" + str(player_pokemon.max_hp)
+		player_lv.text = "Lv:" + str(player_pokemon.level)
 		enemy_hp.text = str(enemy_pokemon.hp) + "/" + str(enemy_pokemon.max_hp)
 		enemy_lv.text = "Lv:" + str(enemy_pokemon.level)
 		gx_hp()
@@ -400,7 +402,7 @@ func _on_timer_timeout() -> void:
 			PlayerData.save(player_pokemon, player_pokemon.wz)
 			zdks.text = "出现了新的宝可梦"
 			enemy_pokemon.mx()
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1).timeout
 			wz = 1
 			_hhz = false
 			jz.hide()
@@ -429,6 +431,12 @@ func _on_timer_2_timeout() -> void:
 			hhz(hh_wz)
 		elif sy_dj == true and player_pokemon.hp > 0:
 			sy_dj = false
+			wz = 1
+			_hhz = false
+			PlayerData.save(player_pokemon, player_pokemon.wz)
+			jz.hide()
+			ui.show()
+			hh_wz = 0
 		else:
 			sy_dj = false
 			PlayerData.save(player_pokemon, player_pokemon.wz)
@@ -524,10 +532,13 @@ func qiehuan():
 
 func player_qiehuan():
 	can_gxhp = false
+	player_pokemon.queue_free()
 	player_pokemon = PokemonManager.Pokemon_instantiate(0)
 	player_pokemon.position = marker_2d_1.position
 	player_name.text = player_pokemon.pokemon_name
 	add_child(player_pokemon)
+	player_pokemon.a_level(100, 20)
+	gx_hp()
 
 func pd_hh(gj_pokemon: Node2D, fy_pokemon:Node2D):
 	if gj_pokemon == player_pokemon:
@@ -551,18 +562,74 @@ func on_dj(dj_name: String):
 		ui.hide()
 		jz.show()
 		wz = 0
-		zdks.text = player_pokemon.pokemon_name + "使用了" + dj_name
+		zdks.text = "使用了" + dj_name
 		sy_dj = true
 		await get_tree().create_timer(1).timeout
 		for i in DjList.ball_arr.size():
 			var a = DjList.ball_arr[i].new()
 			if dj_name == a.name:
+				PlayerData.dj_sy(dj_name)
 				var bzl = ((3 * enemy_pokemon.max_hp - 2 * enemy_pokemon.hp) * 200 * a.bzl) / (3 * enemy_pokemon.max_hp)
 				var sfcg = randf_range(0, 1)
 				if float(bzl) / 255.0 > sfcg:
+					bz_animation(a.tp, a.tp2)
+					await get_tree().create_timer(4).timeout
 					zdks.text = "捕捉成功"
+					PlayerData.save(enemy_pokemon, enemy_pokemon.wz)
 					await get_tree().create_timer(1).timeout
+					ball.hide()
+					enemy_die()
+					qiehuan()
+					PlayerData.save(player_pokemon, player_pokemon.wz)
+					zdks.text = "出现了新的宝可梦"
+					enemy_pokemon.mx()
+					await get_tree().create_timer(2).timeout
+					wz = 1
+					_hhz = false
+					jz.hide()
+					ui.show()
+					hh_wz = 0
+					can_gxhp = true
+					return
 				else:
+					bz_animation(a.tp, a.tp2)
+					await get_tree().create_timer(4).timeout
+					bz_sb_animation(a.tp2)
 					zdks.text = enemy_pokemon.pokemon_name + "挣脱了"
 					await get_tree().create_timer(1).timeout
+		for i in DjList.dj_arr.size():
+			var a = DjList.dj_arr[i].new()
+			if dj_name == a.name:
+				PlayerData.dj_sy(dj_name)
+				zdks.text = "恢复了" + str(a.hf) +"hp"
+				player_pokemon.hp += a.hf
+				if player_pokemon.hp > player_pokemon.max_hp:
+					player_pokemon.hp = player_pokemon.max_hp
+				gx_hp()
+				await get_tree().create_timer(1).timeout
 		enemy_hh()
+
+func bz_animation(ball_texture1: Texture, ball_texture2: Texture):
+	ball.show()
+	ball.texture = ball_texture1
+	animation_player.play("Ball_sy")
+	await get_tree().create_timer(1).timeout
+	ball.rotation_degrees = 0
+	ball.texture = ball_texture2
+	var tween = create_tween()
+	tween.tween_property(enemy_pokemon, "scale", Vector2(0,0), 1)
+	await tween.finished
+	ball.texture = ball_texture1
+	tween = create_tween()
+	tween.set_loops(2)
+	ball.rotation_degrees = 0
+	tween.tween_property(ball, "rotation_degrees", -20, 0.3)
+	tween.tween_property(ball, "rotation_degrees", 20, 0.3)
+	tween.tween_property(ball, "rotation_degrees", 0, 0.3)
+
+func bz_sb_animation(ball_texture: Texture):
+	ball.texture = ball_texture
+	var tween = create_tween()
+	tween.tween_property(enemy_pokemon, "scale", Vector2(1, 1), 1)
+	await tween.finished
+	ball.hide()
