@@ -53,7 +53,6 @@ func a_level(a: int, _gtz: int):
 	wg = int((_wg * 2 + _gtz ) * level / 50 + 10)
 	fy = int((_fy * 2 + _gtz ) * level / 50 + 10)
 	sd = int((_sd * 2 + _gtz ) * level / 50 + 10)
-	
 	if level >= 1:
 		_move.append(PokemonMoveList.charmander_movelist[0].new())
 		move_num += 1

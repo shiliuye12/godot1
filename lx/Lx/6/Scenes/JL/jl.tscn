@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://qg16urfxu76h"]
+
+[ext_resource type="Texture2D" uid="uid://q0fyqf02a3ru" path="res://6/asstes/PG_ITCS-main/othersource/Pic/selectPrize_bg.jpg" id="1_2tsc6"]
+[ext_resource type="Texture2D" uid="uid://2k0cs63npsyo" path="res://6/asstes/PG_ITCS-main/othersource/Pic/coin.png" id="2_jpnst"]
+[ext_resource type="FontFile" uid="uid://6l3rm3ckhspu" path="res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf" id="3_iaves"]
+[ext_resource type="Texture2D" uid="uid://moq1tfqyf2u2" path="res://6/asstes/PG_ITCS-main/othersource/Pic/pointerUp.png" id="4_o0vwn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o0vwn"]
+font = ExtResource("3_iaves")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[node name="JL" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectPrizeBg" type="Sprite2D" parent="."]
+position = Vector2(579, 360.00003)
+scale = Vector2(2.3626647, 2.3626645)
+texture = ExtResource("1_2tsc6")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -323.0
+offset_top = -22.0
+offset_right = 324.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 100
+columns = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_jpnst")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "金币X100"
+label_settings = SubResource("LabelSettings_o0vwn")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_o0vwn")
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer2"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_jpnst")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "金币X100"
+label_settings = SubResource("LabelSettings_o0vwn")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer2"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_o0vwn")
+stretch_mode = 4
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer3"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_jpnst")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "金币X100"
+label_settings = SubResource("LabelSettings_o0vwn")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer3"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_o0vwn")
+stretch_mode = 4

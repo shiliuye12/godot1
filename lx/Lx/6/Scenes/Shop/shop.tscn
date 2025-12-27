@@ -1,0 +1,264 @@
+[gd_scene load_steps=15 format=3 uid="uid://c50starfi3mmv"]
+
+[ext_resource type="Script" uid="uid://cpi2usue04wtb" path="res://6/Scenes/Shop/shop.gd" id="1_arood"]
+[ext_resource type="Texture2D" uid="uid://clh0cd3yvhvoa" path="res://6/asstes/PG_ITCS-main/othersource/Pic/storeBg.jpg" id="1_eq836"]
+[ext_resource type="FontFile" uid="uid://6l3rm3ckhspu" path="res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf" id="2_5styu"]
+[ext_resource type="Texture2D" uid="uid://csm8gisrn5nb6" path="res://6/asstes/dj/Potion.png" id="3_jpwtj"]
+[ext_resource type="Texture2D" uid="uid://moq1tfqyf2u2" path="res://6/asstes/PG_ITCS-main/othersource/Pic/pointerUp.png" id="4_lhhup"]
+[ext_resource type="Texture2D" uid="uid://bjmf3y7ke3igd" path="res://6/asstes/dj/Super Potion.png" id="4_ybblb"]
+[ext_resource type="Texture2D" uid="uid://cnbt75mj8px8l" path="res://6/asstes/dj/Hyper Potion.png" id="5_lhhup"]
+[ext_resource type="Texture2D" uid="uid://bj5stqh3stsxi" path="res://6/asstes/dj/Max Potion.png" id="6_arood"]
+[ext_resource type="Texture2D" uid="uid://bsy8sqes432ii" path="res://6/asstes/PokeBall/Poke Balls.png" id="7_qslg1"]
+[ext_resource type="Texture2D" uid="uid://convy5ecx6ied" path="res://6/asstes/PokeBall/Great Ball.png" id="8_ohj16"]
+[ext_resource type="Texture2D" uid="uid://ckp1l7gb5f3q0" path="res://6/asstes/PokeBall/Ultra Ball.png" id="9_xe0xc"]
+[ext_resource type="Texture2D" uid="uid://kxqru0bfknou" path="res://6/asstes/PokeBall/Master Ball.png" id="10_q1kbt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jpwtj"]
+font = ExtResource("2_5styu")
+font_size = 44
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_trtgj"]
+font = ExtResource("2_5styu")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_arood")
+
+[node name="Shop" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(583, 356.00003)
+scale = Vector2(2.3618422, 2.3618422)
+texture = ExtResource("1_eq836")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="money" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "金币数量: 10000"
+label_settings = SubResource("LabelSettings_jpwtj")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -118.0
+offset_right = 298.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("3_jpwtj")
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "$500"
+label_settings = SubResource("LabelSettings_trtgj")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_lhhup")
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer2"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_ybblb")
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "$500"
+label_settings = SubResource("LabelSettings_trtgj")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer2"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_lhhup")
+stretch_mode = 4
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer3"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("5_lhhup")
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "$500"
+label_settings = SubResource("LabelSettings_trtgj")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer3"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_lhhup")
+stretch_mode = 4
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer4"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("6_arood")
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "$500"
+label_settings = SubResource("LabelSettings_trtgj")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer4"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_lhhup")
+stretch_mode = 4
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer5"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("7_qslg1")
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "$500"
+label_settings = SubResource("LabelSettings_trtgj")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer5"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_lhhup")
+stretch_mode = 4
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer6"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("8_ohj16")
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "$500"
+label_settings = SubResource("LabelSettings_trtgj")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer6"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_lhhup")
+stretch_mode = 4
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer7"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("9_xe0xc")
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "$500"
+label_settings = SubResource("LabelSettings_trtgj")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer7"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_lhhup")
+stretch_mode = 4
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer8"]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("10_q1kbt")
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "$500"
+label_settings = SubResource("LabelSettings_trtgj")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer8"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_lhhup")
+stretch_mode = 4

@@ -439,7 +439,6 @@ func _on_timer_timeout() -> void:
 		hh_wz = 0
 		can_gxhp = true
 
-
 func _on_timer_2_timeout() -> void:
 	if player_pokemon.sd >= enemy_pokemon.sd:
 		wz = 1
@@ -708,7 +707,7 @@ func on_new_pokemon_data(data: Dictionary):
 	player_pokemon.position = marker_2d_1.position
 	player_name.text = player_pokemon.pokemon_name
 	add_child(player_pokemon)
-	player_pokemon.ex = player_pokemon_data["ex"]
+	player_pokemon.dq_ex = player_pokemon_data["ex"]
 	player_pokemon.scale = Vector2(0, 0)
 	tween = create_tween()
 	tween.tween_property(player_pokemon, "scale", Vector2(1, 1), 1)
@@ -742,8 +741,8 @@ func on_new_pokemon_data(data: Dictionary):
 
 func ex():
 	var xy_ex = (player_pokemon.level * player_pokemon.level * player_pokemon.level * 4)/ 5.0
-	player_pokemon.dq_ex += (20 * 64 * enemy_pokemon.level * (2 * enemy_pokemon.level) * (2 * enemy_pokemon.level)) / float((5 * (enemy_pokemon.level + player_pokemon.level + 10) * (enemy_pokemon.level + player_pokemon.level + 10)))
-	if player_pokemon.dq_ex >= xy_ex:
+	player_pokemon.dq_ex += (10 * 64 * enemy_pokemon.level * (2 * enemy_pokemon.level) * (2 * enemy_pokemon.level)) / float((5 * (enemy_pokemon.level + player_pokemon.level + 10) * (enemy_pokemon.level + player_pokemon.level + 10)))
+	while (player_pokemon.dq_ex >= xy_ex):
 		player_pokemon.dq_ex -= xy_ex
 		player_pokemon.level += 1
 		player_pokemon.a_level(player_pokemon.level, player_pokemon_data["gtz"])
@@ -758,6 +757,7 @@ func ex():
 		add_child(player_pokemon)
 		player_pokemon.dq_ex = player_pokemon_data["ex"]
 		player_pokemon.a_level(player_pokemon_data["level"], player_pokemon_data["gtz"])
+		player_pokemon.hp = player_pokemon_data.hp
 		player_pokemon.move1 = player_pokemon_data["move"][0]
 		player_pokemon.move_pp = player_pokemon_data["move_pp"]
 		player_pokemon.wz = player_pokemon_data["wz"]

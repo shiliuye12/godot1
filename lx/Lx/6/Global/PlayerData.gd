@@ -85,8 +85,6 @@ var dj_arr: Array = [potion, super_potion, hyper_potion, max_potion]
 
 func save(pokemon: Node2D, a: int):
 	if a < dq_pokemon + 1:
-		#pokemons[a - 1]["move"].clear()
-		#pokemons[a - 1]["move_pp"].clear()
 		pokemons[a - 1]["id"] = pokemon.id
 		pokemons[a - 1]["level"] = pokemon.level
 		pokemons[a - 1]["hp"] = pokemon.hp
