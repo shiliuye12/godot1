@@ -28,6 +28,7 @@ var _wg = 65
 var _fy = 65
 var _sd = 45
 var _move: Array
+var dq_ex = 0.0
 
 var move1 = 0
 var move2 = 1
@@ -84,7 +85,7 @@ func a_level(a: int, _gtz: int):
 		move_pp.append(_move[0].pp)
 		move_pp.append(_move[1].pp)
 		move_pp.append(_move[2].pp)
-	if move_num > 4:
+	if move_num >= 4:
 		move1 = randi_range(0, move_num - 1)
 		move2 = randi_range(0, move_num - 1)
 		move3 = randi_range(0, move_num - 1)

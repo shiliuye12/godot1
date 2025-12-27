@@ -36,6 +36,7 @@ var player_pokemon5
 var player_pokemon6
 
 var wz: int = 0
+var pokemon: Array = []
 
 func _unhandled_input(event: InputEvent) -> void:
 	if wz <= 3 and event.is_action_pressed("pokemon_down"):
@@ -46,6 +47,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		wz += 1
 	if wz >= 2 and event.is_action_pressed("pokemon_up"):
 		wz -= 2
+	if event.is_action_pressed("pokemon_qd") and wz + 1 != PlayerData.dq_pokemon_wz and pokemon.size() > wz and PlayerData.pokemons[wz]["hp"] > 0:
+		PlayerData.dq_pokemon_wz = wz + 1
+		PokemonSignalHub.on_new_pokemon_data.emit(pokemon[wz])
 
 func _ready() -> void:
 	wz = 0
@@ -62,6 +66,7 @@ func _ready() -> void:
 	start_move(player_pokemon1, player_pokemon_data1)
 	player_pokemon1.hp = player_pokemon_data1.hp
 	player_pokemon1.mx()
+	pokemon.append(player_pokemon_data1)
 	if PlayerData.dq_pokemon > 1:
 		player_pokemon_data2 = PlayerData.pokemon_load(2)
 		player_pokemon2 = PokemonManager.Pokemon_instantiate(player_pokemon_data2["id"])
@@ -72,6 +77,7 @@ func _ready() -> void:
 		start_move(player_pokemon2, player_pokemon_data2)
 		player_pokemon2.hp = player_pokemon_data2.hp
 		player_pokemon2.mx()
+		pokemon.append(player_pokemon_data2)
 	if PlayerData.dq_pokemon > 2:
 		player_pokemon_data3 = PlayerData.pokemon_load(3)
 		player_pokemon3 = PokemonManager.Pokemon_instantiate(player_pokemon_data3["id"])
@@ -82,6 +88,7 @@ func _ready() -> void:
 		start_move(player_pokemon3, player_pokemon_data3)
 		player_pokemon3.hp = player_pokemon_data3.hp
 		player_pokemon3.mx()
+		pokemon.append(player_pokemon_data3)
 	if PlayerData.dq_pokemon > 3:
 		player_pokemon_data4 = PlayerData.pokemon_load(4)
 		player_pokemon4 = PokemonManager.Pokemon_instantiate(player_pokemon_data4["id"])
@@ -92,6 +99,7 @@ func _ready() -> void:
 		start_move(player_pokemon4, player_pokemon_data4)
 		player_pokemon4.hp = player_pokemon_data4.hp
 		player_pokemon4.mx()
+		pokemon.append(player_pokemon_data4)
 	if PlayerData.dq_pokemon > 4:
 		player_pokemon_data5 = PlayerData.pokemon_load(5)
 		player_pokemon5 = PokemonManager.Pokemon_instantiate(player_pokemon_data5["id"])
@@ -102,6 +110,7 @@ func _ready() -> void:
 		start_move(player_pokemon5, player_pokemon_data5)
 		player_pokemon5.hp = player_pokemon_data5.hp
 		player_pokemon5.mx()
+		pokemon.append(player_pokemon_data5)
 	if PlayerData.dq_pokemon > 5:
 		player_pokemon_data6 = PlayerData.pokemon_load(6)
 		player_pokemon6 = PokemonManager.Pokemon_instantiate(player_pokemon_data6["id"])
@@ -112,6 +121,7 @@ func _ready() -> void:
 		start_move(player_pokemon6, player_pokemon_data6)
 		player_pokemon6.hp = player_pokemon_data6.hp
 		player_pokemon6.mx()
+		pokemon.append(player_pokemon_data6)
 
 func _process(_delta: float) -> void:
 	if wz == 0:

@@ -39,6 +39,8 @@ extends Control
 @onready var timer_2: Timer = $Timer2
 @onready var ball: Sprite2D = $Ball
 
+const POKE_BALLS = preload("uid://bsy8sqes432ii")
+const POKE_BALLS_2 = preload("uid://4m8p8i0rkd3e")
 const HEALTH_BAR_0 = preload("uid://b7j1os4tq5etw")
 const HEALTH_BAR_10 = preload("uid://rfdchq30snu8")
 const HEALTH_BAR_20 = preload("uid://bpeugcqrom2p")
@@ -110,6 +112,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		ui.show()
 
 func _ready() -> void:
+	PlayerData.level += 1
 	mb_1.hide()
 	mb_2.hide()
 	zdui.hide()
@@ -122,6 +125,7 @@ func _ready() -> void:
 	zdui.hide()
 	wz = 0
 	PokemonSignalHub.on_dj.connect(on_dj)
+	PokemonSignalHub.on_new_pokemon_data.connect(on_new_pokemon_data)
 
 func _process(_delta: float) -> void:
 	if wz == 1:
@@ -225,14 +229,14 @@ func qd():
 
 func start():
 	mb_2.show()
-
 	player_pokemon.position = marker_2d_1.position
 	enemy_pokemon.position = marker_2d_2.position
 	player_pokemon.scale = Vector2(0,0)
 	add_child(player_pokemon)
 	add_child(enemy_pokemon)
 	player_pokemon.a_level(player_pokemon_data["level"], player_pokemon_data["gtz"])
-	enemy_pokemon.a_level(randi_range(enemy_pokemon.min_level, enemy_pokemon.max_level), randi_range(0, 32))
+	enemy_pokemon.a_level(PlayerData.level + 5 + randi_range(0, 2), randi_range(0, 32))
+	player_pokemon.dq_ex = player_pokemon_data["ex"]
 	player_name.text = player_pokemon.pokemon_name
 	enemy_name.text = enemy_pokemon.pokemon_name
 	player_lv.text = "Lv:" + str(player_pokemon_data["level"])
@@ -377,7 +381,9 @@ func enemy_die():
 	enemy_dq_wg = 0
 
 func player_die():
-	pass
+	player_dq_wg = 0.0
+	player_dq_fy = 0.0
+	player_dq_sd = 0.0
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	animation_player.play("jiazai")
@@ -397,6 +403,7 @@ func _on_timer_timeout() -> void:
 		if enemy_pokemon.hp > 0:
 			enemy_hh()
 		else:
+			ex()
 			enemy_die()
 			qiehuan()
 			PlayerData.save(player_pokemon, player_pokemon.wz)
@@ -409,6 +416,7 @@ func _on_timer_timeout() -> void:
 			ui.show()
 			hh_wz = 0
 			can_gxhp = true
+			return
 	else:
 		wz = 1
 		_hhz = false
@@ -416,6 +424,21 @@ func _on_timer_timeout() -> void:
 		jz.hide()
 		ui.show()
 		hh_wz = 0
+	if enemy_pokemon.hp <= 0:
+		ex()
+		enemy_die()
+		qiehuan()
+		PlayerData.save(player_pokemon, player_pokemon.wz)
+		zdks.text = "出现了新的宝可梦"
+		enemy_pokemon.mx()
+		await get_tree().create_timer(1).timeout
+		wz = 1
+		_hhz = false
+		jz.hide()
+		ui.show()
+		hh_wz = 0
+		can_gxhp = true
+
 
 func _on_timer_2_timeout() -> void:
 	if player_pokemon.sd >= enemy_pokemon.sd:
@@ -425,6 +448,7 @@ func _on_timer_2_timeout() -> void:
 		jz.hide()
 		ui.show()
 		hh_wz = 0
+		return
 	else:
 		if player_pokemon.hp > 0 and sy_dj == false:
 			wz = 1
@@ -441,13 +465,33 @@ func _on_timer_2_timeout() -> void:
 			sy_dj = false
 			PlayerData.save(player_pokemon, player_pokemon.wz)
 			player_die()
-			player_qiehuan()
-			wz = 1
-			_hhz = false
+			zdui.hide()
+			ui.hide()
+			jz.show()
+			zdks.text = player_pokemon.pokemon_name + "倒下了"
+			await get_tree().create_timer(1).timeout
 			jz.hide()
-			ui.show()
+			wz = 0
 			hh_wz = 0
-			can_gxhp = true
+			can_gxhp = false
+			bb_instance = POKEMON_BB.instantiate()
+			add_child(bb_instance)
+			return
+	if player_pokemon.hp <= 0:
+		sy_dj = false
+		PlayerData.save(player_pokemon, player_pokemon.wz)
+		player_die()
+		zdui.hide()
+		ui.hide()
+		jz.show()
+		zdks.text = player_pokemon.pokemon_name + "倒下了"
+		await get_tree().create_timer(1).timeout
+		jz.hide()
+		wz = 0
+		hh_wz = 0
+		can_gxhp = false
+		bb_instance = POKEMON_BB.instantiate()
+		add_child(bb_instance)
 
 func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 	var power = 0
@@ -527,12 +571,19 @@ func qiehuan():
 	enemy_pokemon.position = marker_2d_2.position
 	enemy_name.text = enemy_pokemon.pokemon_name
 	add_child(enemy_pokemon)
-	enemy_pokemon.a_level(randi_range(enemy_pokemon.min_level, enemy_pokemon.max_level),  randi_range(0, 32))
+	enemy_pokemon.a_level(PlayerData.level + 5 + randi_range(0, 2),  randi_range(0, 32))
 	gx_hp()
 
 func player_qiehuan():
 	can_gxhp = false
+	var tween = create_tween()
+	tween.tween_property(player_pokemon, "scale", Vector2(0, 0), 1)
+	await tween.finished
 	player_pokemon.queue_free()
+	ball.show()
+	animation_player.play("qh_pokemon")
+	await animation_player.animation_finished
+	ball.texture = POKE_BALLS_2
 	player_pokemon = PokemonManager.Pokemon_instantiate(0)
 	player_pokemon.position = marker_2d_1.position
 	player_name.text = player_pokemon.pokemon_name
@@ -633,3 +684,98 @@ func bz_sb_animation(ball_texture: Texture):
 	tween.tween_property(enemy_pokemon, "scale", Vector2(1, 1), 1)
 	await tween.finished
 	ball.hide()
+
+func on_new_pokemon_data(data: Dictionary):
+	ball.texture = POKE_BALLS
+	bb_instance.queue_free()
+	_hhz = true
+	zdui.hide()
+	ui.hide()
+	jz.show()
+	wz = 0
+	zdks.text = "就决定是你了"
+	can_gxhp = false
+	var tween = create_tween()
+	tween.tween_property(player_pokemon, "scale", Vector2(0, 0), 1)
+	await tween.finished
+	ball.show()
+	animation_player.play("qh_pokemon")
+	await get_tree().create_timer(1).timeout
+	ball.texture = POKE_BALLS_2
+	player_pokemon.queue_free()
+	player_pokemon = PokemonManager.Pokemon_instantiate(data["id"])
+	zdks.text = player_pokemon.pokemon_name
+	player_pokemon.position = marker_2d_1.position
+	player_name.text = player_pokemon.pokemon_name
+	add_child(player_pokemon)
+	player_pokemon.ex = player_pokemon_data["ex"]
+	player_pokemon.scale = Vector2(0, 0)
+	tween = create_tween()
+	tween.tween_property(player_pokemon, "scale", Vector2(1, 1), 1)
+	player_pokemon.a_level(data["level"], data["gtz"])
+	player_pokemon.move1 = data["move"][0]
+	player_pokemon.move_pp = data["move_pp"]
+	player_pokemon.wz = data["wz"]
+	move_1.text = player_pokemon._move[player_pokemon.move1].name
+	if player_pokemon.move_num > 1:
+		player_pokemon.move1 = data["move"][0]
+		player_pokemon.move2 = data["move"][1]
+		move_2.text = player_pokemon._move[player_pokemon.move2].name
+	if player_pokemon.move_num > 2:
+		player_pokemon.move1 = data["move"][0]
+		player_pokemon.move2 = data["move"][1]
+		player_pokemon.move3 = data["move"][2]
+		move_3.text = player_pokemon._move[player_pokemon.move3].name
+	if player_pokemon.move_num > 3:
+		player_pokemon.move1 = data["move"][0]
+		player_pokemon.move2 = data["move"][1]
+		player_pokemon.move3 = data["move"][2]
+		player_pokemon.move4 = data["move"][3]
+		move_4.text = player_pokemon._move[player_pokemon.move4].name
+	player_pokemon.move_number = data["move"]
+	gx_hp()
+	await get_tree().create_timer(1).timeout
+	ball.hide()
+	sy_dj = true
+	can_gxhp = true
+	enemy_hh()
+
+func ex():
+	var xy_ex = (player_pokemon.level * player_pokemon.level * player_pokemon.level * 4)/ 5.0
+	player_pokemon.dq_ex += (20 * 64 * enemy_pokemon.level * (2 * enemy_pokemon.level) * (2 * enemy_pokemon.level)) / float((5 * (enemy_pokemon.level + player_pokemon.level + 10) * (enemy_pokemon.level + player_pokemon.level + 10)))
+	if player_pokemon.dq_ex >= xy_ex:
+		player_pokemon.dq_ex -= xy_ex
+		player_pokemon.level += 1
+		player_pokemon.a_level(player_pokemon.level, player_pokemon_data["gtz"])
+		PlayerData.save(player_pokemon, player_pokemon.wz)
+		
+		player_pokemon_data = PlayerData.pokemon_load(player_pokemon.wz)
+		player_pokemon.queue_free()
+		player_pokemon = PokemonManager.Pokemon_instantiate(player_pokemon_data["id"])
+		zdks.text = player_pokemon.pokemon_name
+		player_pokemon.position = marker_2d_1.position
+		player_name.text = player_pokemon.pokemon_name
+		add_child(player_pokemon)
+		player_pokemon.dq_ex = player_pokemon_data["ex"]
+		player_pokemon.a_level(player_pokemon_data["level"], player_pokemon_data["gtz"])
+		player_pokemon.move1 = player_pokemon_data["move"][0]
+		player_pokemon.move_pp = player_pokemon_data["move_pp"]
+		player_pokemon.wz = player_pokemon_data["wz"]
+		move_1.text = player_pokemon._move[player_pokemon.move1].name
+		if player_pokemon.move_num > 1:
+			player_pokemon.move1 = player_pokemon_data["move"][0]
+			player_pokemon.move2 = player_pokemon_data["move"][1]
+			move_2.text = player_pokemon._move[player_pokemon.move2].name
+		if player_pokemon.move_num > 2:
+			player_pokemon.move1 = player_pokemon_data["move"][0]
+			player_pokemon.move2 = player_pokemon_data["move"][1]
+			player_pokemon.move3 = player_pokemon_data["move"][2]
+			move_3.text = player_pokemon._move[player_pokemon.move3].name
+		if player_pokemon.move_num > 3:
+			player_pokemon.move1 = player_pokemon_data["move"][0]
+			player_pokemon.move2 = player_pokemon_data["move"][1]
+			player_pokemon.move3 = player_pokemon_data["move"][2]
+			player_pokemon.move4 = player_pokemon_data["move"][3]
+			move_4.text = player_pokemon._move[player_pokemon.move4].name
+		player_pokemon.move_number = player_pokemon_data["move"]
+		gx_hp()
