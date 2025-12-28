@@ -14,6 +14,8 @@ var super_potion = 1
 var hyper_potion = 1
 var max_potion = 1
 
+var coin: int = 0
+
 var pokemon1: Dictionary = {
 	"id": -1,
 	"level": 0,
@@ -128,3 +130,23 @@ func dj_sy(_name: String):
 	if _name == "全满药":
 		max_potion -= 1
 	poke_ball_arr = [poke_ball, great_ball, ultra_ball, master_ball]
+
+func dj_tj(_name: String):
+	if _name == "精灵球":
+		poke_ball += 1
+	if _name == "高级球":
+		ultra_ball += 1
+	if _name == "超级球":
+		great_ball += 1
+	if _name == "大师球":
+		master_ball += 1
+	if _name == "伤药":
+		potion += 1
+	if _name == "厉害伤药":
+		hyper_potion += 1
+	if _name == "好伤药":
+		super_potion += 1
+	if _name == "全满药":
+		max_potion += 1
+	poke_ball_arr = [poke_ball, great_ball, ultra_ball, master_ball]
+	dj_arr = [potion, super_potion, hyper_potion, max_potion]

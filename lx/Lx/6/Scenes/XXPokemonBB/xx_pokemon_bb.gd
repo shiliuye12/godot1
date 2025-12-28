@@ -41,7 +41,6 @@ var player_pokemon6
 var wz: int = 0
 var pokemon: Array = []
 var gx_wz = true
-var cd_wz = 0
 
 func _unhandled_input(event: InputEvent) -> void:
 	if wz <= 3 and event.is_action_pressed("pokemon_down") and gx_wz:
@@ -52,21 +51,23 @@ func _unhandled_input(event: InputEvent) -> void:
 		wz += 1
 	if wz >= 2 and event.is_action_pressed("pokemon_up") and gx_wz:
 		wz -= 2
-	if event.is_action_pressed("pokemon_qd") and wz + 1 != PlayerData.dq_pokemon_wz and pokemon.size() > wz: 
+	if event.is_action_pressed("pokemon_qd") and pokemon.size() > wz: 
 		gx_wz = false
 		color_rect.show()
-		if cd_wz == 0 and event.is_action_pressed("pokemon_down"):
-			cd_wz += 1
-		if cd_wz == 1 and event.is_action_pressed("pokemon_down"):
-			cd_wz = 0
-		if cd_wz == 1 and event.is_action_pressed("pokemon_up"):
-			cd_wz -= 1
-		if cd_wz == 0 and event.is_action_pressed("pokemon_up"):
-			cd_wz = 1
+	if texture_rect_1.visible == false and event.is_action_pressed("pokemon_down") and gx_wz == false:
+		texture_rect_1.show()
+		texture_rect_2.hide()
+	elif texture_rect_1.visible == true and event.is_action_pressed("pokemon_down") and gx_wz == false:
+		texture_rect_1.hide()
+		texture_rect_2.show()
+	elif texture_rect_1.visible == false and event.is_action_pressed("pokemon_up") and gx_wz == false:
+		texture_rect_1.show()
+		texture_rect_2.hide()
+	elif texture_rect_1.visible == true and event.is_action_pressed("pokemon_up") and gx_wz == false:
+		texture_rect_1.hide()
+		texture_rect_2.show()
 	if event.is_action_pressed("exit") and gx_wz == false:
 		color_rect.hide()
-		cd_wz = 0
-		wz = 0
 		gx_wz = true
 
 func _ready() -> void:
@@ -217,12 +218,6 @@ func _process(_delta: float) -> void:
 			move(player_pokemon6)
 		else:
 			hp.text = "-"
-	if cd_wz == 0 and gx_wz == false:
-		texture_rect_1.show()
-		texture_rect_2.hide()
-	if cd_wz == 1 and gx_wz == false:
-		texture_rect_1.hide()
-		texture_rect_2.show()
 
 func start_move(player_pokemon: Node2D, player_pokemon_data: Dictionary):
 	player_pokemon.move1 = player_pokemon_data["move"][0]

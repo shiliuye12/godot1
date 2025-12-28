@@ -13,6 +13,7 @@ const HYPER_POTION = preload("uid://cnbt75mj8px8l")
 const MAX_POTION = preload("uid://bj5stqh3stsxi")
 const POTION = preload("uid://csm8gisrn5nb6")
 const SUPER_POTION = preload("uid://bjmf3y7ke3igd")
+const COIN = preload("uid://2k0cs63npsyo")
 
 class poke_ball:
 	var name = "精灵球"
@@ -20,6 +21,7 @@ class poke_ball:
 	var bzl: float = 1.0
 	var tp = POKE_BALLS
 	var tp2 = POKE_BALLS_2
+	var weight: int = 100
 
 class great_ball:
 	var name = "超级球"
@@ -27,6 +29,7 @@ class great_ball:
 	var bzl: float= 1.5
 	var tp = GREAT_BALL
 	var tp2 = GREAT_BALL_2
+	var weight: int = 70
 
 class ultra_ball:
 	var name = "高级球"
@@ -34,6 +37,7 @@ class ultra_ball:
 	var bzl: float= 2
 	var tp = ULTRA_BALL
 	var tp2 = ULTRA_BALL_2
+	var weight: int = 40
 
 class master_ball:
 	var name = "大师球"
@@ -41,30 +45,41 @@ class master_ball:
 	var bzl: float= 9999
 	var tp = MASTER_BALL
 	var tp2 = MASTER_BALL_2
+	var weight: int = 10
 
 class potion:
 	var name = "伤药"
 	var text = "恢复20HP"
 	var hf = 20
 	var tp = POTION
+	var weight: int = 100
 
 class super_potion:
 	var name = "好伤药"
 	var text = "恢复50HP"
 	var hf = 50
 	var tp = SUPER_POTION
+	var weight: int = 70
 
 class hyper_potion:
 	var name = "厉害伤药"
 	var text = "恢复100HP"
 	var hf = 100
 	var tp = HYPER_POTION
+	var weight: int = 50
 
 class max_potion:
 	var name = "全满药"
 	var text = "恢复全部HP"
 	var hf = 99999
 	var tp = MAX_POTION
+	var weight: int = 10
+
+class coin:
+	var name = "金币"
+	var tp = COIN
+	var weight: int = 100
 
 var ball_arr: Array = [poke_ball, great_ball, ultra_ball, master_ball]
 var dj_arr: Array = [potion, super_potion, hyper_potion, max_potion]
+var qt_arr: Array = [coin]

@@ -49,7 +49,7 @@ func _process(_delta: float) -> void:
 			var new = PokemonManager.Pokemon_instantiate(0)
 			new.a_level(5, randi_range(0, 32))
 			PlayerData.save(new, new.wz)
-			PokemonScenesChoose.to_pokemon_vs()
+			PokemonScenesChoose.to_jl()
 	if wz == 2:
 		sprite_2d.position = marker_2d_2.position
 		label.text = "就决定是你了 妙蛙种子"

@@ -84,10 +84,10 @@ texture = ExtResource("3_jpwtj")
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "$500"
+text = "$30"
 label_settings = SubResource("LabelSettings_trtgj")
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer"]
+[node name="jt1" type="TextureRect" parent="GridContainer/VBoxContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(60, 50)
 layout_mode = 2
@@ -107,10 +107,10 @@ texture = ExtResource("4_ybblb")
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "$500"
+text = "$80"
 label_settings = SubResource("LabelSettings_trtgj")
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer2"]
+[node name="jt2" type="TextureRect" parent="GridContainer/VBoxContainer2"]
 visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(60, 50)
@@ -131,10 +131,10 @@ texture = ExtResource("5_lhhup")
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "$500"
+text = "$180"
 label_settings = SubResource("LabelSettings_trtgj")
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer3"]
+[node name="jt3" type="TextureRect" parent="GridContainer/VBoxContainer3"]
 visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(60, 50)
@@ -158,7 +158,7 @@ size_flags_horizontal = 4
 text = "$500"
 label_settings = SubResource("LabelSettings_trtgj")
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer4"]
+[node name="jt4" type="TextureRect" parent="GridContainer/VBoxContainer4"]
 visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(60, 50)
@@ -179,10 +179,10 @@ texture = ExtResource("7_qslg1")
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer5"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "$500"
+text = "$50"
 label_settings = SubResource("LabelSettings_trtgj")
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer5"]
+[node name="jt5" type="TextureRect" parent="GridContainer/VBoxContainer5"]
 visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(60, 50)
@@ -203,10 +203,10 @@ texture = ExtResource("8_ohj16")
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer6"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "$500"
+text = "$100"
 label_settings = SubResource("LabelSettings_trtgj")
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer6"]
+[node name="jt6" type="TextureRect" parent="GridContainer/VBoxContainer6"]
 visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(60, 50)
@@ -227,10 +227,10 @@ texture = ExtResource("9_xe0xc")
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer7"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "$500"
+text = "$200"
 label_settings = SubResource("LabelSettings_trtgj")
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer7"]
+[node name="jt7" type="TextureRect" parent="GridContainer/VBoxContainer7"]
 visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(60, 50)
@@ -251,10 +251,10 @@ texture = ExtResource("10_q1kbt")
 [node name="Label" type="Label" parent="GridContainer/VBoxContainer8"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "$500"
+text = "$2000"
 label_settings = SubResource("LabelSettings_trtgj")
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer8"]
+[node name="jt8" type="TextureRect" parent="GridContainer/VBoxContainer8"]
 visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(60, 50)
