@@ -16,6 +16,7 @@ var xx_bb = null
 var wz = 1
 var in_shop = true
 var jg: Array = [30, 80, 180, 500, 50, 100, 200, 2000]
+var dj: Array
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pokemon_p"):
@@ -42,6 +43,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pokemon_qd") and in_shop:
 		if PlayerData.coin >= jg[wz - 1]:
 			PlayerData.coin -= jg[wz - 1]
+			PlayerData.dj_tj(dj[wz - 1].name)
 
 func _process(_delta: float) -> void:
 	money.text = "金币数量: " + str(PlayerData.coin)
@@ -117,3 +119,11 @@ func _process(_delta: float) -> void:
 		jt_6.hide()
 		jt_7.hide()
 		jt_8.show()
+
+func _ready() -> void:
+	for i in DjList.dj_arr.size():
+		var a = DjList.dj_arr[i].new()
+		dj.append(a)
+	for i in DjList.ball_arr.size():
+		var a = DjList.ball_arr[i].new()
+		dj.append(a)

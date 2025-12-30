@@ -92,14 +92,12 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="name1" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "精灵球"
 label_settings = SubResource("LabelSettings_xjpd6")
 
 [node name="number" type="Label" parent="ColorRect2/MarginContainer/GridContainer/HBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 text = "X 10"

@@ -10,8 +10,6 @@ extends Control
 @onready var label_2: Label = $GridContainer/VBoxContainer2/Label2
 @onready var label_3: Label = $GridContainer/VBoxContainer3/Label3
 
-const XX_POKEMON_BB = preload("uid://byc1b2qkel8os")
-
 var wz = 1
 var z_wz = 3
 var dj: Array
@@ -22,7 +20,6 @@ var _dj_weight_z: int = 0
 var dj_1: int = 0
 var dj_2: int = 0
 var dj_3: int = 0
-var xx_bb = null
 
 var in_jl = true
 
@@ -82,18 +79,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		wz += 1
 	elif wz >= z_wz and event.is_action_pressed("pokemon_right"):
 		wz = 1
-	if event.is_action_pressed("Pokemon_p"):
-		if not xx_bb:
-			xx_bb = XX_POKEMON_BB.instantiate()
-			in_jl = false
-			add_child(xx_bb)
-	if event.is_action_pressed("exit") and xx_bb != null:
-		xx_bb.queue_free()
-		wz = 1
-		in_jl = true
 	if event.is_action_pressed("pokemon_qd") and in_jl == true:
 		if dj[wz].name != "金币":
-			PlayerData.dj_tj(dj[wz].name)
+			PlayerData.dj_tj(dj[dj_int[wz - 1]].name)
 		if dj[wz].name == "金币":
 			PlayerData.coin += 100
 		PokemonScenesChoose.to_shop()

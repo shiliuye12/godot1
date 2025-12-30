@@ -1,9 +1,9 @@
+ColorRect
 Label
 TextureRect
 HBoxContainer
 VBoxContainer
 MarginContainer
-ColorRect
 GridContainer
 Marker2D
 Sprite2D

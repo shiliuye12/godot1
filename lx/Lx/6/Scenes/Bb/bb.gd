@@ -56,10 +56,19 @@ func _unhandled_input(event: InputEvent) -> void:
 				dj.clear()
 				player_dj_num = 0
 				jz_ball()
-	if event.is_action_pressed("pokemon_qd"):
+	if event.is_action_pressed("pokemon_qd") and !PokemonScenesChoose.in_xx:
 		if dj != []:
 			PokemonSignalHub.on_dj.emit(dj[wz - 1].name)
 			dj.clear()
+	elif event.is_action_pressed("pokemon_qd") and PokemonScenesChoose.in_xx:
+		if dj[wz - 1].name != "精灵球" and dj[wz - 1].name != "高级球" and dj[wz - 1].name != "超级球" and dj[wz - 1].name != "大师球" and dj != null :
+			PlayerData.dj_sy(dj[wz - 1].name)
+			var new_pokemon = PlayerData.pokemons[PokemonScenesChoose.in_xx_wz]
+			new_pokemon["hp"] += dj[wz - 1].hf
+			PokemonScenesChoose.to_xx_pokemon_bb()
+	if event.is_action_pressed("exit") and PokemonScenesChoose.in_xx == true:
+		PokemonScenesChoose.in_xx = false
+		PokemonScenesChoose.to_xx_pokemon_bb()
 
 func _ready() -> void:
 	dj_name = [name_1, name_2, name_3, name_4, name_5, name_6, name_7]
@@ -80,6 +89,9 @@ func jz_ball():
 			dj_name[i].text = ball.name
 			dj_num[i].text = "X" + str(PlayerData.poke_ball_arr[i])
 			dj.append(ball)
+		else :
+			dj_name[i].hide()
+			dj_num[i].hide()
 
 func jz_dj():
 	title.text = "道具"
@@ -94,6 +106,9 @@ func jz_dj():
 			dj_name[i].text = _dj.name
 			dj_num[i].text = "X" + str(PlayerData.dj_arr[i])
 			dj.append(_dj)
+		else :
+			dj_name[i].hide()
+			dj_num[i].hide()
 
 func _process(_delta: float) -> void:
 	if dj == []:
@@ -103,42 +118,49 @@ func _process(_delta: float) -> void:
 	if wz == 1:
 		if dj == []:
 			return
-		jt.position = marker_2d.position
-		tp.texture = dj[0].tp
-		ms.text = dj[0].text
+		if dj.size() > 0:
+			jt.position = marker_2d.position
+			tp.texture = dj[0].tp
+			ms.text = dj[0].text
 	if wz == 2:
 		if dj == []:
 			return
-		jt.position = marker_2d_2.position
-		tp.texture = dj[1].tp
-		ms.text = dj[1].text
+		if dj.size() > 1:
+			jt.position = marker_2d_2.position
+			tp.texture = dj[1].tp
+			ms.text = dj[1].text
 	if wz == 3:
 		if dj == []:
 			return
-		jt.position = marker_2d_3.position
-		tp.texture = dj[2].tp
-		ms.text = dj[2].text
+		if dj.size() > 2:
+			jt.position = marker_2d_3.position
+			tp.texture = dj[2].tp
+			ms.text = dj[2].text
 	if wz == 4:
 		if dj == []:
 			return
-		jt.position = marker_2d_4.position
-		tp.texture = dj[3].tp
-		ms.text = dj[3].text
+		if dj.size() > 3:
+			jt.position = marker_2d_4.position
+			tp.texture = dj[3].tp
+			ms.text = dj[3].text
 	if wz == 5:
 		if dj == []:
 			return
-		jt.position = marker_2d_5.position
-		tp.texture = dj[4].tp
-		ms.text = dj[4].text
+		if dj.size() > 4:
+			jt.position = marker_2d_5.position
+			tp.texture = dj[4].tp
+			ms.text = dj[4].text
 	if wz == 6:
 		if dj == []:
 			return
-		jt.position = marker_2d_6.position
-		tp.texture = dj[5].tp
-		ms.text = dj[5].text
+		if dj.size() > 5:
+			jt.position = marker_2d_6.position
+			tp.texture = dj[5].tp
+			ms.text = dj[5].text
 	if wz == 7:
 		if dj == []:
 			return
-		jt.position = marker_2d_7.position
-		tp.texture = dj[6].tp
-		ms.text = dj[6].text
+		if dj.size() > 6:
+			jt.position = marker_2d_7.position
+			tp.texture = dj[6].tp
+			ms.text = dj[6].text

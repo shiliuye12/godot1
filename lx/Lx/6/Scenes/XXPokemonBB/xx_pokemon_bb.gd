@@ -41,6 +41,7 @@ var player_pokemon6
 var wz: int = 0
 var pokemon: Array = []
 var gx_wz = true
+var pokemon_sl: Array = []
 
 func _unhandled_input(event: InputEvent) -> void:
 	if wz <= 3 and event.is_action_pressed("pokemon_down") and gx_wz:
@@ -51,7 +52,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		wz += 1
 	if wz >= 2 and event.is_action_pressed("pokemon_up") and gx_wz:
 		wz -= 2
-	if event.is_action_pressed("pokemon_qd") and pokemon.size() > wz: 
+	if event.is_action_pressed("pokemon_qd") and !gx_wz and texture_rect_1.visible == true:
+		PokemonScenesChoose.in_xx_wz = wz
+		PokemonScenesChoose.to_bb()
+		PokemonScenesChoose.in_xx = true
+	if event.is_action_pressed("pokemon_qd") and pokemon.size() > wz and gx_wz:
 		gx_wz = false
 		color_rect.show()
 	if texture_rect_1.visible == false and event.is_action_pressed("pokemon_down") and gx_wz == false:
@@ -66,11 +71,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif texture_rect_1.visible == true and event.is_action_pressed("pokemon_up") and gx_wz == false:
 		texture_rect_1.hide()
 		texture_rect_2.show()
+	if event.is_action_pressed("exit") and gx_wz == true:
+		PokemonScenesChoose.to_shop()
 	if event.is_action_pressed("exit") and gx_wz == false:
 		color_rect.hide()
 		gx_wz = true
 
-func _ready() -> void:
+func _ready():
 	wz = 0
 	sprite_2d.show()
 	sprite_2d_2.hide()
@@ -84,8 +91,11 @@ func _ready() -> void:
 	player_pokemon1.a_level(player_pokemon_data1["level"], player_pokemon_data1["gtz"])
 	start_move(player_pokemon1, player_pokemon_data1)
 	player_pokemon1.hp = player_pokemon_data1.hp
+	if player_pokemon1.hp > player_pokemon1.max_hp:
+		player_pokemon1.hp = player_pokemon1.max_hp
 	player_pokemon1.mx()
 	pokemon.append(player_pokemon_data1)
+	pokemon_sl.append(player_pokemon1)
 	if PlayerData.dq_pokemon > 1:
 		player_pokemon_data2 = PlayerData.pokemon_load(2)
 		player_pokemon2 = PokemonManager.Pokemon_instantiate(player_pokemon_data2["id"])
@@ -95,8 +105,11 @@ func _ready() -> void:
 		player_pokemon2.a_level(player_pokemon_data2["level"], player_pokemon_data2["gtz"])
 		start_move(player_pokemon2, player_pokemon_data2)
 		player_pokemon2.hp = player_pokemon_data2.hp
+		if player_pokemon2.hp > player_pokemon2.max_hp:
+			player_pokemon2.hp = player_pokemon2.max_hp
 		player_pokemon2.mx()
 		pokemon.append(player_pokemon_data2)
+		pokemon_sl.append(player_pokemon2)
 	if PlayerData.dq_pokemon > 2:
 		player_pokemon_data3 = PlayerData.pokemon_load(3)
 		player_pokemon3 = PokemonManager.Pokemon_instantiate(player_pokemon_data3["id"])
@@ -106,8 +119,11 @@ func _ready() -> void:
 		player_pokemon3.a_level(player_pokemon_data3["level"], player_pokemon_data3["gtz"])
 		start_move(player_pokemon3, player_pokemon_data3)
 		player_pokemon3.hp = player_pokemon_data3.hp
+		if player_pokemon3.hp > player_pokemon3.max_hp:
+			player_pokemon3.hp = player_pokemon3.max_hp
 		player_pokemon3.mx()
 		pokemon.append(player_pokemon_data3)
+		pokemon_sl.append(player_pokemon3)
 	if PlayerData.dq_pokemon > 3:
 		player_pokemon_data4 = PlayerData.pokemon_load(4)
 		player_pokemon4 = PokemonManager.Pokemon_instantiate(player_pokemon_data4["id"])
@@ -117,8 +133,11 @@ func _ready() -> void:
 		player_pokemon4.a_level(player_pokemon_data4["level"], player_pokemon_data4["gtz"])
 		start_move(player_pokemon4, player_pokemon_data4)
 		player_pokemon4.hp = player_pokemon_data4.hp
+		if player_pokemon4.hp > player_pokemon4.max_hp:
+			player_pokemon4.hp = player_pokemon4.max_hp
 		player_pokemon4.mx()
 		pokemon.append(player_pokemon_data4)
+		pokemon_sl.append(player_pokemon4)
 	if PlayerData.dq_pokemon > 4:
 		player_pokemon_data5 = PlayerData.pokemon_load(5)
 		player_pokemon5 = PokemonManager.Pokemon_instantiate(player_pokemon_data5["id"])
@@ -128,8 +147,11 @@ func _ready() -> void:
 		player_pokemon5.a_level(player_pokemon_data5["level"], player_pokemon_data5["gtz"])
 		start_move(player_pokemon5, player_pokemon_data5)
 		player_pokemon5.hp = player_pokemon_data5.hp
+		if player_pokemon5.hp > player_pokemon5.max_hp:
+			player_pokemon5.hp = player_pokemon5.max_hp
 		player_pokemon5.mx()
 		pokemon.append(player_pokemon_data5)
+		pokemon_sl.append(player_pokemon5)
 	if PlayerData.dq_pokemon > 5:
 		player_pokemon_data6 = PlayerData.pokemon_load(6)
 		player_pokemon6 = PokemonManager.Pokemon_instantiate(player_pokemon_data6["id"])
@@ -139,8 +161,11 @@ func _ready() -> void:
 		player_pokemon6.a_level(player_pokemon_data6["level"], player_pokemon_data6["gtz"])
 		start_move(player_pokemon6, player_pokemon_data6)
 		player_pokemon6.hp = player_pokemon_data6.hp
+		if player_pokemon6.hp > player_pokemon6.max_hp:
+			player_pokemon6.hp = player_pokemon6.max_hp
 		player_pokemon6.mx()
 		pokemon.append(player_pokemon_data6)
+		pokemon_sl.append(player_pokemon6)
 
 func _process(_delta: float) -> void:
 	if wz == 0:
