@@ -1,10 +1,4 @@
-res://6/Scenes/JL/jl.tscn
-res://6/Scenes/Shop/shop.gd
-res://6/Scenes/XXPokemonBB/xx_pokemon_bb.tscn
-res://6/Global/PokemonScenesChoose.gd
-res://6/Scenes/XXPokemonBB/xx_pokemon_bb.gd
-res://6/Scenes/Bb/bb.tscn
-res://6/Scenes/Bb/bb.gd
-res://6/Scenes/JL/jl.gd
-res://6/Global/PlayerData.gd
-res://6/Scenes/Shop/shop.tscn
+res://6/Scenes/Move/move.tscn
+res://6/Scenes/Move/move.gd
+res://6/Scenes/ChoosePokemon/choose_pokemon.tscn
+res://6/Scenes/ChoosePokemon/choose_pokemon.gd

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c50starfi3mmv"]
+[gd_scene load_steps=16 format=3 uid="uid://c50starfi3mmv"]
 
 [ext_resource type="Script" uid="uid://cpi2usue04wtb" path="res://6/Scenes/Shop/shop.gd" id="1_arood"]
 [ext_resource type="Texture2D" uid="uid://clh0cd3yvhvoa" path="res://6/asstes/PG_ITCS-main/othersource/Pic/storeBg.jpg" id="1_eq836"]
@@ -14,6 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://kxqru0bfknou" path="res://6/asstes/PokeBall/Master Ball.png" id="10_q1kbt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jpwtj"]
+font = ExtResource("2_5styu")
+font_size = 44
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_arood"]
 font = ExtResource("2_5styu")
 font_size = 44
 font_color = Color(0, 0, 0, 1)
@@ -46,6 +51,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="money" type="Label" parent="MarginContainer"]
@@ -54,6 +60,13 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "金币数量: 10000"
 label_settings = SubResource("LabelSettings_jpwtj")
+
+[node name="NextLable" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "按下 F 键进入下一关"
+label_settings = SubResource("LabelSettings_arood")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1

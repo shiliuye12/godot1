@@ -1,0 +1,310 @@
+[gd_scene load_steps=6 format=3 uid="uid://b85iufgcbi56u"]
+
+[ext_resource type="Script" uid="uid://d7m78afg2r0l" path="res://6/Scenes/Move/move.gd" id="1_0s1gw"]
+[ext_resource type="Texture2D" uid="uid://5qyk3gxghk88" path="res://6/asstes/PG_ITCS-main/othersource/Pic/pointer.png" id="1_xudui"]
+[ext_resource type="FontFile" uid="uid://6l3rm3ckhspu" path="res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf" id="2_0s1gw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xudui"]
+font = ExtResource("2_0s1gw")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j26h8"]
+font = ExtResource("2_0s1gw")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[node name="Move" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0s1gw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.96862745, 0.95686275, 0.827451, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 64.0
+offset_right = 530.0
+offset_bottom = 598.0
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+color = Color(0.827451, 1, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect2/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect2/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect2/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "属性："
+label_settings = SubResource("LabelSettings_xudui")
+
+[node name="p_type" type="Label" parent="ColorRect2/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "-"
+label_settings = SubResource("LabelSettings_xudui")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect2/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect2/ColorRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "威力："
+label_settings = SubResource("LabelSettings_xudui")
+
+[node name="p_power" type="Label" parent="ColorRect2/ColorRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "-"
+label_settings = SubResource("LabelSettings_xudui")
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="p_jt1" type="TextureRect" parent="ColorRect2/MarginContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_xudui")
+expand_mode = 2
+
+[node name="p_move1" type="Label" parent="ColorRect2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "寄生种子"
+label_settings = SubResource("LabelSettings_j26h8")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="p_jt2" type="TextureRect" parent="ColorRect2/MarginContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_xudui")
+expand_mode = 2
+
+[node name="p_move2" type="Label" parent="ColorRect2/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "------"
+label_settings = SubResource("LabelSettings_j26h8")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="p_jt3" type="TextureRect" parent="ColorRect2/MarginContainer/VBoxContainer/HBoxContainer3"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_xudui")
+expand_mode = 2
+
+[node name="p_move3" type="Label" parent="ColorRect2/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "------"
+label_settings = SubResource("LabelSettings_j26h8")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="p_jt4" type="TextureRect" parent="ColorRect2/MarginContainer/VBoxContainer/HBoxContainer4"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_xudui")
+expand_mode = 2
+
+[node name="p_move4" type="Label" parent="ColorRect2/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "------"
+label_settings = SubResource("LabelSettings_j26h8")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 633.0
+offset_top = 64.0
+offset_right = 1081.0
+offset_bottom = 598.0
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect3"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+color = Color(0.827451, 1, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect3/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect3/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect3/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect3/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "属性："
+label_settings = SubResource("LabelSettings_xudui")
+
+[node name="type" type="Label" parent="ColorRect3/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "-"
+label_settings = SubResource("LabelSettings_xudui")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect3/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect3/ColorRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "威力："
+label_settings = SubResource("LabelSettings_xudui")
+
+[node name="power" type="Label" parent="ColorRect3/ColorRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "-"
+label_settings = SubResource("LabelSettings_xudui")
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect3/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="jt1" type="TextureRect" parent="ColorRect3/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_xudui")
+expand_mode = 2
+
+[node name="move1" type="Label" parent="ColorRect3/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "------"
+label_settings = SubResource("LabelSettings_j26h8")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="jt2" type="TextureRect" parent="ColorRect3/MarginContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_xudui")
+expand_mode = 2
+
+[node name="move2" type="Label" parent="ColorRect3/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "------"
+label_settings = SubResource("LabelSettings_j26h8")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="jt3" type="TextureRect" parent="ColorRect3/MarginContainer/VBoxContainer/HBoxContainer3"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_xudui")
+expand_mode = 2
+
+[node name="move3" type="Label" parent="ColorRect3/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "------"
+label_settings = SubResource("LabelSettings_j26h8")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="jt4" type="TextureRect" parent="ColorRect3/MarginContainer/VBoxContainer/HBoxContainer4"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_xudui")
+expand_mode = 2
+
+[node name="move4" type="Label" parent="ColorRect3/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "------"
+label_settings = SubResource("LabelSettings_j26h8")

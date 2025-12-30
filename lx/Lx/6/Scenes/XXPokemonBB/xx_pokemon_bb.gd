@@ -56,6 +56,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		PokemonScenesChoose.in_xx_wz = wz
 		PokemonScenesChoose.to_bb()
 		PokemonScenesChoose.in_xx = true
+	if event.is_action_pressed("pokemon_qd") and !gx_wz and texture_rect_1.visible == false:
+		PokemonScenesChoose.in_xx_wz = wz
+		PokemonScenesChoose.to_move()
 	if event.is_action_pressed("pokemon_qd") and pokemon.size() > wz and gx_wz:
 		gx_wz = false
 		color_rect.show()

@@ -5,6 +5,7 @@ const JL = preload("uid://qg16urfxu76h")
 const SHOP = preload("uid://c50starfi3mmv")
 const BB = preload("uid://bjtea7ulhngtk")
 const XX_POKEMON_BB = preload("uid://byc1b2qkel8os")
+const MOVE = preload("uid://b85iufgcbi56u")
 
 var in_xx = false
 var in_xx_wz = 0
@@ -23,3 +24,6 @@ func to_bb():
 
 func to_xx_pokemon_bb():
 	get_tree().change_scene_to_packed(XX_POKEMON_BB)
+
+func to_move():
+	get_tree().change_scene_to_packed(MOVE)
