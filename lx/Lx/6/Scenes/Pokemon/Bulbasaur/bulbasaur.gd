@@ -60,14 +60,20 @@ func a_level(a: int, _gtz: int):
 		move_num += 1
 		_move.append(PokemonMoveList.bulbasaur_movelist[1].new())
 		move_num += 1
-	if level >= 4:
+	if level >= 3:
 		_move.append(PokemonMoveList.bulbasaur_movelist[2].new())
 		move_num += 1
-	if level >= 8:
+	if level >= 6:
 		_move.append(PokemonMoveList.bulbasaur_movelist[3].new())
 		move_num += 1
-	if level >= 12:
+	if level >= 9:
 		_move.append(PokemonMoveList.bulbasaur_movelist[4].new())
+		move_num += 1
+	if level >= 12:
+		_move.append(PokemonMoveList.bulbasaur_movelist[5].new())
+		move_num += 1
+	if level >= 15:
+		_move.append(PokemonMoveList.bulbasaur_movelist[6].new())
 		move_num += 1
 	
 	if move_num == 1:

@@ -74,6 +74,9 @@ var enemy_dq_fy = 0.0
 var enemy_dq_sd = 0.0
 
 var sy_dj: bool = false
+var _player_die = false
+var enemy_num = 0
+var dq_enemy_num = 1
 
 var player_pokemon_data = PlayerData.pokemon_load(1)
 var player_pokemon = PokemonManager.Pokemon_instantiate(player_pokemon_data["id"])
@@ -126,6 +129,11 @@ func _ready() -> void:
 	wz = 0
 	PokemonSignalHub.on_dj.connect(on_dj)
 	PokemonSignalHub.on_new_pokemon_data.connect(on_new_pokemon_data)
+	enemy_num = 1
+	if PlayerData.level >= 5:
+		enemy_num = 2
+	elif PlayerData.level >= 10:
+		enemy_num = 3
 
 func _process(_delta: float) -> void:
 	if wz == 1:
@@ -375,12 +383,14 @@ func jc_move(_wz: int , gj_pokemon: Node2D):
 				player_dq_sd += gj_pokemon._move[gj_pokemon.move_number[_wz - 1]].lx_sx_lv
 
 func enemy_die():
+	PlayerData.coin += enemy_pokemon.level * 3 +20
 	enemy_pokemon.queue_free()
 	enemy_dq_fy = 0
 	enemy_dq_sd = 0
 	enemy_dq_wg = 0
 
 func player_die():
+	_player_die = true
 	player_dq_wg = 0.0
 	player_dq_fy = 0.0
 	player_dq_sd = 0.0
@@ -398,35 +408,14 @@ func _on_player_start_animation_finished() -> void:
 	wz = 1
 
 func _on_timer_timeout() -> void:
-	if player_pokemon.sd >= enemy_pokemon.sd:
-		wz = 1
-		if enemy_pokemon.hp > 0:
-			enemy_hh()
-		else:
-			ex()
-			enemy_die()
-			qiehuan()
-			PlayerData.save(player_pokemon, player_pokemon.wz)
-			zdks.text = "出现了新的宝可梦"
-			enemy_pokemon.mx()
-			await get_tree().create_timer(1).timeout
-			wz = 1
-			_hhz = false
-			jz.hide()
-			ui.show()
-			hh_wz = 0
-			can_gxhp = true
-			return
-	else:
-		wz = 1
-		_hhz = false
-		PlayerData.save(player_pokemon, player_pokemon.wz)
-		jz.hide()
-		ui.show()
-		hh_wz = 0
 	if enemy_pokemon.hp <= 0:
 		ex()
+		dq_enemy_num += 1
 		enemy_die()
+		if dq_enemy_num > enemy_num:
+			PlayerData.save(player_pokemon, player_pokemon.wz)
+			PokemonScenesChoose.to_jl()
+			return
 		qiehuan()
 		PlayerData.save(player_pokemon, player_pokemon.wz)
 		zdks.text = "出现了新的宝可梦"
@@ -438,8 +427,37 @@ func _on_timer_timeout() -> void:
 		ui.show()
 		hh_wz = 0
 		can_gxhp = true
+		return
+	if player_pokemon.sd >= enemy_pokemon.sd:
+		wz = 1
+		if enemy_pokemon.hp > 0:
+			gx_hp()
+			enemy_hh()
+	else:
+		wz = 1
+		_hhz = false
+		PlayerData.save(player_pokemon, player_pokemon.wz)
+		jz.hide()
+		ui.show()
+		hh_wz = 0
 
 func _on_timer_2_timeout() -> void:
+	if player_pokemon.hp <= 0:
+		sy_dj = false
+		PlayerData.save(player_pokemon, player_pokemon.wz)
+		player_die()
+		zdui.hide()
+		ui.hide()
+		jz.show()
+		zdks.text = player_pokemon.pokemon_name + "倒下了"
+		await get_tree().create_timer(1).timeout
+		jz.hide()
+		wz = 0
+		hh_wz = 0
+		can_gxhp = false
+		bb_instance = POKEMON_BB.instantiate()
+		add_child(bb_instance)
+		return
 	if player_pokemon.sd >= enemy_pokemon.sd:
 		wz = 1
 		_hhz = false
@@ -460,37 +478,6 @@ func _on_timer_2_timeout() -> void:
 			jz.hide()
 			ui.show()
 			hh_wz = 0
-		else:
-			sy_dj = false
-			PlayerData.save(player_pokemon, player_pokemon.wz)
-			player_die()
-			zdui.hide()
-			ui.hide()
-			jz.show()
-			zdks.text = player_pokemon.pokemon_name + "倒下了"
-			await get_tree().create_timer(1).timeout
-			jz.hide()
-			wz = 0
-			hh_wz = 0
-			can_gxhp = false
-			bb_instance = POKEMON_BB.instantiate()
-			add_child(bb_instance)
-			return
-	if player_pokemon.hp <= 0:
-		sy_dj = false
-		PlayerData.save(player_pokemon, player_pokemon.wz)
-		player_die()
-		zdui.hide()
-		ui.hide()
-		jz.show()
-		zdks.text = player_pokemon.pokemon_name + "倒下了"
-		await get_tree().create_timer(1).timeout
-		jz.hide()
-		wz = 0
-		hh_wz = 0
-		can_gxhp = false
-		bb_instance = POKEMON_BB.instantiate()
-		add_child(bb_instance)
 
 func _sh(_wz: int, gj_pokemon: Node2D , fy_pokemon: Node2D):
 	var power = 0
@@ -617,7 +604,7 @@ func on_dj(dj_name: String):
 		await get_tree().create_timer(1).timeout
 		for i in DjList.ball_arr.size():
 			var a = DjList.ball_arr[i].new()
-			if dj_name == a.name:
+			if dj_name == a.name and PlayerData.dq_pokemon < 6:
 				PlayerData.dj_sy(dj_name)
 				var bzl = ((3 * enemy_pokemon.max_hp - 2 * enemy_pokemon.hp) * 200 * a.bzl) / (3 * enemy_pokemon.max_hp)
 				var sfcg = randf_range(0, 1)
@@ -625,10 +612,15 @@ func on_dj(dj_name: String):
 					bz_animation(a.tp, a.tp2)
 					await get_tree().create_timer(4).timeout
 					zdks.text = "捕捉成功"
+					dq_enemy_num += 1
 					PlayerData.save(enemy_pokemon, enemy_pokemon.wz)
 					await get_tree().create_timer(1).timeout
 					ball.hide()
 					enemy_die()
+					if dq_enemy_num > enemy_num:
+						PlayerData.save(player_pokemon, player_pokemon.wz)
+						PokemonScenesChoose.to_jl()
+						return
 					qiehuan()
 					PlayerData.save(player_pokemon, player_pokemon.wz)
 					zdks.text = "出现了新的宝可梦"
@@ -647,6 +639,15 @@ func on_dj(dj_name: String):
 					bz_sb_animation(a.tp2)
 					zdks.text = enemy_pokemon.pokemon_name + "挣脱了"
 					await get_tree().create_timer(1).timeout
+			elif dj_name == a.name and PlayerData.dq_pokemon >= 6:
+				zdks.text = "当前宝可梦已达上限，无法捕捉"
+				await get_tree().create_timer(1).timeout
+				wz = 1
+				_hhz = false
+				jz.hide()
+				ui.show()
+				hh_wz = 0
+				can_gxhp = true
 		for i in DjList.dj_arr.size():
 			var a = DjList.dj_arr[i].new()
 			if dj_name == a.name:
@@ -737,7 +738,15 @@ func on_new_pokemon_data(data: Dictionary):
 	ball.hide()
 	sy_dj = true
 	can_gxhp = true
-	enemy_hh()
+	if _player_die == false:
+		enemy_hh()
+	else:
+		wz = 1
+		_hhz = false
+		jz.hide()
+		ui.show()
+		hh_wz = 0
+		_player_die = false
 
 func ex():
 	var xy_ex = (player_pokemon.level * player_pokemon.level * player_pokemon.level * 4)/ 5.0
@@ -745,6 +754,8 @@ func ex():
 	while (player_pokemon.dq_ex >= xy_ex):
 		player_pokemon.dq_ex -= xy_ex
 		player_pokemon.level += 1
+		player_pokemon.move_num = 0
+		player_pokemon._move.clear()
 		player_pokemon.a_level(player_pokemon.level, player_pokemon_data["gtz"])
 		PlayerData.save(player_pokemon, player_pokemon.wz)
 		

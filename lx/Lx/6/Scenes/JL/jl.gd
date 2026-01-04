@@ -69,6 +69,15 @@ func _ready() -> void:
 		label_2.text = "金币 X 100"
 	if label_3.text == "金币":
 		label_3.text = "金币 X 100"
+	
+	for i in PlayerData.dq_pokemon:
+		var player_pokemon_data = PlayerData.pokemon_load(i + 1)
+		var player_pokemon = PokemonManager.Pokemon_instantiate(player_pokemon_data["id"])
+		player_pokemon.a_level(player_pokemon_data["level"], player_pokemon_data["gtz"])
+		for j in player_pokemon.move_num:
+			if j >= 4:
+				break
+			player_pokemon_data["move_pp"][j] = player_pokemon._move[player_pokemon_data["move"][j]].pp
 
 func _unhandled_input(event: InputEvent) -> void:
 	if wz <= 1 and event.is_action_pressed("pokemon_left"):

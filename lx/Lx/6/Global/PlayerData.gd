@@ -151,3 +151,8 @@ func dj_tj(_name: String):
 		max_potion += 1
 	poke_ball_arr = [poke_ball, great_ball, ultra_ball, master_ball]
 	dj_arr = [potion, super_potion, hyper_potion, max_potion]
+
+func game_over():
+	pokemons = [pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6]
+	poke_ball_arr = [poke_ball, great_ball, ultra_ball, master_ball]
+	dj_arr = [potion, super_potion, hyper_potion, max_potion]

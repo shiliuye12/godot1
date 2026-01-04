@@ -145,12 +145,17 @@ func typekz(player_type: String, enemy_type: String):
 			return 1
 
 func sj_dot(move: String, fy_pokemon: Node2D):
-	if move == "寄生种子" and fy_pokemon.type != "草" and fy_pokemon.dq_dot != "寄生种子":
+	var dot_num = 0
+	if move == "寄生种子" and fy_pokemon.type != "草" and fy_pokemon.type_2 != "草" and fy_pokemon.dq_dot != "寄生种子":
 		fy_pokemon.dq_dot = move
 		fy_pokemon.dq_dot_hh = 999
-		return 1
-	else:
-		return 0
+		dot_num = 1
+	if move == "毒粉" and fy_pokemon.type != "毒" and fy_pokemon.type_2 != "毒" and fy_pokemon.dq_dot != "毒粉":
+		fy_pokemon.dq_dot = move
+		fy_pokemon.dq_dot_hh = 999
+		dot_num = 1
+	
+	return dot_num
 
 func jc_dot(gj_pokemon: Node2D, fy_pokemon: Node2D):
 	if fy_pokemon.dq_dot == "寄生种子" and fy_pokemon.dq_dot_hh > 0:
@@ -163,6 +168,13 @@ func jc_dot(gj_pokemon: Node2D, fy_pokemon: Node2D):
 		if gj_pokemon.hp > gj_pokemon.max_hp:
 			gj_pokemon.hp = gj_pokemon.max_hp
 		return "寄生状态"
+	if fy_pokemon.dq_dot == "毒粉" and fy_pokemon.dq_dot_hh > 0:
+		fy_pokemon.dq_dot_hh -= 1
+		var a = fy_pokemon.max_hp / 8
+		fy_pokemon.hp -= a
+		if fy_pokemon.hp <= 0 :
+			fy_pokemon.hp = 0
+		return "中毒状态"
 
 #region
 class zhua:
@@ -213,6 +225,13 @@ class gaosuxuanzhuan:
 	var pp = 40
 	var power = 50
 	var accuracy = 100
+
+class feiyekuaidao:
+	var name = "飞叶快刀"
+	var type = "草"
+	var pp = 25
+	var power = 55
+	var accuracy = 95
 
 #endregion
 
@@ -277,8 +296,19 @@ class suorukezhong:
 	var lx = "提升"
 	var lx_sx = "防御"
 	var lx_sx_lv = 0.1
+
+class dufen:
+	var name = "毒粉"
+	var type = "毒"
+	var pp = 35
+	var power = 0
+	var accuracy = 75
+	var lx = "dot"
+	var lx_sx = "毒"
+	var lx_sx_lv = 1
+
 #endregion
 
 var charmander_movelist: Array = [zhua, jiaosheng, huohua, yanwu, longxi]
-var bulbasaur_movelist: Array = [zhuangji, jiaosheng, tengbian, shengzhang, jishengzhongzi]
+var bulbasaur_movelist: Array = [zhuangji, jiaosheng, tengbian, shengzhang, jishengzhongzi, feiyekuaidao, dufen]
 var squirtle_movelist: Array = [zhuangji, yaoweiba, shuiqiang, suorukezhong, gaosuxuanzhuan]

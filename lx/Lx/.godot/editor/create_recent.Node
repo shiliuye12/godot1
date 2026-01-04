@@ -1,9 +1,9 @@
-HBoxContainer
-CheckBox
-Label
 VBoxContainer
+Label
 MarginContainer
 ColorRect
+HBoxContainer
+CheckBox
 TextureRect
 TextEdit
 GridContainer

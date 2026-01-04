@@ -47,9 +47,9 @@ func _process(_delta: float) -> void:
 		sprite_2d_4.hide()
 		if Input.is_action_just_pressed("pokemon_qd"):
 			var new = PokemonManager.Pokemon_instantiate(0)
-			new.a_level(50, randi_range(0, 32))
+			new.a_level(5, randi_range(0, 32))
 			PlayerData.save(new, new.wz)
-			PokemonScenesChoose.to_jl()
+			PokemonScenesChoose.to_pokemon_vs()
 	if wz == 2:
 		sprite_2d.position = marker_2d_2.position
 		label.text = "就决定是你了 妙蛙种子"
@@ -58,7 +58,7 @@ func _process(_delta: float) -> void:
 		sprite_2d_4.hide()
 		if Input.is_action_just_pressed("pokemon_qd"):
 			var new = PokemonManager.Pokemon_instantiate(1)
-			new.a_level(5, randi_range(0, 32))
+			new.a_level(50, randi_range(0, 32))
 			PlayerData.save(new, new.wz)
 			PokemonScenesChoose.to_pokemon_vs()
 	if wz == 3:

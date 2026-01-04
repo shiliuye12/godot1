@@ -1,4 +1,6 @@
-res://6/Scenes/Move/move.tscn
-res://6/Scenes/Move/move.gd
+res://6/Scenes/PokemonVS/pokemon_vs.tscn
+res://6/Global/PokemonMoveList.gd
 res://6/Scenes/ChoosePokemon/choose_pokemon.tscn
 res://6/Scenes/ChoosePokemon/choose_pokemon.gd
+res://6/Scenes/Pokemon/Bulbasaur/bulbasaur.tscn
+res://6/Scenes/Pokemon/Bulbasaur/bulbasaur.gd

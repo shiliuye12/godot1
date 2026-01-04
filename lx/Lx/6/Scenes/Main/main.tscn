@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://ffik1juy20ki"]
+
+[ext_resource type="Script" uid="uid://b7ncof188mebg" path="res://6/Scenes/Main/main.gd" id="1_1xmix"]
+[ext_resource type="FontFile" uid="uid://6l3rm3ckhspu" path="res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_3o62l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ejqn"]
+font = ExtResource("1_3o62l")
+font_size = 96
+font_color = Color(0, 0, 0, 1)
+outline_size = 3
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1xmix"]
+font = ExtResource("1_3o62l")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3o62l"]
+font = ExtResource("1_3o62l")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1xmix")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9764706, 0.9647059, 0.84313726, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 170
+
+[node name="title" type="Label" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "宝可梦闯关"
+label_settings = SubResource("LabelSettings_0ejqn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+
+[node name="start" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "开始游戏"
+label_settings = SubResource("LabelSettings_1xmix")
+
+[node name="start2" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "按下“ENTER”开始游戏"
+label_settings = SubResource("LabelSettings_3o62l")

@@ -122,6 +122,12 @@ func _ready() -> void:
 		player_pokemon6.hp = player_pokemon_data6.hp
 		player_pokemon6.mx()
 		pokemon.append(player_pokemon_data6)
+	var hp_0 = 0
+	for i in pokemon.size():
+		if pokemon[i].hp == 0:
+			hp_0 += 1
+	if hp_0 == pokemon.size():
+		PokemonScenesChoose.to_game_over() 
 
 func _process(_delta: float) -> void:
 	if wz == 0:

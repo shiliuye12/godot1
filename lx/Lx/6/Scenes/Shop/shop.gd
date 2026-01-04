@@ -19,6 +19,8 @@ var jg: Array = [30, 80, 180, 500, 50, 100, 200, 2000]
 var dj: Array
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pokemon_f"):
+		PokemonScenesChoose.to_pokemon_vs()
 	if event.is_action_pressed("Pokemon_p"):
 		if not xx_bb:
 			xx_bb = XX_POKEMON_BB.instantiate()
