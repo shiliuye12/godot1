@@ -1,6 +1,9 @@
-res://6/Scenes/PokemonVS/pokemon_vs.tscn
-res://6/Global/PokemonMoveList.gd
 res://6/Scenes/ChoosePokemon/choose_pokemon.tscn
-res://6/Scenes/ChoosePokemon/choose_pokemon.gd
-res://6/Scenes/Pokemon/Bulbasaur/bulbasaur.tscn
-res://6/Scenes/Pokemon/Bulbasaur/bulbasaur.gd
+res://6/Global/PokemonMoveList.gd
+res://6/Scenes/Pokemon/Charmeleon/charmeleon.tscn
+res://6/Scenes/Pokemon/Charmeleon/charmeleon.gd
+res://6/Global/PokemonManager.gd
+res://main/Main/control.gd
+res://main/Main/control.tscn
+res://6/Scenes/Main/main.tscn
+res://6/Scenes/Main/main.gd

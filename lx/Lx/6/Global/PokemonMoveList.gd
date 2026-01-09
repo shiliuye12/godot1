@@ -233,6 +233,26 @@ class feiyekuaidao:
 	var power = 55
 	var accuracy = 95
 
+class huoyanya:
+	var name = "火焰牙"
+	var type = "火"
+	var pp = 15
+	var power = 65
+	var accuracy = 95
+
+class pikai:
+	var name = "劈开"
+	var type = "一般"
+	var pp = 20
+	var power = 70
+	var accuracy = 100
+	
+class penshehuoyan:
+	var name = "喷射火焰"
+	var type = "火"
+	var pp = 15
+	var power = 90
+	var accuracy = 100
 #endregion
 
 #region
@@ -312,3 +332,8 @@ class dufen:
 var charmander_movelist: Array = [zhua, jiaosheng, huohua, yanwu, longxi]
 var bulbasaur_movelist: Array = [zhuangji, jiaosheng, tengbian, shengzhang, jishengzhongzi, feiyekuaidao, dufen]
 var squirtle_movelist: Array = [zhuangji, yaoweiba, shuiqiang, suorukezhong, gaosuxuanzhuan]
+
+var charmeleon_movelist: Array = charmander_movelist
+
+func _ready() -> void:
+	charmeleon_movelist.append_array([huoyanya, pikai, penshehuoyan])

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="lx"
-run/main_scene="uid://ffik1juy20ki"
+run/main_scene="uid://bdmy68qya5tnt"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 

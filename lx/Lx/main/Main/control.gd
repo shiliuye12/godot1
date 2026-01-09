@@ -5,6 +5,7 @@ const MAIN_2 = preload("uid://cy1gxrpv8l0h7")
 const MAIN_3 = preload("uid://cefem2digvvti")
 const MAIN_4 = preload("uid://crnn6n0tybv6y")
 const MAIN_5 = preload("uid://dbx00yseeje8i")
+const MAIN_6 = preload("uid://ffik1juy20ki")
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -24,3 +25,6 @@ func _on_4_pressed() -> void:
 
 func _on_5_pressed() -> void:
 	get_tree().change_scene_to_packed(MAIN_5)
+
+func _on_6_pressed() -> void:
+	get_tree().change_scene_to_packed(MAIN_6)
