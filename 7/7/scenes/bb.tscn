@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://c6w75lub55sjv"]
+
+[ext_resource type="PackedScene" uid="uid://dkw1wycg6ydqq" path="res://scenes/w.tscn" id="1_57aba"]
+[ext_resource type="Script" uid="uid://dhi2q0ik2cv8k" path="res://scenes/bb.gd" id="1_btauc"]
+
+[node name="bb" type="Control" unique_id=1686096070]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_btauc")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=993745083]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=60043696]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1971566082]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "背包"
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=832282123]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "退出"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1143756014]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 30
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1915984057]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/MarginContainer2" unique_id=1084953270]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/h_separation = 28
+theme_override_constants/v_separation = 10
+columns = 9
+
+[node name="W" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1784026161 instance=ExtResource("1_57aba")]
+layout_mode = 2
+
+[node name="W2" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1090101473 instance=ExtResource("1_57aba")]
+layout_mode = 2
+
+[node name="W3" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=312492559 instance=ExtResource("1_57aba")]
+layout_mode = 2
+
+[node name="W4" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=129986951 instance=ExtResource("1_57aba")]
+layout_mode = 2
+
+[node name="W5" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1944239797 instance=ExtResource("1_57aba")]
+layout_mode = 2
+
+[node name="W6" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=442237846 instance=ExtResource("1_57aba")]
+layout_mode = 2
+
+[node name="W7" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1942872337 instance=ExtResource("1_57aba")]
+layout_mode = 2
+
+[node name="W8" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1337735481 instance=ExtResource("1_57aba")]
+layout_mode = 2
+
+[node name="W9" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1327014908 instance=ExtResource("1_57aba")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=726666242]
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=556558658]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/h_separation = 28
+theme_override_constants/v_separation = 10
+columns = 9
+
+[node name="W" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1204228945 instance=ExtResource("1_57aba")]
+layout_mode = 2

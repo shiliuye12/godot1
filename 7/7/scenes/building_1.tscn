@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cwlwqyse1q0n3"]
+
+[ext_resource type="PackedScene" uid="uid://bxoabf3o3bspr" path="res://scenes/building.tscn" id="1_8kne3"]
+
+[node name="building_1" unique_id=1975099555 instance=ExtResource("1_8kne3")]
+
+[node name="TileMapLayer" parent="." index="0" unique_id=1130545314]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 1, 0, 0, 0)

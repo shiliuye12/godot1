@@ -1,7 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1767946960
-godot.windows.opt.tools.64.20260109-162225-647.log::TextFile::-1::1767946945::0::1::::<><><>0<>0<><>::
-godot.windows.opt.tools.64.20260109-162240-739.log::TextFile::-1::1767946960::0::1::::<><><>0<>0<><>::
+::res://::1770293559
 icon.svg::CompressedTexture2D::4814205675737737270::1765771073::1765771073::1::::<><><>0<>0<>ed74252deb6cd3806df235572515cb28<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://1/::1765771132
 ::res://1/assets/::1765771132
@@ -785,7 +783,7 @@ Poke Balls2.png::CompressedTexture2D::2062281193009514056::1766728350::176672851
 Poke Balls.png::CompressedTexture2D::3701401587737243380::1766728486::1766728525::1::::<><><>0<>0<>efc77d7f493e5888874789c7910401bd<>res://.godot/imported/Poke Balls.png-b2f3e3335ef4a1f1ec068b2c3ee34bdf.ctex::
 Ultra Ball2.png::CompressedTexture2D::3548421297732645922::1766732163::1766732267::1::::<><><>0<>0<>e6aca5787e01bab02da2b5ee92baebbf<>res://.godot/imported/Ultra Ball2.png-ec49bbc395c07f550dcf155125cb786a.ctex::
 Ultra Ball.png::CompressedTexture2D::5507295445724090577::1766732143::1766732262::1::::<><><>0<>0<>2ac0297e49122da217681cb9bc1a6d9f<>res://.godot/imported/Ultra Ball.png-6085ec6c1ab0ec2c8df72a8e7632b874.ctex::
-::res://6/asstes/pokemon/::1767947143
+::res://6/asstes/pokemon/::1767947144
 001 Bulbasaur.png::CompressedTexture2D::8484940833635857273::1765881799::1765881800::1::::<><><>0<>0<>217c8cf614db91365900f4af095526b1<>res://.godot/imported/001 Bulbasaur.png-e84886c4fa521dcef2e62ddbe45d23c8.ctex::
 001bulbasaur.png::CompressedTexture2D::6202457226365913061::1765880413::1765880414::1::::<><><>0<>0<>afe0e6237b52924f3f7d6c9685f2ae57<>res://.godot/imported/001bulbasaur.png-12b77340c3a5c55b9740392c4cd4d27d.ctex::
 004 Charmander.png::CompressedTexture2D::5939482217356825737::1765880183::1765880183::1::::<><><>0<>0<>d1ac9b8e65c5629f7ed016cae5f4f1d9<>res://.godot/imported/004 Charmander.png-95b3dbd68ba0bcb64183b1128f40bd3c.ctex::
@@ -794,10 +792,10 @@ Ultra Ball.png::CompressedTexture2D::5507295445724090577::1766732143::1766732262
 005charmeleon.png::CompressedTexture2D::8426007192811989513::1767947136::1767947136::1::::<><><>0<>0<>3890618d4f2d5d8c7b344f55ee4f0a64<>res://.godot/imported/005charmeleon.png-2355fc7c0270089759890e98658b0878.ctex::
 007 Squirtle.png::CompressedTexture2D::4661235309957041595::1766294387::1766294388::1::::<><><>0<>0<>5708ea57e3f03c19ccfc05b97f5b1034<>res://.godot/imported/007 Squirtle.png-08fad2bf8d236c9664c87abcd1be3be3.ctex::
 007squirtle.png::CompressedTexture2D::4735310576215484930::1766294378::1766294379::1::::<><><>0<>0<>815db57a1d060bdf5fdf3e5031cfd40a<>res://.godot/imported/007squirtle.png-3ee205648058487dff55e11e2220f94b.ctex::
-::res://6/Global/::1767947038
+::res://6/Global/::1767947373
 DJList.gd::GDScript::2699232862249996537::1766905956::0::1::::<>Node<><>0<>0<><>::
 PlayerData.gd::GDScript::8317729504870119694::1767422202::0::1::::<>Node<><>0<>0<><>::
-PokemonManager.gd::GDScript::3643746125348154839::1766294953::0::1::::<>Node<><>0<>0<><>::
+PokemonManager.gd::GDScript::3643746125348154839::1767947373::0::1::::<>Node<><>0<>0<><>::
 PokemonMoveList.gd::GDScript::8715922993163303432::1767947038::0::1::::<>Node<><>0<>0<><>::
 PokemonScenesChoose.gd::GDScript::1756685652667426152::1767422777::0::1::::<>Node<><>0<>0<><>::
 PokemonSignalHub.gd::GDScript::5105900449873031641::1766812784::0::1::::<>Node<><>0<>0<><>::
@@ -818,9 +816,9 @@ game_over.tscn::PackedScene::5994276979155031059::1767422720::0::1::::<><><>0<>0
 ::res://6/Scenes/JL/::1767426041
 jl.gd::GDScript::5554923016479322020::1767426041::0::1::::<>Control<><>0<>0<><>::
 jl.tscn::PackedScene::1137042843143271573::1767425503::0::1::::<><><>0<>0<><>::uid://q0fyqf02a3ru::::res://6/asstes/PG_ITCS-main/othersource/Pic/selectPrize_bg.jpg<>uid://cle31gxu5dpbo::::res://6/Scenes/JL/jl.gd<>uid://2k0cs63npsyo::::res://6/asstes/PG_ITCS-main/othersource/Pic/coin.png<>uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf<>uid://moq1tfqyf2u2::::res://6/asstes/PG_ITCS-main/othersource/Pic/pointerUp.png
-::res://6/Scenes/Main/::1767423336
-main.gd::GDScript::4659447330338725832::1767422821::0::1::::<>Control<><>0<>0<><>::
-main.tscn::PackedScene::361771081293855960::1767423336::0::1::::<><><>0<>0<><>::uid://b7ncof188mebg::::res://6/Scenes/Main/main.gd<>uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf
+::res://6/Scenes/Main/::1767947793
+main.gd::GDScript::4659447330338725832::1767947793::0::1::::<>Control<><>0<>0<><>::
+main.tscn::PackedScene::361771081293855960::1767947792::0::1::::<><><>0<>0<><>::uid://b7ncof188mebg::::res://6/Scenes/Main/main.gd<>uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf
 ::res://6/Scenes/Move/::1767421294
 move.gd::GDScript::277414101868995833::1767089594::0::1::::<>Control<><>0<>0<><>::
 move.tscn::PackedScene::4765105580168327226::1767421294::0::1::::<><><>0<>0<><>::uid://d7m78afg2r0l::::res://6/Scenes/Move/move.gd<>uid://5qyk3gxghk88::::res://6/asstes/PG_ITCS-main/othersource/Pic/pointer.png<>uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf
@@ -831,8 +829,9 @@ bulbasaur.tscn::PackedScene::2457037093809841177::1767526626::0::1::::<><><>0<>0
 ::res://6/Scenes/Pokemon/Charmander/::1766841784
 charmander.gd::GDScript::6101739910958294213::1766841784::0::1::::<>Node2D<><>0<>0<><>::
 charmander.tscn::PackedScene::1545928020549909628::1766409163::0::1::::<><><>0<>0<><>::uid://cqven0oulpgrh::::res://6/asstes/pokemon/004 Charmander.png<>uid://cs6y1af8phtov::::res://6/Scenes/Pokemon/Charmander/charmander.gd<>uid://wox3v32pedlc::::res://6/asstes/pokemon/004charmander.png
-::res://6/Scenes/Pokemon/Charmeleon/::1767947083
-charmeleon.tscn::PackedScene::5510004327548602652::1767947083::0::1::::<><><>0<>0<><>::uid://ds5f0awomw0oj::::res://6/asstes/pokemon/001 Bulbasaur.png<>uid://cumrtgmlxvp6t::::res://6/asstes/pokemon/001bulbasaur.png
+::res://6/Scenes/Pokemon/Charmeleon/::1767947804
+charmeleon.gd::GDScript::3641787772071032039::1767947329::0::1::::<>Node2D<><>0<>0<><>::
+charmeleon.tscn::PackedScene::5510004327548602652::1767947804::0::1::::<><><>0<>0<><>::uid://br5dyhxpbtc2b::::res://6/Scenes/Pokemon/Charmeleon/charmeleon.gd<>uid://ccbecgph7p2fv::::res://6/asstes/pokemon/005 Charmeleon.png<>uid://dsbvdwfwufexd::::res://6/asstes/pokemon/005charmeleon.png
 ::res://6/Scenes/Pokemon/Squirtle/::1766819786
 squirtle.gd::GDScript::8548959003143621950::1766819786::0::1::::<>Node2D<><>0<>0<><>::
 squirtle.tscn::PackedScene::4337665587235353324::1766730919::0::1::::<><><>0<>0<><>::uid://dt2gdui6hml4i::::res://6/Scenes/Pokemon/Squirtle/squirtle.gd<>uid://b8p24xuix3r8m::::res://6/asstes/pokemon/007squirtle.png<>uid://b7n64nn46btp0::::res://6/asstes/pokemon/007 Squirtle.png
@@ -850,6 +849,6 @@ xx_pokemon_bb.gd::GDScript::8008125202727695926::1767083535::0::1::::<>Control<>
 xx_pokemon_bb.tscn::PackedScene::4076663557427325898::1767083587::0::1::::<><><>0<>0<><>::uid://dmdgwf2vt8o0u::::res://6/Scenes/XXPokemonBB/xx_pokemon_bb.gd<>uid://cd54kpnkbffi::::res://6/asstes/PG_ITCS-main/othersource/Pic/playerPokemons.jpg<>uid://6l3rm3ckhspu::::res://3/assets/fonts/gemunu-libre-v8-latin-700.ttf<>uid://moq1tfqyf2u2::::res://6/asstes/PG_ITCS-main/othersource/Pic/pointerUp.png<>uid://5qyk3gxghk88::::res://6/asstes/PG_ITCS-main/othersource/Pic/pointer.png
 ::res://main/::1765771133
 ChangeScences.gd::GDScript::4429008608123981048::1765771074::0::1::::<>Node<><>0<>0<><>::
-::res://main/Main/::1765771133
-control.gd::GDScript::2458972632655471287::1765771094::0::1::::<>Control<><>0<>0<><>::
-control.tscn::PackedScene::2623274074172439561::1765771094::0::1::::<><><>0<>0<><>::uid://bbbe6jrwmsjyt::::res://main/Main/control.gd<>uid://crrkho6b66av3::::res://1/assets/element_red_diamond.png<>uid://ctdvbyeic0kas::::res://2/assets/plane/1.png<>uid://dp2u160befthp::::res://3/assets/player/parrot.png<>uid://b5sogjep608ru::::res://4/assets/1.png<>uid://dc8lcbo7hbwmt::::res://5/assets/res/Resources/menu-start-gold.png
+::res://main/Main/::1767947683
+control.gd::GDScript::2458972632655471287::1767947661::0::1::::<>Control<><>0<>0<><>::
+control.tscn::PackedScene::2623274074172439561::1767947683::0::1::::<><><>0<>0<><>::uid://bbbe6jrwmsjyt::::res://main/Main/control.gd<>uid://crrkho6b66av3::::res://1/assets/element_red_diamond.png<>uid://ctdvbyeic0kas::::res://2/assets/plane/1.png<>uid://dp2u160befthp::::res://3/assets/player/parrot.png<>uid://b5sogjep608ru::::res://4/assets/1.png<>uid://dc8lcbo7hbwmt::::res://5/assets/res/Resources/menu-start-gold.png<>uid://wox3v32pedlc::::res://6/asstes/pokemon/004charmander.png

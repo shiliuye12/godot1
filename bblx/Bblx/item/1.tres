@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b2eyxprn41mjn"]
+
+[ext_resource type="Script" uid="uid://dxbgdyipy0y1e" path="res://item.gd" id="1_08iia"]
+[ext_resource type="Texture2D" uid="uid://dowjycvgyg2bq" path="res://zy/tilemap.png" id="2_jqx26"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx5bh"]
+atlas = ExtResource("2_jqx26")
+region = Rect2(0, 136, 16, 16)
+
+[resource]
+script = ExtResource("1_08iia")
+name = "1"
+texture = SubResource("AtlasTexture_hx5bh")
+id = 1
+metadata/_custom_type_script = "uid://dxbgdyipy0y1e"

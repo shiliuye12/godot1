@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ct0n3lj5tb5ia"]
+
+[ext_resource type="Texture2D" uid="uid://dowjycvgyg2bq" path="res://zy/tilemap.png" id="1_3xuqs"]
+[ext_resource type="Script" uid="uid://stldnxi22u7v" path="res://object.gd" id="2_0i3lm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwaef"]
+atlas = ExtResource("1_3xuqs")
+region = Rect2(17, 0, 50, 50)
+
+[node name="Object" type="Sprite2D" unique_id=1784965341]
+modulate = Color(1, 1, 1, 0.45490196)
+texture = SubResource("AtlasTexture_dwaef")
+script = ExtResource("2_0i3lm")
+rect = Rect2(0, 0, 15, 15)

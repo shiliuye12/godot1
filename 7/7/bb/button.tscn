@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://copht3qpeaqid"]
+
+[ext_resource type="Script" uid="uid://bv2pv3xruo5bk" path="res://bb/button.gd" id="1_rb60t"]
+
+[node name="SlotButton" type="Button" unique_id=1205262047]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+script = ExtResource("1_rb60t")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1709668600]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=355226031]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2

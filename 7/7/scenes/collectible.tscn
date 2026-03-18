@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://3b0caolxw0kj"]
+
+[ext_resource type="Script" uid="uid://k0827y2dsdm5" path="res://scenes/collectible.gd" id="1_1pg6c"]
+[ext_resource type="Texture2D" uid="uid://b8tkv68371jst" path="res://asset/tilemap_packed.png" id="1_bkg8t"]
+
+[sub_resource type="Animation" id="Animation_bkg8t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1pg6c"]
+resource_name = "die"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_61c27"]
+resource_name = "hit"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ga2k0"]
+_data = {
+&"RESET": SubResource("Animation_bkg8t"),
+&"die": SubResource("Animation_1pg6c"),
+&"hit": SubResource("Animation_61c27")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gns2"]
+size = Vector2(16, 33)
+
+[node name="Collectible" type="Node2D" unique_id=498627887]
+script = ExtResource("1_1pg6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1770083576]
+texture = ExtResource("1_bkg8t")
+region_enabled = true
+region_rect = Rect2(48, 80, 16, 33)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=262352842]
+libraries/ = SubResource("AnimationLibrary_ga2k0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=335686222]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1226144309]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_6gns2")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

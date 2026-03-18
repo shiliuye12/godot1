@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://u3s2h85nycu7"]
+
+[ext_resource type="PackedScene" uid="uid://h65ep4nut0j3" path="res://item/slot.tscn" id="1_iro3t"]
+[ext_resource type="Script" uid="uid://b1mqfieqqio3n" path="res://item/bag_ui.gd" id="1_jv2bp"]
+
+[node name="BagUi" type="Control" unique_id=460839922]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jv2bp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1811869165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.42903125, 0.42903125, 0.42903125, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=420847618]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=557673692]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1207838775]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=674191005]
+layout_mode = 2
+columns = 9
+
+[node name="Slot" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=572947635 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot2" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1719306142 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot3" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=75124581 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot4" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=197746254 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot5" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=456307730 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot6" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1266583669 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot7" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1270912353 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot8" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1399784819 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot9" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=2134106217 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot10" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=553201381 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot11" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=455079309 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot12" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1468042955 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot13" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=2075290632 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot14" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=2032159877 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot15" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=875725398 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot16" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=649259139 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot17" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1083385455 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot18" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=2116421393 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot19" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=582615769 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot20" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=522973531 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot21" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=902645612 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot22" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=393240832 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot23" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=444351416 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot24" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1758059372 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot25" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=21102971 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot26" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=1645895996 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot27" parent="MarginContainer/VBoxContainer/MarginContainer/GridContainer" unique_id=162009014 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1715702696]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/MarginContainer2" unique_id=1680422683]
+layout_mode = 2
+columns = 9
+
+[node name="Slot" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=720171830 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot2" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1533789223 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot3" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1039051774 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot4" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1886257572 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot5" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1472977704 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot6" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1441607744 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot7" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1154957970 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot8" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=22433416 instance=ExtResource("1_iro3t")]
+layout_mode = 2
+
+[node name="Slot9" parent="MarginContainer/VBoxContainer/MarginContainer2/GridContainer" unique_id=1127367422 instance=ExtResource("1_iro3t")]
+layout_mode = 2

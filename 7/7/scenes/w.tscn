@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dkw1wycg6ydqq"]
+
+[ext_resource type="Texture2D" uid="uid://b8tkv68371jst" path="res://asset/tilemap_packed.png" id="1_2witt"]
+[ext_resource type="Script" uid="uid://c3ohy5pxb3sh0" path="res://scenes/w.gd" id="1_sv5w6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv5w6"]
+atlas = ExtResource("1_2witt")
+region = Rect2(83, 131, 10, 10)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2witt"]
+font_size = 8
+
+[node name="W" type="MarginContainer" unique_id=1784026161]
+custom_minimum_size = Vector2(32, 32)
+script = ExtResource("1_sv5w6")
+
+[node name="Panel" type="Panel" parent="." unique_id=2038948932]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1595053048]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1559720823]
+layout_mode = 2
+texture = SubResource("AtlasTexture_sv5w6")
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=482103804]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "99"
+label_settings = SubResource("LabelSettings_2witt")

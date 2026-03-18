@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://p7l2631oe3lu"]
+
+[ext_resource type="Script" uid="uid://ca5sonha7akr1" path="res://bb/bag_ui.gd" id="1_1t58l"]
+[ext_resource type="PackedScene" uid="uid://copht3qpeaqid" path="res://bb/button.tscn" id="1_yam7c"]
+
+[node name="bag_ui" type="Control" unique_id=1069634655]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1t58l")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1920915381]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -46.0
+offset_right = 106.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=404041664]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="BagSlotGridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer" unique_id=1318200224]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 9
+
+[node name="SlotButton" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=1205262047 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton2" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=648931441 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton3" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=494709299 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton4" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=398697176 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton5" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=365033728 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton6" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=760312815 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton7" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=1802412183 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton8" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=2016232118 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton9" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=1774427047 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton10" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=1981556953 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton11" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=1419990661 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton12" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=525233479 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton13" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=160872861 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton14" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=1005964012 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton15" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=1901553862 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton16" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=223041275 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton17" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=1372717872 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton18" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=943107056 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton19" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=415194361 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton20" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=728655577 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton21" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=2026213134 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton22" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=1413902619 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton23" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=2072905870 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton24" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=1941656110 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton25" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=14650141 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton26" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=420555293 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton27" parent="PanelContainer/VBoxContainer/BagSlotGridContainer" unique_id=1338205090 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="HotBarContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2081458106]
+layout_mode = 2
+
+[node name="SlotButton" parent="PanelContainer/VBoxContainer/HotBarContainer" unique_id=197051809 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton2" parent="PanelContainer/VBoxContainer/HotBarContainer" unique_id=508728709 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton3" parent="PanelContainer/VBoxContainer/HotBarContainer" unique_id=1790616759 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton4" parent="PanelContainer/VBoxContainer/HotBarContainer" unique_id=191298112 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton5" parent="PanelContainer/VBoxContainer/HotBarContainer" unique_id=141218626 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton6" parent="PanelContainer/VBoxContainer/HotBarContainer" unique_id=207911731 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton7" parent="PanelContainer/VBoxContainer/HotBarContainer" unique_id=133053121 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton8" parent="PanelContainer/VBoxContainer/HotBarContainer" unique_id=449722937 instance=ExtResource("1_yam7c")]
+layout_mode = 2
+
+[node name="SlotButton9" parent="PanelContainer/VBoxContainer/HotBarContainer" unique_id=864867970 instance=ExtResource("1_yam7c")]
+layout_mode = 2

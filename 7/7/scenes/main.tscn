@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b2drepbr3lrvd"]
+
+[ext_resource type="Script" uid="uid://bfuqbgv1sxadm" path="res://scenes/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://d4e54lebrln5c" path="res://scenes/game.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://3b0caolxw0kj" path="res://scenes/collectible.tscn" id="2_0wfyh"]
+
+[node name="main" type="Node2D" unique_id=1428564984]
+script = ExtResource("1_jyhfs")
+
+[node name="game" parent="." unique_id=1512490483 instance=ExtResource("1_o5qli")]
+
+[node name="Collectible" parent="." unique_id=498627887 instance=ExtResource("2_0wfyh")]
+position = Vector2(48, 57)
+
+[node name="Collectible3" parent="." unique_id=173788496 instance=ExtResource("2_0wfyh")]
+position = Vector2(176, 131)
+
+[node name="Collectible2" parent="." unique_id=426774307 instance=ExtResource("2_0wfyh")]
+position = Vector2(104, 83)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1384763166]
+process_mode = 3

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://6b447w0wv0x4"]
+
+[ext_resource type="Script" uid="uid://d3ck4tiq28eyw" path="res://wg/grid_container.gd" id="1_yu1vw"]
+
+[node name="GridContainer" type="GridContainer" unique_id=1374882852]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+script = ExtResource("1_yu1vw")

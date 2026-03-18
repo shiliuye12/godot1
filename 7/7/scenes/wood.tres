@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://ccywdw1j5ses7"]
+
+[ext_resource type="Script" uid="uid://dx11wv4iuq140" path="res://scenes/item_resource.gd" id="1_78uxs"]
+[ext_resource type="Texture2D" uid="uid://b8tkv68371jst" path="res://asset/tilemap_packed.png" id="1_oxhl0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khy7m"]
+atlas = ExtResource("1_oxhl0")
+region = Rect2(83, 131, 10, 10)
+
+[resource]
+script = ExtResource("1_78uxs")
+item_name = "木头"
+icon = SubResource("AtlasTexture_khy7m")
+metadata/_custom_type_script = "uid://dx11wv4iuq140"

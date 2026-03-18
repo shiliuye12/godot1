@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://swpvjgggxdsr"]
+
+[ext_resource type="Texture2D" uid="uid://b8tkv68371jst" path="res://asset/tilemap_packed.png" id="1_ctpro"]
+[ext_resource type="Script" uid="uid://cgpi4k8fleg8f" path="res://bb/slot_item.gd" id="1_rm5hg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm5hg"]
+atlas = ExtResource("1_ctpro")
+region = Rect2(81, 81, 14, 14)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctdnk"]
+font_size = 4
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
+
+[node name="Slot_item" type="Control" unique_id=1145532397]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rm5hg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1056459156]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_rm5hg")
+
+[node name="Label" type="Label" parent="." unique_id=1902198721]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 27.0
+offset_bottom = 24.0
+text = "11"
+label_settings = SubResource("LabelSettings_ctdnk")
