@@ -11,6 +11,7 @@ var xz_sx_2 = -1
 const OBJECT = preload("uid://ct0n3lj5tb5ia")
 const AREA_2D = preload("uid://x8wx0d75eaym")
 const BAG_UI = preload("uid://u3s2h85nycu7")
+const BUILDING = preload("uid://cjbo4j0l2dni7")
 
 var gridSize: Vector2
 var object
@@ -80,6 +81,11 @@ func _input(event: InputEvent) -> void:
 		if player_date.Slots[xz_sx].item:
 			if player_date.Slots[xz_sx].item.id == 5:
 				newPlacement = AREA_2D.instantiate()
+				add_child(newPlacement)
+				newPlacement.global_position = get_global_mouse_position()
+				object = newPlacement
+			elif player_date.Slots[xz_sx].item.id == 6:
+				newPlacement = BUILDING.instantiate()
 				add_child(newPlacement)
 				newPlacement.global_position = get_global_mouse_position()
 				object = newPlacement

@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://db0adscp66v8l"]
+
+[ext_resource type="PackedScene" uid="uid://cxybbyhr2wtko" path="res://Tool/grid.tscn" id="1_up8sa"]
+[ext_resource type="Script" uid="uid://bx8jtvj62egrr" path="res://Scene/main/main.gd" id="1_yhpoe"]
+[ext_resource type="PackedScene" uid="uid://c5bighnkvav0p" path="res://Scene/Camera/camera_2d.tscn" id="2_30dud"]
+[ext_resource type="PackedScene" uid="uid://ctji6a1j2i8ux" path="res://Scene/Slot/slot.tscn" id="3_dwohs"]
+[ext_resource type="PackedScene" uid="uid://4jjokgx68fnx" path="res://Scene/Sawmill/sawmill.tscn" id="7_e5itc"]
+
+[node name="Main" type="Node2D" unique_id=440039550]
+script = ExtResource("1_yhpoe")
+
+[node name="Control" parent="." unique_id=336087748 instance=ExtResource("1_up8sa")]
+offset_left = -375.0
+offset_top = -377.0
+offset_right = 375.0
+offset_bottom = 373.0
+columns = 10
+width = 10
+height = 10
+cellWidth = 75
+cellHeight = 75
+
+[node name="Camera2D" parent="." unique_id=1219702832 instance=ExtResource("2_30dud")]
+position = Vector2(584, 325)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1149432474]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1748570509]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer" unique_id=1414192274]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/MarginContainer" unique_id=1826224074]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 9
+
+[node name="Slot" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=64537040 instance=ExtResource("3_dwohs")]
+layout_mode = 2
+
+[node name="Slot2" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=176104474 instance=ExtResource("3_dwohs")]
+layout_mode = 2
+
+[node name="Slot3" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=1570059761 instance=ExtResource("3_dwohs")]
+layout_mode = 2
+
+[node name="Slot4" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=1885491278 instance=ExtResource("3_dwohs")]
+layout_mode = 2
+
+[node name="Slot5" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=1140593935 instance=ExtResource("3_dwohs")]
+layout_mode = 2
+
+[node name="Slot6" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=869590884 instance=ExtResource("3_dwohs")]
+layout_mode = 2
+
+[node name="Slot7" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=1641045587 instance=ExtResource("3_dwohs")]
+layout_mode = 2
+
+[node name="Slot8" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=1657468169 instance=ExtResource("3_dwohs")]
+layout_mode = 2
+
+[node name="building" type="Node" parent="." unique_id=563291086]
+
+[node name="items" type="Node" parent="." unique_id=878442052]
+
+[node name="Sawmill" parent="." unique_id=1789470519 instance=ExtResource("7_e5itc")]
+position = Vector2(188, 185)

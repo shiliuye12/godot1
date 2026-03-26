@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b5caj17gdd36u"]
+
+[ext_resource type="Script" uid="uid://dvl8xb34plfng" path="res://Scene/Belt/belt.gd" id="1_686dk"]
+[ext_resource type="Texture2D" uid="uid://bwuuti5p8dafh" path="res://Asset/微信图片_20260325102827_21_30.jpg" id="2_686dk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi1qr"]
+size = Vector2(74, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_686dk"]
+size = Vector2(56, 56)
+
+[node name="Belt" type="Area2D" unique_id=401628864]
+script = ExtResource("1_686dk")
+rect = Rect2(0, 0, 75, 75)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1862247949]
+texture = ExtResource("2_686dk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1318892252]
+shape = SubResource("RectangleShape2D_oi1qr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=522442423]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=418462262]
+position = Vector2(74, 0)
+shape = SubResource("RectangleShape2D_686dk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bcwtsqcjwk211"]
+
+[ext_resource type="Script" uid="uid://dwqilfhcamkhr" path="res://Tool/panel_container.gd" id="1_na3q6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_na3q6"]
+bg_color = Color(0.413683, 0.4136831, 0.41368288, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1342361277]
+self_modulate = Color(1, 1, 1, 0.38039216)
+custom_minimum_size = Vector2(32, 32)
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_na3q6")
+script = ExtResource("1_na3q6")

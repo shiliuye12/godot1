@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dekjuuqtnx2lk"]
+
+[ext_resource type="Texture2D" uid="uid://bwuuti5p8dafh" path="res://Asset/微信图片_20260325102827_21_30.jpg" id="1_8g6bd"]
+[ext_resource type="Script" uid="uid://kydby8roh44q" path="res://Scene/Test/object.gd" id="2_2aiqo"]
+
+[node name="object" type="Sprite2D" unique_id=1975748268]
+texture = ExtResource("1_8g6bd")
+script = ExtResource("2_2aiqo")
+rect = Rect2(0, 0, 75, 75)

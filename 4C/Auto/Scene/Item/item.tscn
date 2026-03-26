@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dg2dt3330rsms"]
+
+[ext_resource type="Script" uid="uid://dihwo5jxij7lv" path="res://Scene/Item/item.gd" id="1_7c5d4"]
+[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="2_bt412"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rctmd"]
+atlas = ExtResource("2_bt412")
+region = Rect2(114, 82, 75, 75)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2q2wy"]
+radius = 0.01
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wo3ni"]
+size = Vector2(65, 64)
+
+[node name="Item" type="CharacterBody2D" unique_id=830181443]
+script = ExtResource("1_7c5d4")
+rect = Rect2(0, 0, 75, 75)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=920999996]
+texture = SubResource("AtlasTexture_rctmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=453257551]
+z_index = 10
+shape = SubResource("CircleShape2D_2q2wy")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=221452879]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=942167796]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_wo3ni")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

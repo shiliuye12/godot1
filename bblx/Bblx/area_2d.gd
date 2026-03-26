@@ -40,7 +40,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			_can_cs = false
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is CSD:
 		_if_csd = true
@@ -50,8 +49,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 #	if area is CSD:
 #		_if_csd = false
 #		on_csd.erase(area)
-
-
 
 @export var rect: Rect2
 
