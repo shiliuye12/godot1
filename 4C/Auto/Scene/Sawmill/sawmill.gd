@@ -1,31 +1,66 @@
 extends Node2D
 
-const ITEM = preload("uid://dg2dt3330rsms")
+var items_data = {
+	"number": 0,
+	"slot":null
+}
+var item
+var ui = null
 
-@onready var timer: Timer = $Timer
-var belt
-var can_produce = true
+const BUILDING_UI = preload("uid://dc1ske4gora4r")
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area is Belt:
-		belt = area
-		timer.start()
+func _ready() -> void:
+	pass
+	#Global.ui_items_change.connect(_ui_items_change)
 
-func _on_timer_timeout() -> void:
-	if belt:
-		var new_item = ITEM.instantiate()
-		var item_node = get_node("/root/Main/items")
-		item_node.add_child(new_item)
-		new_item.global_position = belt.global_position
-
-func _process(delta: float) -> void:
-	if belt and can_produce == true and timer.is_stopped():
-		timer.start()
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_entry_body_entered(body: Node2D) -> void:
 	if body is item:
-		can_produce = true
+		if items_data.slot != null:
+			if items_data.slot.item != null:
+				if items_data.slot.item.id == body.slot_.item.id:
+					items_data.number += 1
+					items_data.slot = body.slot_
+					Global.items_change.emit(items_data)
+					body.queue_free()
+		elif items_data.slot == null:
+			items_data.number = 1
+			items_data.slot = body.slot_
+			#Global.items_change.emit(items_data)
+			body.queue_free()
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is item:
-		can_produce = false
+func can_enter(body: item):
+	if body.id == 1:
+		return true
+	else:
+		return false
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event.is_action_pressed("left"):
+		ui = BUILDING_UI.instantiate()
+		ui.building = self
+		add_child(ui)
+		ui.open(items_data)
+
+#func _ui_items_change(slot: Slot):
+	#items_data.slot = slot
+	#items_data.number = slot.number
+	#if items_data.number == 0:
+		#items_data.slot = null
+
+
+@export var rect: Rect2
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+var slot_: Slot
+
+func update():
+	sprite_2d.texture = slot_.item.texture
+
+func get_global_rect():
+	return Rect2(
+		global_position - rect.size / 2,
+		rect.size
+	)
+
+func set_on_place():
+	modulate.a = 1

@@ -8,9 +8,11 @@ var slot_: Slot
 var move: Vector2 = Vector2(0, 0)
 var speed = 75
 var _can_move = true
+var id = -1
 
 func update():
 	sprite_2d.texture = slot_.item.texture
+	id = slot_.item.id
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("left"):

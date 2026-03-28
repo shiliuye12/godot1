@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://bx8jtvj62egrr" path="res://Scene/main/main.gd" id="1_yhpoe"]
 [ext_resource type="PackedScene" uid="uid://c5bighnkvav0p" path="res://Scene/Camera/camera_2d.tscn" id="2_30dud"]
 [ext_resource type="PackedScene" uid="uid://ctji6a1j2i8ux" path="res://Scene/Slot/slot.tscn" id="3_dwohs"]
-[ext_resource type="PackedScene" uid="uid://4jjokgx68fnx" path="res://Scene/Sawmill/sawmill.tscn" id="7_e5itc"]
+[ext_resource type="PackedScene" uid="uid://rybyryv8q8n7" path="res://Scene/Sawmill/sawmill.tscn" id="6_i4lwv"]
+[ext_resource type="PackedScene" uid="uid://4jjokgx68fnx" path="res://Scene/Lumberyard/lumberyard.tscn" id="7_e5itc"]
+[ext_resource type="PackedScene" uid="uid://b5caj17gdd36u" path="res://Scene/Belt/ belt.tscn" id="7_xft36"]
 
 [node name="Main" type="Node2D" unique_id=440039550]
 script = ExtResource("1_yhpoe")
@@ -69,7 +71,13 @@ layout_mode = 2
 
 [node name="building" type="Node" parent="." unique_id=563291086]
 
-[node name="items" type="Node" parent="." unique_id=878442052]
+[node name="Lumberyard" parent="building" unique_id=1789470519 instance=ExtResource("7_e5itc")]
+position = Vector2(112, 110)
 
-[node name="Sawmill" parent="." unique_id=1789470519 instance=ExtResource("7_e5itc")]
+[node name="Sawmill" parent="building" unique_id=559273586 instance=ExtResource("6_i4lwv")]
 position = Vector2(188, 185)
+
+[node name="Belt" parent="building" unique_id=401628864 instance=ExtResource("7_xft36")]
+position = Vector2(112, 186)
+
+[node name="items" type="Node" parent="." unique_id=878442052]

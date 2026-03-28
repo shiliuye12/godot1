@@ -14,6 +14,7 @@ var xz_sx_2 = -1
 const OBJECT = preload("uid://dekjuuqtnx2lk")
 const BAG_UI = preload("uid://dandknfb2b0qa")
 const _BELT = preload("uid://b5caj17gdd36u")
+const SAWMILL = preload("uid://rybyryv8q8n7")
 
 var gridSize: Vector2
 var object
@@ -38,6 +39,8 @@ func kjl_update():
 		if !bag_slot[i].wp:
 			var new_slot = slotitem.instantiate()
 			bag_slot[i].spawn(new_slot)
+		if player_data.Slots[i].number == 0:
+			player_data.Slots[i].item = null
 		bag_slot[i].wp.slot_ = player_data.Slots[i]
 		bag_slot[i].wp.update()
 
@@ -77,24 +80,27 @@ func slot_jh():
 	_rotation = 0
 	
 func save_data():
-	ResourceSaver.save(player_data,"res://Resource/player_data.tres")
+	pass
+	#ResourceSaver.save(player_data,"res://Resource/player_data.tres")
 
 func _input(event: InputEvent) -> void:
-	if xz_sx != -1 and not object:
+	if xz_sx != -1 and not object and player_data.Slots[xz_sx].item:
 		var newPlacement
-		if player_data.Slots[xz_sx].item:
-			newPlacement = OBJECT.instantiate()
-			add_child(newPlacement)
-			newPlacement.slot_ = player_data.Slots[xz_sx]
-			newPlacement.update()
-			newPlacement.global_position = get_global_mouse_position()
-			object = newPlacement
-			object.rotation = _rotation
+		if player_data.Slots[xz_sx].item.name == "传送带" or player_data.Slots[xz_sx].item.name == "伐木场":
+			if player_data.Slots[xz_sx].item:
+				newPlacement = OBJECT.instantiate()
+				add_child(newPlacement)
+				newPlacement.slot_ = player_data.Slots[xz_sx]
+				newPlacement.update()
+				newPlacement.global_position = get_global_mouse_position()
+				object = newPlacement
+				object.rotation = _rotation
 	elif Input.is_action_just_pressed("right") and isValid:
 		_place_placement(objectCells)
-	if object and event.is_action_pressed("exit"):
-		object.queue_free()
-		object = null
+	if xz_sx != -1 and event.is_action_pressed("exit"):
+		if object:
+			object.queue_free()
+			object = null
 		isValid = null
 		_reset_highlight()
 		Global.button_off.emit()
@@ -140,18 +146,39 @@ func _check_and_hightlight_cells(objectCells: Array):
 	return isValid
 
 func _place_placement(objectCells):
-	if object.slot_.item.name == "传送带":
+	if object.slot_.item.name == "传送带" or "伐木场":
 		var wz = object.global_position
 		var a_rotation = object.rotation
 		object.queue_free()
-		object = _BELT.instantiate()
+		if object.slot_.item.name == "传送带":
+			object = _BELT.instantiate()
+		elif object.slot_.item.name == "伐木场":
+			object = SAWMILL.instantiate()
 		building.add_child(object)
 		object.global_position = wz
 		object.rotation = a_rotation
+		if player_data.Slots[xz_sx].number <= 0:
+			player_data.Slots[xz_sx].item = null
+			player_data.Slots[xz_sx].number = 0
+			if object:
+				object.queue_free()
+				object = null
+			isValid = null
+			_reset_highlight()
+			Global.button_off.emit()
+			xz_sx = -1
+			xz_sx_2 = -1
+			_rotation = 0
+			save_data()
+			return
+		save_data()
 	_rotation = object.rotation
 	object.set_on_place()
 	object = null
 	isValid = null
+	player_data.Slots[xz_sx].number -= 1
+	if player_data.Slots[xz_sx].number <= 0:
+		Global.button_off.emit()
 	
 	for cell in objectCells:
 		cell.full = true
@@ -160,6 +187,7 @@ func _place_placement(objectCells):
 
 
 func _process(delta: float) -> void:
+	kjl_update()
 	if not object: return
 	var mousePosition = get_global_mouse_position()
 	var newTargetCell = _get_target_cell(mousePosition)

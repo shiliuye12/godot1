@@ -1,32 +1,38 @@
-[gd_scene format=3 uid="uid://4jjokgx68fnx"]
+[gd_scene format=3 uid="uid://rybyryv8q8n7"]
 
 [ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="1_53e1a"]
-[ext_resource type="Script" uid="uid://ce3fpkarkr5o4" path="res://Scene/Sawmill/sawmill.gd" id="1_hbe2t"]
+[ext_resource type="Script" uid="uid://kqpt7p6o0u6f" path="res://Scene/Sawmill/sawmill.gd" id="1_hbe2t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbe2t"]
 atlas = ExtResource("1_53e1a")
-region = Rect2(0, 0, 75, 75)
+region = Rect2(48, 36, 75, 75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21bka"]
-size = Vector2(72, 72)
+size = Vector2(60, 60)
 
-[node name="Sawmill" type="Node2D" unique_id=1789470519]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbe2t"]
+size = Vector2(60, 60)
+
+[node name="Sawmill" type="Area2D" unique_id=747879841 groups=["building"]]
 script = ExtResource("1_hbe2t")
+rect = Rect2(0, 0, 75, 75)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=280101123]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=798088576]
 texture = SubResource("AtlasTexture_hbe2t")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=8121823]
+[node name="exit" type="Area2D" parent="." unique_id=562263573]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1803887741]
-position = Vector2(0, 74)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=1918338690]
+position = Vector2(0, 76)
 shape = SubResource("RectangleShape2D_21bka")
 
-[node name="Timer" type="Timer" parent="." unique_id=621608528]
-wait_time = 2.0
-one_shot = true
+[node name="entry" type="Area2D" parent="." unique_id=865324808]
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entry" unique_id=2114859280]
+shape = SubResource("RectangleShape2D_21bka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2099959756]
+shape = SubResource("RectangleShape2D_hbe2t")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="body_entered" from="entry" to="." method="_on_entry_body_entered"]

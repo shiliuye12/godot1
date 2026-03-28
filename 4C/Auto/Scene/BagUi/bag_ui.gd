@@ -51,13 +51,30 @@ func _button_on():
 		Global.button_off.emit()
 
 func slot_jh():
-	var temp_slot: Slot = player_data.Slots[xz_sx]
-	player_data.Slots[xz_sx] = player_data.Slots[xz_sx_2]
-	player_data.Slots[xz_sx_2] = temp_slot
-	xz_sx = -1
-	xz_sx_2 = -1
-	save_data()
-	bag_update()
+	if player_data.Slots[xz_sx].item == null or player_data.Slots[xz_sx_2].item == null:
+		var temp_slot: Slot = player_data.Slots[xz_sx]
+		player_data.Slots[xz_sx] = player_data.Slots[xz_sx_2]
+		player_data.Slots[xz_sx_2] = temp_slot
+		xz_sx = -1
+		xz_sx_2 = -1
+		save_data()
+		bag_update()
+	elif player_data.Slots[xz_sx].item.id != player_data.Slots[xz_sx_2].item.id:
+		var temp_slot: Slot = player_data.Slots[xz_sx]
+		player_data.Slots[xz_sx] = player_data.Slots[xz_sx_2]
+		player_data.Slots[xz_sx_2] = temp_slot
+		xz_sx = -1
+		xz_sx_2 = -1
+		save_data()
+		bag_update()
+	elif player_data.Slots[xz_sx].item.id == player_data.Slots[xz_sx_2].item.id:
+		player_data.Slots[xz_sx_2].number += player_data.Slots[xz_sx].number
+		player_data.Slots[xz_sx].item = null
+		player_data.Slots[xz_sx].number = 0
+		xz_sx = -1
+		xz_sx_2 = -1
+		save_data()
+		bag_update()
 	
 func save_data():
 	ResourceSaver.save(player_data,"res://Resource/player_data.tres")

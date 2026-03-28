@@ -7,5 +7,9 @@ class_name SlotItem
 var slot_: Slot
 
 func update():
-	texture_rect.texture = slot_.item.texture
-	label.text = str(slot_.number)
+	if slot_.item != null:
+		texture_rect.texture = slot_.item.texture
+		label.text = str(slot_.number)
+	else:
+		texture_rect.texture = null
+		label.text = ""

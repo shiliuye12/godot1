@@ -23,6 +23,10 @@ Global="*uid://d24xggcwhn6a1"
 
 window/stretch/mode="viewport"
 
+[global_group]
+
+building=""
+
 [input]
 
 camera_down={

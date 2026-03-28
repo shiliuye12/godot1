@@ -12,4 +12,5 @@ script = ExtResource("1_3v0br")
 name = "木头"
 texture = SubResource("AtlasTexture_hd47s")
 id = 1
+ms = "普通的木头"
 metadata/_custom_type_script = "uid://5po6te85tamv"

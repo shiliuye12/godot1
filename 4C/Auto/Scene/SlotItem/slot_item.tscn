@@ -4,6 +4,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ggaq"]
 font_color = Color(0, 0, 0, 1)
+outline_size = 2
 
 [node name="SlotItem" type="MarginContainer" unique_id=1708767977]
 custom_minimum_size = Vector2(75, 75)
