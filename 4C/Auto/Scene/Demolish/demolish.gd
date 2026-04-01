@@ -1,0 +1,61 @@
+extends Area2D
+class_name Demolish
+
+var demolish_building = null
+@onready var player_data = preload("res://Resource/player_data.tres")
+
+const BELT = preload("uid://dawvbko2ige0d")
+const SAWMILL = preload("uid://cioy41cld7dg2")
+
+func save_data():
+	ResourceSaver.save(player_data,"res://Resource/player_data.tres")
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is Belt:
+		demolish_building = area
+	if area is Sawmill:
+		demolish_building = area
+
+func _on_area_exited(area: Area2D) -> void:
+	if area is Belt:
+		demolish_building = null
+	if area is Sawmill:
+		demolish_building = null
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if demolish_building and event.is_action_pressed("left"):
+		if demolish_building is Belt:
+			for i in player_data.Slots.size():
+				if player_data.Slots[i].item:
+					if player_data.Slots[i].item.id == 2:
+						player_data.Slots[i].number += 1
+						demolish_building.queue_free()
+						demolish_building = null
+						save_data()
+						return
+			for i in player_data.Slots.size():
+				if !player_data.Slots[i].item:
+					player_data.Slots[i].item = BELT
+					player_data.Slots[i].number += 1
+					demolish_building.queue_free()
+					demolish_building = null
+					save_data()
+					return
+		if demolish_building is Sawmill:
+			for i in player_data.Slots.size():
+				if player_data.Slots[i].item:
+					if player_data.Slots[i].item.id == 3:
+						player_data.Slots[i].number += 1
+						demolish_building.queue_free()
+						demolish_building = null
+						save_data()
+						return
+			for i in player_data.Slots.size():
+				if !player_data.Slots[i].item:
+					player_data.Slots[i].item = SAWMILL
+					player_data.Slots[i].number += 1
+					demolish_building.queue_free()
+					demolish_building = null
+					save_data()
+					return

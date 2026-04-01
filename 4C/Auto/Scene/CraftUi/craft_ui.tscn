@@ -1,0 +1,281 @@
+[gd_scene format=3 uid="uid://bwst6d627c8hh"]
+
+[ext_resource type="PackedScene" uid="uid://ctji6a1j2i8ux" path="res://Scene/Slot/slot.tscn" id="1_a7o0p"]
+[ext_resource type="Script" uid="uid://dcbi4h6qigroa" path="res://Scene/CraftUi/craft_ui.gd" id="1_p4xba"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a7o0p"]
+font_size = 32
+
+[node name="CraftUi" type="Control" unique_id=173402470]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p4xba")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2137314219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2036809, 0.20368093, 0.2036809, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=633169239]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 70
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=297163714]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1542186992]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1295015446]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 8
+
+[node name="Slot" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=64537040 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot2" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1415132637 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot3" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=357354054 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot4" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=653941323 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot5" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=2008160582 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot6" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=844703132 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot7" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1829009747 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot8" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=659828971 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="GridContainer2" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1778254717]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 8
+
+[node name="Slot" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=2087971739 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot2" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1994691487 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot3" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1018294349 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot4" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=764158332 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot5" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1894109440 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot6" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=284435610 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot7" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=111827951 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot8" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1562539808 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot9" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1254969087 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot10" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=454267188 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot11" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=14632222 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot12" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=849303497 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot13" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=754763132 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot14" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1688504845 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot15" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=532590289 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot16" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1290042824 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot17" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1898147 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot18" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=936887001 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot19" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1934303295 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot20" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=828074423 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot21" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=2139428987 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot22" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1605911812 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot23" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1930095222 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot24" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=779534154 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot25" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1057908092 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot26" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=525962657 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot27" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1640728683 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot28" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1885786239 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot29" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1734055523 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot30" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=108111198 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot31" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=195297765 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="Slot32" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer2" unique_id=1850402498 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=127223321]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=1013231508]
+layout_mode = 2
+color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect" unique_id=360536048]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer" unique_id=18139450]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=64551317]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=894359252]
+layout_mode = 2
+
+[node name="uiSlot" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=344248872 instance=ExtResource("1_a7o0p")]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2014104941]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="uiName" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2" unique_id=1143252344]
+layout_mode = 2
+text = "11111"
+label_settings = SubResource("LabelSettings_a7o0p")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1080660444]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+color = Color(0.2966023, 0.2966023, 0.2966023, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/ColorRect" unique_id=868992354]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/ColorRect/MarginContainer" unique_id=949674049]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="ms" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=684699874]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "11111"
+
+[node name="asset" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1144372117]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "11111"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=205431910]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer" unique_id=168475603]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="minus" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1981856552]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "-"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1223411938]
+layout_mode = 2
+text = "1"
+virtual_keyboard_type = 2
+
+[node name="plus" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=935610134]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "+"
+
+[node name="CraftButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=268935108]
+layout_mode = 2
+text = "合成"
+
+[node name="Timer" type="Timer" parent="." unique_id=588412024]
+wait_time = 2.0
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/minus" to="." method="_on_minus_pressed"]
+[connection signal="text_changed" from="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/plus" to="." method="_on_plus_pressed"]

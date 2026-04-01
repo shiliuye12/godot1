@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://cy6v05nmqncyp"]
+
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_dtm6t"]
+[ext_resource type="Script" uid="uid://kql1chvkxloc" path="res://Resource/script/recipe_data.gd" id="2_gboo2"]
+[ext_resource type="Resource" uid="uid://cxndsw5p541go" path="res://Resource/Recipe/plank.tres" id="2_rvo8o"]
+
+[resource]
+script = ExtResource("2_gboo2")
+recipes = Array[ExtResource("1_dtm6t")]([ExtResource("2_rvo8o"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://kql1chvkxloc"

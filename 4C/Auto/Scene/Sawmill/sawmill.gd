@@ -1,13 +1,25 @@
-extends Node2D
+extends Area2D
+class_name Sawmill
 
 var items_data = {
 	"number": 0,
 	"slot":null
 }
+var out_item_data = {
+	"number": 0,
+	"slot":null
+}
+var craft = true
 var item
 var ui = null
+var next_building = null
+var can_produce = false
 
+@onready var timer: Timer = $Timer
+
+var recipe: Recipe = preload("uid://cxndsw5p541go")
 const BUILDING_UI = preload("uid://dc1ske4gora4r")
+const ITEM = preload("uid://dg2dt3330rsms")
 
 func _ready() -> void:
 	pass
@@ -64,3 +76,46 @@ func get_global_rect():
 
 func set_on_place():
 	modulate.a = 1
+
+func _on_timer_timeout() -> void:
+	craft = true
+	var slot_: Slot = Slot.new()
+	slot_.item = Item.new()
+	out_item_data.slot = slot_
+	out_item_data.number += 1
+	out_item_data.slot.item = recipe.outitem
+
+func _process(delta: float) -> void:
+	if items_data.slot:
+		if items_data.slot.item.name == recipe.inputltem1 and craft:
+			if items_data.number >= 2:
+				if out_item_data.number < 20:
+					craft = false
+					items_data.number -= 2
+					timer.start()
+	if next_building and can_produce and out_item_data.number >= 1:
+		can_produce = false
+		var new_item = ITEM.instantiate()
+		var item_node = get_node("/root/Main/items")
+		item_node.add_child(new_item)
+		out_item_data.number -= 1
+		var slot_: Slot = Slot.new()
+		slot_.item = recipe.outitem
+		slot_.number = 1
+		new_item.slot_ = slot_
+		new_item.update()
+		new_item.global_position = next_building.global_position
+
+func _on_exit_area_entered(area: Area2D) -> void:
+	if area is Belt:
+		next_building = area
+		can_produce = true
+
+func _on_exit_body_exited(body: Node2D) -> void:
+	if body is item:
+		can_produce = true
+
+func _on_exit_area_exited(area: Area2D) -> void:
+	if area is Belt:
+		next_building = null
+		can_produce = false

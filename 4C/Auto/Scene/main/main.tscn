@@ -34,40 +34,69 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer" unique_id=1414192274]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=675288693]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1414192274]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/margin_bottom = 20
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/MarginContainer" unique_id=1826224074]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1826224074]
 layout_mode = 2
 theme_override_constants/h_separation = 20
 columns = 9
 
-[node name="Slot" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=64537040 instance=ExtResource("3_dwohs")]
+[node name="Slot" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer/GridContainer" unique_id=64537040 instance=ExtResource("3_dwohs")]
 layout_mode = 2
 
-[node name="Slot2" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=176104474 instance=ExtResource("3_dwohs")]
+[node name="Slot2" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer/GridContainer" unique_id=176104474 instance=ExtResource("3_dwohs")]
 layout_mode = 2
 
-[node name="Slot3" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=1570059761 instance=ExtResource("3_dwohs")]
+[node name="Slot3" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer/GridContainer" unique_id=1570059761 instance=ExtResource("3_dwohs")]
 layout_mode = 2
 
-[node name="Slot4" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=1885491278 instance=ExtResource("3_dwohs")]
+[node name="Slot4" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer/GridContainer" unique_id=1885491278 instance=ExtResource("3_dwohs")]
 layout_mode = 2
 
-[node name="Slot5" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=1140593935 instance=ExtResource("3_dwohs")]
+[node name="Slot5" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer/GridContainer" unique_id=1140593935 instance=ExtResource("3_dwohs")]
 layout_mode = 2
 
-[node name="Slot6" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=869590884 instance=ExtResource("3_dwohs")]
+[node name="Slot6" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer/GridContainer" unique_id=869590884 instance=ExtResource("3_dwohs")]
 layout_mode = 2
 
-[node name="Slot7" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=1641045587 instance=ExtResource("3_dwohs")]
+[node name="Slot7" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer/GridContainer" unique_id=1641045587 instance=ExtResource("3_dwohs")]
 layout_mode = 2
 
-[node name="Slot8" parent="CanvasLayer/MarginContainer/MarginContainer/GridContainer" unique_id=1657468169 instance=ExtResource("3_dwohs")]
+[node name="Slot8" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer/GridContainer" unique_id=1657468169 instance=ExtResource("3_dwohs")]
 layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1483774575]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer2" unique_id=208929618]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Demolish" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=486674754]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "拆除"
+
+[node name="Tech" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=1324237892]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "科技"
+
+[node name="Craft" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=1243694751]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "合成"
 
 [node name="building" type="Node" parent="." unique_id=563291086]
 
@@ -81,3 +110,5 @@ position = Vector2(188, 185)
 position = Vector2(112, 186)
 
 [node name="items" type="Node" parent="." unique_id=878442052]
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/Demolish" to="." method="_on_demolish_pressed"]

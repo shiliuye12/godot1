@@ -21,18 +21,20 @@ func _ready() -> void:
 	#Global.items_change.connect(_items_change)
 
 func open(item_data: Dictionary):
-	if item_data.number != 0:
-		building_slot1.wp.slot_ = item_data.slot
-		building_slot1.wp.slot_.number = item_data.number
-		building_slot1.wp.update()
+	pass
+	#if item_data.number != 0:
+		#building_slot1.wp.slot_ = item_data.slot
+		#building_slot1.wp.slot_.number = item_data.number
+		#building_slot1.wp.update()
 
 func bag_update():
 	for i in range(player_data.Slots.size()):
-		if !player_data.Slots[i].item:
-			if bag_slot[i].wp:
-				bag_slot[i].wp.queue_free()
-				bag_slot[i].wp = null
-			continue
+		if player_data.Slots[i]:
+			if !player_data.Slots[i].item:
+				if bag_slot[i].wp:
+					bag_slot[i].wp.queue_free()
+					bag_slot[i].wp = null
+				continue
 		if !bag_slot[i].wp:
 			var new_slot = slotitem.instantiate()
 			bag_slot[i].spawn(new_slot)
@@ -100,13 +102,15 @@ func slot_jh():
 	elif xz_sx3 != -1:
 		var temp_slot: Slot = player_data.Slots[xz_sx]
 		player_data.Slots[xz_sx] = building_slot1.wp.slot_
-		player_data.Slots[xz_sx].number = building_slot1.wp.slot_.number
+		if player_data.Slots[xz_sx]:
+			player_data.Slots[xz_sx].number = building_slot1.wp.slot_.number
+			building.items_data.number = temp_slot.number
 		building_slot1.wp.slot_ = temp_slot
 		building.items_data.slot = temp_slot
-		building.items_data.number = temp_slot.number
-		if temp_slot.number == 0:
-			building.items_data.slot = null
-			building.items_data.number = 0
+		if player_data.Slots[xz_sx]:
+			if temp_slot.number == 0:
+				building.items_data.slot = null
+				building.items_data.number = 0
 		#Global.ui_items_change.emit(building_slot1.wp.slot_)
 		xz_sx = -1
 		xz_sx2 = -1
@@ -126,6 +130,16 @@ func save_data():
 func _process(delta: float) -> void:
 	if building:
 		building_slot1.wp.slot_ = building.items_data.slot
+		building_slot2.wp.slot_ = building.out_item_data.slot
 		if building_slot1.wp.slot_:
 			building_slot1.wp.slot_.number = building.items_data.number
 			building_slot1.wp.update()
+		if building_slot2.wp.slot_:
+			building_slot2.wp.slot_.number = building.out_item_data.number
+			building_slot2.wp.update()
+		if building.items_data.number <= 0:
+			building_slot1.wp.slot_ = null
+			building_slot1.wp.update()
+		if building.out_item_data.number <= 0:
+			building_slot2.wp.slot_ = null
+			building_slot2.wp.update()

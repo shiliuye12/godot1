@@ -5,7 +5,7 @@ class_name Belt
 var _item: item
 var _rotation: Vector2 = Vector2(0, 0)
 var _can_move = false
-var next_belt
+var next_belt = null
 var speed = 75
 
 func _on_body_entered(body: Node2D) -> void:
@@ -16,12 +16,16 @@ func _on_body_entered(body: Node2D) -> void:
 func _process(delta: float) -> void:
 	update_rotation()
 	if _item and _can_move and _item.can_move:
-		if next_belt is Belt:
-			if next_belt._item == null:
-				_item.move = _rotation
-				_item.position += speed * _rotation * delta
-		elif next_belt.is_in_group("building"):
-			if next_belt.items_data.number <= 20 and next_belt.can_enter(_item):
+		if next_belt:
+			if next_belt is Belt:
+				if next_belt._item == null:
+					_item.move = _rotation
+					_item.position += speed * _rotation * delta
+			elif next_belt.is_in_group("building"):
+				if next_belt.items_data.number <= 20 and next_belt.can_enter(_item):
+					_item.move = _rotation
+					_item.position += speed * _rotation * delta
+			elif next_belt.is_in_group("box"):
 				_item.move = _rotation
 				_item.position += speed * _rotation * delta
 
@@ -42,10 +46,14 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("building"):
 		_can_move = true
 		next_belt = area
+	elif area.is_in_group("box"):
+		_can_move = true
+		next_belt = area
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area is Belt:
 		_can_move = false
+		next_belt = null
 
 
 

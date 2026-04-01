@@ -1,20 +1,28 @@
 extends Node2D
 
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
-@onready var bag_slot: Array = $CanvasLayer/MarginContainer/MarginContainer/GridContainer.get_children()
+@onready var bag_slot: Array = $CanvasLayer/MarginContainer/HBoxContainer/MarginContainer/GridContainer.get_children()
 @onready var player_data = preload("res://Resource/player_data.tres")
 @onready var slotitem = preload("res://Scene/SlotItem/slot_item.tscn")
 @onready var grid_container: GridContainer = $Control
 @onready var building: Node = $building
 @onready var items: Node = $items
+@onready var demolish: Button = $CanvasLayer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/Demolish
+@onready var tech: Button = $CanvasLayer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/Tech
+@onready var craft: Button = $CanvasLayer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/Craft
 
 var xz_sx = -1
 var xz_sx_2 = -1
+var in_demolish = false
+var new_demolish
 
 const OBJECT = preload("uid://dekjuuqtnx2lk")
 const BAG_UI = preload("uid://dandknfb2b0qa")
 const _BELT = preload("uid://b5caj17gdd36u")
 const SAWMILL = preload("uid://rybyryv8q8n7")
+const DEMOLISH = preload("uid://bqtco6n5pifjc")
+const INLET = preload("uid://dvvgytqnygovj")
+
 
 var gridSize: Vector2
 var object
@@ -80,13 +88,12 @@ func slot_jh():
 	_rotation = 0
 	
 func save_data():
-	pass
-	#ResourceSaver.save(player_data,"res://Resource/player_data.tres")
+	ResourceSaver.save(player_data,"res://Resource/player_data.tres")
 
 func _input(event: InputEvent) -> void:
 	if xz_sx != -1 and not object and player_data.Slots[xz_sx].item:
 		var newPlacement
-		if player_data.Slots[xz_sx].item.name == "传送带" or player_data.Slots[xz_sx].item.name == "伐木场":
+		if player_data.Slots[xz_sx].item.name == "传送带" or player_data.Slots[xz_sx].item.name == "伐木场" or player_data.Slots[xz_sx].item.name == "入货口":
 			if player_data.Slots[xz_sx].item:
 				newPlacement = OBJECT.instantiate()
 				add_child(newPlacement)
@@ -114,6 +121,10 @@ func _input(event: InputEvent) -> void:
 		bag.queue_free()
 		kjl_update()
 		bag = null
+	if in_demolish and Input.is_action_just_pressed("exit"):
+		in_demolish = false
+		new_demolish.queue_free()
+		new_demolish = null
 
 func _get_target_cell(targetPosition):
 	for child:Control in grid_container.get_children():
@@ -139,14 +150,14 @@ func _check_and_hightlight_cells(objectCells: Array):
 		#isValid = false
 	for cell in objectCells:
 		if cell.full:
-			isValid = false
+			#isValid = false
 			cell.change_color(Color.RED)
 		else:
 			cell.change_color(Color.GREEN)
 	return isValid
 
 func _place_placement(objectCells):
-	if object.slot_.item.name == "传送带" or "伐木场":
+	if object.slot_.item.name == "传送带" or "伐木场" or "入货口":
 		var wz = object.global_position
 		var a_rotation = object.rotation
 		object.queue_free()
@@ -154,6 +165,8 @@ func _place_placement(objectCells):
 			object = _BELT.instantiate()
 		elif object.slot_.item.name == "伐木场":
 			object = SAWMILL.instantiate()
+		elif object.slot_.item.name == "入货口":
+			object = INLET.instantiate()
 		building.add_child(object)
 		object.global_position = wz
 		object.rotation = a_rotation
@@ -188,6 +201,8 @@ func _place_placement(objectCells):
 
 func _process(delta: float) -> void:
 	kjl_update()
+	if in_demolish:
+		new_demolish.global_position = get_global_mouse_position()
 	if not object: return
 	var mousePosition = get_global_mouse_position()
 	var newTargetCell = _get_target_cell(mousePosition)
@@ -201,3 +216,12 @@ func _process(delta: float) -> void:
 		_reset_highlight()
 		objectCells = _get_target_cells()
 		isValid = _check_and_hightlight_cells(objectCells)
+	
+	
+
+func _on_demolish_pressed() -> void:
+	in_demolish = true
+	new_demolish = DEMOLISH.instantiate()
+	add_child(new_demolish)
+	new_demolish.global_position = get_global_mouse_position()
+	

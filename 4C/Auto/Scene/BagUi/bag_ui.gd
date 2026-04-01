@@ -21,11 +21,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func bag_update():
 	for i in range(player_data.Slots.size()):
-		if !player_data.Slots[i].item:
-			if bag_slot[i].wp:
-				bag_slot[i].wp.queue_free()
-				bag_slot[i].wp = null
-			continue
+		if player_data.Slots[i]:
+			if !player_data.Slots[i].item:
+				if bag_slot[i].wp:
+					bag_slot[i].wp.queue_free()
+					bag_slot[i].wp = null
+				continue
 		if !bag_slot[i].wp:
 			var new_slot = slotitem.instantiate()
 			bag_slot[i].spawn(new_slot)

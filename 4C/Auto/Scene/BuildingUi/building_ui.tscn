@@ -75,6 +75,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Slot2" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1379224982 instance=ExtResource("1_d5cg7")]
 layout_mode = 2
+disabled = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/HBoxContainer" unique_id=792123646]
 layout_mode = 2
