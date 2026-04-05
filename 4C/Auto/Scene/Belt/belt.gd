@@ -7,22 +7,33 @@ var _rotation: Vector2 = Vector2(0, 0)
 var _can_move = false
 var next_belt = null
 var speed = 75
+var item_queue: Array
+
+func _ready() -> void:
+	Global.item_on.connect(_item_on)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is item:
 		await get_tree().create_timer(0.5).timeout
-		_item = body
+		if body:
+			_item = body
 
 func _process(delta: float) -> void:
 	update_rotation()
 	if _item and _can_move and _item.can_move:
+		if item_queue:
+			if _item == item_queue[0]:
+				item_queue.erase(_item)
 		if next_belt:
 			if next_belt is Belt:
-				if next_belt._item == null:
-					_item.move = _rotation
-					_item.position += speed * _rotation * delta
+				if !(_item in next_belt.item_queue):
+					next_belt.item_queue.append(_item)
+				if next_belt.item_queue and next_belt._item == null:
+					if next_belt.item_queue[0] == _item:
+						_item.move = _rotation
+						_item.position += speed * _rotation * delta
 			elif next_belt.is_in_group("building"):
-				if next_belt.items_data.number <= 20 and next_belt.can_enter(_item):
+				if next_belt.items_data.number < 20 and next_belt.can_enter(_item):
 					_item.move = _rotation
 					_item.position += speed * _rotation * delta
 			elif next_belt.is_in_group("box"):
@@ -77,5 +88,18 @@ func set_on_place():
 
 func _on_body_exited(body: Node2D) -> void:
 	if _item:
+		#if next_belt:
+			#next_belt.item_queue.erase(_item)
 		_item.can_move()
 		_item = null
+
+func _item_on(a: item):
+	if next_belt:
+		if next_belt is Belt:
+			if next_belt.item_queue:
+				if a == next_belt.item_queue[0]:
+					item_queue.erase(a)
+	else:
+		if item_queue:
+			if a == item_queue[0]:
+				item_queue.erase(a)

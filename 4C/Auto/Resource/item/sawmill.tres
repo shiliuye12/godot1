@@ -9,7 +9,7 @@ region = Rect2(48, 36, 75, 75)
 
 [resource]
 script = ExtResource("1_lpw3t")
-name = "伐木场"
+name = "锯木厂"
 texture = SubResource("AtlasTexture_hbe2t")
 id = 3
 metadata/_custom_type_script = "uid://5po6te85tamv"

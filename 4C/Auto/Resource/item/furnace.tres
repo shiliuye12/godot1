@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cpbsl2d5j73kl"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_5j5t1"]
+[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="2_m7k64"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iloqt"]
+atlas = ExtResource("2_m7k64")
+region = Rect2(2, 101, 75, 75)
+
+[resource]
+script = ExtResource("1_5j5t1")
+name = "熔炉"
+texture = SubResource("AtlasTexture_iloqt")
+id = 7
+metadata/_custom_type_script = "uid://5po6te85tamv"

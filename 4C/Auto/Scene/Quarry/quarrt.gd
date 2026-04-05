@@ -1,8 +1,8 @@
 extends Node2D
 
 const ITEM = preload("uid://dg2dt3330rsms")
-const WOOD = preload("uid://bjlnyb4651vrl")
 const Item = preload("uid://5po6te85tamv")
+const STONE = preload("uid://csjn7qaau0ubx")
 
 @onready var timer_2: Timer = $Timer2
 @onready var timer_3: Timer = $Timer3
@@ -17,7 +17,6 @@ var can_produce_2 = true
 var can_produce_3 = true
 var can_produce_4 = true
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is Belt:
 		belt = area
@@ -30,10 +29,10 @@ func _on_timer_timeout() -> void:
 		item_node.add_child(new_item)
 		var slot_: Slot = Slot.new()
 		slot_.item = Item.new()
-		slot_.item.name = WOOD.name
-		slot_.item.texture = WOOD.texture
-		slot_.item.ms = WOOD.ms
-		slot_.item.id = WOOD.id
+		slot_.item.name = STONE.name
+		slot_.item.texture = STONE.texture
+		slot_.item.ms = STONE.ms
+		slot_.item.id = STONE.id
 		slot_.number = 1
 		new_item.slot_ = slot_
 		new_item.update()
@@ -58,6 +57,8 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area is Belt:
 		belt = null
 		timer.stop()
+
+
 
 func _on_area_2d_2_area_entered(area: Area2D) -> void:
 	if area is Belt:
@@ -131,10 +132,10 @@ func _on_timer_2_timeout() -> void:
 		item_node.add_child(new_item)
 		var slot_: Slot = Slot.new()
 		slot_.item = Item.new()
-		slot_.item.name = WOOD.name
-		slot_.item.texture = WOOD.texture
-		slot_.item.ms = WOOD.ms
-		slot_.item.id = WOOD.id
+		slot_.item.name = STONE.name
+		slot_.item.texture = STONE.texture
+		slot_.item.ms = STONE.ms
+		slot_.item.id = STONE.id
 		slot_.number = 1
 		new_item.slot_ = slot_
 		new_item.update()
@@ -148,10 +149,10 @@ func _on_timer_3_timeout() -> void:
 		item_node.add_child(new_item)
 		var slot_: Slot = Slot.new()
 		slot_.item = Item.new()
-		slot_.item.name = WOOD.name
-		slot_.item.texture = WOOD.texture
-		slot_.item.ms = WOOD.ms
-		slot_.item.id = WOOD.id
+		slot_.item.name = STONE.name
+		slot_.item.texture = STONE.texture
+		slot_.item.ms = STONE.ms
+		slot_.item.id = STONE.id
 		slot_.number = 1
 		new_item.slot_ = slot_
 		new_item.update()
@@ -165,10 +166,10 @@ func _on_timer_4_timeout() -> void:
 		item_node.add_child(new_item)
 		var slot_: Slot = Slot.new()
 		slot_.item = Item.new()
-		slot_.item.name = WOOD.name
-		slot_.item.texture = WOOD.texture
-		slot_.item.ms = WOOD.ms
-		slot_.item.id = WOOD.id
+		slot_.item.name = STONE.name
+		slot_.item.texture = STONE.texture
+		slot_.item.ms = STONE.ms
+		slot_.item.id = STONE.id
 		slot_.number = 1
 		new_item.slot_ = slot_
 		new_item.update()

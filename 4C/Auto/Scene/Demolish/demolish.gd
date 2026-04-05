@@ -6,21 +6,30 @@ var demolish_building = null
 
 const BELT = preload("uid://dawvbko2ige0d")
 const SAWMILL = preload("uid://cioy41cld7dg2")
+const INLET = preload("uid://3q2pfsalrcvf")
+const FURNACE = preload("uid://cpbsl2d5j73kl")
 
 func save_data():
 	ResourceSaver.save(player_data,"res://Resource/player_data.tres")
-
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is Belt:
 		demolish_building = area
 	if area is Sawmill:
 		demolish_building = area
+	if area is Inlet:
+		demolish_building = area
+	if area is Furnace:
+		demolish_building = area
 
 func _on_area_exited(area: Area2D) -> void:
 	if area is Belt:
 		demolish_building = null
 	if area is Sawmill:
+		demolish_building = null
+	if area is Inlet:
+		demolish_building = null
+	if area is Furnace:
 		demolish_building = null
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -54,6 +63,40 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			for i in player_data.Slots.size():
 				if !player_data.Slots[i].item:
 					player_data.Slots[i].item = SAWMILL
+					player_data.Slots[i].number += 1
+					demolish_building.queue_free()
+					demolish_building = null
+					save_data()
+					return
+		if demolish_building is Inlet:
+			for i in player_data.Slots.size():
+				if player_data.Slots[i].item:
+					if player_data.Slots[i].item.id == 5:
+						player_data.Slots[i].number += 1
+						demolish_building.queue_free()
+						demolish_building = null
+						save_data()
+						return
+			for i in player_data.Slots.size():
+				if !player_data.Slots[i].item:
+					player_data.Slots[i].item = INLET
+					player_data.Slots[i].number += 1
+					demolish_building.queue_free()
+					demolish_building = null
+					save_data()
+					return
+		if demolish_building is Furnace:
+			for i in player_data.Slots.size():
+				if player_data.Slots[i].item:
+					if player_data.Slots[i].item.id == 7:
+						player_data.Slots[i].number += 1
+						demolish_building.queue_free()
+						demolish_building = null
+						save_data()
+						return
+			for i in player_data.Slots.size():
+				if !player_data.Slots[i].item:
+					player_data.Slots[i].item = FURNACE
 					player_data.Slots[i].number += 1
 					demolish_building.queue_free()
 					demolish_building = null

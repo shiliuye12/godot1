@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://cljadnpgxl5y2"]
+
+[ext_resource type="Resource" uid="uid://cpbsl2d5j73kl" path="res://Resource/item/furnace.tres" id="1_a4vm8"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_aabsi"]
+
+[resource]
+script = ExtResource("1_aabsi")
+inputitem1 = "石砖"
+inputCount1 = 5
+outputCount = 1
+outitem = ExtResource("1_a4vm8")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

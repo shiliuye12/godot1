@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cmblb11l57k1y"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_faihm"]
+[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="2_4ljdm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2yq0"]
+atlas = ExtResource("2_4ljdm")
+region = Rect2(83, 51, 75, 75)
+
+[resource]
+script = ExtResource("1_faihm")
+name = "石砖"
+texture = SubResource("AtlasTexture_k2yq0")
+id = 8
+metadata/_custom_type_script = "uid://5po6te85tamv"

@@ -7,4 +7,4 @@ class_name Recipe
 @export var inputitem2 = ""
 @export var inputCount2: int
 @export var outputCount: int
-@export var outitem: Resource
+@export var outitem: Item

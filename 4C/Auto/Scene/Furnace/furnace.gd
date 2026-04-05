@@ -1,5 +1,5 @@
 extends Area2D
-class_name Sawmill
+class_name Furnace
 
 var items_data = {
 	"number": 0,
@@ -26,7 +26,11 @@ const ITEM = preload("uid://dg2dt3330rsms")
 func _ready() -> void:
 	for i in recipe.recipes.size():
 		if recipe.recipes[i]:
-			if recipe.recipes[i].outitem.name == "木板":
+			if recipe.recipes[i].outitem.name == "石砖":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "铁锭":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "铜锭":
 				recipes.append(recipe.recipes[i])
 	#Global.ui_items_change.connect(_ui_items_change)
 
@@ -88,15 +92,15 @@ func _on_timer_timeout() -> void:
 	slot_.item = Item.new()
 	out_item_data.slot = slot_
 	out_item_data.number += 1
-	out_item_data.slot.item = recipe.outitem
+	out_item_data.slot.item = recipes[recipe_wz].outitem
 
 func _process(delta: float) -> void:
 	if items_data.slot:
-		if items_data.slot.item.name == recipe.inputitem1 and craft:
-			if items_data.number >= 2:
+		if items_data.slot.item.name == recipes[recipe_wz].inputitem1 and craft:
+			if items_data.number >= recipes[recipe_wz].inputCount1:
 				if out_item_data.number < 20:
 					craft = false
-					items_data.number -= 2
+					items_data.number -= recipes[recipe_wz].inputCount1
 					timer.start()
 				elif out_item_data.number >= 20:
 					craft = false
@@ -107,7 +111,7 @@ func _process(delta: float) -> void:
 		item_node.add_child(new_item)
 		out_item_data.number -= 1
 		var slot_: Slot = Slot.new()
-		slot_.item = recipe.outitem
+		slot_.item = recipes[recipe_wz].outitem
 		slot_.number = 1
 		new_item.slot_ = slot_
 		new_item.update()

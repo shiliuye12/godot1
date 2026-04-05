@@ -44,6 +44,7 @@ layout_mode = 2
 [node name="ColorRect" type="ColorRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer" unique_id=586379277]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
+color = Color(0.73300546, 0.7330054, 0.7330054, 1)
 
 [node name="Node" type="Node" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect" unique_id=1481337461]
 
@@ -54,42 +55,84 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer" unique_id=581298511]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Slot" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=64537040 instance=ExtResource("1_d5cg7")]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=423765813]
+custom_minimum_size = Vector2(10, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Slot2" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1379224982 instance=ExtResource("1_d5cg7")]
+layout_mode = 2
+disabled = true
+
+[node name="RepiceUi" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer" unique_id=1679689142]
+visible = false
+custom_minimum_size = Vector2(0, 290)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/RepiceUi" unique_id=1631593341]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+color = Color(0.45882353, 0.45882353, 0.45882353, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/RepiceUi/ColorRect" unique_id=1204828336]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/RepiceUi/ColorRect/MarginContainer" unique_id=215763303]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="RepiceVBox" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/RepiceUi/ColorRect/MarginContainer/ScrollContainer" unique_id=1368748717]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer" unique_id=792123646]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+
+[node name="RecipeButton" type="Button" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer2" unique_id=323319986]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+text = "查看配方"
+
+[node name="ColorRect2" type="ColorRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer2" unique_id=1257907965]
+custom_minimum_size = Vector2(20, 170)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer" unique_id=453798842]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 150
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/HBoxContainer" unique_id=581298511]
-layout_mode = 2
 theme_override_constants/separation = 30
-
-[node name="Slot" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=64537040 instance=ExtResource("1_d5cg7")]
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=423765813]
-custom_minimum_size = Vector2(10, 80)
-layout_mode = 2
-color = Color(0, 0, 0, 1)
-
-[node name="Slot2" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1379224982 instance=ExtResource("1_d5cg7")]
-layout_mode = 2
-disabled = true
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/HBoxContainer" unique_id=792123646]
-layout_mode = 2
-theme_override_constants/separation = 50
-
-[node name="Button" type="Button" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=323319986]
-custom_minimum_size = Vector2(100, 40)
-layout_mode = 2
-text = "选择配方"
-
-[node name="ColorRect2" type="ColorRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1257907965]
-custom_minimum_size = Vector2(20, 170)
-layout_mode = 2
-color = Color(0, 0, 0, 1)
 
 [node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer" unique_id=1083316346]
 layout_mode = 2
@@ -253,3 +296,5 @@ layout_mode = 2
 
 [node name="Slot45" parent="Control/MarginContainer/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/ScrollContainer/GridContainer" unique_id=1976552081 instance=ExtResource("1_d5cg7")]
 layout_mode = 2
+
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer2/RecipeButton" to="." method="_on_recipe_button_pressed"]

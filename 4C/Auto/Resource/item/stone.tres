@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://csjn7qaau0ubx"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_igexj"]
+[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="2_80ne7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64wl5"]
+atlas = ExtResource("2_80ne7")
+region = Rect2(117, 102, 75, 75)
+
+[resource]
+script = ExtResource("1_igexj")
+name = "石头"
+texture = SubResource("AtlasTexture_64wl5")
+id = 6
+metadata/_custom_type_script = "uid://5po6te85tamv"

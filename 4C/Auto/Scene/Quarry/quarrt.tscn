@@ -1,62 +1,62 @@
-[gd_scene format=3 uid="uid://4jjokgx68fnx"]
+[gd_scene format=3 uid="uid://cgbh6aboxl6c0"]
 
-[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="1_53e1a"]
-[ext_resource type="Script" uid="uid://ce3fpkarkr5o4" path="res://Scene/Lumberyard/lumberyard.gd" id="1_hbe2t"]
+[ext_resource type="Script" uid="uid://d0i2p50ae88wt" path="res://Scene/Quarry/quarrt.gd" id="1_xufkn"]
+[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="2_x7tld"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hbe2t"]
-atlas = ExtResource("1_53e1a")
-region = Rect2(0, 0, 75, 75)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xufkn"]
+atlas = ExtResource("2_x7tld")
+region = Rect2(1, 29, 75, 75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21bka"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg5gs"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xufkn"]
 size = Vector2(60, 60)
 
-[node name="Lumberyard" type="Node2D" unique_id=1789470519]
-script = ExtResource("1_hbe2t")
+[node name="Quarrt" type="Node2D" unique_id=1789470519]
+script = ExtResource("1_xufkn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=280101123]
-texture = SubResource("AtlasTexture_hbe2t")
+texture = SubResource("AtlasTexture_xufkn")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=8121823]
-position = Vector2(123, 107)
+position = Vector2(110, 112)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1803887741]
-position = Vector2(-8, 79)
+position = Vector2(0, 74)
 shape = SubResource("RectangleShape2D_21bka")
 
 [node name="Timer" type="Timer" parent="." unique_id=621608528]
 wait_time = 2.0
 one_shot = true
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=494353185]
+[node name="Area2D2" type="Area2D" parent="." unique_id=265978547]
 position = Vector2(36, 186)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1473959444]
-shape = SubResource("RectangleShape2D_yg5gs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=377770196]
+shape = SubResource("RectangleShape2D_xufkn")
 
-[node name="Timer2" type="Timer" parent="." unique_id=1213295279]
+[node name="Timer2" type="Timer" parent="." unique_id=1920355283]
 wait_time = 2.0
 one_shot = true
 
-[node name="Area2D3" type="Area2D" parent="." unique_id=281952551]
+[node name="Area2D3" type="Area2D" parent="." unique_id=829706373]
 position = Vector2(-37, 186)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=1903663670]
-shape = SubResource("RectangleShape2D_yg5gs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=744128057]
+shape = SubResource("RectangleShape2D_xufkn")
 
-[node name="Timer3" type="Timer" parent="." unique_id=1648052706]
+[node name="Timer3" type="Timer" parent="." unique_id=822791161]
 wait_time = 2.0
 one_shot = true
 
-[node name="Area2D4" type="Area2D" parent="." unique_id=162802974]
+[node name="Area2D4" type="Area2D" parent="." unique_id=468720238]
 position = Vector2(-110, 186)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=580423728]
-shape = SubResource("RectangleShape2D_yg5gs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=676009773]
+shape = SubResource("RectangleShape2D_xufkn")
 
-[node name="Timer4" type="Timer" parent="." unique_id=155607980]
+[node name="Timer4" type="Timer" parent="." unique_id=1924580259]
 wait_time = 2.0
 one_shot = true
 

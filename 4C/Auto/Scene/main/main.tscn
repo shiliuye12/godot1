@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://rybyryv8q8n7" path="res://Scene/Sawmill/sawmill.tscn" id="6_i4lwv"]
 [ext_resource type="PackedScene" uid="uid://4jjokgx68fnx" path="res://Scene/Lumberyard/lumberyard.tscn" id="7_e5itc"]
 [ext_resource type="PackedScene" uid="uid://b5caj17gdd36u" path="res://Scene/Belt/ belt.tscn" id="7_xft36"]
+[ext_resource type="PackedScene" uid="uid://cgbh6aboxl6c0" path="res://Scene/Quarry/quarrt.tscn" id="8_xft36"]
+[ext_resource type="PackedScene" uid="uid://i6uats16fvv4" path="res://Scene/Furnace/furnace.tscn" id="9_fcd1k"]
+[ext_resource type="PackedScene" uid="uid://4hj3hj5cvss2" path="res://Scene/Mine/mine.tscn" id="10_1bbhm"]
 
 [node name="Main" type="Node2D" unique_id=440039550]
 script = ExtResource("1_yhpoe")
@@ -16,14 +19,13 @@ offset_left = -375.0
 offset_top = -377.0
 offset_right = 375.0
 offset_bottom = 373.0
-columns = 10
-width = 10
-height = 10
+columns = 20
+width = 20
+height = 20
 cellWidth = 75
 cellHeight = 75
 
 [node name="Camera2D" parent="." unique_id=1219702832 instance=ExtResource("2_30dud")]
-position = Vector2(584, 325)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1149432474]
 
@@ -73,6 +75,9 @@ layout_mode = 2
 [node name="Slot8" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer/GridContainer" unique_id=1657468169 instance=ExtResource("3_dwohs")]
 layout_mode = 2
 
+[node name="Slot9" parent="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer/GridContainer" unique_id=591779340 instance=ExtResource("3_dwohs")]
+layout_mode = 2
+
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1483774575]
 layout_mode = 2
 size_flags_vertical = 8
@@ -101,14 +106,24 @@ text = "合成"
 [node name="building" type="Node" parent="." unique_id=563291086]
 
 [node name="Lumberyard" parent="building" unique_id=1789470519 instance=ExtResource("7_e5itc")]
-position = Vector2(112, 110)
+position = Vector2(-227, 150)
 
 [node name="Sawmill" parent="building" unique_id=559273586 instance=ExtResource("6_i4lwv")]
-position = Vector2(188, 185)
+position = Vector2(262, 185)
 
 [node name="Belt" parent="building" unique_id=401628864 instance=ExtResource("7_xft36")]
 position = Vector2(112, 186)
 
+[node name="Quarrt" parent="building" unique_id=1649455000 instance=ExtResource("8_xft36")]
+position = Vector2(76, -227)
+
+[node name="Furnace" parent="building" unique_id=747879841 instance=ExtResource("9_fcd1k")]
+position = Vector2(339, 186)
+
+[node name="Mine" parent="building" unique_id=725201044 instance=ExtResource("10_1bbhm")]
+position = Vector2(-223, -227)
+
 [node name="items" type="Node" parent="." unique_id=878442052]
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/Demolish" to="." method="_on_demolish_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/Craft" to="." method="_on_craft_pressed"]

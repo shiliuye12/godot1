@@ -10,7 +10,6 @@ script = ExtResource("1_wa3th")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2103967291]
 visible = false
-modulate = Color(1, 1, 1, 0.6666667)
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 1
 anchors_preset = 8
@@ -24,5 +23,22 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1005232308]
+visible = false
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

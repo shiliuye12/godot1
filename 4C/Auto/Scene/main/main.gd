@@ -22,6 +22,8 @@ const _BELT = preload("uid://b5caj17gdd36u")
 const SAWMILL = preload("uid://rybyryv8q8n7")
 const DEMOLISH = preload("uid://bqtco6n5pifjc")
 const INLET = preload("uid://dvvgytqnygovj")
+const CRAFT_UI = preload("uid://bwst6d627c8hh")
+const FURNACE = preload("uid://i6uats16fvv4")
 
 
 var gridSize: Vector2
@@ -31,11 +33,16 @@ var objectCells
 var isValid = false
 var bag = null
 var _rotation = 0
+var craft_ui
 
 func _ready() -> void:
 	kjl_update()
 	Global.button_on.connect(_button_on)
 	gridSize = Vector2(grid_container.cellWidth, grid_container.cellHeight)
+	craft_ui = CRAFT_UI.instantiate()
+	canvas_layer.add_child(craft_ui)
+	craft_ui.visible = false
+	
 
 func kjl_update():
 	for i in range(bag_slot.size()):
@@ -93,7 +100,7 @@ func save_data():
 func _input(event: InputEvent) -> void:
 	if xz_sx != -1 and not object and player_data.Slots[xz_sx].item:
 		var newPlacement
-		if player_data.Slots[xz_sx].item.name == "传送带" or player_data.Slots[xz_sx].item.name == "伐木场" or player_data.Slots[xz_sx].item.name == "入货口":
+		if player_data.Slots[xz_sx].item.name == "传送带" or player_data.Slots[xz_sx].item.name == "锯木厂" or player_data.Slots[xz_sx].item.name == "入货口" or player_data.Slots[xz_sx].item.name == "熔炉":
 			if player_data.Slots[xz_sx].item:
 				newPlacement = OBJECT.instantiate()
 				add_child(newPlacement)
@@ -151,22 +158,24 @@ func _check_and_hightlight_cells(objectCells: Array):
 	for cell in objectCells:
 		if cell.full:
 			#isValid = false
-			cell.change_color(Color.RED)
+			cell.change_color(Color.GREEN)
 		else:
 			cell.change_color(Color.GREEN)
 	return isValid
 
 func _place_placement(objectCells):
-	if object.slot_.item.name == "传送带" or "伐木场" or "入货口":
+	if object.slot_.item.name == "传送带" or "锯木厂" or "入货口" or "熔炉":
 		var wz = object.global_position
 		var a_rotation = object.rotation
 		object.queue_free()
 		if object.slot_.item.name == "传送带":
 			object = _BELT.instantiate()
-		elif object.slot_.item.name == "伐木场":
+		elif object.slot_.item.name == "锯木厂":
 			object = SAWMILL.instantiate()
 		elif object.slot_.item.name == "入货口":
 			object = INLET.instantiate()
+		elif object.slot_.item.name == "熔炉":
+			object = FURNACE.instantiate()
 		building.add_child(object)
 		object.global_position = wz
 		object.rotation = a_rotation
@@ -224,4 +233,7 @@ func _on_demolish_pressed() -> void:
 	new_demolish = DEMOLISH.instantiate()
 	add_child(new_demolish)
 	new_demolish.global_position = get_global_mouse_position()
-	
+
+func _on_craft_pressed() -> void:
+	craft_ui.visible = true
+	#ChangeScence.to_craft_ui()

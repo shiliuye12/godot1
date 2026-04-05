@@ -8,8 +8,12 @@ var xz_sx = -1
 var xz_sx2 = -1
 var xz_sx3 = -1
 var building
-@onready var building_slot1: Button = $Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/Slot
-@onready var building_slot2: Button = $Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/Slot2
+var recipe: Array
+@onready var building_slot1: Button = $Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/Slot
+@onready var building_slot2: Button = $Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/Slot2
+@onready var repice_ui: VBoxContainer = $Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/RepiceUi
+@onready var recipe_data = preload("uid://cy6v05nmqncyp")
+@onready var repice_v_box: VBoxContainer = $Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/RepiceUi/ColorRect/MarginContainer/ScrollContainer/RepiceVBox
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit"):
@@ -19,6 +23,13 @@ func _ready() -> void:
 	bag_update()
 	Global.button_on.connect(_button_on)
 	#Global.items_change.connect(_items_change)
+	recipe = building.recipes
+	for i in recipe.size():
+		var btn = Button.new()
+		btn.pressed.connect(_on_recipe_button.bind(i))
+		repice_v_box.add_child(btn)
+		btn.custom_minimum_size = Vector2(50, 40)
+		btn.text = recipe[i].outitem.name
 
 func open(item_data: Dictionary):
 	pass
@@ -100,10 +111,20 @@ func slot_jh():
 			save_data()
 			bag_update()
 	elif xz_sx3 != -1:
-		var temp_slot: Slot = player_data.Slots[xz_sx]
-		player_data.Slots[xz_sx] = building_slot1.wp.slot_
+		var temp_slot: Slot = Slot.new()
+		temp_slot.item = Item.new()
+		temp_slot.item = player_data.Slots[xz_sx].item
+		temp_slot.number = player_data.Slots[xz_sx].number
+		if building_slot1.wp.slot_ == null:
+			player_data.Slots[xz_sx].item = null
+			player_data.Slots[xz_sx].number = 0
+		else:
+			player_data.Slots[xz_sx] = building_slot1.wp.slot_
 		if player_data.Slots[xz_sx]:
-			player_data.Slots[xz_sx].number = building_slot1.wp.slot_.number
+			if building_slot1.wp.slot_ == null:
+				player_data.Slots[xz_sx].number = 0
+			else:
+				player_data.Slots[xz_sx].number = building_slot1.wp.slot_.number
 			building.items_data.number = temp_slot.number
 		building_slot1.wp.slot_ = temp_slot
 		building.items_data.slot = temp_slot
@@ -143,3 +164,14 @@ func _process(delta: float) -> void:
 		if building.out_item_data.number <= 0:
 			building_slot2.wp.slot_ = null
 			building_slot2.wp.update()
+
+func _on_recipe_button_pressed() -> void:
+	if repice_ui.visible == true:
+		repice_ui.hide()
+	else:
+		repice_ui.show()
+		#for i in recipe.size():
+			#recipe_button[i].text = str(recipe[i].outitem.name)
+
+func _on_recipe_button(i: int):
+	building.recipe_wz = i
