@@ -24,6 +24,10 @@ const DEMOLISH = preload("uid://bqtco6n5pifjc")
 const INLET = preload("uid://dvvgytqnygovj")
 const CRAFT_UI = preload("uid://bwst6d627c8hh")
 const FURNACE = preload("uid://i6uats16fvv4")
+const MAKER = preload("uid://cnyqsuhkbnwxj")
+const COMBINER = preload("uid://n6614d654tak")
+const EXIT = preload("uid://c3e2v7o8sp3ot")
+const SPLITTER = preload("uid://cdf684aferulb")
 
 
 var gridSize: Vector2
@@ -42,7 +46,6 @@ func _ready() -> void:
 	craft_ui = CRAFT_UI.instantiate()
 	canvas_layer.add_child(craft_ui)
 	craft_ui.visible = false
-	
 
 func kjl_update():
 	for i in range(bag_slot.size()):
@@ -100,7 +103,14 @@ func save_data():
 func _input(event: InputEvent) -> void:
 	if xz_sx != -1 and not object and player_data.Slots[xz_sx].item:
 		var newPlacement
-		if player_data.Slots[xz_sx].item.name == "传送带" or player_data.Slots[xz_sx].item.name == "锯木厂" or player_data.Slots[xz_sx].item.name == "入货口" or player_data.Slots[xz_sx].item.name == "熔炉":
+		if player_data.Slots[xz_sx].item.name == "传送带" or \
+		player_data.Slots[xz_sx].item.name == "锯木厂" or \
+		player_data.Slots[xz_sx].item.name == "入货口" or \
+		player_data.Slots[xz_sx].item.name == "熔炉" or \
+		player_data.Slots[xz_sx].item.name == "合成器" or \
+		player_data.Slots[xz_sx].item.name == "制造机" or \
+		player_data.Slots[xz_sx].item.name == "出货口" or \
+		player_data.Slots[xz_sx].item.name == "分流器":
 			if player_data.Slots[xz_sx].item:
 				newPlacement = OBJECT.instantiate()
 				add_child(newPlacement)
@@ -109,6 +119,8 @@ func _input(event: InputEvent) -> void:
 				newPlacement.global_position = get_global_mouse_position()
 				object = newPlacement
 				object.rotation = _rotation
+				if player_data.Slots[xz_sx].item.name == "制造机":
+					object.rect.size = Vector2(150, 150)
 	elif Input.is_action_just_pressed("right") and isValid:
 		_place_placement(objectCells)
 	if xz_sx != -1 and event.is_action_pressed("exit"):
@@ -164,36 +176,43 @@ func _check_and_hightlight_cells(objectCells: Array):
 	return isValid
 
 func _place_placement(objectCells):
-	if object.slot_.item.name == "传送带" or "锯木厂" or "入货口" or "熔炉":
-		var wz = object.global_position
-		var a_rotation = object.rotation
-		object.queue_free()
-		if object.slot_.item.name == "传送带":
-			object = _BELT.instantiate()
-		elif object.slot_.item.name == "锯木厂":
-			object = SAWMILL.instantiate()
-		elif object.slot_.item.name == "入货口":
-			object = INLET.instantiate()
-		elif object.slot_.item.name == "熔炉":
-			object = FURNACE.instantiate()
-		building.add_child(object)
-		object.global_position = wz
-		object.rotation = a_rotation
-		if player_data.Slots[xz_sx].number <= 0:
-			player_data.Slots[xz_sx].item = null
-			player_data.Slots[xz_sx].number = 0
-			if object:
-				object.queue_free()
-				object = null
-			isValid = null
-			_reset_highlight()
-			Global.button_off.emit()
-			xz_sx = -1
-			xz_sx_2 = -1
-			_rotation = 0
-			save_data()
-			return
+	var wz = object.global_position
+	var a_rotation = object.rotation
+	object.queue_free()
+	if object.slot_.item.name == "传送带":
+		object = _BELT.instantiate()
+	elif object.slot_.item.name == "锯木厂":
+		object = SAWMILL.instantiate()
+	elif object.slot_.item.name == "入货口":
+		object = INLET.instantiate()
+	elif object.slot_.item.name == "熔炉":
+		object = FURNACE.instantiate()
+	elif object.slot_.item.name == "合成器":
+		object = MAKER.instantiate()
+	elif object.slot_.item.name == "制造机":
+		object = COMBINER.instantiate()
+	elif object.slot_.item.name == "出货口":
+		object = EXIT.instantiate()
+	elif object.slot_.item.name == "分流器":
+		object = SPLITTER.instantiate()
+	building.add_child(object)
+	object.global_position = wz
+	object.rotation = a_rotation
+	if player_data.Slots[xz_sx].number <= 0:
+		player_data.Slots[xz_sx].item = null
+		player_data.Slots[xz_sx].number = 0
+		if object:
+			object.queue_free()
+			object = null
+		isValid = null
+		_reset_highlight()
+		Global.button_off.emit()
+		xz_sx = -1
+		xz_sx_2 = -1
+		_rotation = 0
 		save_data()
+		return
+	save_data()
 	_rotation = object.rotation
 	object.set_on_place()
 	object = null
@@ -206,7 +225,6 @@ func _place_placement(objectCells):
 		cell.full = true
 	
 	_reset_highlight()
-
 
 func _process(delta: float) -> void:
 	kjl_update()
@@ -225,11 +243,12 @@ func _process(delta: float) -> void:
 		_reset_highlight()
 		objectCells = _get_target_cells()
 		isValid = _check_and_hightlight_cells(objectCells)
-	
-	
 
 func _on_demolish_pressed() -> void:
 	in_demolish = true
+	if new_demolish:
+		new_demolish.queue_free()
+		new_demolish = null
 	new_demolish = DEMOLISH.instantiate()
 	add_child(new_demolish)
 	new_demolish.global_position = get_global_mouse_position()

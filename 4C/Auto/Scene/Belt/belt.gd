@@ -22,13 +22,17 @@ func _process(delta: float) -> void:
 	update_rotation()
 	if _item and _can_move and _item.can_move:
 		if item_queue:
-			if _item == item_queue[0]:
-				item_queue.erase(_item)
+			item_queue.remove_at(0)
 		if next_belt:
-			if next_belt is Belt:
+			if next_belt is Belt or next_belt is Splitter:
 				if !(_item in next_belt.item_queue):
 					next_belt.item_queue.append(_item)
 				if next_belt.item_queue and next_belt._item == null:
+					for i in range(next_belt.item_queue.size()-1, -1, -1):
+						var x = next_belt.item_queue[i]
+						if not is_instance_valid(x):
+							next_belt.item_queue.remove_at(i)
+							continue
 					if next_belt.item_queue[0] == _item:
 						_item.move = _rotation
 						_item.position += speed * _rotation * delta
@@ -60,9 +64,21 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("box"):
 		_can_move = true
 		next_belt = area
+	elif area is Splitter:
+		_can_move = true
+		next_belt = area
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area is Belt:
+		_can_move = false
+		next_belt = null
+	elif area is Splitter:
+		_can_move = false
+		next_belt = null
+	elif area.is_in_group("box"):
+		_can_move = false
+		next_belt = null
+	elif area.is_in_group("building"):
 		_can_move = false
 		next_belt = null
 
@@ -95,11 +111,12 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _item_on(a: item):
 	if next_belt:
-		if next_belt is Belt:
+		if next_belt is Belt or next_belt is Splitter:
 			if next_belt.item_queue:
-				if a == next_belt.item_queue[0]:
+				if a in next_belt.item_queue:
 					item_queue.erase(a)
-	else:
+
+	if next_belt == null:
 		if item_queue:
-			if a == item_queue[0]:
+			if a in item_queue:
 				item_queue.erase(a)

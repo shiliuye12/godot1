@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://div1q0ahx4bf0"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_iltv3"]
+[ext_resource type="Texture2D" uid="uid://bwuuti5p8dafh" path="res://Asset/微信图片_20260325102827_21_30.jpg" id="2_ddkev"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld4de"]
+atlas = ExtResource("2_ddkev")
+region = Rect2(19, 21, 75, 75)
+
+[resource]
+script = ExtResource("1_iltv3")
+name = "分流器"
+texture = SubResource("AtlasTexture_ld4de")
+id = 16
+metadata/_custom_type_script = "uid://5po6te85tamv"

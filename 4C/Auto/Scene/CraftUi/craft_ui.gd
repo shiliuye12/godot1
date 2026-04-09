@@ -186,10 +186,11 @@ func _on_craft_button_pressed() -> void:
 						can_carft += 1
 						item_1 = i
 					if recipe_data.recipes[xz_sx].inputCount2 != 0:
-						if player_data.Slots[i].item.name == recipe_data.recipes[xz_sx].inputitem1\
-						and player_data.Slots[i].number >= recipe_data.recipes[xz_sx].inputCount1 * number:
-							can_carft += 1
-							item_2 = i
+						if player_data.Slots[i].item.name == recipe_data.recipes[xz_sx].inputitem2\
+						and player_data.Slots[i].number >= recipe_data.recipes[xz_sx].inputCount2 * number:
+							if can_carft == 1:
+								can_carft += 1
+								item_2 = i
 			if recipe_data.recipes[xz_sx].inputCount2 == 0:
 				if can_carft == 1:
 					for i in production_queue.production_queue.size():
@@ -201,7 +202,7 @@ func _on_craft_button_pressed() -> void:
 							return
 			elif recipe_data.recipes[xz_sx].inputCount2 != 0:
 				if can_carft == 2:
-					for i in production_queue.size():
+					for i in production_queue.production_queue.size():
 						if production_queue.production_queue[i].item == null:
 							player_data.Slots[item_1].number -= recipe_data.recipes[xz_sx].inputCount1 * number
 							player_data.Slots[item_2].number -= recipe_data.recipes[xz_sx].inputCount2 * number

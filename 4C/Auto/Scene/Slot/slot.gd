@@ -18,6 +18,7 @@ func _on_pressed() -> void:
 	color_rect_2.show()
 	Global.button_on.emit()
 
+
 func _button_off():
 	color_rect.hide()
 	color_rect_2.hide()

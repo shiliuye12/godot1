@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://b2umfnp87xv0s"]
+
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_inh5v"]
+[ext_resource type="Resource" uid="uid://c1t6ygj6vty8m" path="res://Resource/item/maker.tres" id="1_nwnlw"]
+
+[resource]
+script = ExtResource("1_inh5v")
+inputitem1 = "铁锭"
+inputCount1 = 10
+inputitem2 = "铜锭"
+inputCount2 = 10
+outputCount = 1
+outitem = ExtResource("1_nwnlw")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

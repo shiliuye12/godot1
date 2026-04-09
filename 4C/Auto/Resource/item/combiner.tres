@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c5k414gkua7aa"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_ehog0"]
+[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="2_6x0wu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x0wu"]
+atlas = ExtResource("2_6x0wu")
+region = Rect2(174, 23, 75, 75)
+
+[resource]
+script = ExtResource("1_ehog0")
+name = "制造机"
+texture = SubResource("AtlasTexture_6x0wu")
+id = 14
+metadata/_custom_type_script = "uid://5po6te85tamv"

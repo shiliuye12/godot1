@@ -1,5 +1,5 @@
 extends Area2D
-class_name Furnace
+class_name Maker
 
 var items_data = {
 	"number": 0,
@@ -26,11 +26,13 @@ const ITEM = preload("uid://dg2dt3330rsms")
 func _ready() -> void:
 	for i in recipe.recipes.size():
 		if recipe.recipes[i]:
-			if recipe.recipes[i].outitem.name == "石砖":
+			if recipe.recipes[i].outitem.name == "传送带":
 				recipes.append(recipe.recipes[i])
-			if recipe.recipes[i].outitem.name == "铁锭":
+			if recipe.recipes[i].outitem.name == "熔炉":
 				recipes.append(recipe.recipes[i])
-			if recipe.recipes[i].outitem.name == "铜锭":
+			if recipe.recipes[i].outitem.name == "入货口":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "锯木厂":
 				recipes.append(recipe.recipes[i])
 	#Global.ui_items_change.connect(_ui_items_change)
 

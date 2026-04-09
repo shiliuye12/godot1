@@ -16,3 +16,9 @@ func get_global_rect():
 
 func set_on_place():
 	modulate.a = 1
+
+func get_global_rect2():
+	return Rect2(
+		global_position - rect.size / 2,
+		Vector2(150, 150)
+	)

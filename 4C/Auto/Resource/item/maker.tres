@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c1t6ygj6vty8m"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_qh3mr"]
+[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="2_4vtmi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wx84"]
+atlas = ExtResource("2_4vtmi")
+region = Rect2(51, 49, 75, 75)
+
+[resource]
+script = ExtResource("1_qh3mr")
+name = "合成器"
+texture = SubResource("AtlasTexture_3wx84")
+id = 13
+metadata/_custom_type_script = "uid://5po6te85tamv"

@@ -46,10 +46,14 @@ func _on_entry_body_entered(body: Node2D) -> void:
 			body.queue_free()
 
 func can_enter(body: item):
-	if body.id == 1:
-		return true
+	if items_data.slot:
+		if body.id == items_data.slot.item.id:
+			return true
+		else:
+			return false
 	else:
-		return false
+		items_data.number = 0
+		return true
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("left"):
@@ -88,15 +92,15 @@ func _on_timer_timeout() -> void:
 	slot_.item = Item.new()
 	out_item_data.slot = slot_
 	out_item_data.number += 1
-	out_item_data.slot.item = recipe.outitem
+	out_item_data.slot.item = recipes[recipe_wz].outitem
 
 func _process(delta: float) -> void:
 	if items_data.slot:
-		if items_data.slot.item.name == recipe.inputitem1 and craft:
-			if items_data.number >= 2:
+		if items_data.slot.item.name == recipes[recipe_wz].inputitem1 and craft:
+			if items_data.number >= recipes[recipe_wz].inputCount1:
 				if out_item_data.number < 20:
 					craft = false
-					items_data.number -= 2
+					items_data.number -= recipes[recipe_wz].inputCount1
 					timer.start()
 				elif out_item_data.number >= 20:
 					craft = false
@@ -107,11 +111,14 @@ func _process(delta: float) -> void:
 		item_node.add_child(new_item)
 		out_item_data.number -= 1
 		var slot_: Slot = Slot.new()
-		slot_.item = recipe.outitem
+		slot_.item = recipes[recipe_wz].outitem
 		slot_.number = 1
 		new_item.slot_ = slot_
 		new_item.update()
 		new_item.global_position = next_building.global_position
+	if items_data.number <= 0:
+		items_data.number = 0
+		items_data.slot = null
 
 func _on_exit_area_entered(area: Area2D) -> void:
 	if area is Belt:

@@ -7,7 +7,8 @@ extends Control
 @onready var slotitem = preload("res://Scene/SlotItem/slot_item.tscn")
 var xz_sx = -1
 var xz_sx_2 = -1
-
+var bag_inventory_array: Array
+var bag_inventory_array_number: Array
 
 func _ready() -> void:
 	bag_update()
@@ -18,6 +19,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		Global.button_off.emit()
 		xz_sx = -1
 		xz_sx_2 = -1
+	if event.is_action_pressed("bag_inventory"):
+		bag_inventory()
 
 func bag_update():
 	for i in range(player_data.Slots.size()):
@@ -79,3 +82,38 @@ func slot_jh():
 	
 func save_data():
 	ResourceSaver.save(player_data,"res://Resource/player_data.tres")
+
+func _process(delta: float) -> void:
+	bag_update()
+
+func bag_inventory() -> void:
+	var merge_dict: Dictionary = {}
+	
+	for slot in player_data.Slots:
+		if slot.item and slot.number > 0:
+			var item_id = slot.item.id
+			
+			if merge_dict.has(item_id):
+				merge_dict[item_id].number += slot.number
+			else:
+				merge_dict[item_id] = {
+					"item": slot.item,
+					"number": slot.number
+				}
+	
+	var merged_array: Array = []
+	for key in merge_dict:
+		merged_array.append(merge_dict[key])
+	
+	merged_array.sort_custom(func(a, b):
+		return a.item.id < b.item.id
+	)
+	
+	for i in range(player_data.Slots.size()):
+		if i < merged_array.size():
+			player_data.Slots[i].item = merged_array[i].item
+			player_data.Slots[i].number = merged_array[i].number
+		else:
+			player_data.Slots[i].item = null
+			player_data.Slots[i].number = 0
+	save_data()

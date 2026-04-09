@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://i6uats16fvv4"]
+[gd_scene format=3 uid="uid://cnyqsuhkbnwxj"]
 
-[ext_resource type="Script" uid="uid://b67k3lh0vw763" path="res://Scene/Furnace/furnace.gd" id="1_bxj27"]
-[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="1_iloqt"]
+[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="1_e0cga"]
+[ext_resource type="Script" uid="uid://bfq3tg2cr43cd" path="res://Scene/Maker/maker.gd" id="1_y36fu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bxj27"]
-atlas = ExtResource("1_iloqt")
-region = Rect2(2, 101, 75, 75)
+[sub_resource type="AtlasTexture" id="AtlasTexture_iloqt"]
+atlas = ExtResource("1_e0cga")
+region = Rect2(51, 49, 75, 75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21bka"]
 size = Vector2(60, 60)
@@ -13,12 +13,11 @@ size = Vector2(60, 60)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbe2t"]
 size = Vector2(60, 60)
 
-[node name="Furnace" type="Area2D" unique_id=747879841 groups=["building"]]
-script = ExtResource("1_bxj27")
-rect = Rect2(0, 0, 75, 75)
+[node name="Maker" type="Area2D" unique_id=747879841 groups=["building"]]
+script = ExtResource("1_y36fu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=798088576]
-texture = SubResource("AtlasTexture_bxj27")
+texture = SubResource("AtlasTexture_iloqt")
 
 [node name="entry" type="Area2D" parent="." unique_id=865324808]
 

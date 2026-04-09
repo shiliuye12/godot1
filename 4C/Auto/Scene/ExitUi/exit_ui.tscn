@@ -1,0 +1,259 @@
+[gd_scene format=3 uid="uid://bxtw3otbppgya"]
+
+[ext_resource type="Script" uid="uid://csv8pmjju80oq" path="res://Scene/ExitUi/exit_ui.gd" id="1_ssdw6"]
+[ext_resource type="PackedScene" uid="uid://ctji6a1j2i8ux" path="res://Scene/Slot/slot.tscn" id="2_by05b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5cumk"]
+font_size = 32
+
+[node name="ExitUi" type="CanvasLayer" unique_id=1752337258]
+script = ExtResource("1_ssdw6")
+
+[node name="Control" type="Control" parent="." unique_id=374357149]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=510989490]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2036809, 0.20368093, 0.2036809, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=762827758]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=418502214]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/HBoxContainer" unique_id=661186958]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 8
+
+[node name="Slot" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=64537040 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot2" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=761960098 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot3" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1537506896 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot4" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1847026974 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot5" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1514355300 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot6" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=2006832926 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot7" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1997047814 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot8" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1912684514 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot9" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=513745694 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot10" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1322962681 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot11" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1978163112 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot12" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=825464642 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot13" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1756013587 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot14" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=412858742 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot15" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1183302929 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot16" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=2142067605 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot17" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=768213766 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot18" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1552986902 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot19" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1718563892 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot20" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=39575808 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot21" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1095615877 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot22" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=840058969 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot23" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=845376018 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot24" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1577165168 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot25" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=136574501 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot26" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=774350843 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot27" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=3436868 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot28" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1165636023 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot29" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=657415205 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot30" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=860114753 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot31" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1654338373 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot32" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=620411576 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot33" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1292831597 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot34" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1857249139 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot35" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=74291496 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot36" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=817623525 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot37" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1873603498 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot38" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1135953808 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot39" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1961094922 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot40" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=293996499 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot41" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=455636175 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot42" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=1267373785 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot43" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=2106956877 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot44" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=399662386 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="Slot45" parent="Control/MarginContainer/HBoxContainer/GridContainer" unique_id=867975384 instance=ExtResource("2_by05b")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer" unique_id=772471814]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer" unique_id=1255368268]
+layout_mode = 2
+color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect" unique_id=992308562]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer" unique_id=427658698]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1182568516]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=459363912]
+layout_mode = 2
+
+[node name="uiSlot" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1867484473 instance=ExtResource("2_by05b")]
+layout_mode = 2
+disabled = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1036310152]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="uiName" type="Label" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2" unique_id=377379009]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_5cumk")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=776823852]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+color = Color(0.2966023, 0.2966023, 0.2966023, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/ColorRect" unique_id=1121404088]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="ms" type="Label" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/ColorRect/MarginContainer" unique_id=1049481759]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1048198050]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="CraftButton" type="Button" parent="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1338437524]
+layout_mode = 2
+text = "输出"
+
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/CraftButton" to="." method="_on_craft_button_pressed"]

@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cgbh6aboxl6c0" path="res://Scene/Quarry/quarrt.tscn" id="8_xft36"]
 [ext_resource type="PackedScene" uid="uid://i6uats16fvv4" path="res://Scene/Furnace/furnace.tscn" id="9_fcd1k"]
 [ext_resource type="PackedScene" uid="uid://4hj3hj5cvss2" path="res://Scene/Mine/mine.tscn" id="10_1bbhm"]
+[ext_resource type="PackedScene" uid="uid://c3e2v7o8sp3ot" path="res://Scene/Exit/exit.tscn" id="11_e1vod"]
+[ext_resource type="PackedScene" uid="uid://cdf684aferulb" path="res://Scene/Splitter/splitter.tscn" id="12_qrrqh"]
 
 [node name="Main" type="Node2D" unique_id=440039550]
 script = ExtResource("1_yhpoe")
@@ -122,6 +124,12 @@ position = Vector2(339, 186)
 
 [node name="Mine" parent="building" unique_id=725201044 instance=ExtResource("10_1bbhm")]
 position = Vector2(-223, -227)
+
+[node name="Exit" parent="building" unique_id=1054054186 instance=ExtResource("11_e1vod")]
+position = Vector2(485, 180)
+
+[node name="Splitter" parent="building" unique_id=750177351 instance=ExtResource("12_qrrqh")]
+position = Vector2(-336, 561)
 
 [node name="items" type="Node" parent="." unique_id=878442052]
 

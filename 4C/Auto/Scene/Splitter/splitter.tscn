@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cdf684aferulb"]
+
+[ext_resource type="Script" uid="uid://clnhoi7spkt48" path="res://Scene/Splitter/splitter.gd" id="1_ld4de"]
+[ext_resource type="Texture2D" uid="uid://bwuuti5p8dafh" path="res://Asset/微信图片_20260325102827_21_30.jpg" id="2_yw8af"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld4de"]
+atlas = ExtResource("2_yw8af")
+region = Rect2(19, 21, 75, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi1qr"]
+size = Vector2(74, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_686dk"]
+size = Vector2(56, 56)
+
+[node name="Splitter" type="Area2D" unique_id=401628864]
+script = ExtResource("1_ld4de")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1862247949]
+texture = SubResource("AtlasTexture_ld4de")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1318892252]
+shape = SubResource("RectangleShape2D_oi1qr")
+
+[node name="right" type="Area2D" parent="." unique_id=522442423]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right" unique_id=418462262]
+position = Vector2(77, -1)
+shape = SubResource("RectangleShape2D_686dk")
+
+[node name="up" type="Area2D" parent="." unique_id=2135321597]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="up" unique_id=1252938319]
+position = Vector2(0, -74)
+shape = SubResource("RectangleShape2D_686dk")
+
+[node name="down" type="Area2D" parent="." unique_id=416071062]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="down" unique_id=270051721]
+position = Vector2(0, 75)
+shape = SubResource("RectangleShape2D_686dk")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="area_entered" from="right" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="right" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="up" to="." method="_on_right_area_entered"]
+[connection signal="area_exited" from="up" to="." method="_on_right_area_exited"]
+[connection signal="area_entered" from="down" to="." method="_on_down_area_entered"]
+[connection signal="area_exited" from="down" to="." method="_on_down_area_exited"]
