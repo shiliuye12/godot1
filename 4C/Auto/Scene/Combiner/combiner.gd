@@ -23,16 +23,138 @@ var recipes: Array
 
 @onready var timer: Timer = $Timer
 
-@onready var recipe = preload("uid://cy6v05nmqncyp")
+@onready var recipe = preload("res://Resource/recipe_data.tres")
 const BUILDING_UI = preload("uid://cxejupw44ks23")
 const ITEM = preload("uid://dg2dt3330rsms")
 
 func _ready() -> void:
+	Global.recipe_change.connect(_recipe_change)
 	for i in recipe.recipes.size():
 		if recipe.recipes[i]:
 			if recipe.recipes[i].outitem.name == "合成器":
 				recipes.append(recipe.recipes[i])
-	#Global.ui_items_change.connect(_ui_items_change)
+			if recipe.recipes[i].outitem.name == "制造机":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "入货口":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "出货口":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "分流器":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "窗户":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "木梁":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "铁质框架":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "铜装饰品":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "民居主体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "民居":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "加固地基":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "金属屋顶":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "高级墙体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "官府主体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "官府":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "家具":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "铁质窗户":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥墩":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥面":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥身":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥梁主体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥梁1":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥梁2":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥梁3":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "精密地基":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "精致墙体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "高级屋顶":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "皇宫主体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "皇宫":
+				recipes.append(recipe.recipes[i])
+
+func _recipe_change():
+	for i in recipe.recipes.size():
+		if recipe.recipes[i]:
+			if recipe.recipes[i].outitem.name == "合成器":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "制造机":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "入货口":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "出货口":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "分流器":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "窗户":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "木梁":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "铁质框架":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "铜装饰品":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "民居主体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "民居":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "加固地基":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "金属屋顶":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "高级墙体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "官府主体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "官府":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "家具":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "铁质窗户":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥墩":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥面":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥身":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥梁主体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥梁1":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥梁2":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "桥梁3":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "精密地基":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "精致墙体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "高级屋顶":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "皇宫主体":
+				recipes.append(recipe.recipes[i])
+			if recipe.recipes[i].outitem.name == "皇宫":
+				recipes.append(recipe.recipes[i])
 
 func _on_entry_body_entered(body: Node2D) -> void:
 	if body is item:

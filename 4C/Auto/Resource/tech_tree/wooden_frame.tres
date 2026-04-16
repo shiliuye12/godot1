@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://bao0e15osgpaq"]
+
+[ext_resource type="Resource" uid="uid://dfl85li6dytb7" path="res://Resource/Recipe/wooden_frame.tres" id="1_k387i"]
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_xn6k0"]
+
+[resource]
+script = ExtResource("1_xn6k0")
+item1 = "木板"
+itemCount1 = 30
+recipe = ExtResource("1_k387i")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

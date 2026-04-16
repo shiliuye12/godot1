@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://cu1g7xpc6eil8"]
+
+[ext_resource type="Resource" uid="uid://br8i7l2iie5uq" path="res://Resource/Recipe/government_office_1.tres" id="1_qb4gf"]
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_yvbfr"]
+
+[resource]
+script = ExtResource("1_yvbfr")
+item1 = "加固地基"
+itemCount1 = 1
+item2 = "高级墙体"
+itemCount2 = 1
+item3 = "金属屋顶"
+itemCount3 = 1
+recipe = ExtResource("1_qb4gf")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

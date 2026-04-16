@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://4hj3hj5cvss2"]
 
 [ext_resource type="Script" uid="uid://xsyd4mnftdf2" path="res://Scene/Mine/mine.gd" id="1_2oych"]
-[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="1_505tk"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hbe2t"]
-atlas = ExtResource("1_505tk")
-region = Rect2(-109, 0, 300, 300)
+[ext_resource type="Texture2D" uid="uid://c21jflr6pbp1m" path="res://Asset/采矿场.png" id="2_2oych"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21bka"]
 size = Vector2(60, 60)
@@ -17,7 +13,7 @@ size = Vector2(60, 60)
 script = ExtResource("1_2oych")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=280101123]
-texture = SubResource("AtlasTexture_hbe2t")
+texture = ExtResource("2_2oych")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=8121823]
 position = Vector2(112, 111)

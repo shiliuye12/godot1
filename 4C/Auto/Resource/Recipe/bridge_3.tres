@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://fbcxldgqo3x1"]
+
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_elcu5"]
+[ext_resource type="Resource" uid="uid://b8y8qkcelfayh" path="res://Resource/item/bridge_3.tres" id="1_vqk2i"]
+
+[resource]
+script = ExtResource("1_elcu5")
+inputitem1 = "桥梁主体"
+inputCount1 = 1
+inputitem2 = "桥面"
+inputCount2 = 1
+outputCount = 1
+outitem = ExtResource("1_vqk2i")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

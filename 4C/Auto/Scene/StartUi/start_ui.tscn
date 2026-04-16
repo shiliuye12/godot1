@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://uk66hbc0ykly"]
+
+[ext_resource type="Script" uid="uid://binyxvf85t1ce" path="res://Scene/StartUi/start_ui.gd" id="1_f1vcl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iekh5"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f1vcl"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tq5du"]
+font_size = 32
+
+[node name="StartUi" type="Control" unique_id=1525306777]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f1vcl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1534236976]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.122984864, 0.12298489, 0.12298482, 0.4509804)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=1763196252]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer" unique_id=583575504]
+layout_mode = 2
+color = Color(0.5705783, 0.57057834, 0.57057834, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect" unique_id=1109347554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/ColorRect/MarginContainer" unique_id=486186085]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1699939408]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "背景介绍"
+label_settings = SubResource("LabelSettings_iekh5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1458393191]
+custom_minimum_size = Vector2(0, 333)
+layout_mode = 2
+text = "        你意外穿越到古代，被当朝皇帝委以重任，负责在荒野之上新
+建一座完整小镇。按照要求，城内需要修建民居、官府、皇家宫殿，
+还要架设桥梁，连通各处水陆交通。
+        所幸你身负现代科技知识，能够在此简陋环境中，制造出各类
+机械装置。你研制出材料自动合成器械，利用寻常原料炼制坚固建
+材。依靠超前的机械技术，摆脱古代繁重低效的手工劳作，快速规划
+建造城镇，以现代工艺筑造一方安稳繁华的全新聚落。"
+label_settings = SubResource("LabelSettings_f1vcl")
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1580293953]
+custom_minimum_size = Vector2(0.09, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/VBoxContainer/Button" unique_id=1806817105]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "下一页"
+label_settings = SubResource("LabelSettings_tq5du")
+
+[connection signal="pressed" from="ColorRect/MarginContainer/ColorRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://cqh08rqf78u3y"]
+
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_6pwjc"]
+[ext_resource type="Resource" uid="uid://jikbptwopcsn" path="res://Resource/item/advanced_wall.tres" id="1_x1f5u"]
+
+[resource]
+script = ExtResource("1_6pwjc")
+inputitem1 = "窗户 "
+inputCount1 = 10
+inputitem2 = "木梁"
+inputCount2 = 10
+outputCount = 1
+outitem = ExtResource("1_x1f5u")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

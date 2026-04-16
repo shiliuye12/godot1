@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://btouacp5h44ab"]
+
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_tofv7"]
+[ext_resource type="Resource" uid="uid://txylg1804ctv" path="res://Resource/item/imperial_palace_main.tres" id="1_vqnfo"]
+
+[resource]
+script = ExtResource("1_tofv7")
+inputitem1 = "精致墙体"
+inputCount1 = 1
+inputitem2 = "高级屋顶"
+inputCount2 = 1
+outputCount = 1
+outitem = ExtResource("1_vqnfo")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

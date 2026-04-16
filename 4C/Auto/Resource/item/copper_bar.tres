@@ -1,15 +1,11 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://ckakcgebnc4bu"]
 
 [ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_thsj7"]
-[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="2_tkeq6"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tjh5j"]
-atlas = ExtResource("2_tkeq6")
-region = Rect2(58, 50, 75, 75)
+[ext_resource type="Texture2D" uid="uid://dur6pr46byrw4" path="res://Asset/1_铜锭1.0_WH_75x75px.png" id="2_tkeq6"]
 
 [resource]
 script = ExtResource("1_thsj7")
 name = "铜锭"
-texture = SubResource("AtlasTexture_tjh5j")
+texture = ExtResource("2_tkeq6")
 id = 12
 metadata/_custom_type_script = "uid://5po6te85tamv"

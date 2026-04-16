@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://bymxmtpkdcfsa"]
+
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_ahyfn"]
+[ext_resource type="Resource" uid="uid://gp72s66l3gv5" path="res://Resource/Recipe/wooden_beam.tres" id="1_ivamb"]
+
+[resource]
+script = ExtResource("1_ahyfn")
+item1 = "木板"
+itemCount1 = 20
+item2 = "石砖"
+itemCount2 = 20
+recipe = ExtResource("1_ivamb")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://gp72s66l3gv5"]
+
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_53gt8"]
+[ext_resource type="Resource" uid="uid://b8pijav7mh7n2" path="res://Resource/item/wooden_beam.tres" id="1_w6ip3"]
+
+[resource]
+script = ExtResource("1_53gt8")
+inputitem1 = "木板"
+inputCount1 = 10
+inputitem2 = "石砖"
+inputCount2 = 10
+outputCount = 1
+outitem = ExtResource("1_w6ip3")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

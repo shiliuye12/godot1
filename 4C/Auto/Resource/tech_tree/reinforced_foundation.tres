@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://b73e2mbewkrfn"]
+
+[ext_resource type="Resource" uid="uid://xqubt8pp3lvy" path="res://Resource/Recipe/reinforced_foundation.tres" id="1_fkhir"]
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_jk1br"]
+
+[resource]
+script = ExtResource("1_jk1br")
+item1 = "石砖"
+itemCount1 = 50
+item2 = "铁板"
+itemCount2 = 50
+recipe = ExtResource("1_fkhir")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

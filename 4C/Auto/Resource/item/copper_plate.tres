@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://vy1npphf2ero"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_ynelv"]
+[ext_resource type="Texture2D" uid="uid://cvnayutp755ba" path="res://Asset/1_铜板_WH_75x75px.png" id="2_a0rvw"]
+
+[resource]
+script = ExtResource("1_ynelv")
+name = "铜板"
+texture = ExtResource("2_a0rvw")
+id = 23
+metadata/_custom_type_script = "uid://5po6te85tamv"

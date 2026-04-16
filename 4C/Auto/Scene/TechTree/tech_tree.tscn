@@ -1,5 +1,110 @@
 [gd_scene format=3 uid="uid://cpw4kugn0gtx"]
 
+[ext_resource type="Script" uid="uid://chpbuk0yebp6a" path="res://Scene/TechTree/tech_tree.gd" id="1_e541s"]
+[ext_resource type="PackedScene" uid="uid://86tnnsq78ymr" path="res://Scene/TechTreeButton/tech_tree_button.tscn" id="1_isdii"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="2_e541s"]
+[ext_resource type="Resource" uid="uid://dr32at76igtgb" path="res://Resource/Recipe/sawmill.tres" id="3_6i423"]
+[ext_resource type="Resource" uid="uid://bnnxohwdnu4ik" path="res://Resource/tech_tree/sawmill.tres" id="5_6i423"]
+[ext_resource type="Resource" uid="uid://cxndsw5p541go" path="res://Resource/Recipe/plank.tres" id="5_jy2jp"]
+[ext_resource type="Resource" uid="uid://bhm7gque5eg03" path="res://Resource/Recipe/stone_brick.tres" id="7_c18fe"]
+[ext_resource type="Resource" uid="uid://bp7ujjvapyb20" path="res://Resource/tech_tree/furnace.tres" id="8_c18fe"]
+[ext_resource type="Resource" uid="uid://bqgm040x8wo1r" path="res://Resource/Recipe/iron_bar.tres" id="8_mhkv7"]
+[ext_resource type="Resource" uid="uid://dmhj1fr16bn3v" path="res://Resource/Recipe/copper_bar.tres" id="9_t462q"]
+[ext_resource type="Resource" uid="uid://cljadnpgxl5y2" path="res://Resource/Recipe/furnace.tres" id="10_t462q"]
+[ext_resource type="Resource" uid="uid://2vjdrwtty3nj" path="res://Resource/Recipe/belt.tres" id="12_lum40"]
+[ext_resource type="Resource" uid="uid://cmff4401oph1b" path="res://Resource/tech_tree/belt.tres" id="13_n0dys"]
+[ext_resource type="Resource" uid="uid://b2umfnp87xv0s" path="res://Resource/Recipe/maker.tres" id="14_vo2jm"]
+[ext_resource type="Resource" uid="uid://d3y70ap3k6cqy" path="res://Resource/tech_tree/maker.tres" id="15_xs6p2"]
+[ext_resource type="Resource" uid="uid://dxe47m2qb6hsf" path="res://Resource/Recipe/inlet.tres" id="16_euq6g"]
+[ext_resource type="Resource" uid="uid://c31epvc2p8385" path="res://Resource/tech_tree/inlet.tres" id="17_rgqij"]
+[ext_resource type="Resource" uid="uid://mlmeb1gkipja" path="res://Resource/Recipe/paper.tres" id="18_8j3v7"]
+[ext_resource type="Resource" uid="uid://e1m0js1xugom" path="res://Resource/Recipe/fiber.tres" id="19_qofl8"]
+[ext_resource type="Resource" uid="uid://borgneef73n5a" path="res://Resource/tech_tree/fiber.tres" id="20_bfy4t"]
+[ext_resource type="Resource" uid="uid://dfl85li6dytb7" path="res://Resource/Recipe/wooden_frame.tres" id="21_bfy4t"]
+[ext_resource type="Resource" uid="uid://bao0e15osgpaq" path="res://Resource/tech_tree/wooden_frame.tres" id="22_cvmi5"]
+[ext_resource type="Resource" uid="uid://d1w32l62bp0we" path="res://Resource/Recipe/stone_wall.tres" id="23_niasb"]
+[ext_resource type="Resource" uid="uid://bpmfmpkxq750h" path="res://Resource/tech_tree/stone_wall.tres" id="24_p5twu"]
+[ext_resource type="Resource" uid="uid://bvg88hxmx7t47" path="res://Resource/Recipe/iron_nail.tres" id="25_wggaw"]
+[ext_resource type="Resource" uid="uid://cga371c8prboa" path="res://Resource/Recipe/iron_plate.tres" id="26_pdyml"]
+[ext_resource type="Resource" uid="uid://brxumlud30vbu" path="res://Resource/Recipe/copper_plate.tres" id="27_qdko5"]
+[ext_resource type="Resource" uid="uid://dxuh0afiaj72r" path="res://Resource/tech_tree/iron.tres" id="28_3vyfo"]
+[ext_resource type="Resource" uid="uid://u3cu1gab6ay5" path="res://Resource/tech_tree/paper.tres" id="29_pdyml"]
+[ext_resource type="Resource" uid="uid://cpw7meuyk2c14" path="res://Resource/Recipe/combiner.tres" id="30_3vyfo"]
+[ext_resource type="Resource" uid="uid://dcmvrn5hckq8a" path="res://Resource/tech_tree/combiner.tres" id="30_qdko5"]
+[ext_resource type="Resource" uid="uid://cwyu08pi6y1qn" path="res://Resource/Recipe/window.tres" id="32_yokgy"]
+[ext_resource type="Resource" uid="uid://b4hgnovw3iixg" path="res://Resource/tech_tree/window.tres" id="33_kkwxx"]
+[ext_resource type="Resource" uid="uid://bymxmtpkdcfsa" path="res://Resource/tech_tree/wooden_beam.tres" id="34_kkwxx"]
+[ext_resource type="Resource" uid="uid://gp72s66l3gv5" path="res://Resource/Recipe/wooden_beam.tres" id="34_n7gac"]
+[ext_resource type="Resource" uid="uid://djirsbfaj3427" path="res://Resource/Recipe/iron_frame.tres" id="36_54vvg"]
+[ext_resource type="Resource" uid="uid://cgau4j4gt1hri" path="res://Resource/tech_tree/iron_frame.tres" id="37_goa2x"]
+[ext_resource type="Resource" uid="uid://cfo66yxhixmf6" path="res://Resource/Recipe/copper_ornament.tres" id="38_woqf7"]
+[ext_resource type="Resource" uid="uid://csmtfaljmfm1s" path="res://Resource/tech_tree/copper_ornament.tres" id="39_ty5qa"]
+[ext_resource type="Resource" uid="uid://xpcxsgp2g8tr" path="res://Resource/Recipe/splitter.tres" id="40_niipu"]
+[ext_resource type="Resource" uid="uid://iwdfn86me0kx" path="res://Resource/tech_tree/splitter.tres" id="41_xrhnj"]
+[ext_resource type="Resource" uid="uid://b7c8teej6y6ew" path="res://Resource/Recipe/exit.tres" id="42_gregq"]
+[ext_resource type="Resource" uid="uid://2wlrdjmteusw" path="res://Resource/tech_tree/exit.tres" id="43_wngux"]
+[ext_resource type="Resource" uid="uid://ddjsfy4fintcc" path="res://Resource/Recipe/furniture.tres" id="44_gxtii"]
+[ext_resource type="Resource" uid="uid://bayb1erhfkjf5" path="res://Resource/Recipe/iron_window.tres" id="45_66g4p"]
+[ext_resource type="Resource" uid="uid://mnxprnmjo22h" path="res://Resource/tech_tree/furniture.tres" id="46_6h18i"]
+[ext_resource type="Resource" uid="uid://8xkr0ncpxlje" path="res://Resource/Recipe/crude_foundation.tres" id="47_6h18i"]
+[ext_resource type="Resource" uid="uid://dybgww0qe6e3k" path="res://Resource/tech_tree/crude_foundation.tres" id="48_3you6"]
+[ext_resource type="Resource" uid="uid://dc2em66qkfflc" path="res://Resource/Recipe/wall.tres" id="49_7sflo"]
+[ext_resource type="Resource" uid="uid://cwb1raasea1p7" path="res://Resource/tech_tree/wall.tres" id="50_kxerr"]
+[ext_resource type="Resource" uid="uid://knqu7ia5cqmg" path="res://Resource/Recipe/simple_roof.tres" id="51_p8ebp"]
+[ext_resource type="Resource" uid="uid://lui5ln8lh4m1" path="res://Resource/tech_tree/simple_roof.tres" id="52_h5nxq"]
+[ext_resource type="Resource" uid="uid://c51shm3hf3lw8" path="res://Resource/Recipe/residence_1.tres" id="53_jm8vh"]
+[ext_resource type="Resource" uid="uid://xqubt8pp3lvy" path="res://Resource/Recipe/reinforced_foundation.tres" id="53_qsbhs"]
+[ext_resource type="Resource" uid="uid://cct31fpnvlfn8" path="res://Resource/Recipe/government_office_main.tres" id="53_vuhi3"]
+[ext_resource type="Resource" uid="uid://b73e2mbewkrfn" path="res://Resource/tech_tree/reinforced_foundation.tres" id="54_0tacx"]
+[ext_resource type="Resource" uid="uid://br8i7l2iie5uq" path="res://Resource/Recipe/government_office_1.tres" id="54_0uu7h"]
+[ext_resource type="Resource" uid="uid://khq8b3krwb8c" path="res://Resource/Recipe/residence_2.tres" id="54_r5r8g"]
+[ext_resource type="Resource" uid="uid://bgtunynnusapm" path="res://Resource/Recipe/government_office_2.tres" id="55_2ie8r"]
+[ext_resource type="Resource" uid="uid://bo5fki7emn23q" path="res://Resource/Recipe/residence_3.tres" id="55_n7f5c"]
+[ext_resource type="Resource" uid="uid://g4brkwljnyus" path="res://Resource/Recipe/residence_main.tres" id="56_1wc3n"]
+[ext_resource type="Resource" uid="uid://dlhct5i0kyuwi" path="res://Resource/Recipe/government_office_3.tres" id="56_ox4k3"]
+[ext_resource type="Resource" uid="uid://fvhu1h2m2ugn" path="res://Resource/tech_tree/residence.tres" id="57_bbt13"]
+[ext_resource type="Resource" uid="uid://cqh08rqf78u3y" path="res://Resource/Recipe/advanced_wall.tres" id="60_0uu7h"]
+[ext_resource type="Resource" uid="uid://bj6sc4466e222" path="res://Resource/tech_tree/advanced_wall.tres" id="61_2ie8r"]
+[ext_resource type="Resource" uid="uid://b6x1cvfgeitfu" path="res://Resource/Recipe/metal_roof.tres" id="62_ox4k3"]
+[ext_resource type="Resource" uid="uid://bq6e71kpkhr33" path="res://Resource/tech_tree/metal_roof.tres" id="63_bbt13"]
+[ext_resource type="Resource" uid="uid://i2lydyoes6v6" path="res://Resource/Recipe/bridge_body.tres" id="64_1el6j"]
+[ext_resource type="Resource" uid="uid://d1fwme7g27ita" path="res://Resource/Recipe/precision_foundation.tres" id="64_pgirx"]
+[ext_resource type="Resource" uid="uid://cu1g7xpc6eil8" path="res://Resource/tech_tree/government_office.tres" id="64_vphjk"]
+[ext_resource type="Resource" uid="uid://bbd0li6ro7veu" path="res://Resource/tech_tree/precision_foundation.tres" id="65_cj53k"]
+[ext_resource type="Resource" uid="uid://cd4brqnm4p52j" path="res://Resource/Recipe/bridge_pier.tres" id="65_gpwcl"]
+[ext_resource type="Resource" uid="uid://bx7eds6ktl74e" path="res://Resource/tech_tree/bridge_body.tres" id="65_ve8yj"]
+[ext_resource type="Resource" uid="uid://dmydwli3rtu65" path="res://Resource/Recipe/bridge_deck.tres" id="66_68pcf"]
+[ext_resource type="Resource" uid="uid://b8tdle8dwclow" path="res://Resource/tech_tree/bridge_pier.tres" id="66_d5saj"]
+[ext_resource type="Resource" uid="uid://bxrte71ka5jav" path="res://Resource/Recipe/exquisite_wall.tres" id="66_x3o6u"]
+[ext_resource type="Resource" uid="uid://xhctl0pe77un" path="res://Resource/tech_tree/exquisite.tres" id="67_4c21u"]
+[ext_resource type="Resource" uid="uid://b6ov27wrriypb" path="res://Resource/tech_tree/bridge_deck.tres" id="67_skqek"]
+[ext_resource type="Resource" uid="uid://bllits1stuyyv" path="res://Resource/Recipe/advanced_roof.tres" id="68_4c21u"]
+[ext_resource type="Resource" uid="uid://ci6g0mt21w4is" path="res://Resource/Recipe/bridge_main.tres" id="68_mxc2e"]
+[ext_resource type="Resource" uid="uid://dvgu2bkikfqdp" path="res://Resource/tech_tree/adcanced_roof.tres" id="69_iqatg"]
+[ext_resource type="Resource" uid="uid://djoe5mtlg332s" path="res://Resource/Recipe/bridge_1.tres" id="69_vphjk"]
+[ext_resource type="Resource" uid="uid://uf8h4fic04j3" path="res://Resource/Recipe/bridge_2.tres" id="70_tluhx"]
+[ext_resource type="Resource" uid="uid://fbcxldgqo3x1" path="res://Resource/Recipe/bridge_3.tres" id="71_frtvx"]
+[ext_resource type="Resource" uid="uid://bq7ri2hodtud8" path="res://Resource/tech_tree/bridge.tres" id="72_6lvq0"]
+[ext_resource type="Resource" uid="uid://btouacp5h44ab" path="res://Resource/Recipe/imperial_palace_main.tres" id="80_frtvx"]
+[ext_resource type="Resource" uid="uid://cg8junc4byvs2" path="res://Resource/Recipe/imperial_palace.tres" id="81_6lvq0"]
+[ext_resource type="Resource" uid="uid://nmsye5b3xvmh" path="res://Resource/tech_tree/imperial_palace.tres" id="82_6lvq0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5saj"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_gpwcl"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_6i423"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7sflo"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_kxerr"]
+font_size = 32
+
 [node name="TechTree" type="Control" unique_id=1057024343]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +112,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_e541s")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1241861896]
 layout_mode = 1
@@ -24,9 +130,323 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer" unique_id=691193869]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer" unique_id=683225786]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/ScrollContainer" unique_id=1578831550]
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/HBoxContainer" unique_id=691193869]
+custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer" unique_id=1578831550]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=2014767800]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8" unique_id=38895457]
+layout_mode = 2
+text = "物品/材料"
+label_settings = SubResource("LabelSettings_d5saj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=814955162]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TechTreeButton" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1155347912 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("3_6i423"), ExtResource("5_jy2jp")])
+tech_tree = ExtResource("5_6i423")
+ms = "木材加工"
+
+[node name="TechTreeButton2" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1725527222 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("7_c18fe"), ExtResource("8_mhkv7"), ExtResource("9_t462q"), ExtResource("10_t462q")])
+tech_tree = ExtResource("8_c18fe")
+ms = "熔炼"
+
+[node name="TechTreeButton3" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1673186704 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("12_lum40")])
+tech_tree = ExtResource("13_n0dys")
+ms = "基础物流"
+
+[node name="TechTreeButton4" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=630542512 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("14_vo2jm")])
+tech_tree = ExtResource("15_xs6p2")
+ms = "基础制造"
+
+[node name="TechTreeButton5" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=82639098 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("16_euq6g")])
+tech_tree = ExtResource("17_rgqij")
+ms = "基础存储"
+
+[node name="TechTreeButton6" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=175989004 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("19_qofl8")])
+tech_tree = ExtResource("20_bfy4t")
+ms = "木头加工2"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1133378357]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TechTreeButton2" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1873506306 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("21_bfy4t")])
+tech_tree = ExtResource("22_cvmi5")
+ms = "木板加工"
+
+[node name="TechTreeButton3" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1387603736 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("23_niasb")])
+tech_tree = ExtResource("24_p5twu")
+ms = "石材加工"
+
+[node name="TechTreeButton4" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=2136146939 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("25_wggaw"), ExtResource("26_pdyml"), ExtResource("27_qdko5")])
+tech_tree = ExtResource("28_3vyfo")
+ms = "金属加工"
+
+[node name="TechTreeButton5" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1897103797 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("18_8j3v7")])
+tech_tree = ExtResource("29_pdyml")
+ms = "纸"
+
+[node name="TechTreeButton6" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1232643348 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("30_3vyfo")])
+tech_tree = ExtResource("30_qdko5")
+ms = "高级制造"
+
+[node name="TechTreeButton7" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=718232871 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("32_yokgy")])
+tech_tree = ExtResource("33_kkwxx")
+ms = "窗户"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1661466201]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TechTreeButton7" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=668352340 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("34_n7gac")])
+tech_tree = ExtResource("34_kkwxx")
+ms = "房梁"
+
+[node name="TechTreeButton8" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1312887641 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("36_54vvg")])
+tech_tree = ExtResource("37_goa2x")
+ms = "铁质框架"
+
+[node name="TechTreeButton9" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1693761513 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("38_woqf7")])
+tech_tree = ExtResource("39_ty5qa")
+ms = "铜装饰品"
+
+[node name="TechTreeButton10" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1573070978 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("40_niipu")])
+tech_tree = ExtResource("41_xrhnj")
+ms = "分流器"
+
+[node name="TechTreeButton11" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=971394336 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("42_gregq")])
+tech_tree = ExtResource("43_wngux")
+ms = "高级存储"
+
+[node name="TechTreeButton12" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1964097945 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("44_gxtii"), ExtResource("45_66g4p")])
+tech_tree = ExtResource("46_6h18i")
+ms = "装饰"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1082996176]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=966459815]
+layout_mode = 2
+text = "建筑"
+label_settings = SubResource("LabelSettings_gpwcl")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1576379313]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TechTreeButton7" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=1715856632 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("47_6h18i")])
+tech_tree = ExtResource("48_3you6")
+ms = "民居地基"
+
+[node name="TechTreeButton8" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=330512454 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("49_7sflo")])
+tech_tree = ExtResource("50_kxerr")
+ms = "民居墙体"
+
+[node name="TechTreeButton9" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=1718057883 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("51_p8ebp")])
+tech_tree = ExtResource("52_h5nxq")
+ms = "民居屋顶"
+
+[node name="TechTreeButton10" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=211144801 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("53_jm8vh"), ExtResource("54_r5r8g"), ExtResource("55_n7f5c"), ExtResource("56_1wc3n")])
+tech_tree = ExtResource("57_bbt13")
+ms = "民居"
+
+[node name="TechTreeButton11" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=1635485997 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("53_qsbhs")])
+tech_tree = ExtResource("54_0tacx")
+ms = "官府地基"
+
+[node name="TechTreeButton12" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5" unique_id=552171468 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("60_0uu7h")])
+tech_tree = ExtResource("61_2ie8r")
+ms = "官府墙体"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=2117842276]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TechTreeButton7" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=1591434528 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("62_ox4k3")])
+tech_tree = ExtResource("63_bbt13")
+ms = "官府屋顶"
+
+[node name="TechTreeButton8" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=1680253085 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("53_vuhi3"), ExtResource("54_0uu7h"), ExtResource("55_2ie8r"), ExtResource("56_ox4k3")])
+tech_tree = ExtResource("64_vphjk")
+ms = "官府"
+
+[node name="TechTreeButton9" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=1338834612 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("65_gpwcl")])
+tech_tree = ExtResource("66_d5saj")
+ms = "桥墩"
+
+[node name="TechTreeButton10" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=1919017553 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("64_1el6j")])
+tech_tree = ExtResource("65_ve8yj")
+ms = "桥身"
+
+[node name="TechTreeButton11" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=1535060836 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("66_68pcf")])
+tech_tree = ExtResource("67_skqek")
+ms = "桥面"
+
+[node name="TechTreeButton12" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6" unique_id=1571308061 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("68_mxc2e"), ExtResource("69_vphjk"), ExtResource("70_tluhx"), ExtResource("71_frtvx")])
+tech_tree = ExtResource("72_6lvq0")
+ms = "桥梁"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=2131628895]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TechTreeButton7" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=326282714 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("64_pgirx")])
+tech_tree = ExtResource("65_cj53k")
+ms = "皇宫地基"
+
+[node name="TechTreeButton8" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=606542153 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("66_x3o6u")])
+tech_tree = ExtResource("67_4c21u")
+ms = "皇宫墙体"
+
+[node name="TechTreeButton9" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=637585394 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("68_4c21u")])
+tech_tree = ExtResource("69_iqatg")
+ms = "皇宫屋顶"
+
+[node name="TechTreeButton10" parent="ColorRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7" unique_id=1717055242 instance=ExtResource("1_isdii")]
+layout_mode = 2
+recipes = Array[ExtResource("2_e541s")]([ExtResource("80_frtvx"), ExtResource("81_6lvq0")])
+tech_tree = ExtResource("82_6lvq0")
+ms = "皇宫"
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/HBoxContainer" unique_id=475084762]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+color = Color(0.54178685, 0.5417869, 0.54178685, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/HBoxContainer/ColorRect" unique_id=1805262384]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer/ColorRect/MarginContainer" unique_id=75525080]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1814487308]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_6i423")
+
+[node name="Label2" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1407872689]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_6i423")
+
+[node name="Label3" type="Label" parent="ColorRect/MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=489971820]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_6i423")
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=628140784]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "解锁"
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1006538878]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 2.0
+offset_right = 218.0
+offset_bottom = 47.0
+text = "当前繁荣值："
+label_settings = SubResource("LabelSettings_7sflo")
+
+[node name="Label2" type="Label" parent="ColorRect" unique_id=1961889084]
+layout_mode = 0
+offset_left = 814.0
+offset_top = 601.0
+offset_right = 1006.0
+offset_bottom = 646.0
+text = "需要繁荣值："
+label_settings = SubResource("LabelSettings_kxerr")
+
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

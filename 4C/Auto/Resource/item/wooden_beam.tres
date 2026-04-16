@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b8pijav7mh7n2"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_esxo1"]
+[ext_resource type="Texture2D" uid="uid://eoelueedjyl6" path="res://Asset/1_房梁_WH_2048x2048px.png" id="2_d7yeq"]
+
+[resource]
+script = ExtResource("1_esxo1")
+name = "木梁"
+texture = ExtResource("2_d7yeq")
+id = 26
+metadata/_custom_type_script = "uid://5po6te85tamv"

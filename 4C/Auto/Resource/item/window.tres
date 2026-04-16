@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bc6kxt10lobc2"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_3w3av"]
+[ext_resource type="Texture2D" uid="uid://s36m0avjheae" path="res://Asset/new/1_窗户_WH_2048x2048px.png" id="2_p4ko7"]
+
+[resource]
+script = ExtResource("1_3w3av")
+name = "窗户"
+texture = ExtResource("2_p4ko7")
+id = 27
+metadata/_custom_type_script = "uid://5po6te85tamv"

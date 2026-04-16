@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://bpmfmpkxq750h"]
+
+[ext_resource type="Resource" uid="uid://d1w32l62bp0we" path="res://Resource/Recipe/stone_wall.tres" id="1_owh84"]
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_sqhyr"]
+
+[resource]
+script = ExtResource("1_sqhyr")
+item1 = "石砖"
+itemCount1 = 30
+recipe = ExtResource("1_owh84")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://8xkr0ncpxlje"]
+
+[ext_resource type="Resource" uid="uid://bb01iw4v1qimg" path="res://Resource/item/crude_foundation.tres" id="1_jsakw"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_p2hm4"]
+
+[resource]
+script = ExtResource("1_p2hm4")
+inputitem1 = "石砖"
+inputCount1 = 10
+outputCount = 1
+outitem = ExtResource("1_jsakw")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://4jjokgx68fnx"]
 
-[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="1_53e1a"]
 [ext_resource type="Script" uid="uid://ce3fpkarkr5o4" path="res://Scene/Lumberyard/lumberyard.gd" id="1_hbe2t"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hbe2t"]
-atlas = ExtResource("1_53e1a")
-region = Rect2(0, 0, 75, 75)
+[ext_resource type="Texture2D" uid="uid://b484ii01520eq" path="res://Asset/伐木场.png" id="2_yg5gs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21bka"]
 size = Vector2(60, 60)
@@ -17,7 +13,7 @@ size = Vector2(60, 60)
 script = ExtResource("1_hbe2t")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=280101123]
-texture = SubResource("AtlasTexture_hbe2t")
+texture = ExtResource("2_yg5gs")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=8121823]
 position = Vector2(123, 107)

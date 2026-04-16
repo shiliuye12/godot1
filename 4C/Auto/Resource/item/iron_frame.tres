@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://0x436o6tbpvu"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_oocrr"]
+[ext_resource type="Texture2D" uid="uid://b7wionk7ic7dc" path="res://Asset/1_铁质框架_WH_2048x2048px.png" id="2_1yl0k"]
+
+[resource]
+script = ExtResource("1_oocrr")
+name = "铁质框架"
+texture = ExtResource("2_1yl0k")
+id = 28
+metadata/_custom_type_script = "uid://5po6te85tamv"

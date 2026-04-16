@@ -3,6 +3,7 @@ extends Button
 @onready var color_rect: ColorRect = $ColorRect
 @onready var color_rect_2: ColorRect = $ColorRect2
 @onready var label: Label = $Label
+@onready var name_label: Label = $Label
 
 var wp: SlotItem
 

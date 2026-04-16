@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://d3crl4f0smwhw"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_5vpih"]
+[ext_resource type="Texture2D" uid="uid://1fvsxo4aneu3" path="res://Asset/new/1_金属屋顶_WH_2048x2048px.png" id="2_8gpd6"]
+
+[resource]
+script = ExtResource("1_5vpih")
+name = "金属屋顶"
+texture = ExtResource("2_8gpd6")
+id = 32
+metadata/_custom_type_script = "uid://5po6te85tamv"

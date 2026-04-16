@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b1m27wakvwg0k"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_qdcor"]
+[ext_resource type="Texture2D" uid="uid://3r716sts5mdd" path="res://Asset/new/1_铁窗户_WH_2048x2048px.png" id="2_7ce65"]
+
+[resource]
+script = ExtResource("1_qdcor")
+name = "铁质窗户"
+texture = ExtResource("2_7ce65")
+id = 34
+metadata/_custom_type_script = "uid://5po6te85tamv"

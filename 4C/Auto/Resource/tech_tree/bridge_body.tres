@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://bx7eds6ktl74e"]
+
+[ext_resource type="Resource" uid="uid://i2lydyoes6v6" path="res://Resource/Recipe/bridge_body.tres" id="1_e6ugp"]
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_g0so4"]
+
+[resource]
+script = ExtResource("1_g0so4")
+item1 = "石砖"
+itemCount1 = 50
+item2 = "铁锭"
+itemCount2 = 50
+item3 = "木板"
+itemCount3 = 50
+recipe = ExtResource("1_e6ugp")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

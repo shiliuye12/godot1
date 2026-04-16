@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://c3e2v7o8sp3ot"]
 
 [ext_resource type="Script" uid="uid://dai4bshadpg1t" path="res://Scene/Exit/exit.gd" id="1_6i1v1"]
-[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="1_530ed"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iloqt"]
-atlas = ExtResource("1_530ed")
-region = Rect2(-23, -34, 75, 75)
+[ext_resource type="Texture2D" uid="uid://bo2y31p5qcl6h" path="res://Asset/new/1_仓库出.png" id="2_6i1v1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21bka"]
 size = Vector2(60, 60)
@@ -18,7 +14,8 @@ script = ExtResource("1_6i1v1")
 rect = Rect2(0, 0, 75, 75)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=798088576]
-texture = SubResource("AtlasTexture_iloqt")
+rotation = 1.5707964
+texture = ExtResource("2_6i1v1")
 
 [node name="exit" type="Area2D" parent="." unique_id=562263573]
 

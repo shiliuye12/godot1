@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bb01iw4v1qimg"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_l7acc"]
+[ext_resource type="Texture2D" uid="uid://b1fxhfyrx68e8" path="res://Asset/new/1_简陋地基_WH_2048x2048px.png" id="2_67gku"]
+
+[resource]
+script = ExtResource("1_l7acc")
+name = "简陋地基"
+texture = ExtResource("2_67gku")
+id = 24
+metadata/_custom_type_script = "uid://5po6te85tamv"

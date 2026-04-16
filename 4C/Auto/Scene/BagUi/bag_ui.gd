@@ -34,6 +34,9 @@ func bag_update():
 			var new_slot = slotitem.instantiate()
 			bag_slot[i].spawn(new_slot)
 		bag_slot[i].wp.slot_ = player_data.Slots[i]
+		if player_data.Slots[i].item:
+			if player_data.Slots[i].number == 0:
+				player_data.Slots[i].item = null
 		bag_slot[i].wp.update()
 
 func _button_on():

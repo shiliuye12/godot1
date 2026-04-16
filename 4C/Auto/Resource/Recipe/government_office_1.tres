@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://br8i7l2iie5uq"]
+
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_f04ci"]
+[ext_resource type="Resource" uid="uid://dvalh8e01oxpx" path="res://Resource/item/government_office_1.tres" id="1_r2nkb"]
+
+[resource]
+script = ExtResource("1_f04ci")
+inputitem1 = "官府主体"
+inputCount1 = 1
+inputitem2 = "加固地基"
+inputCount2 = 1
+outputCount = 1
+outitem = ExtResource("1_r2nkb")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

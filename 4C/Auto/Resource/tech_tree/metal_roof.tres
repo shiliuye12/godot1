@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://bq6e71kpkhr33"]
+
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_1gf0r"]
+[ext_resource type="Resource" uid="uid://b6x1cvfgeitfu" path="res://Resource/Recipe/metal_roof.tres" id="1_dtuib"]
+
+[resource]
+script = ExtResource("1_1gf0r")
+item1 = "铁板"
+itemCount1 = 50
+item2 = "铜板"
+itemCount2 = 50
+recipe = ExtResource("1_dtuib")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

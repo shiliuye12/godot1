@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bvg88hxmx7t47"]
+
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_cqei8"]
+[ext_resource type="Resource" uid="uid://dfcu4igkolcf6" path="res://Resource/item/iron_nail.tres" id="1_m5ynt"]
+
+[resource]
+script = ExtResource("1_cqei8")
+inputitem1 = "铁锭"
+inputCount1 = 1
+outputCount = 1
+outitem = ExtResource("1_m5ynt")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

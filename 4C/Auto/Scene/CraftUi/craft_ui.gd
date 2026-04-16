@@ -3,9 +3,15 @@ extends Control
 @onready var minus: Button = $MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/minus
 @onready var line_edit: LineEdit = $MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/LineEdit
 @onready var plus: Button = $MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/plus
-@onready var recipe_slot: Array = $MarginContainer/HBoxContainer/VBoxContainer/GridContainer2.get_children()
+@onready var recipe_slot: Array = $MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer.get_children() + \
+$MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2.get_children() + \
+$MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3.get_children() + \
+$MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4.get_children() + \
+$MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5.get_children() + \
+$MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6.get_children() + \
+$MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7.get_children()
 @onready var queue_slot: Array = $MarginContainer/HBoxContainer/VBoxContainer/GridContainer.get_children()
-@onready var recipe_data = preload("uid://cy6v05nmqncyp")
+@onready var recipe_data = preload("res://Resource/recipe_data.tres")
 @onready var slotitem = preload("uid://d2jwiye4h32fi")
 @onready var ui_slot: Button = $MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/uiSlot
 @onready var ui_name: Label = $MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/uiName
@@ -21,6 +27,10 @@ var xz_sx = -1
 func _ready() -> void:
 	craft_bag_ui_update()
 	Global.button_on.connect(_button_on)
+	Global.recipe_change.connect(_recipe_change)
+
+func _recipe_change():
+	craft_bag_ui_update()
 
 func craft_bag_ui_update():
 	for i in range(recipe_slot.size()):
@@ -188,9 +198,8 @@ func _on_craft_button_pressed() -> void:
 					if recipe_data.recipes[xz_sx].inputCount2 != 0:
 						if player_data.Slots[i].item.name == recipe_data.recipes[xz_sx].inputitem2\
 						and player_data.Slots[i].number >= recipe_data.recipes[xz_sx].inputCount2 * number:
-							if can_carft == 1:
-								can_carft += 1
-								item_2 = i
+							can_carft += 1
+							item_2 = i
 			if recipe_data.recipes[xz_sx].inputCount2 == 0:
 				if can_carft == 1:
 					for i in production_queue.production_queue.size():

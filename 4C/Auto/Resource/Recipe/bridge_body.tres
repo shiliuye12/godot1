@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://i2lydyoes6v6"]
+
+[ext_resource type="Resource" uid="uid://vuve6gttol5x" path="res://Resource/item/bridge_body.tres" id="1_mvewp"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_n4d5n"]
+
+[resource]
+script = ExtResource("1_n4d5n")
+inputitem1 = "石砖"
+inputCount1 = 50
+inputitem2 = "铁锭"
+inputCount2 = 50
+outputCount = 1
+outitem = ExtResource("1_mvewp")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

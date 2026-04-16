@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://dybgww0qe6e3k"]
+
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_c1nl6"]
+[ext_resource type="Resource" uid="uid://8xkr0ncpxlje" path="res://Resource/Recipe/crude_foundation.tres" id="1_dfw4y"]
+
+[resource]
+script = ExtResource("1_c1nl6")
+item1 = "石砖"
+itemCount1 = 20
+recipe = ExtResource("1_dfw4y")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bt5qadqtyfs4v"]
+
+[ext_resource type="Script" uid="uid://i4v646ndio6b" path="res://Scene/Bridge/bridge.gd" id="1_bd1jd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bd1jd"]
+size = Vector2(300, 150)
+
+[node name="Bridge" type="Area2D" unique_id=772275785]
+script = ExtResource("1_bd1jd")
+rect = Rect2(0, 0, 300, 150)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=929189401]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=528326032]
+shape = SubResource("RectangleShape2D_bd1jd")

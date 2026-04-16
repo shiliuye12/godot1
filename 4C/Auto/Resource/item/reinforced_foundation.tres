@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cktwxqjetrs36"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_nbpse"]
+[ext_resource type="Texture2D" uid="uid://yrhiyy5h3nsy" path="res://Asset/1_加固地基_WH_2048x2048px.png" id="2_nmc35"]
+
+[resource]
+script = ExtResource("1_nbpse")
+name = "加固地基"
+texture = ExtResource("2_nmc35")
+id = 30
+metadata/_custom_type_script = "uid://5po6te85tamv"

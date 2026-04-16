@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://cga371c8prboa"]
+
+[ext_resource type="Resource" uid="uid://cayko4uyk22o6" path="res://Resource/item/iron_plate.tres" id="1_af7kp"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_cs28p"]
+
+[resource]
+script = ExtResource("1_cs28p")
+inputitem1 = "铁锭"
+inputCount1 = 2
+outputCount = 1
+outitem = ExtResource("1_af7kp")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

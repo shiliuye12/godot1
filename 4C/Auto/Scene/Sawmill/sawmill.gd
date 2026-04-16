@@ -19,16 +19,23 @@ var recipes: Array
 
 @onready var timer: Timer = $Timer
 
-@onready var recipe = preload("uid://cy6v05nmqncyp")
+@onready var recipe = preload("res://Resource/recipe_data.tres")
 const BUILDING_UI = preload("uid://dc1ske4gora4r")
 const ITEM = preload("uid://dg2dt3330rsms")
 
 func _ready() -> void:
+	Global.recipe_change.connect(_recipe_change)
 	for i in recipe.recipes.size():
 		if recipe.recipes[i]:
 			if recipe.recipes[i].outitem.name == "木板":
 				recipes.append(recipe.recipes[i])
-	#Global.ui_items_change.connect(_ui_items_change)
+
+func _recipe_change():
+	recipes.clear()
+	for i in recipe.recipes.size():
+		if recipe.recipes[i]:
+			if recipe.recipes[i].outitem.name == "木板":
+				recipes.append(recipe.recipes[i])
 
 func _on_entry_body_entered(body: Node2D) -> void:
 	if body is item:

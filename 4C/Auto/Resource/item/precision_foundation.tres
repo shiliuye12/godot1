@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://6fgp8vvvepqp"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_8vscp"]
+[ext_resource type="Texture2D" uid="uid://taacrl7ef8hp" path="res://Asset/1_高级地基_WH_2048x2048px.png" id="2_dtbcf"]
+
+[resource]
+script = ExtResource("1_8vscp")
+name = "精密地基"
+texture = ExtResource("2_dtbcf")
+id = 38
+metadata/_custom_type_script = "uid://5po6te85tamv"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://xpcxsgp2g8tr"]
+
+[ext_resource type="Resource" uid="uid://div1q0ahx4bf0" path="res://Resource/item/splitter.tres" id="1_i7vb1"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_q34yy"]
+
+[resource]
+script = ExtResource("1_q34yy")
+inputitem1 = "铜板"
+inputCount1 = 10
+inputitem2 = "铜锭"
+inputCount2 = 10
+outputCount = 1
+outitem = ExtResource("1_i7vb1")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

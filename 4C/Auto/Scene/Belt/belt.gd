@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 						_item.move = _rotation
 						_item.position += speed * _rotation * delta
 			elif next_belt.is_in_group("building"):
-				if next_belt.items_data.number < 20 and next_belt.can_enter(_item):
+				if next_belt.can_enter(_item):
 					_item.move = _rotation
 					_item.position += speed * _rotation * delta
 			elif next_belt.is_in_group("box"):

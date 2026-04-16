@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://b6ov27wrriypb"]
+
+[ext_resource type="Resource" uid="uid://dmydwli3rtu65" path="res://Resource/Recipe/bridge_deck.tres" id="1_3xkov"]
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_ma4qj"]
+
+[resource]
+script = ExtResource("1_ma4qj")
+item1 = "木板"
+itemCount1 = 50
+item2 = "铜装饰品"
+itemCount2 = 50
+recipe = ExtResource("1_3xkov")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

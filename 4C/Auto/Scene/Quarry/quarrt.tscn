@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://cgbh6aboxl6c0"]
 
 [ext_resource type="Script" uid="uid://d0i2p50ae88wt" path="res://Scene/Quarry/quarrt.gd" id="1_xufkn"]
-[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="2_x7tld"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xufkn"]
-atlas = ExtResource("2_x7tld")
-region = Rect2(1, 29, 75, 75)
+[ext_resource type="Texture2D" uid="uid://br5tv7pngp4fe" path="res://Asset/采石场.png" id="2_xufkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21bka"]
 size = Vector2(60, 60)
@@ -17,7 +13,7 @@ size = Vector2(60, 60)
 script = ExtResource("1_xufkn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=280101123]
-texture = SubResource("AtlasTexture_xufkn")
+texture = ExtResource("2_xufkn")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=8121823]
 position = Vector2(110, 112)

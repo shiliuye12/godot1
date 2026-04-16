@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dyj8vvjvwoip0"]
+
+[ext_resource type="Script" uid="uid://bvija8qps3wfj" path="res://Scene/GovernmentOffice/government_office.gd" id="1_7evwv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3twu3"]
+size = Vector2(300, 300)
+
+[node name="GovernmentOffice" type="Area2D" unique_id=407194518]
+script = ExtResource("1_7evwv")
+rect = Rect2(0, 0, 300, 300)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=345548572]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1780480507]
+shape = SubResource("RectangleShape2D_3twu3")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://6jkfdxk4iyyq"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_ywbar"]
+[ext_resource type="Texture2D" uid="uid://cagyjfvamh0od" path="res://Asset/1_家具_WH_2048x2048px.png" id="2_yst6x"]
+
+[resource]
+script = ExtResource("1_ywbar")
+name = "家具"
+texture = ExtResource("2_yst6x")
+id = 33
+metadata/_custom_type_script = "uid://5po6te85tamv"

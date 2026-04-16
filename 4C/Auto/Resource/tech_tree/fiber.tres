@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://borgneef73n5a"]
+
+[ext_resource type="Resource" uid="uid://e1m0js1xugom" path="res://Resource/Recipe/fiber.tres" id="1_j07i6"]
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="2_cqiy4"]
+
+[resource]
+script = ExtResource("2_cqiy4")
+item1 = "木头"
+itemCount1 = 10
+recipe = ExtResource("1_j07i6")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

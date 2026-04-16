@@ -1,15 +1,11 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://3q2pfsalrcvf"]
 
 [ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_jhwr7"]
-[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="2_b7h63"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1yudv"]
-atlas = ExtResource("2_b7h63")
-region = Rect2(116, 81, 75, 75)
+[ext_resource type="Texture2D" uid="uid://dkuunjex5wix4" path="res://Asset/new/1_仓库入.png" id="2_b7h63"]
 
 [resource]
 script = ExtResource("1_jhwr7")
 name = "入货口"
-texture = SubResource("AtlasTexture_1yudv")
+texture = ExtResource("2_b7h63")
 id = 5
 metadata/_custom_type_script = "uid://5po6te85tamv"

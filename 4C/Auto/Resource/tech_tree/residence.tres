@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://fvhu1h2m2ugn"]
+
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_6fc1w"]
+[ext_resource type="Resource" uid="uid://c51shm3hf3lw8" path="res://Resource/Recipe/residence_1.tres" id="1_r6wus"]
+
+[resource]
+script = ExtResource("1_6fc1w")
+item1 = "简陋屋顶"
+itemCount1 = 1
+item2 = "墙身"
+itemCount2 = 1
+item3 = "简陋地基"
+itemCount3 = 1
+recipe = ExtResource("1_r6wus")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

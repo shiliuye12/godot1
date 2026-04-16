@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c6u0k0sdqv2yp"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_4h7ns"]
+[ext_resource type="Texture2D" uid="uid://cm0ts00n652sk" path="res://Asset/1_高级屋顶_WH_2048x2048px.png" id="2_gw7do"]
+
+[resource]
+script = ExtResource("1_4h7ns")
+name = "高级屋顶"
+texture = ExtResource("2_gw7do")
+id = 40
+metadata/_custom_type_script = "uid://5po6te85tamv"

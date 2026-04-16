@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://cwyu08pi6y1qn"]
+
+[ext_resource type="Resource" uid="uid://bc6kxt10lobc2" path="res://Resource/item/window.tres" id="1_0f1y4"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_j6vk1"]
+
+[resource]
+script = ExtResource("1_j6vk1")
+inputitem1 = "纸"
+inputCount1 = 1
+inputitem2 = "木制框架"
+inputCount2 = 1
+outputCount = 1
+outitem = ExtResource("1_0f1y4")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

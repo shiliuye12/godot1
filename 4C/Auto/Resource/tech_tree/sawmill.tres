@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://bnnxohwdnu4ik"]
+
+[ext_resource type="Resource" uid="uid://dr32at76igtgb" path="res://Resource/Recipe/sawmill.tres" id="1_71yml"]
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_n7naf"]
+
+[resource]
+script = ExtResource("1_n7naf")
+item1 = "木头"
+itemCount1 = 5
+recipe = ExtResource("1_71yml")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

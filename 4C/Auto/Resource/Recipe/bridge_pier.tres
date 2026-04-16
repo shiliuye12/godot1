@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://cd4brqnm4p52j"]
+
+[ext_resource type="Resource" uid="uid://sfg31taaphtn" path="res://Resource/item/bridge_pier.tres" id="1_n6tgg"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_w2x23"]
+
+[resource]
+script = ExtResource("1_w2x23")
+inputitem1 = "木梁"
+inputCount1 = 10
+inputitem2 = "石墙"
+inputCount2 = 10
+outputCount = 1
+outitem = ExtResource("1_n6tgg")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

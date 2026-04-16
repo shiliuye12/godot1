@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://86tnnsq78ymr"]
+
+[ext_resource type="Script" uid="uid://dj5pje8f5l00q" path="res://Scene/TechTreeButton/tech_tree_button.gd" id="1_d3yi1"]
+
+[node name="TechTreeButton" type="Button" unique_id=1155347912]
+custom_minimum_size = Vector2(75, 75)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_d3yi1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=295304264]
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=1986300895]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 0
+offset_top = 80.0
+offset_right = 75.0
+offset_bottom = 103.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

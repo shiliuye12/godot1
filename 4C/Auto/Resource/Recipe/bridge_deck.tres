@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://dmydwli3rtu65"]
+
+[ext_resource type="Resource" uid="uid://by1ovr0vs1d24" path="res://Resource/item/bridge_deck.tres" id="1_2c0ge"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_nyavq"]
+
+[resource]
+script = ExtResource("1_nyavq")
+inputitem1 = "木板"
+inputCount1 = 50
+inputitem2 = "铜装饰品"
+inputCount2 = 10
+outputCount = 1
+outitem = ExtResource("1_2c0ge")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

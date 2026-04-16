@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://nmsye5b3xvmh"]
+
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_7x442"]
+[ext_resource type="Resource" uid="uid://cg8junc4byvs2" path="res://Resource/Recipe/imperial_palace.tres" id="1_rioe2"]
+
+[resource]
+script = ExtResource("1_7x442")
+item1 = "精密地基"
+itemCount1 = 1
+item2 = "精致墙体"
+itemCount2 = 1
+item3 = "高级屋顶"
+itemCount3 = 1
+recipe = ExtResource("1_rioe2")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

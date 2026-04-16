@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://mnxprnmjo22h"]
+
+[ext_resource type="Resource" uid="uid://ddjsfy4fintcc" path="res://Resource/Recipe/furniture.tres" id="1_eto5g"]
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_mwape"]
+
+[resource]
+script = ExtResource("1_mwape")
+item1 = "铁质框架"
+itemCount1 = 50
+item2 = "铁钉"
+itemCount2 = 50
+item3 = "纸"
+itemCount3 = 50
+recipe = ExtResource("1_eto5g")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

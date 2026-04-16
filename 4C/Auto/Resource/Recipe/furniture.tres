@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://ddjsfy4fintcc"]
+
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_0oi0o"]
+[ext_resource type="Resource" uid="uid://6jkfdxk4iyyq" path="res://Resource/item/furniture.tres" id="1_116fh"]
+
+[resource]
+script = ExtResource("1_0oi0o")
+inputitem1 = "木板"
+inputCount1 = 20
+inputitem2 = "铁钉"
+inputCount2 = 20
+outputCount = 1
+outitem = ExtResource("1_116fh")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

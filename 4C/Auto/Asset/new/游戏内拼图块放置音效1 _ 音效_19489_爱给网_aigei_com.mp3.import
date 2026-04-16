@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvqlp4ololmb0"
+path="res://.godot/imported/游戏内拼图块放置音效1 _ 音效_19489_爱给网_aigei_com.mp3-ec8c0fb893e81465072e3b856b1c2e5d.mp3str"
+
+[deps]
+
+source_file="res://Asset/new/游戏内拼图块放置音效1 _ 音效_19489_爱给网_aigei_com.mp3"
+dest_files=["res://.godot/imported/游戏内拼图块放置音效1 _ 音效_19489_爱给网_aigei_com.mp3-ec8c0fb893e81465072e3b856b1c2e5d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://sfg31taaphtn"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_bo2gs"]
+[ext_resource type="Texture2D" uid="uid://dbrofauhi33d" path="res://Asset/new/1_桥墩_WH_2048x2048px.png" id="2_n6t0e"]
+
+[resource]
+script = ExtResource("1_bo2gs")
+name = "桥墩"
+texture = ExtResource("2_n6t0e")
+id = 35
+metadata/_custom_type_script = "uid://5po6te85tamv"

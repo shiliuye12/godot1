@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://xhctl0pe77un"]
+
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_mwu4r"]
+[ext_resource type="Resource" uid="uid://bxrte71ka5jav" path="res://Resource/Recipe/exquisite_wall.tres" id="1_xemmm"]
+
+[resource]
+script = ExtResource("1_mwu4r")
+item1 = "铁质窗户"
+itemCount1 = 100
+item2 = "家具"
+itemCount2 = 100
+recipe = ExtResource("1_xemmm")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

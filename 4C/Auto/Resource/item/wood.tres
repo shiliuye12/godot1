@@ -1,16 +1,12 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://bjlnyb4651vrl"]
 
 [ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_3v0br"]
-[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="2_agevr"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hd47s"]
-atlas = ExtResource("2_agevr")
-region = Rect2(0, 79, 75, 75)
+[ext_resource type="Texture2D" uid="uid://cwbefjklalagr" path="res://Asset/mmexport1775727460699.png" id="2_agevr"]
 
 [resource]
 script = ExtResource("1_3v0br")
 name = "木头"
-texture = SubResource("AtlasTexture_hd47s")
+texture = ExtResource("2_agevr")
 id = 1
 ms = "普通的木头"
 metadata/_custom_type_script = "uid://5po6te85tamv"

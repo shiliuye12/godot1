@@ -23,6 +23,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1005232308]
 visible = false
@@ -39,6 +40,7 @@ offset_right = 37.5
 offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

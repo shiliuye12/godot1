@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://c51shm3hf3lw8"]
+
+[ext_resource type="Resource" uid="uid://cg22gredk5nck" path="res://Resource/item/residence_1.tres" id="1_cdvdr"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_v8lb5"]
+
+[resource]
+script = ExtResource("1_v8lb5")
+inputitem1 = "民居主体"
+inputCount1 = 1
+inputitem2 = "简陋地基"
+inputCount2 = 1
+outputCount = 1
+outitem = ExtResource("1_cdvdr")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cstgugm2h6uco"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_yqxco"]
+[ext_resource type="Texture2D" uid="uid://dxuu4v3aemwsj" path="res://Asset/微信图片_20260323235644_16_30.png" id="2_nmdvp"]
+
+[resource]
+script = ExtResource("1_yqxco")
+name = "官府3"
+texture = ExtResource("2_nmdvp")
+id = 46
+metadata/_custom_type_script = "uid://5po6te85tamv"

@@ -13,7 +13,7 @@ var recipe: Array
 @onready var building_slot1: Button = $Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/Slot
 @onready var building_slot2: Button = $Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/Slot2
 @onready var repice_ui: VBoxContainer = $Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/RepiceUi
-@onready var recipe_data = preload("uid://cy6v05nmqncyp")
+@onready var recipe_data = preload("res://Resource/recipe_data.tres")
 @onready var repice_v_box: VBoxContainer = $Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/RepiceUi/ColorRect/MarginContainer/ScrollContainer/RepiceVBox
 @onready var recipe_text: Label = $Control/MarginContainer/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer2/ColorRect2/MarginContainer/RecipeText
 @onready var building_slot3: Button = $Control/Slot

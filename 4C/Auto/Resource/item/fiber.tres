@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://buvp61apsywr4"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_d2hwv"]
+[ext_resource type="Texture2D" uid="uid://d2q5sw0ajpypp" path="res://Asset/1_纤维_WH_75x75px.png" id="2_47vga"]
+
+[resource]
+script = ExtResource("1_d2hwv")
+name = "纤维"
+texture = ExtResource("2_47vga")
+id = 18
+metadata/_custom_type_script = "uid://5po6te85tamv"

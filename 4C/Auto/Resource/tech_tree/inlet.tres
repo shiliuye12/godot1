@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://c31epvc2p8385"]
+
+[ext_resource type="Resource" uid="uid://dxe47m2qb6hsf" path="res://Resource/Recipe/inlet.tres" id="1_no277"]
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="2_lqeda"]
+
+[resource]
+script = ExtResource("2_lqeda")
+item1 = "木板"
+itemCount1 = 15
+item2 = "石砖"
+itemCount2 = 15
+recipe = ExtResource("1_no277")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

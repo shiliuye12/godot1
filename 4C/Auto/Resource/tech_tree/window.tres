@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://b4hgnovw3iixg"]
+
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_02avc"]
+[ext_resource type="Resource" uid="uid://cwyu08pi6y1qn" path="res://Resource/Recipe/window.tres" id="1_ppwnl"]
+
+[resource]
+script = ExtResource("1_02avc")
+item1 = "木制框架"
+itemCount1 = 30
+item2 = "纸"
+itemCount2 = 30
+recipe = ExtResource("1_ppwnl")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

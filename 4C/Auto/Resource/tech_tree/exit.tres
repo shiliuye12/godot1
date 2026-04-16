@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://2wlrdjmteusw"]
+
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_rb3u2"]
+[ext_resource type="Resource" uid="uid://b7c8teej6y6ew" path="res://Resource/Recipe/exit.tres" id="1_rrwx1"]
+
+[resource]
+script = ExtResource("1_rb3u2")
+item1 = "铁板"
+itemCount1 = 50
+item2 = "铜板"
+itemCount2 = 50
+recipe = ExtResource("1_rrwx1")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

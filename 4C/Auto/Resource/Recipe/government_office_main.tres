@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://cct31fpnvlfn8"]
+
+[ext_resource type="Resource" uid="uid://cq4wt5xaorcd1" path="res://Resource/item/government_office_main.tres" id="1_b2yte"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_beyfp"]
+
+[resource]
+script = ExtResource("1_beyfp")
+inputitem1 = "高级墙体"
+inputCount1 = 1
+inputitem2 = "金属屋顶"
+inputCount2 = 1
+outputCount = 1
+outitem = ExtResource("1_b2yte")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

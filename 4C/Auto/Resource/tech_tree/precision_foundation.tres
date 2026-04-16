@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TechTree" format=3 uid="uid://bbd0li6ro7veu"]
+
+[ext_resource type="Resource" uid="uid://d1fwme7g27ita" path="res://Resource/Recipe/precision_foundation.tres" id="1_smx3n"]
+[ext_resource type="Script" uid="uid://dp3k6c7ineooo" path="res://Resource/script/tech_tree.gd" id="1_tfkjf"]
+
+[resource]
+script = ExtResource("1_tfkjf")
+item1 = "铁板"
+itemCount1 = 100
+item2 = "铜板"
+itemCount2 = 100
+recipe = ExtResource("1_smx3n")
+metadata/_custom_type_script = "uid://dp3k6c7ineooo"

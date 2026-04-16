@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://rybyryv8q8n7"]
 
-[ext_resource type="Texture2D" uid="uid://cvw31tsv8qmjo" path="res://Asset/tilemap_packed.png" id="1_53e1a"]
 [ext_resource type="Script" uid="uid://kqpt7p6o0u6f" path="res://Scene/Sawmill/sawmill.gd" id="1_hbe2t"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hbe2t"]
-atlas = ExtResource("1_53e1a")
-region = Rect2(48, 36, 75, 75)
+[ext_resource type="Texture2D" uid="uid://cawhjg2lc73e2" path="res://Asset/new/1_锯木厂.png" id="2_hbe2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21bka"]
 size = Vector2(60, 60)
@@ -18,7 +14,7 @@ script = ExtResource("1_hbe2t")
 rect = Rect2(0, 0, 75, 75)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=798088576]
-texture = SubResource("AtlasTexture_hbe2t")
+texture = ExtResource("2_hbe2t")
 
 [node name="entry" type="Area2D" parent="." unique_id=865324808]
 

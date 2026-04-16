@@ -6,7 +6,9 @@
 [resource]
 script = ExtResource("1_h1ggr")
 inputitem1 = "石砖"
-inputCount1 = 30
+inputCount1 = 5
+inputitem2 = "木板"
+inputCount2 = 5
 outputCount = 1
 outitem = ExtResource("1_g8uqu")
 metadata/_custom_type_script = "uid://dflulrb0iifve"

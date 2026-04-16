@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_ykg8a")
 inputitem1 = "铜矿"
-inputCount1 = 5
+inputCount1 = 3
 outputCount = 1
 outitem = ExtResource("1_2fxnl")
 metadata/_custom_type_script = "uid://dflulrb0iifve"

@@ -15,6 +15,7 @@ size = Vector2(60, 60)
 
 [node name="Maker" type="Area2D" unique_id=747879841 groups=["building"]]
 script = ExtResource("1_y36fu")
+rect = Rect2(0, 0, 75, 75)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=798088576]
 texture = SubResource("AtlasTexture_iloqt")

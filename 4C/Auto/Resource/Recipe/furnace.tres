@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_aabsi")
-inputitem1 = "石砖"
+inputitem1 = "石头"
 inputCount1 = 5
 outputCount = 1
 outitem = ExtResource("1_a4vm8")

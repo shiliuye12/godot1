@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c4ayiodevna3j"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_wl5u6"]
+[ext_resource type="Texture2D" uid="uid://dxuu4v3aemwsj" path="res://Asset/微信图片_20260323235644_16_30.png" id="2_l5dvf"]
+
+[resource]
+script = ExtResource("1_wl5u6")
+name = "桥梁1"
+texture = ExtResource("2_l5dvf")
+id = 48
+metadata/_custom_type_script = "uid://5po6te85tamv"

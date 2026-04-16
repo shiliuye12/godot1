@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cdpgqnivfmoa0"]
+
+[ext_resource type="Script" uid="uid://chr5sbewy5bj1" path="res://Scene/ImperialPalace/imperial_palace.gd" id="1_n0axb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0axb"]
+size = Vector2(375, 375)
+
+[node name="ImperialPalace" type="Area2D" unique_id=1862605974]
+script = ExtResource("1_n0axb")
+rect = Rect2(0, 0, 375, 375)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1699817668]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=84092120]
+shape = SubResource("RectangleShape2D_n0axb")

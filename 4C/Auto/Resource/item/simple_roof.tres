@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bi7nlysnkl2cm"]
+
+[ext_resource type="Script" uid="uid://5po6te85tamv" path="res://Resource/script/item.gd" id="1_supcu"]
+[ext_resource type="Texture2D" uid="uid://bw1kw2b06gdxn" path="res://Asset/new/1_简陋屋顶_WH_2048x2048px.png" id="2_b1n8a"]
+
+[resource]
+script = ExtResource("1_supcu")
+name = "简陋屋顶"
+texture = ExtResource("2_b1n8a")
+id = 26
+metadata/_custom_type_script = "uid://5po6te85tamv"

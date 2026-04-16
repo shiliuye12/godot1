@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://h2nfqjnn1d4n"]
+
+[ext_resource type="Script" uid="uid://hcbubs7ck1y1" path="res://Scene/IntroductionUi/introduction_ui.gd" id="1_oj2bd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_53q20"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oj2bd"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ahna0"]
+font_size = 32
+
+[node name="IntroductionUi" type="Control" unique_id=203200243]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oj2bd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=260942508]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.122984864, 0.12298489, 0.12298482, 0.4509804)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=151998885]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer" unique_id=380817507]
+layout_mode = 2
+color = Color(0.5705783, 0.57057834, 0.57057834, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/ColorRect" unique_id=1407344662]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/ColorRect/MarginContainer" unique_id=1536034948]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/HBoxContainer" unique_id=1209605497]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/HBoxContainer" unique_id=420797802]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1596448196]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "11111"
+label_settings = SubResource("LabelSettings_53q20")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2137118896]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+text = "111"
+label_settings = SubResource("LabelSettings_oj2bd")
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=281909546]
+custom_minimum_size = Vector2(0.09, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/Button" unique_id=1322637734]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "关闭"
+label_settings = SubResource("LabelSettings_ahna0")
+
+[connection signal="pressed" from="ColorRect/MarginContainer/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

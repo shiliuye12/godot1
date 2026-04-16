@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bllits1stuyyv"]
+
+[ext_resource type="Resource" uid="uid://c6u0k0sdqv2yp" path="res://Resource/item/advanced_roof.tres" id="1_e6ros"]
+[ext_resource type="Script" uid="uid://dflulrb0iifve" path="res://Resource/script/recipe.gd" id="1_ervfl"]
+
+[resource]
+script = ExtResource("1_ervfl")
+inputitem1 = "铁钉"
+inputCount1 = 100
+inputitem2 = "铜装饰品"
+inputCount2 = 30
+outputCount = 1
+outitem = ExtResource("1_e6ros")
+metadata/_custom_type_script = "uid://dflulrb0iifve"

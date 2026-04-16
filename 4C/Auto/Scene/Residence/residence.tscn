@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://0r1dmxfvvycs"]
+
+[ext_resource type="Script" uid="uid://b2j5ksak4le4i" path="res://Scene/Residence/residence.gd" id="1_fdgeh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdgeh"]
+size = Vector2(225, 225)
+
+[node name="residence" type="Area2D" unique_id=499727787]
+script = ExtResource("1_fdgeh")
+rect = Rect2(0, 0, 225, 225)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=622495762]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1502076240]
+shape = SubResource("RectangleShape2D_fdgeh")
